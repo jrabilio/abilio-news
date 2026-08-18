@@ -1,0 +1,8 @@
+# Dependências das seis ferramentas do pipeline da newsletter.
+# A rotina da nuvem roda `pip3 install -r requirements.txt` antes de começar;
+# sem este arquivo ela falha no passo 2, antes de coletar qualquer notícia.
+
+python-dotenv>=1.0.0     # notify_whatsapp.py e publish_git.py leem o .env
+requests>=2.31.0         # market_data.py, notify_whatsapp.py, scrape_single_site.py
+beautifulsoup4>=4.12.0   # scrape_single_site.py
+lxml>=5.0.0              # parser do BeautifulSoup

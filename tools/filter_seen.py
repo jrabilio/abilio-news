@@ -85,6 +85,10 @@ def main() -> int:
 
     payload = json.dumps(novos, ensure_ascii=False, indent=2)
     if args.out:
+        # .tmp/ é gitignorado, então não existe num clone novo -- e a rotina
+        # da nuvem sempre parte de um clone novo. Sem isto, o primeiro passo
+        # do dia morre em FileNotFoundError.
+        os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
         with open(args.out, "w", encoding="utf-8") as fh:
             fh.write(payload)
         print(f"{len(novos)} inéditos, {descartados} já publicados → {args.out}", file=sys.stderr)

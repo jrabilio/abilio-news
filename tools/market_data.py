@@ -21,6 +21,7 @@ Saída (JSON):
 
 import argparse
 import json
+import os
 import sys
 import warnings
 
@@ -119,6 +120,10 @@ def main() -> int:
     result = {"indicadores": indicadores}
     payload = json.dumps(result, ensure_ascii=False, indent=2)
     if args.out:
+        # .tmp/ é gitignorado, então não existe num clone novo -- e a rotina
+        # da nuvem sempre parte de um clone novo. Sem isto, o primeiro passo
+        # do dia morre em FileNotFoundError.
+        os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
         with open(args.out, "w", encoding="utf-8") as fh:
             fh.write(payload)
         print(f"Salvo em {args.out} ({len(indicadores)} indicadores).")
