@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-18</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-18</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Migalhas</div><h2><a href="https://www.migalhas.com.br/quentes/462484/apos-prejuizo-de-r-10-1-bi-casas-bahia-pede-recuperacao-judicial">Casas Bahia pede recuperação judicial com nove subsidiárias</a></h2><p class="resumo">O Grupo Casas Bahia protocolou pedido de recuperação judicial na Justiça de São Paulo no domingo, 16/08/2026, um dia após aprovação pelo conselho de administração, incluindo a controladora e nove subsidiárias como ASAP Log, Cnova e Indústria de Móveis Bartira. A varejista havia registrado prejuízo líquido contábil de R$ 10,1 bilhões no segundo trimestre de 2026, com patrimônio líquido negativo em R$ 8,2 bilhões, e cita juros elevados e restrição de crédito como causas. A empresa já fechou 298 lojas e reduziu o quadro de funcionários, e afirma que pretende manter operações em todos os canais durante o processo.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,20</div><div class="var down">▼ -0.41%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 6,04</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">166.784</div><div class="var down">▼ -0.09%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.745</div><div class="var down">▼ -0.52%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.645</div><div class="var down">▼ -0.32%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/economia/money/mercado/mercado-financeiro-ibovespa-dolar-17-agosto-2026/">Ibovespa fecha em leve alta e dólar recua a R$ 5,20 em meio à crise da Casas Bahia</a></h3><p class="resumo">O Ibovespa encerrou o pregão de segunda-feira, 17/08/2026, com alta de 0,09%, aos 166.954,77 pontos, sustentado pela Petrobras diante da alta do petróleo, enquanto bancos recuaram com preocupações sobre crédito. O dólar à vista caiu 0,41%, fechando a R$ 5,1998 na venda, interrompendo cinco sessões seguidas de alta. As ações da Magazine Luiza (MGLU3) subiram 8,18%, a R$ 4,15, enquanto os papéis da Casas Bahia (BHIA3) despencaram cerca de 25% após o pedido de recuperação judicial da companhia no domingo.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Startupz</div><h3><a href="https://www.startupz.com.br/artigo/condutive-capta-r-2-5-milhoes-em-rodada-pre-seed-com-a-domo-vc-e-vai-montar-rede-de-mil-consultores-de-energia">Condutive capta R$ 2,5 milhões em rodada pré-seed com a DOMO.VC</a></h3><p class="resumo">A Condutive, marketplace catarinense de energia renovável, captou R$ 2,5 milhões em rodada pré-seed liderada pela DOMO.VC, com participação da Bossa Invest e investidores-anjo. O aporte será usado para estruturar uma rede de mil consultores autônomos que vão prospectar clientes no mercado livre de energia e geração distribuída. A startup, fundada em 2024, já atua em 25 estados com 30 fornecedores parceiros, entre eles EDP, Matrix e Casa dos Ventos, e registrou alta de 50% no volume de propostas nos últimos seis meses.</p></article><article class="item"><div class="eyebrow fonte">Startups.com.br</div><h3><a href="https://startups.com.br/negocios/rodada-de-investimento/premia-capta-r-5m-e-prepara-aquisicoes-para-ampliar-portfolio/">Premia capta R$ 5 milhões e prepara aquisições para ampliar portfólio</a></h3><p class="resumo">A Premia, edtech de modelos próprios de inteligência artificial para educação básica e superior, fechou sua primeira rodada de investimento, no valor de R$ 5 milhões, com aporte de um family office não identificado. Os recursos serão usados para reforçar a área comercial, ampliar a infraestrutura tecnológica e financiar aquisições que complementem o portfólio, incluindo a entrada em educação corporativa. A empresa, já rentável, tem hoje 3,8 milhões de usuários e mira chegar a 20 milhões em dois anos, ampliando a presença para 1.500 municípios.</p></article><article class="item"><div class="eyebrow fonte">Startupz</div><h3><a href="https://www.startupz.com.br/artigo/exclusivo-stamina-ventures-consolida-presenca-no-early-stage-e-avanca-para-cheques-pre-serie-a">Stamina Ventures consolida presença no early stage e avança para cheques pré-Série A</a></h3><p class="resumo">A gestora brasileira de venture capital Stamina Ventures, fundada em 2013, anunciou a abertura de uma nova frente de investimento em estágio pré-Série A, com cheques de até R$ 5 milhões, mantendo a atuação original em pré-seed e seed. O primeiro investimento dessa nova frente foi na MeetRox, startup brasileira de inteligência artificial para times de Receita e Customer Success, na qual a gestora já era investidora desde 2021. Em 13 anos de operação, a Stamina já investiu em 78 empresas, somando mais de 120 cheques com follow-ons e 17 exits.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">ND+ (ndmais.com.br)</div><h3><a href="https://ndmais.com.br/empregos-e-concursos/nubank-50-vagas-estagio-inteligencia-artificial/">Nubank abre 50 vagas de estágio com foco em inteligência artificial para 2027</a></h3><p class="resumo">O Nubank abriu em 17 de agosto de 2026 as inscrições para seu Programa de Estágio 2027, com 50 vagas voltadas a estudantes de qualquer graduação com foco em tecnologia, dados e inteligência artificial. As inscrições vão até 30 de agosto, com início previsto para janeiro de 2027 em São Paulo, Campinas, Rio de Janeiro e Belo Horizonte. Os selecionados vão atuar em projetos transversais e terão contato direto com os modelos e agentes de IA usados nos produtos do banco, em regime híbrido de 30 horas semanais.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">XP Investimentos (Café com ESG)</div><h3><a href="https://conteudos.xpi.com.br/esg/companhias-aereas-destacam-falta-de-incentivos-para-implementar-saf-cafe-com-esg-17-08/">Decreto sobre combustível sustentável de aviação frustra companhias aéreas no Brasil</a></h3><p class="resumo">A Latam, a Gol, a Azul e a Abear criticaram o decreto que regulamentou o Programa Nacional de Combustível Sustentável de Aviação (ProBioQAV) por não prever desoneração fiscal sobre o consumo do combustível, limitando os incentivos à etapa de produção (debêntures incentivadas, financiamento do BNDES e fomento em ZPEs). As empresas argumentam que o SAF custa de 2 a 5 vezes mais que o querosene convencional, que já responde por cerca de 40% das despesas operacionais das aéreas. Como alternativa, o governo mantém uma linha de crédito no Fundo Nacional da Aviação Civil (FNAC) a 6,5% ao ano para aquisição de SAF produzido no país.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Forbes Agro</div><h3><a href="https://forbes.com.br/forbes-agro/2026/08/interrupcao-no-escoamento-de-cafe-na-colombia-pressiona-oferta-para-o-mercado-dos-eua/">Terremoto na Colômbia interrompe escoamento de café e eleva demanda por grão brasileiro</a></h3><p class="resumo">Um terremoto de magnitude 7,4 atingiu a região cafeeira da Colômbia e bloqueou as estradas até o porto de Buenaventura, interrompendo por cerca de 15 dias o escoamento do produto. A Colômbia responde por cerca de 25% do café consumido nos Estados Unidos, e com o estoque de arábica certificado já reduzido, compradores internacionais passaram a buscar café brasileiro. O selo Rainforest Alliance, que já pagava prêmio de cerca de R$ 30 por saca de arábica, ganhou valorização adicional nesse cenário de risco de desabastecimento.</p></article><article class="item"><div class="eyebrow fonte">Revista Cultivar</div><h3><a href="https://revistacultivar.com.br/noticias/governo-abre-processo-de-reciprocidade-contra-tarifas-dos-eua">Brasil abre processo da Lei da Reciprocidade contra tarifas dos EUA</a></h3><p class="resumo">O governo brasileiro abriu formalmente o processo da Lei da Reciprocidade, instrumento que permite aplicar tarifas na mesma proporção das impostas pelos Estados Unidos, com etapa de consulta aos setores afetados antes de definir o tamanho da resposta. O tarifaço americano atinge cerca de US$ 6,6 bilhões em exportações brasileiras, incluindo açúcar e máquinas agrícolas. Empresas que operam nos dois países pediram cautela antes de qualquer retaliação, com receio de represálias adicionais dos EUA.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Investidor10</div><h3><a href="https://investidor10.com.br/noticias/itausa-itsa4-investe-r-732-mi-e-eleva-participacao-na-aegea-para-14-121893/">Aegea conclui aumento de capital de R$ 2,1 bilhões para reduzir dívida antes de IPO</a></h3><p class="resumo">A Aegea Saneamento concluiu aumento de capital de R$ 2,1 bilhões, com aportes de Itaúsa (R$ 732 milhões) e do fundo soberano GIC, que passaram a deter 14,01% e 35,67% da companhia, respectivamente. O objetivo declarado é reforçar o caixa e acelerar a desalavancagem antes de uma possível oferta pública de ações na B3, ainda que a alavancagem tenha piorado de 3,01x para 3,87x no trimestre. O reforço de caixa recente e a preparação para o mercado de capitais são um gancho a observar, com ressalva de que a empresa está em fase de ajuste financeiro.</p></article><article class="item"><div class="eyebrow fonte">ADVFN Brasil</div><h3><a href="https://br.advfn.com/jornal/2026/08/m-dias-branco-registra-lucro-de-r-168-9-milhoes-no-2t26-queda-de-22">M. Dias Branco tem lucro menor no 2T26, mas dobra investimentos e reforça caixa</a></h3><p class="resumo">A M. Dias Branco registrou lucro líquido de R$ 168,9 milhões no 2º trimestre de 2026, queda de 22% frente ao mesmo período de 2025, com margem EBITDA em 10,5%. Apesar da pressão sobre a rentabilidade, o volume de vendas cresceu 4,4% e a empresa quase dobrou os investimentos do semestre, para R$ 273,5 milhões, direcionados à automação industrial. A companhia encerrou o trimestre com R$ 2,1 bilhões em caixa e R$ 767 milhões em caixa líquido, o dobro do registrado um ano antes — sinal de fôlego financeiro que pode sustentar conversas de patrocínio institucional.</p></article><article class="item"><div class="eyebrow fonte">Âncora 1</div><h3><a href="https://ancora1.com/noticias/assis-aplaude-de-p-espetculo-da-ctg-brasil-que-uniu-orquestra-incluso-e-sustentabilidade">CTG Brasil leva turnê cultural com orquestra e Libras a cidades do interior de SP</a></h3><p class="resumo">A CTG Brasil Tour 2026 apresentou concertos gratuitos com orquestra em Assis, Avaré e Ourinhos (SP), incluindo tradução em Libras e ações de plantio de mudas como parte do compromisso socioambiental da empresa. O espetáculo em Assis lotou o teatro municipal, unindo cultura, inclusão e sustentabilidade. A iniciativa evidencia investimento cultural já ativo da CTG Brasil, referência útil para propostas de expansão ou renovação de patrocínio.</p></article><article class="item"><div class="eyebrow fonte">PaperAge</div><h3><a href="https://www.paperage.com/2026news/08-07-2026sylvamo-releases-second-quarter-2026-earnings.html">Sylvamo tem prejuízo no 2T26 mas dobra EBITDA na comparação sequencial</a></h3><p class="resumo">A Sylvamo reportou prejuízo líquido de US$ 11 milhões no 2º trimestre de 2026, abaixo do esperado pelo mercado. Ainda assim, o EBITDA ajustado mais que dobrou na comparação sequencial, para US$ 60 milhões, e as margens na América do Norte subiram para 15%. A empresa mantém plano de investir cerca de US$ 145 milhões em projetos de capital de alto retorno nos próximos três anos e projeta maior geração de caixa livre no segundo semestre de 2026 — recuperação operacional em curso, ainda sem tradução direta em lucro.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-08-18</span></footer>
+</body></html>
