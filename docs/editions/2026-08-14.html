@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-14</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-14</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Money Times</div><h2><a href="https://www.moneytimes.com.br/gringos-retiram-quase-r-5-bilhoes-em-um-unico-pregao-a-maior-saida-em-cinco-anos-lils/">Estrangeiros retiram R$ 4,72 bilhões da B3 em um único pregão, maior saída desde 2021</a></h2><p class="resumo">Investidores estrangeiros retiraram R$ 4,72 bilhões da B3 na terça-feira (11/08), a maior saída diária desde abril de 2021, no mesmo dia em que o J.P. Morgan rebaixou a recomendação para ações brasileiras de &#x27;overweight&#x27; para neutra. O Ibovespa caiu 2,50% na sessão, e em agosto os estrangeiros já acumulam saída líquida de R$ 11,9 bilhões da bolsa.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,189</div><div class="var up">▲ +0.20%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,999</div><div class="var up">▲ +0.30%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">167.101</div><div class="var down">▼ -0.23%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.799</div><div class="var up">▲ +0.65%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.803</div><div class="var up">▲ +0.81%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Money Times</div><h3><a href="https://www.moneytimes.com.br/gringos-retiram-quase-r-5-bilhoes-em-um-unico-pregao-a-maior-saida-em-cinco-anos-lils/">Estrangeiros retiram R$ 4,72 bilhões da B3 em um único pregão, maior saída desde 2021</a></h3><p class="resumo">Investidores estrangeiros retiraram R$ 4,72 bilhões da B3 na terça-feira (11/08/2026), a maior saída diária desde abril de 2021. O movimento se intensificou no mesmo dia em que o J.P. Morgan rebaixou a recomendação para ações brasileiras de &#x27;overweight&#x27; para neutra. Na sessão, o Ibovespa caiu 2,50%. Em agosto, os estrangeiros já acumulam saída líquida de R$ 11,9 bilhões da bolsa.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/nubank-roxo34-resultados-segundo-trimestre-2026/">Nubank (ROXO34): lucro líquido sobe 49% no 2º trimestre e vai a US$ 1,06 bilhão</a></h3><p class="resumo">O Nubank registrou lucro líquido recorde de US$ 1,06 bilhão no segundo trimestre de 2026, alta de 49% em 12 meses e primeiro resultado trimestral acima de US$ 1 bilhão na história da companhia. A receita bruta cresceu para cerca de US$ 5,9 bilhões, e a base de clientes chegou a quase 139 milhões no Brasil, México e Colômbia. As ações saltaram cerca de 9% no after-market americano após o balanço.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/stonex-fecha-acordo-para-comprar-travelex-bank/">StoneX fecha acordo para comprar Travelex Bank no Brasil</a></h3><p class="resumo">A StoneX Group anunciou em 12 de agosto de 2026 acordo definitivo para adquirir o Banco Travelex S.A., primeiro banco brasileiro dedicado exclusivamente a operações de câmbio regulado pelo Banco Central. A operação combinada deve movimentar cerca de US$ 6 bilhões em volume anual, atendendo cerca de 20 mil clientes. A conclusão está sujeita à aprovação do Banco Central e é esperada em até 12 meses.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">DealFlow Brasil</div><h3><a href="https://www.dealflowbrasil.com.br/noticia/delivery-das-favelas-abre-rodada-e-mira-expansao-para-o-nordeste-em-2026">Delivery das Favelas abre rodada de investimento para expandir ao Nordeste</a></h3><p class="resumo">A startup Delivery das Favelas anunciou a abertura de uma nova rodada de captação de recursos para expandir suas operações ao Nordeste em 2026, entrando nos mercados de Recife e Salvador após consolidar atuação no Rio de Janeiro e em São Paulo. O plano inclui ampliar a base de entregadores cadastrados até o fim do ano. Valor da rodada e investidores ainda não foram divulgados.</p></article><article class="item"><div class="eyebrow fonte">NeoFeed</div><h3><a href="https://neofeed.com.br/startups/beacon-o-family-office-para-fundadores-de-startups-incorpora-gestora-e-mira-r-1-bilhao/">Beacon incorpora 314 Capital e mira R$ 1 bilhão sob gestão</a></h3><p class="resumo">A Beacon Founders, plataforma de family office voltada a fundadores de startups, incorporou a gestora 314 Capital em operação via troca de ações. Com a fusão, o volume sob gestão da Beacon subiu para R$ 650 milhões, com meta de alcançar R$ 1 bilhão até o fim de 2026. Natan Epstein, fundador da 314 Capital, passa a ser sócio e CIO da Beacon, que também obtém licença da CVM para gestão de recursos.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/business/anthropic-negocia-aquisicao-da-decart-em-acordo-avaliado-em-us-6-bilhoes/">Anthropic negocia comprar startup israelense Decart AI por US$ 6 bilhões</a></h3><p class="resumo">A Anthropic, dona do chatbot Claude, está em negociações para adquirir a startup israelense Decart AI por cerca de US$ 6 bilhões, segundo apuração do Wall Street Journal. A Decart desenvolve &#x27;world models&#x27; capazes de simular ambientes físicos, além de tecnologia para otimizar uso de GPUs e reduzir custos de treinamento de IA. Seria uma das maiores aquisições já feitas pela Anthropic; a empresa não confirmou oficialmente os termos.</p></article><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/inteligencia-artificial/parceira-da-anthropic-empresa-brasileira-corta-mais-de-50-do-esforco-com-agentes-de-ia/">Parceira da Anthropic, startup brasileira Triggo.ai reduz esforço operacional em mais de 50% com agentes de IA</a></h3><p class="resumo">A Triggo.ai, startup brasileira parceira da Anthropic, afirmou ter reduzido em mais de 50% o esforço humano em processos de manutenção e ordens de serviço ao implementar agentes de IA baseados em Claude para a CS Frotas, rede com mais de mil oficinas. Segundo o CDO e cofundador Anderson Paulucci, o agente apoia a gestão de manutenção veicular em operações reais, exemplo de ganho de eficiência com IA agêntica no Brasil.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mundo/nvidia-desenvolve-nova-familia-de-modelos-de-ia-de-codigo-aberto-diz-the-information/">Nvidia lança Nemotron 3.5 Lightning e revela desenvolvimento do Nemotron 4, de até 1 trilhão de parâmetros</a></h3><p class="resumo">A Nvidia lançou o Nemotron 3.5 Lightning, modelo agêntico de código aberto com cerca de 30 bilhões de parâmetros, e revelou estar desenvolvendo o Nemotron 4, cuja maior variante deve ter ao menos 1 trilhão de parâmetros. A empresa também apresentou o NeMo Switchyard, biblioteca de roteamento entre modelos abertos, para competir com os principais laboratórios americanos e chineses. O Nemotron 4 ainda não tem data de lançamento.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">CanalEnergia</div><h3><a href="https://www.canalenergia.com.br/noticias/53353630/lula-assina-decretos-de-abertura-do-mercado-e-da-pauta-verde">Lula regulamenta hidrogênio de baixo carbono e abre mercado livre de energia</a></h3><p class="resumo">O presidente Lula assinou, em 12 de agosto de 2026, pacote de quatro decretos do setor de energia, entre eles a regulamentação do marco legal do hidrogênio de baixo carbono. A norma cria o Sistema Brasileiro de Certificação do Hidrogênio (SBCH2) e define competências da ANP, da CCEE e do Inmetro na certificação e comercialização do produto. O pacote também prevê a abertura do mercado livre de energia para residências e pequenas empresas.</p></article><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://www.otempo.com.br/politica/2026/8/13/lula-regulamenta-captura-e-estocagem-geologica-de-dioxido-de-carbono">Governo regulamenta captura e estocagem geológica de CO2 no Brasil</a></h3><p class="resumo">O governo federal publicou o Decreto 13.095/2026, assinado pelo presidente Lula, que regulamenta as atividades de captura, transporte por dutos e estocagem geológica de dióxido de carbono no país. A norma regulamenta a Lei 14.993/2024 e atribui à ANP a autorização e fiscalização das atividades, com monitoramento mínimo de 20 anos após o encerramento. O texto busca incentivar hubs compartilhados para reduzir custos de projetos de descarbonização industrial.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Cultura e Mercado</div><h3><a href="https://culturaemercado.com.br/uma-nova-oportunidade-para-quem-faz-cultura-nas-periferias/">Rouanet nas Favelas 2: MinC e Vale abrem inscrições para R$ 10 milhões em projetos culturais</a></h3><p class="resumo">O Ministério da Cultura e a mineradora Vale, em parceria com a Cufa, abrem inscrições a partir de 15 de agosto para a segunda edição do programa Rouanet nas Favelas. A iniciativa destina R$ 10 milhões via Lei Rouanet à produção cultural em favelas e periferias de oito capitais, incluindo Belo Horizonte, Rio de Janeiro e São Paulo. Serão selecionadas ao menos 50 propostas, com até R$ 200 mil cada, nas áreas de artes cênicas, artes visuais, audiovisual, música e patrimônio cultural. Inscrições pelo Salic até 13 de outubro.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/agro/maioria-do-stf-valida-moratoria-da-soja-e-barra-processos-de-indenizacao/">STF valida constitucionalidade da Moratória da Soja e barra indenizações às tradings</a></h3><p class="resumo">O Supremo Tribunal Federal declarou constitucional a Moratória da Soja, acordo em que tradings deixam de comprar grão de área desmatada na Amazônia após 2008, afastou acusação de formação de cartel contra as empresas signatárias e barrou processos que cobravam indenização. No mesmo julgamento, o STF validou leis de Mato Grosso e Rondônia que retiram benefício fiscal de quem adere a pactos do tipo — aderir à moratória é legal, e os estados punirem quem adere também é. A indústria comemorou a segurança jurídica, mas o produtor que abriu área dentro do Código Florestal segue sem acesso às grandes compradoras.</p></article><article class="item"><div class="eyebrow fonte">Canal Rural</div><h3><a href="https://www.canalrural.com.br/pecuaria/brasil-atinge-90-da-cota-anual-de-carne-bovina-para-a-china/">Brasil atinge 90% da cota anual de carne bovina para a China e frigoríficos reduzem embarques</a></h3><p class="resumo">As exportações brasileiras de carne bovina para a China atingiram 90% da cota anual de salvaguarda comercial de 1,106 milhão de toneladas para 2026, patamar alcançado menos de três semanas depois de a cota ter passado de 80%, em 21 de julho. Pelas regras chinesas, uma tarifa adicional de 55% passa a incidir sobre embarques a partir do terceiro dia após o esgotamento total da cota, somando-se aos 12% de tarifa de importação e 9% de tributação doméstica. Frigoríficos brasileiros já ajustam a programação industrial, com redução de turnos e suspensão de contratos.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://www.otempo.com.br/blogs/paulo-navarro/2026/8/11/a-sede-da-sada">Grupo Sada completa 50 anos e reforça diversificação para negócios verdes</a></h3><p class="resumo">Em coluna publicada em 11/08/2026, a vice-presidente Daniela Medioli comenta os 50 anos do Grupo Sada, maior operador de logística de veículos 0km da América Latina, destacando ciclo recente de mais de R$ 1,3 bilhão em investimentos privados em biocombustíveis e reciclagem veicular, e o compromisso institucional com sustentabilidade. A empresa projeta reduzir a logística para 30% das atividades até os anos 2030, ampliando negócios em bioenergia. Marco de 50 anos e discurso institucional de ESG abrem janela natural para pauta de patrocínio.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-08-14</span></footer>
+</body></html>

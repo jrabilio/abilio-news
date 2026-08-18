@@ -1,0 +1,16 @@
+# Segredo — NUNCA versionar. Este repositório é PÚBLICO por definição.
+.env
+.env.*
+!.env.example
+
+# Temporários do pipeline (coleta, edição intermediária)
+.tmp/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# macOS
+.DS_Store

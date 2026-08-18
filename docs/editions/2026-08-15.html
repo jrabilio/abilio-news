@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-15</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-15</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Exame</div><h2><a href="https://exame.com/invest/mercados/hapvida-cai-20-apos-balanco-veja-os-pontos-que-deixaram-o-mercado-em-alerta/">Hapvida vai reajustar ou cancelar 947 mil planos deficitários após balanço fraco</a></h2><p class="resumo">A Hapvida anunciou que cerca de 947 mil beneficiários, ou 11% da base de planos coletivos, estão em revisão comercial por apresentarem condições econômicas desfavoráveis, com ticket médio cerca de metade do valor médio da carteira consolidada. A estratégia prevê reajustes de preço ou, em alguns casos, o descontinuamento dos contratos deficitários. O anúncio veio após balanço do 2º trimestre de 2026 que levou as ações da companhia a caírem cerca de 20% na sessão.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,220</div><div class="var up">▲ +0.52%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 6,040</div><div class="var up">▲ +1.00%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">166.934</div><div class="var down">▼ -0.10%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.786</div><div class="var down">▼ -0.17%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.729</div><div class="var down">▼ -0.28%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/invest/mercados/hapvida-cai-20-apos-balanco-veja-os-pontos-que-deixaram-o-mercado-em-alerta/">Hapvida vai reajustar ou cancelar 947 mil planos deficitários após balanço fraco</a></h3><p class="resumo">A Hapvida anunciou que cerca de 947 mil beneficiários, ou 11% da base de planos coletivos, estão em revisão comercial por apresentarem condições econômicas desfavoráveis, com ticket médio cerca de metade do valor médio da carteira consolidada. A estratégia prevê reajustes de preço ou, em alguns casos, o descontinuamento dos contratos deficitários. O anúncio veio após balanço do 2º trimestre de 2026 que levou as ações da companhia a caírem cerca de 20% na sessão.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Startups.com.br</div><h3><a href="https://startups.com.br/negocios/cripto/yellow-card-capta-us-40m-chega-ao-brasil-com-foco-em-pagamentos-cross-border/">Yellow Card capta US$ 40 milhões e chega ao Brasil com foco em pagamentos cross-border</a></h3><p class="resumo">A Yellow Card, fintech especializada em infraestrutura de stablecoins com forte atuação na África, levantou US$ 40 milhões liderados por SC Ventures, Sony Innovation Fund, Polychain Capital e Blockchain Capital. A empresa usará parte do aporte para entrar no Brasil como porta de entrada para a América Latina, iniciando com uma equipe remota de três pessoas. A companhia já havia captado US$ 120 milhões anteriormente e processa mais de US$ 10 bilhões em volume anual de transações em 20 países africanos.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Olhar Digital</div><h3><a href="https://olhardigital.com.br/2026/08/14/inteligencia-artificial/brasil-supera-eua-na-adocao-de-agentes-de-ia-pelas-empresas/">Brasil supera EUA na adoção de agentes de IA por empresas, aponta estudo da Sinch</a></h3><p class="resumo">Pesquisa global &#x27;The AI Production Paradox&#x27;, da Sinch, ouviu 2.527 executivos de dez países e mostrou que 76% das empresas brasileiras já mantêm agentes de IA em produção, acima da média dos EUA (67%) e da média mundial (62%). O levantamento também identificou desafios de governança: 80% das organizações brasileiras já interromperam ou reverteram alguma implementação de IA, e em 39% desses casos houve vazamento de dados. O estudo foi divulgado em 14 de agosto de 2026.</p></article><article class="item"><div class="eyebrow fonte">9to5Google</div><h3><a href="https://9to5google.com/2026/08/13/gemini-3-7-flash-launch/">Google lança Gemini 3.7 Flash com foco em programação e preço pela metade</a></h3><p class="resumo">O Google anunciou em 13 de agosto de 2026 o Gemini 3.7 Flash, apenas três semanas após o lançamento do 3.6 Flash, com ganhos relevantes em codificação e desenvolvimento web (o desempenho no benchmark DeepSWE saltou de 49,0% para 65,3%). O modelo chega com preço introdutório de US$ 0,75 por milhão de tokens de entrada e US$ 3,75 por milhão de saída, metade do valor anterior, válido até o fim de 2026. O lançamento ocorre em meio à demora do Google para entregar o Gemini 3.5 Pro.</p></article><article class="item"><div class="eyebrow fonte">Cerebras (blog oficial)</div><h3><a href="https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai">OpenAI e Cerebras lançam modo Ultrafast para o GPT-5.6 Sol</a></h3><p class="resumo">OpenAI e Cerebras anunciaram em 13 de agosto de 2026 o Ultrafast, novo nível de serviço na API que faz o GPT-5.6 Sol operar a até 750 tokens de saída por segundo, usando a arquitetura Wafer-Scale Engine da Cerebras. Segundo dados da Artificial Analysis citados pela Cerebras, o modo é cerca de 11 vezes mais rápido que o Claude Fable 5 e 5 vezes mais rápido que o Opus 4.8 no modo Fast. O recurso está disponível em acesso inicial limitado a clientes selecionados.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Eixos</div><h3><a href="https://eixos.com.br/empresas/heineken-preve-r-460-milhoes-para-adotar-bioenergia-em-caldeiras-de-cervejaria/">Heineken e Veolia investem R$ 460 milhões em bioenergia na cervejaria de Jacareí</a></h3><p class="resumo">O Grupo Heineken fechou parceria com a Veolia para implantar um sistema híbrido de biomassa e biometano certificados nas caldeiras da fábrica de Jacareí (SP), substituindo o gás natural. O investimento pode chegar a R$ 460 milhões até 2037, com a Veolia responsável pela engenharia, construção e operação da infraestrutura, que começa a operar em 2027. A empresa estima reduzir em até 97,5% as emissões da unidade até 2030, evitando cerca de 67 mil toneladas de CO2.</p></article><article class="item"><div class="eyebrow fonte">Money Times</div><h3><a href="https://www.moneytimes.com.br/orizon-orvr3-adquire-51-do-aterro-de-rondonopolis-no-mato-grosso-veja-detalhes-da-operacao-lmrs/">Orizon compra 51% de aterro sanitário em Rondonópolis (MT) por R$ 45,4 milhões</a></h3><p class="resumo">A Orizon Meio Ambiente anunciou nesta quinta-feira (13/08) a aquisição de 51% da empresa titular do Aterro Sanitário de Rondonópolis, no Mato Grosso, por R$ 45,4 milhões pagos à vista. O ativo, já licenciado e em operação, recebe entre 13 mil e 14 mil toneladas de resíduos urbanos por mês e deve gerar Ebitda anual entre R$ 16 milhões e R$ 18 milhões. A operação amplia a presença da companhia no Centro-Oeste e ainda depende de aprovação do Cade.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Ministério da Cultura (gov.br)</div><h3><a href="https://www.gov.br/cultura/pt-br/assuntos/editais/inscricoes-abertas/programa-rouanet-nas-favelas-2/programa-rouanet-nas-favelas-2">MinC lança &#x27;Rouanet nas Favelas 2&#x27; com R$ 10 milhões para 50 projetos</a></h3><p class="resumo">O Ministério da Cultura abriu, em parceria com Vale e CUFA, o Edital de Chamamento Público MinC nº 6/2026, com inscrições a partir de 15 de agosto até 13 de outubro pelo sistema Salic. Serão destinados ao menos R$ 10 milhões, via Lei Rouanet, para selecionar 50 projetos culturais desenvolvidos em favelas e periferias urbanas das capitais e do Distrito Federal, com até R$ 200 mil por proposta. Podem participar pessoas jurídicas com ou sem fins lucrativos que atendam aos critérios do edital.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Agência Brasil</div><h3><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-08/conab-estima-safra-de-graos-de-3608-milhoes-de-toneladas-em-202526">Conab projeta safra recorde de 360,8 milhões de toneladas de grãos em 2025/26</a></h3><p class="resumo">A Conab divulgou seu 11º levantamento da safra 2025/26, estimando produção recorde de 360,8 milhões de toneladas de grãos, alta de 2,4% sobre o ciclo anterior. O avanço reflete expansão de 2,1% na área cultivada, para 83,5 milhões de hectares. A soja segue como principal produto, com 180,5 milhões de toneladas projetadas, seguida pelo milho, com 143 milhões de toneladas.</p></article><article class="item"><div class="eyebrow fonte">Forbes Brasil</div><h3><a href="https://forbes.com.br/forbes-agro/2026/08/mo-yun-a-dona-da-chinesa-dbn-que-mira-30-do-mercado-de-sementes-de-soja-no-brasil/">Chinesa DBN Biotech mira 30% do mercado brasileiro de biotecnologia de sementes de soja</a></h3><p class="resumo">A DBN Biotech, braço de biotecnologia do grupo chinês DBN Group liderado por Mo Yun, declarou meta de conquistar 30% do mercado brasileiro de biotecnologia de sementes de soja, hoje dominado por Bayer e Corteva. A empresa, presente no Brasil desde 2022, prevê instalar centro de pesquisa em Campinas (SP) e vem investindo em cooperação técnica com produtores brasileiros. Em 2025, a divisão de sementes do grupo faturou 1,53 bilhão de yuans, com lucro líquido 70% maior que no ano anterior.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Engie Brasil</div><h3><a href="https://www.engie.com.br/imprensa/press-releases/engie-brasil-energia-registra-lucro-liquido-de-r-19-bilhao-246-no-segundo-trimestre-de-2026/">Engie Brasil tem lucro recorde de R$ 1,9 bi no 2T26 e aprova R$ 770,8 mi em dividendos</a></h3><p class="resumo">A Engie Brasil Energia registrou lucro líquido de R$ 1,9 bilhão no segundo trimestre de 2026, alta de 246% ante igual período de 2025, impulsionado por efeito não recorrente da repactuação do Uso de Bem Público. O conselho aprovou R$ 770,8 milhões em dividendos intercalares, com data-com em 20/08. A companhia também ampliou presença em transmissão ao assinar o contrato dos Lotes 2 e 3 arrematados no primeiro leilão de transmissão de 2026. Resultado recorde e dividendos robustos abrem janela natural para pauta de patrocínio nas próximas semanas.</p></article><article class="item"><div class="eyebrow fonte">Forbes Brasil</div><h3><a href="https://forbes.com.br/forbes-money/2026/08/itausa-investe-r-732-milhoes-e-aumenta-fatia-na-aegea-para-1401/">Aegea conclui aumento de capital de R$ 2,1 bilhões e Itaúsa eleva fatia para 14,01%</a></h3><p class="resumo">A Aegea Saneamento concluiu em 5 de agosto a captação de R$ 2,1 bilhões via emissão de novas ações, com a Itaúsa aportando R$ 732 milhões e elevando sua participação de 13,27% para 14,01% do capital. Os recursos reforçam o caixa da companhia e aceleram a desleveragem, ampliando a capacidade de financiar novos projetos de saneamento. A Aegea é apontada como candidata ao megaleilão bilionário da Caerd, em Rondônia. Caixa reforçado e apetite de crescimento sinalizam janela para retomar a pauta de patrocínio institucional com a empresa.</p></article><article class="item"><div class="eyebrow fonte">Enercan</div><h3><a href="https://www.enercan.com.br/enercan-lanca-edital-do-programa-de-conservacao-da-app-2026/">Enercan encerra hoje inscrições do Edital PCAPP 2026, 15ª edição do programa socioambiental</a></h3><p class="resumo">A Enercan (Campos Novos Energia) encerra neste sábado, 15 de agosto, o prazo de inscrições do Edital 2026 do Programa de Conservação da Área de Preservação Permanente (PCAPP), que chega à 15ª edição. O programa reconhece e incentiva ações de proteção e recuperação de recursos hídricos, flora e fauna por moradores e proprietários rurais do entorno do reservatório da UHE Campos Novos (SC). Programa ESG ativo e com prazo encerrando agora é ponto de entrada natural para dialogar sobre novas frentes de patrocínio ambiental/social com a empresa.</p></article><article class="item"><div class="eyebrow fonte">Bloomberg Línea</div><h3><a href="https://www.bloomberglinea.com.br/agro/ingredion-quer-dobrar-producao-no-brasil-de-olho-no-milho-como-alternativa-ao-acucar/">Ingredion amplia planta de Mogi Guaçu no maior investimento em 14 anos</a></h3><p class="resumo">A Ingredion Brasil está ampliando a planta de Mogi Guaçu (SP) no que descreve como o maior investimento do país em 14 anos, dobrando a capacidade de produção de polióis (sorbitol e maltitol líquidos) usados em confeitaria, laticínios e farmacêutica. A companhia também reportou, em agosto de 2026, resultado global do 2º trimestre com crescimento no segmento de soluções especiais. Expansão fabril de peso no Brasil sinaliza apetite orçamentário para fortalecer presença local — bom gancho para retomar conversa de patrocínio.</p></article><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://www.otempo.com.br/sada-50-anos/2026/8/4/grupo-sada-planeja-ter-70-das-atividades-em-novos-setores">Grupo Sada completa 50 anos com ciclo de R$ 1,3 bi em investimentos e diversificação</a></h3><p class="resumo">O Grupo Sada, dono da Sada Siderurgia, celebrou 50 anos em agosto de 2026 apoiado em um ciclo recente de mais de R$ 1,3 bilhão em investimentos privados, incluindo expansão de usinas de biocombustíveis e a inauguração da maior recicladora integrada de veículos do Brasil. A empresa mineira, nascida na logística, hoje divide metade das atividades entre indústria, bioenergia e novos negócios verdes, com megaprojeto de etanol de milho em Jaíba (MG). Momento de expansão e visibilidade de marca criam gancho natural para retomar conversa comercial de patrocínio.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-08-15</span></footer>
+</body></html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-03</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-03</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">InfoMoney</div><h2><a href="https://www.infomoney.com.br/negocios/anima-consolida-educacao-corporativa-e-visa-mercado-estimado-em-r-100-bi/">Ânima cria unidade Ânima Empresas e mira mercado de R$ 100 bilhões em educação corporativa</a></h2><p class="resumo">A Ânima Educação consolidou seus ativos de educação corporativa (HSM, Singularity e Le Cordon Bleu) sob a nova unidade Ânima Empresas, mirando um mercado estimado em R$ 100 bilhões. A companhia triplicou sua base de clientes corporativos entre 2019 e 2025, hoje somando 479 clientes em 21 setores, e vem desenvolvendo programas sob medida, como um curso semitécnico com a Gerdau para a indústria siderúrgica.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,0754</div><div class="var up">▲ +0.33%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,8508</div><div class="var down">▼ -0.01%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">177.999</div><div class="var up">▲ +0.47%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.490</div><div class="var up">▲ +0.70%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">25.374</div><div class="var up">▲ +1.00%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/negocios/anima-consolida-educacao-corporativa-e-visa-mercado-estimado-em-r-100-bi/">Ânima cria unidade Ânima Empresas e mira mercado de R$ 100 bilhões em educação corporativa</a></h3><p class="resumo">A Ânima Educação consolidou seus ativos de educação corporativa (HSM, Singularity e Le Cordon Bleu) sob a nova unidade Ânima Empresas, mirando um mercado estimado em R$ 100 bilhões. A companhia triplicou sua base de clientes corporativos entre 2019 e 2025, hoje somando 479 clientes em 21 setores, e vem desenvolvendo programas sob medida, como um curso semitécnico com a Gerdau para a indústria siderúrgica. A educação corporativa ainda responde por 5% a 10% do resultado da empresa, mas é vista como frente de crescimento.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/santander-anuncia-opa-de-permuta-por-acoes-santander-brasil-em-operacao-de-ate-r-11-bi/">Santander propõe OPA de até € 1,9 bilhão por fatia minoritária no Santander Brasil</a></h3><p class="resumo">O Santander anunciou em 30 de julho uma oferta pública voluntária para adquirir cerca de 10% do free float do Santander Brasil, avaliado em R$ 135,6 bilhões, em troca de BDRs ou ADSs do banco espanhol. A proposta oferece prêmio de 15% sobre o fechamento anterior e prevê a emissão de cerca de 156 milhões de novas ações do Santander. O movimento ocorre em meio a resultados fracos do banco no Brasil, com lucro líquido 17,6% menor no 2º trimestre de 2026.</p></article><article class="item"><div class="eyebrow fonte">NeoFeed</div><h3><a href="https://neofeed.com.br/negocios/justica-homologa-plano-de-r-65-bilhoes-e-credores-viram-socios-da-raizen">Justiça homologa plano de R$ 65 bilhões da Raízen e credores viram sócios</a></h3><p class="resumo">A 3ª Vara de Falências de São Paulo homologou o plano de recuperação extrajudicial da Raízen, aprovado por 81,6% dos credores e sem contestações. Do total de R$ 98,6 bilhões em dívidas, R$ 65,1 bilhões foram reestruturados: 45% viram participação acionária dos credores e 55% são refinanciados em novos instrumentos de dívida. A Shell aportará R$ 3,5 bilhões e a empresa já vendeu ativos como uma usina por R$ 760 milhões e a operação argentina por US$ 1,42 bilhão.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Bloomberg Línea</div><h3><a href="https://www.bloomberglinea.com.br/startups/rodadas-da-semana-emergent-se-torna-unicornio-brasileiras-avancam-no-early-stage/">Runflow capta R$ 7 milhões em pré-seed para infraestrutura de agentes de IA</a></h3><p class="resumo">A Runflow, startup fundada em agosto de 2025, captou R$ 7 milhões em rodada pré-seed liderada pela Honey Island (4UM), com participação da Airborne Ventures, da STAMINA Ventures e de investidores estratégicos. A empresa desenvolve infraestrutura de governança para implantação de agentes de IA em grandes empresas, já operando mais de 500 agentes e 250 milhões de execuções mensais, com meta de atingir R$ 100 milhões em receita recorrente anual até 2027.</p></article><article class="item"><div class="eyebrow fonte">Bloomberg Línea</div><h3><a href="https://www.bloomberglinea.com.br/startups/rodadas-da-semana-emergent-se-torna-unicornio-brasileiras-avancam-no-early-stage/">Einship capta R$ 5,3 milhões em rodada seed para logística de comércio exterior com IA</a></h3><p class="resumo">A Einship, startup de tecnologia para gestão de operações de comércio exterior com IA, captou R$ 5,3 milhões (US$ 1 milhão) em rodada seed liderada pelo fundo americano Parceiro Ventures. A empresa cresceu mais de 400% em 2025 e já atingiu, nos cinco primeiros meses de 2026, a receita de todo o ano anterior; hoje atende mais de 100 clientes, entre eles APM Terminals e Allog Group, e planeja expandir para Europa, China e Estados Unidos.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/esg/marcopolo-adota-tecido-feito-com-pet-reciclado-em-poltronas-de-onibus/">Marcopolo adota tecido com PET reciclado em poltronas de ônibus</a></h3><p class="resumo">A fabricante de carrocerias Marcopolo passou a usar, em parceria com a DINI Têxtil, um tecido de poliéster reciclado feito com cerca de 200 garrafas PET por quilo de fio produzido nas poltronas de seus ônibus. Segundo a empresa, o material reduz em até 60% a emissão de CO2 frente ao poliéster virgem e segue a norma automotiva IATF 16949 de qualidade. O design monomaterial também facilita a desmontagem e reciclagem das poltronas ao final da vida útil.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Imea / Folha Regional Online</div><h3><a href="https://www.folharegionalonline.com/2026/08/colheita-do-milho-em-mt-se-aproxima-do-fim-e-alcanca-9677-da-area-aponta-imea/">Colheita de milho em Mato Grosso chega a 96,77% da área e aponta produtividade recorde</a></h3><p class="resumo">Levantamento do Instituto Mato-grossense de Economia Agropecuária (Imea) mostra que a colheita da safrinha de milho no estado atingiu 96,77% da área na sexta-feira (31/7), avanço de 6,11 pontos percentuais na semana. A produtividade média estimada é de 128,64 sacas por hectare, novo recorde estadual, levando a produção 2025/26 a 57,06 milhões de toneladas, 2,92% acima da safra anterior. Os preços do milho em MT estão 11,46% mais altos que no mesmo período de 2024.</p></article>
+<footer><span>Radar Diário</span><span>2026-08-03</span></footer>
+</body></html>

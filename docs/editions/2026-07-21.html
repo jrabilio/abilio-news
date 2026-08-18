@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-07-21</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-07-21</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">NeoFeed</div><h2><a href="https://neofeed.com.br/negocios/nubank-compra-banco-para-nao-perder-o-bank/">Nubank compra o Banco Porto Real para obter licença bancária no Brasil</a></h2><p class="resumo">O Nubank anunciou na noite de segunda-feira (20/07) a assinatura de um contrato de compra e venda de ações para adquirir 100% do Banco Porto Real de Investimentos S.A. A operação tem como objetivo central obter a licença bancária no país, hoje uma lacuna na estrutura da fintech. O movimento amplia o leque de produtos que o Nubank pode oferecer e reduz sua dependência de parceiros para operações reguladas.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,087</div><div class="var down">▼ -0.35%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,797</div><div class="var down">▼ -0.41%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">173.326</div><div class="var down">▼ -0.03%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.509</div><div class="var up">▲ +0.89%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">25.837</div><div class="var up">▲ +1.29%</div></div></div>
+<p class="intro">Nubank mira licença bancária, Emirados compram a Akaer, BNDES mobiliza R$ 6 bi para carbono e a soja atinge máxima de seis meses. O resumo do dia, por seção.</p>
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Brasil 247</div><h3><a href="https://www.brasil247.com/negocios/grupo-edge-compra-100-da-brasileira-akaer/">EDGE Group, dos Emirados, adquire 100% da brasileira Akaer</a></h3><p class="resumo">O conglomerado de defesa e tecnologia EDGE Group, dos Emirados Árabes Unidos, anunciou em 16/07 um acordo para comprar a totalidade da Akaer Engenharia, empresa aeroespacial e de defesa de São José dos Campos (SP). O valor não foi divulgado. É a terceira aquisição estratégica do grupo no Brasil e reforça sua cadeia de veículos aéreos não tripulados (UAVs).</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Bloomberg Línea</div><h3><a href="https://www.bloomberglinea.com.br/startups/rodadas-da-semana-startups-latam-captam-us-3-bi-no-trimestre-brasil-lidera-aportes/">Mercado Bitcoin capta R$ 100 milhões em rodada liderada pela Tether</a></h3><p class="resumo">A exchange Mercado Bitcoin levantou R$ 100 milhões em um aporte liderado pela Tether, maior empresa global de ativos digitais e criadora da stablecoin USDT. Trata-se do first closing de uma rodada mais ampla, que conta ainda com a participação dos fundadores da plataforma e do SoftBank. O capital deve acelerar a expansão da operação no país.</p></article><article class="item"><div class="eyebrow fonte">Bloomberg Línea</div><h3><a href="https://www.bloomberglinea.com.br/startups/rodadas-da-semana-startups-latam-captam-us-3-bi-no-trimestre-brasil-lidera-aportes/">Startups da América Latina captam US$ 3 bi no 2º trimestre; Brasil lidera</a></h3><p class="resumo">A América Latina encerrou o segundo trimestre movimentando US$ 3,03 bilhões em 129 rodadas de investimento, alta de 31% ante o trimestre anterior. O Brasil foi o principal destino dos recursos, com 57% do total. Fintechs e IA concentraram os maiores aportes, impulsionados por megaoperações de crédito e corporate venture capital.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">TechTudo</div><h3><a href="https://www.techtudo.com.br/noticias/2026/01/novidades-sobre-inteligencia-artificial-o-que-esperar-da-tecnologia-em-2026-edsoftwares.ghtml">Google apresenta no I/O 2026 modelo generativo nativamente multimodal</a></h3><p class="resumo">No Google I/O 2026, a empresa revelou um modelo generativo nativamente multimodal, capaz de receber qualquer combinação de texto, imagem, áudio e vídeo e gerar novos conteúdos a partir disso. O anúncio reforça a corrida das big techs por modelos de uso geral e amplia as possibilidades de aplicação em produtos corporativos.</p></article><article class="item"><div class="eyebrow fonte">Diário Indústria &amp; Comércio</div><h3><a href="https://www.diarioinduscom.com.br/Noticias/875321/ia_em_2026:_brasil_avanca_em_financas__regulacao_e_produtividade_assistida">Positivo e Intel lançam nova geração de AI PCs no Brasil</a></h3><p class="resumo">A Positivo Tecnologia, em parceria com a Intel, apresentou uma nova geração de AI PCs equipada com processadores Intel Core Ultra Série 3, apresentados na CES 2026. Os equipamentos trazem processamento de IA local (NPU), mirando ganhos de produtividade em empresas brasileiras sem depender exclusivamente da nuvem.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Agência Brasil</div><h3><a href="https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-07/bndes-busca-mobilizar-ate-r-6-bi-para-mercado-de-credito-de-carbono">BNDES busca mobilizar até R$ 6 bi para o mercado de crédito de carbono</a></h3><p class="resumo">O BNDES lançou a segunda etapa do programa ProFloresta+, com o objetivo de mobilizar até R$ 6 bilhões para o mercado de crédito de carbono no Brasil. A iniciativa amplia o financiamento a projetos florestais e de conservação, em um ano em que o ESG deixou de ser diferencial de marketing e virou obrigação regulatória com a entrada em vigor das normas IFRS S1 e S2 (Resolução CVM 193).</p></article><article class="item"><div class="eyebrow fonte">XP — Café com ESG</div><h3><a href="https://conteudos.xpi.com.br/esg/governo-cria-grupo-de-trabalho-para-definir-diretrizes-de-creditos-de-carbono-em-terras-publicas-cafe-com-esg-21-07/">Governo cria grupo de trabalho para créditos de carbono em terras públicas</a></h3><p class="resumo">O governo federal instituiu, em 21/07, um grupo de trabalho para definir diretrizes de emissão de créditos de carbono em terras públicas. A medida busca dar segurança jurídica e padronização a um mercado em rápida expansão, tema de atenção para empresas que planejam projetos de compensação ambiental.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Ministério da Cultura</div><h3><a href="https://www.gov.br/cultura/pt-br/assuntos/noticias/por-meio-da-lei-rouanet-petrobras-lanca-maior-edital-publico-da-historia-para-o-setor-cultural">Petrobras lança edital de R$ 270 milhões para cultura via Lei Rouanet</a></h3><p class="resumo">A Petrobras abriu a Seleção Petrobras Cultural 2026, que destina R$ 270 milhões a projetos culturais em todo o país, viabilizados pela Lei Rouanet. O edital é um dos maiores da estatal para o setor e representa uma janela relevante de captação para produtores e proponentes culturais neste ciclo.</p></article><article class="item"><div class="eyebrow fonte">Agência Brasil</div><h3><a href="https://agenciabrasil.ebc.com.br/cultura/noticia/2026-07/programa-incentivara-acesso-de-artistas-de-favelas-lei-rouanet">Novo programa amplia acesso de artistas de periferias à Lei Rouanet</a></h3><p class="resumo">O Ministério da Cultura lançou uma iniciativa para ampliar o acesso de artistas, coletivos e produtores de favelas e periferias aos mecanismos de incentivo fiscal da Lei Rouanet. Segundo levantamento, a Política Nacional Aldir Blanc alcançou 99,9% dos municípios e beneficiou 167.817 agentes culturais entre 2023 e 2025.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">SouAgro</div><h3><a href="https://souagro.net/noticia/2026/07/soja-atinge-maior-preco-em-6-meses-e-area-pode-chegar-a-491-milhoes-de-hectares/">Soja atinge maior preço em seis meses; área pode chegar a 49,1 mi ha</a></h3><p class="resumo">A saca de 60 kg de soja fechou a sexta-feira (17/07) cotada a R$ 141,02 no porto de Paranaguá, maior patamar em seis meses. Com os preços firmes, produtores se preparam para ampliar o plantio: a área da safra 2026/27 pode alcançar 49,1 milhões de hectares, com estimativa de colheita recorde de 174,8 milhões de toneladas.</p></article><article class="item"><div class="eyebrow fonte">Agron</div><h3><a href="https://agron.com.br/preco-boi-bezerro-milho-soja-julho-mercado/">Boi gordo recua e milho avança na primeira quinzena de julho</a></h3><p class="resumo">Na primeira metade de julho, o boi gordo recuou 2,1% e encerrou a R$ 329,2 por arroba, enquanto o milho subiu 1,9%, a R$ 64,3 por saca, impulsionado por revisões de estoques globais da safra 2026/27 pelo USDA. O comportamento divergente reforça o cenário de preços mais voláteis nas commodities agrícolas.</p></article>
+<footer><span>Radar Diário</span><span>2026-07-21</span></footer>
+</body></html>

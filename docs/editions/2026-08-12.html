@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-12</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-12</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">InfoMoney</div><h2><a href="https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-11082026/">Ibovespa cai 2,50% e tem pior sessão desde março, após rebaixamento do Brasil pelo JPMorgan</a></h2><p class="resumo">O Ibovespa fechou nesta terça-feira (11/08) em 167.874,64 pontos, queda de 2,50% — pior desempenho desde 12 de março e menor fechamento desde janeiro. O dólar comercial subiu a R$ 5,16. A queda foi atribuída a risco fiscal ligado às pesquisas eleitorais, ao IPCA de julho acima do esperado, à alta dos juros futuros e ao corte da recomendação de investimento no Brasil pelo JPMorgan, que passou de &#x27;overweight&#x27; para neutra.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,16</div><div class="var up">▲ +1.04%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,97</div><div class="var up">▲ +1.25%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">167.875</div><div class="var down">▼ -2.50%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.728</div><div class="var down">▼ -0.32%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.445</div><div class="var down">▼ -0.60%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-11082026/">Ibovespa cai 2,50% e fecha no pior nível desde janeiro; dólar sobe a R$ 5,16</a></h3><p class="resumo">O Ibovespa fechou em 167.874,64 pontos, queda de 2,50%, pior desempenho desde 12 de março e menor fechamento desde janeiro. O dólar comercial subiu para R$ 5,16. A queda foi atribuída a risco fiscal ligado a pesquisas eleitorais, IPCA de julho acima do esperado, alta dos juros futuros e ao rebaixamento do Brasil pelo JPMorgan.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/jpmorgan-corta-brasil-a-neutro-reduz-ibovespa-e-aposta-em-exportadoras-veja-acoes/">JPMorgan rebaixa recomendação de investimento no Brasil para neutra e reduz projeção do Ibovespa</a></h3><p class="resumo">O JPMorgan cortou sua recomendação para ações brasileiras de &#x27;overweight&#x27; para neutra e reduziu a projeção do Ibovespa ao fim de 2026 de 190 mil para 185 mil pontos, citando crescimento mais fraco, deterioração do ciclo de crédito, juros elevados por mais tempo e volatilidade pré-eleitoral. O banco manteve 12 ações brasileiras em sua carteira preferida para a América Latina, priorizando exportadoras.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Startupz</div><h3><a href="https://www.startupz.com.br/artigo/plinq-capta-r-1-3-milhao-em-rodada-liderada-pela-spectra-e-prepara-app-de-seguranca-para-mulheres">Femtech Plinq capta R$ 1,3 milhão em rodada liderada pela Spectra Investments</a></h3><p class="resumo">A femtech Plinq, que permite consultar antecedentes criminais e processos judiciais em bases públicas, fechou sua primeira rodada de investimento, de R$ 1,3 milhão, liderada pela Spectra Investments, com participação de investidores-anjo. A empresa soma mais de 60 mil usuárias e planeja lançar um app mobile em setembro de 2026.</p></article><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/negocios/startup-que-ensina-blockchain-e-tokenizacao-capta-r-15-milhoes-para-lancar-nova-plataforma/">Startup Zayra capta R$ 15 milhões em rodada seed para plataforma de educação sobre ativos digitais</a></h3><p class="resumo">A Zayra, startup de educação financeira digital fundada por Tito Martins, captou R$ 15 milhões em rodada seed com investidores-anjo do setor financeiro. Os recursos serão usados no desenvolvimento da plataforma e na produção de cursos sobre blockchain, stablecoins e contratos inteligentes, em parceria com a faculdade SP Tech.</p></article><article class="item"><div class="eyebrow fonte">Startupz</div><h3><a href="https://www.startupz.com.br/artigo/faz-cred-ex-condolivre-capta-r-80-milhoes-em-60-dias-e-aposta-no-boom-do-consignado-privado">Fintech FAZ Cred (ex-Condolivre) capta R$ 80 milhões em 60 dias apostando no consignado privado</a></h3><p class="resumo">A fintech FAZ Cred captou R$ 80 milhões em 60 dias por meio de um novo FIDC estruturado pela gestora Patrimonial, após migrar o foco de crédito para condomínios para crédito consignado privado. A captação triplicou o volume total de contratos da empresa no período.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Correio Braziliense</div><h3><a href="https://www.correiobraziliense.com.br/politica/2026/08/7478149-lula-discute-soberania-e-ia-com-ministros-professores-e-empresas.html">Lula reúne ministros e especialistas no Planalto para discutir estratégia de IA e soberania digital</a></h3><p class="resumo">Na noite de 11 de agosto, o presidente Lula reuniu no Planalto o vice-presidente, 12 ministros e pesquisadores de universidades para debater inteligência artificial sob a ótica da soberania nacional, a cerca de 52 dias das eleições. O governo sinalizou preocupação com possível interferência de IA no processo eleitoral e defendeu concentração de capacidades de IA no governo federal.</p></article><article class="item"><div class="eyebrow fonte">OpenAI (site oficial)</div><h3><a href="https://openai.com/index/premium-seats-chatgpt-business/">OpenAI lança &#x27;Premium seats&#x27; pagos no ChatGPT Business por até US$ 125/mês por usuário</a></h3><p class="resumo">A OpenAI anunciou assentos Premium para o ChatGPT Business, custando US$ 100/mês no plano anual ou US$ 125/mês no plano mensal, contra US$ 20-25 do assento Standard. O plano Premium oferece cinco vezes mais uso e elimina o limite de cinco horas de uso intensivo, voltado a usuários avançados de IA agêntica.</p></article><article class="item"><div class="eyebrow fonte">Anthropic (blog oficial)</div><h3><a href="https://www.anthropic.com/research/riemann-zeta">Anthropic diz que versão de pesquisa do Claude avançou limite ligado à Hipótese de Riemann</a></h3><p class="resumo">A Anthropic publicou em seu blog de pesquisa que uma versão não lançada do Claude elevou de 41,6% para 67,2% o limite inferior conhecido para a fração de zeros da função zeta de Riemann que satisfazem a hipótese. A empresa reforça que o resultado não é uma prova da Hipótese de Riemann, ainda não passou por revisão por pares tradicional e não pode ser totalmente reproduzido.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">ESG Inside</div><h3><a href="https://esginside.com.br/2026/08/10/renault-geely-do-brasil-publica-relatorio-de-sustentabilidade-2025/">Renault Geely do Brasil publica Relatório de Sustentabilidade 2025</a></h3><p class="resumo">A Renault Geely do Brasil divulgou seu Relatório de Sustentabilidade 2025, reunindo indicadores de desempenho econômico, ambiental, social e de governança, seguindo as Normas GRI e alinhado aos ODS da ONU e ao Pacto Global. A empresa destacou o Mapeamento de Riscos Corporativos e a Campanha de Prevenção à Corrupção realizados no período.</p></article><article class="item"><div class="eyebrow fonte">Forbes Brasil</div><h3><a href="https://forbes.com.br/forbes-agro/2026/08/agro-brasileiro-pode-gerar-3143-milhoes-de-creditos-de-carbono-ate-2035-com-potencial-de-ate-r-35-bilhoes/">Estudo aponta que agro brasileiro pode gerar até 314,3 milhões de créditos de carbono até 2035</a></h3><p class="resumo">Estudo da consultoria Carbonn Nature, apresentado no Fórum Agro &amp; Food Systems da São Paulo Climate Week, projeta três cenários para o agronegócio brasileiro no mercado internacional de carbono, entre 25,6 milhões e 314,3 milhões de créditos até 2035. O estudo aponta a falta de regulamentação para autorização e comercialização como o principal obstáculo.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://www.otempo.com.br/politica/2026/8/12/ministerio-da-cultura-homologa-alteracoes-em-projetos-da-lei-rouanet">Ministério da Cultura homologa alterações em cinco projetos da Lei Rouanet</a></h3><p class="resumo">O MinC formalizou, pela Portaria SEFIC/MINC nº 512 (11/08/2026), ajustes em cinco projetos incentivados pela Lei Rouanet. A montagem teatral &#x27;Tom na Fazenda&#x27; recebeu R$ 127.591,53 complementares para turnê e participação no Festival de Edimburgo, e o projeto &#x27;Leitura em Ação&#x27; obteve R$ 105.927,85 adicionais para oficinas de leitura.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Notícias Agrícolas</div><h3><a href="https://www.noticiasagricolas.com.br/noticias/soja/426245-soja-recua-em-chicago-mas-dolar-e-premios-sustentam-precos-no-brasil-perto-dos-r-150-nos-portos.html">Soja recua em Chicago, mas dólar e prêmios sustentam preços no Brasil perto dos R$ 150 nos portos</a></h3><p class="resumo">Os contratos futuros de soja em Chicago caíram com melhora climática nos EUA, mas o mercado físico brasileiro se manteve entre R$ 146,50 e R$ 150,00 por saca nos portos. A sustentação veio da alta do dólar (R$ 5,16) e de prêmios de exportação entre 150 e 170 pontos, considerados os melhores do ano.</p></article><article class="item"><div class="eyebrow fonte">O Povo (dados MDIC/Secex)</div><h3><a href="https://www.opovo.com.br/noticias/economia/2026/08/10/balanca-comercial-tem-superavit-de-uss-2522-bilhoes-na-1-semana-de-agosto.html">Balança comercial abre agosto com superávit de US$ 2,522 bilhões, puxado pelo agro</a></h3><p class="resumo">Segundo dados do MDIC/Secex, a primeira semana de agosto registrou superávit de US$ 2,522 bilhões, com US$ 9,302 bilhões em exportações e US$ 6,708 bilhões em importações. As exportações do agronegócio somaram US$ 1,941 bilhão, crescimento de 22,4% ante o mesmo período de 2025, e o superávit acumulado no ano chegou a US$ 51,561 bilhões.</p></article>
+<footer><span>Radar Diário</span><span>2026-08-12</span></footer>
+</body></html>

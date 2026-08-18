@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-05</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-05</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Let&#x27;s Money</div><h2><a href="https://www.letsmoney.com.br/noticias/decade-ex-nubank-seed-ia-gestao-patrimonio/">Decade capta US$ 85 milhões na maior rodada seed já registrada na América Latina</a></h2><p class="resumo">A startup Decade, fundada por Vitor Olivier (ex-CTO do Nubank) e Felipe Meneses (cofundador da Hyperplane), anunciou nesta terça-feira (4/8) uma rodada seed de US$ 85 milhões (cerca de R$ 440 milhões), a maior já captada por uma startup latino-americana nessa fase. Os aportes vieram dos fundos Benchmark, Diffusion, Greenoaks, Atlantico e Norte Ventures. A empresa combina inteligência artificial e atendimento humano para gestão financeira e de patrimônio via Open Finance.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,1284</div><div class="var up">▲ +0.01%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,8962</div><div class="var up">▲ +0.76%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">177.895</div><div class="var down">▼ -0.06%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.737</div><div class="var up">▲ +1.79%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.585</div><div class="var up">▲ +2.59%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/valid-vlid3-conclui-aquisicao-de-plataforma-de-pagamentos-e-tokenizacao-hst/">Valid conclui aquisição da HST Card Technology por R$ 73 milhões</a></h3><p class="resumo">A Valid (VLID3) concluiu a aquisição da HST Card Technology, empresa brasileira de software de pagamentos e tokenização com quase quatro décadas de operação e clientes em 19 países. O valor da transação é de R$ 73 milhões, a serem pagos em 3 anos. A HST será incorporada à Plataforma Integrada de Segurança Digital da Valid, alinhada à estratégia de expansão do &#x27;Motor 2&#x27; da companhia.</p></article><article class="item"><div class="eyebrow fonte">Money Times</div><h3><a href="https://www.moneytimes.com.br/smart-fit-smft3-conclui-aquisicao-da-rede-de-academias-evolve-veja-detalhes-da-operacao-lmrs/">Smart Fit conclui aquisição de 60% da rede de academias Evolve</a></h3><p class="resumo">A Smart Fit (SMFT3) informou ao mercado nesta terça-feira (4/8) a conclusão da compra de 60% do capital social da Evolve Participações, dona de 30 academias próprias concentradas no Distrito Federal. A operação avaliou a Evolve em R$ 199,7 milhões, com aporte inicial de R$ 39,7 milhões da Smart Fit e até R$ 60 milhões adicionais condicionados a metas. O acordo prevê mecanismos para aquisição total futura da rede.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Let&#x27;s Money</div><h3><a href="https://www.letsmoney.com.br/noticias/decade-ex-nubank-seed-ia-gestao-patrimonio/">Decade capta US$ 85 milhões na maior rodada seed já registrada na América Latina</a></h3><p class="resumo">A startup Decade, fundada por Vitor Olivier (ex-CTO do Nubank) e Felipe Meneses (cofundador da Hyperplane), anunciou nesta terça-feira (4/8) uma rodada seed de US$ 85 milhões (cerca de R$ 440 milhões), a maior já captada por uma startup latino-americana nessa fase. Os aportes vieram dos fundos Benchmark, Diffusion, Greenoaks, Atlantico e Norte Ventures. A empresa combina inteligência artificial e atendimento humano para gestão financeira e de patrimônio via Open Finance.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Anthropic (newsroom oficial)</div><h3><a href="https://www.anthropic.com/news/tino-cuellar">Anthropic nomeia Tino Cuéllar como primeiro Chief Global Affairs Officer</a></h3><p class="resumo">A Anthropic anunciou em 4/8 a contratação de Mariano-Florentino (Tino) Cuéllar, ex-juiz da Suprema Corte da Califórnia e ex-presidente do Carnegie Endowment for International Peace, como seu primeiro Chief Global Affairs Officer. Ele se reportará à presidente Daniela Amodei e liderará as relações da empresa com governos ao redor do mundo em meio à expansão internacional da companhia. O anúncio foi feito pelo próprio newsroom oficial da Anthropic.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Safras &amp; Mercado</div><h3><a href="https://safras.com.br/colheita-do-milho-safrinha-2026-atinge-547-no-centro-sul-do-brasil-aponta-safras">Colheita da safrinha de milho avança mas segue abaixo da média no Centro-Sul</a></h3><p class="resumo">Levantamento da Safras &amp; Mercado, divulgado na sexta-feira (31/7), mostrou a colheita da safrinha de milho 2026 em 54,7% da área estimada de 15,739 milhões de hectares no Centro-Sul do Brasil. O ritmo avançou frente às semanas anteriores, mas segue abaixo do observado no mesmo período do ano passado, com chuvas atrasando o trabalho de máquinas em Paraná, Mato Grosso do Sul e São Paulo.</p></article><article class="item"><div class="eyebrow fonte">Notícias Agrícolas</div><h3><a href="https://www.noticiasagricolas.com.br/videos/agronegocio/425890-precos-da-soja-se-mantem-no-brasil-por-premios-e-dolar-apesar-de-despencada-em-chicago.html">Preços da soja se mantêm firmes no Brasil apesar de queda em Chicago</a></h3><p class="resumo">No início de agosto, o mercado físico de soja no Brasil resiste à queda dos contratos futuros na Bolsa de Chicago, sustentado pela firmeza dos prêmios e pela alta do dólar. Apesar do cenário de preços favorável ao produtor, o volume de negócios segue baixo, com produtores retendo estoques à espera de cotações ainda melhores nas principais praças e portos do país.</p></article>
+<footer><span>Radar Diário</span><span>2026-08-05</span></footer>
+</body></html>

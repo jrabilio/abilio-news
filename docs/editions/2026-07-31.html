@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-07-31</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-07-31</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Rio Times Online</div><h2><a href="https://www.riotimesonline.com/brazils-financial-morning-call-for-friday-july-31-2026/">Mercado testa alta do Ibovespa à espera do dado fiscal de junho</a></h2><p class="resumo">O Tesouro Nacional divulga nesta sexta-feira (31/7), às 11h30, o resultado primário e a relação dívida líquida/PIB de junho — dado que o mercado vê como teste à consolidação fiscal depois da alta de 1,88% do Ibovespa e da valorização do real a R$ 5,07 por dólar na quinta-feira. Ao meio-dia sai o índice de preços ao produtor, com previsão de salto mensal de 0,5% após um período de deflação. O governo já elevou a projeção de inflação de 2026 para 5,1%, dois pontos acima da meta.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,07</div><div class="var down">▼ -1.14%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,82</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">177.159</div><div class="var up">▲ +1.88%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.438</div><div class="var up">▲ +1.66%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">25.122</div><div class="var up">▲ +2.78%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Seu Dinheiro</div><h3><a href="https://www.seudinheiro.com/2026/empresas/mais-um-adeus-a-b3-outra-empresa-quer-se-despedir-da-bolsa-de-valores-veja-quem-e-proximos-passos-bdap/">CVM concede registro da OPA da T4F Entretenimento</a></h3><p class="resumo">A Comissão de Valores Mobiliários concedeu, em 29 de julho, o registro da Oferta Pública de Aquisição de ações da T4F Entretenimento (SHOW3) movida pelo controlador da empresa. O leilão da oferta já havia sido realizado na B3 em 20 de julho. Com a conclusão do processo, a companhia caminha para deixar a bolsa.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">XP Investimentos</div><h3><a href="https://conteudos.xpi.com.br/esg/ministerio-da-fazenda-abre-primeira-consulta-publica-para-regulamentacao-do-mercado-regulado-de-carbono-cafe-com-esg-29-07/">Ministério da Fazenda abre consulta pública sobre mercado regulado de carbono</a></h3><p class="resumo">O Ministério da Fazenda abriu, em 29 de julho, a primeira consulta pública para regulamentar o mercado regulado de carbono (SBCE) no Brasil. A medida é um passo concreto na implementação do sistema de comércio de emissões criado em 2024, que deve gerar créditos de carbono e passar a operar plenamente entre 2030 e 2031.</p></article><article class="item"><div class="eyebrow fonte">XP Investimentos</div><h3><a href="https://conteudos.xpi.com.br/esg/brasil-se-torna-o-maior-importador-de-veiculos-chineses-no-1o-semestre-de-2026-cafe-com-esg-28-07/">Brasil vira maior importador mundial de veículos elétricos e híbridos da China</a></h3><p class="resumo">O Brasil se tornou, pela primeira vez, o maior importador mundial de veículos chineses, com US$ 5,2 bilhões em compras entre janeiro e maio de 2026, superando Rússia e Bélgica. Do total, US$ 4,5 bilhões foram só em veículos elétricos e híbridos, alta de 146,9% ante o mesmo período de 2025. A participação de elétricos e híbridos nas importações saltou de 33% em 2021 para 87% em 2025.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Pretessências</div><h3><a href="https://www.pretessencias.com.br/oportunidades/minc-e-vale-lancam-segunda-edicao-do-rouanet-nas-favelas/">MinC e Vale lançam 2ª edição do Rouanet nas Favelas com R$ 10 milhões</a></h3><p class="resumo">A ministra da Cultura, Margareth Menezes, lançou em 30 de julho, no Rio de Janeiro, a segunda edição do programa Rouanet nas Favelas, parceria do Ministério da Cultura com a Vale que destinará ao menos R$ 10 milhões à produção cultural em territórios de favela. Serão selecionados pelo menos 50 projetos, com investimento de até R$ 200 mil cada, em oito cidades: Belém, Belo Horizonte, Distrito Federal, Recife, Rio de Janeiro, São Luís, São Paulo e Vitória.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Diário do Grande ABC</div><h3><a href="https://www.dgabc.com.br/Noticia/4338307/agronegocio-ministros-afirmam-que-governo-federal-batera-meta-de-abertura-de-mercados">Governo diz que vai superar meta de abertura de mercados agrícolas em 2026</a></h3><p class="resumo">Ministros do governo Lula afirmaram em evento do agronegócio, em 30 de julho, que o Brasil deve superar a meta de abertura de mais de 700 novos mercados internacionais para produtos agrícolas e industriais em 2026. A declaração ocorre em meio a um cenário de tarifas dos EUA sobre produtos brasileiros e de esforço do governo para diversificar destinos de exportação do agro.</p></article>
+<footer><span>Radar Diário</span><span>2026-07-31</span></footer>
+</body></html>

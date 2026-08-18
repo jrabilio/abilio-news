@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Itinerância dos caminhões | Agosto a outubro de 2026</title>
+<style>
+  :root{
+    --ink:#14171a; --ink-soft:#5b6167; --ink-faint:#8b9198;
+    --paper:#fff; --field:#f2f4f3; --rule:#dfe3e2;
+    --kadu:#1f5fa8; --kadu-bg:#e7f0f9;
+    --bruno:#b35a12; --bruno-bg:#fbeee1;
+    --juntos:#186b50; --juntos-bg:#e4f2ec;
+    --marco:#5f666c; --marco-bg:#eef0f1;
+    --cam:#5b3f9e; --cam-bg:#efeafa;
+    --aberto:#a81f18; --aberto-bg:#fbe8e6;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:28px 18px 64px;background:var(--field);color:var(--ink);
+    font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1220px;margin:0 auto}
+  .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin:0 0 6px}
+  h1{font-size:29px;line-height:1.12;font-weight:650;letter-spacing:-.02em;margin:0 0 4px}
+  .sub{color:var(--ink-soft);font-size:13.5px;margin:0}
+  .filtros{background:var(--paper);border:1px solid var(--rule);border-radius:12px;
+    padding:14px 16px;margin:22px 0;position:sticky;top:0;z-index:5;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+  .flinha{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-bottom:9px}
+  .flinha:last-of-type{margin-bottom:0}
+  .flabel{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--ink-faint);width:86px;flex-shrink:0}
+  .chip{font:inherit;font-size:13px;line-height:1;padding:8px 13px;border-radius:99px;
+    border:1px solid var(--rule);background:#fff;color:var(--ink-soft);cursor:pointer;
+    display:inline-flex;align-items:center;gap:7px;transition:.12s}
+  .chip:hover{border-color:var(--ink-faint)}
+  .chip .pt{width:9px;height:9px;border-radius:3px;display:inline-block}
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:600}
+  .chip:focus-visible{outline:2px solid var(--kadu);outline-offset:2px}
+  .nota{font-size:11.5px;color:var(--ink-faint);margin:10px 0 0}
+  h2.mes{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+    margin:30px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+  .calwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+  .cal{display:grid;grid-template-columns:repeat(7,minmax(132px,1fr));gap:5px;min-width:960px}
+  .dow{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--ink-faint);text-align:center;padding-bottom:3px}
+  .dia{background:var(--paper);border:1px solid var(--rule);border-radius:8px;
+    padding:6px 6px 8px;min-height:118px;display:flex;flex-direction:column;gap:3px;transition:opacity .15s}
+  .dia.vazio{background:transparent;border:none;min-height:0}
+  .dia.fds{background:#fafbfb}
+  .dia.apagado{opacity:.2}
+  .num-dia{font-size:12px;font-weight:700;color:var(--ink-faint);line-height:1;margin-bottom:2px}
+  .tag{font-size:11.5px;line-height:1.28;border-radius:5px;padding:3px 5px;border-left:3px solid transparent}
+  .tag[hidden]{display:none}
+  .t-k{background:var(--kadu-bg);color:var(--kadu);border-left-color:var(--kadu)}
+  .t-b{background:var(--bruno-bg);color:var(--bruno);border-left-color:var(--bruno)}
+  .t-kb{background:var(--juntos-bg);color:var(--juntos);border-left-color:var(--juntos);font-weight:600}
+  .t-m{background:var(--marco-bg);color:var(--marco);border-left-color:var(--marco)}
+  .t-c{background:var(--cam-bg);color:var(--cam);border-left-color:var(--cam)}
+  .t-c.parado{background:transparent;border:1px solid var(--rule);border-left:3px solid #cfc6e6;color:var(--ink-faint)}
+  .t-ev{background:var(--ink);color:#fff;border-left-color:var(--ink);font-weight:600}
+  .t-ev b{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.75;margin-bottom:2px}
+  .t-x{background:var(--aberto-bg);color:var(--aberto);border-left-color:var(--aberto);font-weight:600}
+  .t-f{background:transparent;color:var(--ink-faint);border:1px dashed var(--rule);border-left:3px dashed var(--rule)}
+  .bloco{margin-top:36px;background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:20px 22px}
+  .bloco h3{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px}
+  .bloco h3.v{color:var(--aberto)}
+  .bloco p.intro{margin:0 0 14px;font-size:13px;color:var(--ink-soft)}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+  .col h4{font-size:13px;margin:0 0 8px;padding-bottom:5px;border-bottom:1px solid var(--rule)}
+  .col h4.k{color:var(--kadu)} .col h4.b{color:var(--bruno)} .col h4.r{color:var(--marco)} .col h4.c{color:var(--cam)}
+  .col ul{margin:0;padding-left:17px}
+  .col li{font-size:13.5px;margin-bottom:6px}
+  .bloco ol{margin:0;padding-left:20px}
+  .bloco ol li{margin-bottom:9px;font-size:14px}
+  .bloco ol li span{display:block;color:var(--ink-soft);font-size:13px;margin-top:1px}
+  footer{margin-top:26px;font-size:12px;color:var(--ink-faint);text-align:center}
+  .dica{display:none;font-size:11.5px;color:var(--ink-faint);margin:0 0 8px}
+  @media (max-width:820px){
+    body{padding:18px 10px 52px} h1{font-size:23px}
+    .flabel{width:100%} .dica{display:block} .filtros{position:static}
+  }
+  @media print{
+    body{background:#fff;padding:0;font-size:11px}
+    .filtros,.dica{display:none}
+    .calwrap{overflow:visible} .cal{min-width:0}
+    .dia{min-height:88px;break-inside:avoid} .tag{font-size:9.5px}
+    h2.mes{break-before:page} h2.mes:first-of-type{break-before:auto}
+    .bloco{break-before:page}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Escritório de projetos</p>
+  <h1>Itinerância dos caminhões</h1>
+  <p class="sub">Agosto a outubro de 2026 · Carlos Eduardo (Kadu) e Bruno · versão 13</p>
+</header>
+
+<div class="filtros">
+  <div class="flinha">
+    <span class="flabel">Pessoa</span>
+    <button class="chip" data-g="pessoa" data-v="todos" aria-pressed="true">Todos</button>
+    <button class="chip" data-g="pessoa" data-v="k" aria-pressed="false"><i class="pt" style="background:#1f5fa8"></i>Kadu</button>
+    <button class="chip" data-g="pessoa" data-v="b" aria-pressed="false"><i class="pt" style="background:#b35a12"></i>Bruno</button>
+    <button class="chip" data-g="pessoa" data-v="kb" aria-pressed="false"><i class="pt" style="background:#186b50"></i>Os dois juntos</button>
+  </div>
+  <div class="flinha">
+    <span class="flabel">Caminhão</span>
+    <button class="chip" data-g="proj" data-v="todos" aria-pressed="true">Todos</button>
+    <button class="chip" data-g="proj" data-v="122" aria-pressed="false">122 Repsol, sala de aula</button>
+    <button class="chip" data-g="proj" data-v="133" aria-pressed="false">133 Vibra</button>
+    <button class="chip" data-g="proj" data-v="126" aria-pressed="false">126 Guarulhos</button>
+  </div>
+  <div class="flinha">
+    <span class="flabel">Tipo de ação</span>
+    <button class="chip" data-g="tipo" data-v="todos" aria-pressed="true">Todos</button>
+    <button class="chip" data-g="tipo" data-v="caminhao" aria-pressed="false"><i class="pt" style="background:#5b3f9e"></i>Caminhão sala de aula</button>
+    <button class="chip" data-g="tipo" data-v="escola" aria-pressed="false">Escolas</button>
+    <button class="chip" data-g="tipo" data-v="montagem" aria-pressed="false">Montagem e preparação</button>
+    <button class="chip" data-g="tipo" data-v="logistica" aria-pressed="false">Deslocamento e folga</button>
+  </div>
+  <p class="nota">O projeto 122 tem duas ações independentes, com equipes diferentes: o caminhão sala de aula, que fica estacionado em um ponto de cada cidade, e as escolas, produzidas pelo Bruno. Elas só se cruzam no Rio, no fim de setembro. O caminhão fica fechado nos fins de semana em todas as cidades. A única exceção é o sábado 26/09 no Rio, dia do evento principal da Repsol. Toda tarefa começa com o número do projeto, e os eventos principais aparecem em preto. Marcos do caminhão respeitam os filtros de caminhão e tipo, mas não o de pessoa. Pontos em aberto aparecem sempre. Os projetos 133 e 126 são o mesmo veículo: ele vira 126 em 31/08.</p>
+</div>
+
+<p class="dica">A grade rola para o lado. Vire o celular para ver a semana inteira.</p>
+
+<h2 class="mes">Agosto de 2026</h2>
+<div class="calwrap"><div class="cal">
+  <div class="dow">Seg</div><div class="dow">Ter</div><div class="dow">Qua</div><div class="dow">Qui</div><div class="dow">Sex</div><div class="dow">Sáb</div><div class="dow">Dom</div>
+
+  <div class="dia"><div class="num-dia">10</div><div class="tag t-m" data-who="m" data-proj="133" data-tipo="montagem">133 · artes para a Icleia, CG Print</div></div>
+  <div class="dia"><div class="num-dia">11</div></div>
+  <div class="dia"><div class="num-dia">12</div><div class="tag t-m" data-who="m" data-proj="122" data-tipo="montagem">122 · artes finais para a Icleia, CG Print</div></div>
+  <div class="dia"><div class="num-dia">13</div></div>
+  <div class="dia"><div class="num-dia">14</div><div class="tag t-k" data-who="k" data-proj="geral" data-tipo="logistica">Retirada do carro em Goiânia</div><div class="tag t-k" data-who="k" data-proj="122" data-tipo="montagem">122 · Confirmar cidades: estacionamento e ponto elétrico</div><div class="tag t-k" data-who="k" data-proj="122 133" data-tipo="montagem">122 e 133 · 1ª conferência de orçamentos</div><div class="tag t-x" data-who="x" data-proj="122 133" data-tipo="montagem">Depende dos anexos de orçamento</div></div>
+  <div class="dia fds"><div class="num-dia">15</div></div>
+  <div class="dia fds"><div class="num-dia">16</div><div class="tag t-k" data-who="k" data-proj="geral" data-tipo="logistica">Viagem Goiânia para São Paulo</div></div>
+
+  <div class="dia"><div class="num-dia">17</div><div class="tag t-k" data-who="k" data-proj="133" data-tipo="montagem">133 · Montagem com Edu e Marcinho</div><div class="tag t-b" data-who="b" data-proj="133" data-tipo="montagem">133 · Checagem elétrica e tendas</div><div class="tag t-m" data-who="m" data-proj="122" data-tipo="montagem">122 · caminhão liberado</div></div>
+  <div class="dia"><div class="num-dia">18</div><div class="tag t-k" data-who="k" data-proj="133" data-tipo="montagem">133 · Marcações internas do caminhão</div><div class="tag t-k" data-who="k" data-proj="133" data-tipo="montagem">133 · Compras do Kadu em São Paulo</div><div class="tag t-b" data-who="b" data-proj="133" data-tipo="montagem">133 · Compra da grama e do ventilador</div></div>
+  <div class="dia"><div class="num-dia">19</div><div class="tag t-k" data-who="k" data-proj="133" data-tipo="montagem">133 · Instalação da grama sintética</div><div class="tag t-m" data-who="m" data-proj="133" data-tipo="montagem">133 · Reforma da escada, com o Eduardo</div><div class="tag t-m" data-who="m" data-proj="133" data-tipo="montagem">133 · montagem interna concluída</div><div class="tag t-b" data-who="b" data-proj="133" data-tipo="montagem">133 · Carregamento das tendas do depósito</div><div class="tag t-x" data-who="x" data-proj="133" data-tipo="montagem">Prazo limite do carregamento das tendas</div></div>
+  <div class="dia"><div class="num-dia">20</div><div class="tag t-kb" data-who="kb" data-proj="122 133" data-tipo="montagem">122 e 133 · Plotagem dos dois caminhões</div><div class="tag t-k" data-who="k" data-proj="122 133" data-tipo="montagem">122 e 133 · 2ª conferência de orçamentos</div></div>
+  <div class="dia"><div class="num-dia">21</div><div class="tag t-kb" data-who="kb" data-proj="122" data-tipo="montagem">122 · Plotagem finalizada</div><div class="tag t-m" data-who="m" data-proj="133" data-tipo="montagem">133 · Plotagem segue até segunda 24/08</div><div class="tag t-m" data-who="m" data-proj="122" data-tipo="montagem">122 · Pronto e carregado com a exposição</div></div>
+  <div class="dia fds"><div class="num-dia">22</div><div class="tag t-kb" data-who="kb" data-proj="122" data-tipo="logistica">122 · Viagem para São Sebastião</div><div class="tag t-m" data-who="m" data-proj="122" data-tipo="logistica">122 · deslocamento com a CRF</div></div>
+  <div class="dia fds"><div class="num-dia">23</div><div class="tag t-kb" data-who="kb" data-proj="122" data-tipo="montagem">122 · Religam o caminhão, só acompanham</div></div>
+
+  <div class="dia"><div class="num-dia">24</div><div class="tag t-kb" data-who="kb" data-proj="122" data-tipo="caminhao">122 · Abertura da exposição, de manhã</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião, início</div><div class="tag t-m" data-who="m" data-proj="133" data-tipo="montagem">133 · Plotagem finalizada, caminhão pronto</div><div class="tag t-x" data-who="x" data-proj="133" data-tipo="montagem">Decisão: Kadu segue para o Rio ou volta a SP</div><div class="tag t-m" data-who="m" data-proj="126" data-tipo="montagem">126 · artes e início da impressão</div></div>
+  <div class="dia"><div class="num-dia">25</div><div class="tag t-kb" data-who="kb" data-proj="133" data-tipo="logistica">133 · Viagem para o Rio</div><div class="tag t-m" data-who="m" data-proj="133" data-tipo="logistica">133 · saída do caminhão</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião</div></div>
+  <div class="dia"><div class="num-dia">26</div><div class="tag t-kb" data-who="kb" data-proj="133" data-tipo="montagem">133 · Reconhecimento do local</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião</div></div>
+  <div class="dia"><div class="num-dia">27</div><div class="tag t-kb" data-who="kb" data-proj="133" data-tipo="montagem">133 · Montagem do evento</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião</div></div>
+  <div class="dia"><div class="num-dia">28</div><div class="tag t-ev" data-who="kb" data-proj="133" data-tipo="caminhao"><b>Evento principal</b>133 · Evento no Rio. Kadu e Bruno</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião</div></div>
+  <div class="dia fds"><div class="num-dia">29</div><div class="tag t-f" data-who="kb" data-proj="geral" data-tipo="logistica">Folga dos dois no Rio</div><div class="tag t-m" data-who="m" data-proj="133" data-tipo="logistica">133 · Caminhão volta para SP, perto da CG Print</div><div class="tag t-c parado" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão fechado no fim de semana</div></div>
+  <div class="dia fds"><div class="num-dia">30</div><div class="tag t-kb" data-who="kb" data-proj="133" data-tipo="logistica">133 · Retorno do Rio para São Paulo de carro</div><div class="tag t-c parado" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão fechado no fim de semana</div></div>
+
+  <div class="dia"><div class="num-dia">31</div><div class="tag t-m" data-who="m" data-proj="133 126" data-tipo="logistica">133 e 126 · Na porta da CG Print às 08h</div><div class="tag t-k" data-who="k" data-proj="133 126" data-tipo="montagem">133 e 126 · Desmontagem da arte</div><div class="tag t-f" data-who="b" data-proj="geral" data-tipo="logistica">Bruno em semana de break</div><div class="tag t-x" data-who="x" data-proj="126" data-tipo="montagem">Definir com o Edu quem remove a arte anterior</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião</div></div>
+  <div class="dia vazio"></div><div class="dia vazio"></div><div class="dia vazio"></div><div class="dia vazio"></div><div class="dia vazio"></div><div class="dia vazio"></div>
+</div></div>
+
+<h2 class="mes">Setembro de 2026</h2>
+<div class="calwrap"><div class="cal">
+  <div class="dow">Seg</div><div class="dow">Ter</div><div class="dow">Qua</div><div class="dow">Qui</div><div class="dow">Sex</div><div class="dow">Sáb</div><div class="dow">Dom</div>
+
+  <div class="dia vazio"></div>
+  <div class="dia"><div class="num-dia">1</div><div class="tag t-k" data-who="k" data-proj="126" data-tipo="montagem">126 · Instalação da nova comunicação</div><div class="tag t-f" data-who="b" data-proj="geral" data-tipo="logistica">Bruno em break</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião</div></div>
+  <div class="dia"><div class="num-dia">2</div><div class="tag t-k" data-who="k" data-proj="126" data-tipo="montagem">126 · Instalação</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião</div></div>
+  <div class="dia"><div class="num-dia">3</div><div class="tag t-m" data-who="m" data-proj="126" data-tipo="montagem">126 · instalação em andamento</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião</div></div>
+  <div class="dia"><div class="num-dia">4</div><div class="tag t-m" data-who="m" data-proj="126" data-tipo="montagem">126 · caminhão pronto e saída</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião</div></div>
+  <div class="dia fds"><div class="num-dia">5</div><div class="tag t-c parado" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão fechado no fim de semana</div></div>
+  <div class="dia fds"><div class="num-dia">6</div><div class="tag t-c parado" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão fechado no fim de semana</div></div>
+
+  <div class="dia"><div class="num-dia">7</div><div class="tag t-m" data-who="m" data-proj="geral" data-tipo="logistica">Feriado da Independência. Ninguém trabalha</div><div class="tag t-c parado" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão fechado no fim de semana</div></div>
+  <div class="dia"><div class="num-dia">8</div><div class="tag t-k" data-who="k" data-proj="126" data-tipo="montagem">126 · Início em Guarulhos, montagem</div><div class="tag t-x" data-who="x" data-proj="126" data-tipo="logistica">Kadu fica sem veículo em São Paulo</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="logistica">122 · Bruno pega o carro e viaja para Paraty</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião</div></div>
+  <div class="dia"><div class="num-dia">9</div><div class="tag t-k" data-who="k" data-proj="126" data-tipo="caminhao">126 · Guarulhos</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="escola">122 · Escolas em Paraty, início</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião</div></div>
+  <div class="dia"><div class="num-dia">10</div><div class="tag t-k" data-who="k" data-proj="126" data-tipo="caminhao">126 · Guarulhos</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="escola">122 · Escolas em Paraty</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião</div></div>
+  <div class="dia"><div class="num-dia">11</div><div class="tag t-k" data-who="k" data-proj="126" data-tipo="caminhao">126 · Guarulhos</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="escola">122 · Escolas em Paraty, último dia</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em São Sebastião, encerra</div></div>
+  <div class="dia fds"><div class="num-dia">12</div><div class="tag t-m" data-who="m" data-proj="122" data-tipo="logistica">122 · Saída para o Rio</div><div class="tag t-m" data-who="m" data-proj="122" data-tipo="montagem">Montagem no Rio, 12 ou 13/09</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="logistica">122 · Viagem para São Sebastião</div></div>
+  <div class="dia fds"><div class="num-dia">13</div><div class="tag t-m" data-who="m" data-proj="122" data-tipo="montagem">Montagem no Rio, alternativa</div><div class="tag t-f" data-who="b" data-proj="geral" data-tipo="logistica">Bruno de folga</div></div>
+
+  <div class="dia"><div class="num-dia">14</div><div class="tag t-k" data-who="k" data-proj="126" data-tipo="caminhao">126 · Guarulhos</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="escola">122 · Escolas em São Sebastião, início</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro, início</div></div>
+  <div class="dia"><div class="num-dia">15</div><div class="tag t-k" data-who="k" data-proj="126" data-tipo="caminhao">126 · Guarulhos</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="escola">122 · Escolas em São Sebastião</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div></div>
+  <div class="dia"><div class="num-dia">16</div><div class="tag t-k" data-who="k" data-proj="126" data-tipo="caminhao">126 · Guarulhos</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="escola">122 · Escolas em São Sebastião</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div></div>
+  <div class="dia"><div class="num-dia">17</div><div class="tag t-k" data-who="k" data-proj="126" data-tipo="caminhao">126 · Guarulhos</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="escola">122 · Escolas em São Sebastião</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div></div>
+  <div class="dia"><div class="num-dia">18</div><div class="tag t-k" data-who="k" data-proj="126" data-tipo="caminhao">126 · Kadu encerra as duas primeiras semanas</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="escola">122 · Escolas em São Sebastião, último dia</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div></div>
+  <div class="dia fds"><div class="num-dia">19</div><div class="tag t-f" data-who="k" data-proj="geral" data-tipo="logistica">Kadu de folga</div><div class="tag t-c parado" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão fechado no fim de semana</div><div class="tag t-x" data-who="x" data-proj="126" data-tipo="caminhao">Nomear quem assume Guarulhos de 19 a 30/09</div></div>
+  <div class="dia fds"><div class="num-dia">20</div><div class="tag t-f" data-who="k" data-proj="geral" data-tipo="logistica">Kadu de folga</div><div class="tag t-c parado" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão fechado no fim de semana</div></div>
+
+  <div class="dia"><div class="num-dia">21</div><div class="tag t-k" data-who="k" data-proj="122" data-tipo="montagem">122 · Trabalho remoto, fornecedores</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="escola">122 · Escolas no Rio, início</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div></div>
+  <div class="dia"><div class="num-dia">22</div><div class="tag t-k" data-who="k" data-proj="122" data-tipo="logistica">122 · Kadu viaja para o Rio</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="escola">122 · Escolas no Rio</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div><div class="tag t-x" data-who="x" data-proj="122" data-tipo="logistica">Verificar o crédito Gol para a passagem</div></div>
+  <div class="dia"><div class="num-dia">23</div><div class="tag t-k" data-who="k" data-proj="122" data-tipo="montagem">122 · Preparação do evento e do talk</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="escola">122 · Escolas no Rio</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div></div>
+  <div class="dia"><div class="num-dia">24</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="escola">122 · Monta na escola, ajuda o Kadu e encerra</div><div class="tag t-k" data-who="k" data-proj="122" data-tipo="montagem">122 · Montagem do evento</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div></div>
+  <div class="dia"><div class="num-dia">25</div><div class="tag t-k" data-who="k" data-proj="122" data-tipo="caminhao">122 · Talk. Só o Kadu participa</div><div class="tag t-b" data-who="b" data-proj="122" data-tipo="montagem">122 · Bruno fica na montagem</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div></div>
+  <div class="dia fds"><div class="num-dia">26</div><div class="tag t-ev" data-who="kb" data-proj="122" data-tipo="caminhao"><b>Evento principal</b>122 · Evento da Repsol no Rio. Kadu e Bruno</div></div>
+  <div class="dia fds"><div class="num-dia">27</div><div class="tag t-kb" data-who="kb" data-proj="geral" data-tipo="logistica">Retorno para Goiânia de carro</div><div class="tag t-c parado" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão fechado no fim de semana</div></div>
+
+  <div class="dia"><div class="num-dia">28</div><div class="tag t-kb" data-who="kb" data-proj="geral" data-tipo="logistica">Retorno para Goiânia de carro</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div><div class="tag t-x" data-who="x" data-proj="122" data-tipo="caminhao">Caminhão no Rio sem equipe até 02/10</div></div>
+  <div class="dia"><div class="num-dia">29</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div></div>
+  <div class="dia"><div class="num-dia">30</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div><div class="tag t-m" data-who="m" data-proj="126" data-tipo="caminhao">126 · encerramento em Guarulhos</div></div>
+  <div class="dia vazio"></div><div class="dia vazio"></div><div class="dia vazio"></div><div class="dia vazio"></div>
+</div></div>
+
+<h2 class="mes">Outubro de 2026</h2>
+<div class="calwrap"><div class="cal">
+  <div class="dow">Seg</div><div class="dow">Ter</div><div class="dow">Qua</div><div class="dow">Qui</div><div class="dow">Sex</div><div class="dow">Sáb</div><div class="dow">Dom</div>
+
+  <div class="dia vazio"></div><div class="dia vazio"></div><div class="dia vazio"></div>
+  <div class="dia"><div class="num-dia">1</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro</div></div>
+  <div class="dia"><div class="num-dia">2</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão no Rio de Janeiro, encerra</div></div>
+  <div class="dia fds"><div class="num-dia">3</div><div class="tag t-m" data-who="m" data-proj="122" data-tipo="logistica">122 · Saída para Paraty</div><div class="tag t-m" data-who="m" data-proj="122" data-tipo="montagem">Montagem em Paraty, 03 ou 04/10</div></div>
+  <div class="dia fds"><div class="num-dia">4</div><div class="tag t-m" data-who="m" data-proj="122" data-tipo="montagem">Montagem em Paraty, alternativa</div></div>
+
+  <div class="dia"><div class="num-dia">5</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em Paraty, início</div></div>
+  <div class="dia"><div class="num-dia">6</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em Paraty</div></div>
+  <div class="dia"><div class="num-dia">7</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em Paraty</div></div>
+  <div class="dia"><div class="num-dia">8</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em Paraty</div></div>
+  <div class="dia"><div class="num-dia">9</div><div class="tag t-c" data-who="m" data-proj="122" data-tipo="caminhao">122 · caminhão em Paraty, encerra</div></div>
+  <div class="dia fds"><div class="num-dia">10</div><div class="tag t-m" data-who="m" data-proj="122" data-tipo="logistica">122 · Saída para São Paulo, fim do projeto</div></div>
+  <div class="dia fds"><div class="num-dia">11</div></div>
+
+  <div class="dia"><div class="num-dia">12</div><div class="tag t-m" data-who="m" data-proj="122" data-tipo="montagem">Retirada dos adesivos com a Icleia, CG Print</div></div>
+  <div class="dia"><div class="num-dia">13</div></div><div class="dia"><div class="num-dia">14</div></div><div class="dia"><div class="num-dia">15</div></div><div class="dia"><div class="num-dia">16</div></div>
+  <div class="dia fds"><div class="num-dia">17</div></div><div class="dia fds"><div class="num-dia">18</div></div>
+
+  <div class="dia"><div class="num-dia">19</div></div><div class="dia"><div class="num-dia">20</div></div><div class="dia"><div class="num-dia">21</div></div><div class="dia"><div class="num-dia">22</div></div><div class="dia"><div class="num-dia">23</div></div>
+  <div class="dia fds"><div class="num-dia">24</div></div><div class="dia fds"><div class="num-dia">25</div></div>
+
+  <div class="dia"><div class="num-dia">26</div></div><div class="dia"><div class="num-dia">27</div></div><div class="dia"><div class="num-dia">28</div></div><div class="dia"><div class="num-dia">29</div></div><div class="dia"><div class="num-dia">30</div></div>
+  <div class="dia fds"><div class="num-dia">31</div></div><div class="dia vazio"></div>
+</div></div>
+
+<div class="bloco">
+  <h3>1. Montagem em São Paulo, 17 a 21 de agosto</h3>
+  <p class="intro">Bloco comum aos dois caminhões. O 133 Vibra é montado com o Edu e o Marcinho da cenografia, com montagem já alinhada e planta a ser enviada para as marcações. O 122 Repsol só passa por plotagem e carregamento.</p>
+  <div class="cols">
+    <div class="col">
+      <h4 class="k">Kadu, acompanhamento da montagem do 133</h4>
+      <ul>
+        <li>Marcação das duas televisões. Esta edição leva duas; a próxima volta ao modelo original, só a TV principal.</li>
+        <li>Marcações de luz</li>
+        <li>Óculos de realidade virtual: posição e fixação</li>
+        <li>Prateleira: definir como será montada</li>
+        <li>Tomadas na parte de baixo</li>
+        <li>Instalação da porta</li>
+        <li>Instalação da grama sintética no caminhão em 19/08</li>
+        <li>Conferir o caminhão, a montagem das artes e o orçamento fechado com os fornecedores</li>
+        <li>Conferir os orçamentos finais com a Icleia, CG Print, em 14/08 e novamente em 20/08</li>
+        <li>Conferir a lista de materiais extras da CRF que vão dentro do caminhão, e entender como eles montam a estrutura em cada cidade</li>
+        <li>Confirmar com todas as cidades o local de estacionamento e o ponto elétrico, e se alguém acompanha na chegada de domingo. Ainda esta semana.</li>
+        <li>Comprar em São Paulo para o 133, no mesmo movimento da compra da grama sintética: enforca gato, suporte para teia, fios de lã e 4 tendas brancas 3x3m</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4 class="b">Bruno, enquanto estiver em São Paulo</h4>
+      <ul>
+        <li>Parte elétrica para a instalação das tendas</li>
+        <li>Acompanhar o carregamento das tendas do depósito no caminhão, se ficar em São Paulo para esse movimento</li>
+        <li>Checagem elétrica geral</li>
+        <li>Compra da grama sintética e do ventilador. Referência é o ventilador preto de Manaus, sem gambiarra.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4 class="r">Notas comuns</h4>
+      <ul>
+        <li>Plotagem dos dois caminhões a partir de 20/08. O 122 finaliza em 21/08. O 133 a Icleia prevê finalizar só na segunda 24/08.</li><li>Carregamento das tendas do depósito no caminhão, de preferência antes de ele chegar na CG Print para a plotagem. Se não der, alinhar a data. Confirmar também a chegada das tendas novas compradas.</li>
+        <li>Reforma da escada, lixar por completo e pintar para chegar ao Rio como nova: alinhado com o Eduardo do caminhão, que faz o trabalho.</li>
+        <li>O caminhão da CRF já vem pronto para evento, em metalon, sem risco de montagem.</li>
+        <li>O 122 fica pronto na sexta 21/08 e carrega exclusivamente a exposição Criatividade das Artes.</li>
+        <li>O Eduardo responde apenas pelo 133 Vibra. O 122 é operado pela CRF.</li>
+        <li>Artes e retirada dos adesivos com a Icleia, da CG Print.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bloco">
+  <h3>2. Projeto 122 Repsol, duas ações independentes</h3>
+  <p class="intro">Equipes diferentes. Só se encontram no Rio, no fim de setembro.</p>
+  <div class="cols">
+    <div class="col">
+      <h4 class="c">Caminhão sala de aula</h4>
+      <ul>
+        <li>Fica estacionado em um único ponto de cada cidade e fecha em todos os fins de semana.</li>
+        <li>São Sebastião: 24/08 a 11/09. Saída para o Rio em 12/09, montagem em 12 ou 13/09.</li>
+        <li>Rio de Janeiro: 14/09 a 02/10. Saída para Paraty em 03/10, montagem em 03 ou 04/10.</li>
+        <li>Paraty: 05 a 09/10. Saída para São Paulo em 10/10 e fim do projeto.</li>
+        <li>Único sábado aberto do projeto inteiro: 26/09 no Rio, evento principal da Repsol.</li>
+        <li>Operação e transporte com a CRF, que responde pelo projeto Repsol inteiro.</li>
+        <li>Retirada dos adesivos com a Icleia, CG Print: 12/10.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4 class="b">Escolas, com o Bruno como produtor</h4>
+      <ul>
+        <li>Cidades sequenciais, começando depois do feriado de 07/09.</li>
+        <li>Paraty: 09 a 11/09. Bruno viaja em 08/09, feriado municipal na cidade.</li>
+        <li>São Sebastião: 14 a 18/09.</li>
+        <li>Rio de Janeiro: 21 a 25/09, encerrando no fim do dia 24.</li>
+        <li>Em 25/09 o Bruno já está na montagem do evento, e em 26/09 no evento principal com o Kadu.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bloco">
+  <h3>3. Projeto 133 Vibra, Rio de Janeiro</h3>
+  <div class="cols">
+    <div class="col">
+      <h4 class="r">Caminhão e preparação</h4>
+      <ul>
+        <li>Caminhão do Edu. Montagem interna de 17 a 19/08, plotagem a partir de 20/08 e pronto 100% em 24/08. A Icleia prevê fechar a plotagem só na segunda 24/08.</li>
+        <li>Esta edição leva duas televisões. A próxima volta ao modelo original, com a TV principal apenas.</li>
+        <li>Saída de São Paulo em 25/08.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4 class="k">Operação no Rio</h4>
+      <ul>
+        <li>Reconhecimento do local em 26/08 e montagem em 27/08.</li>
+        <li>Evento principal em 28/08, com público de escola garantido por ônibus.</li>
+        <li>O caminhão retorna para São Paulo no sábado 29/08 e estaciona próximo à CG Print, para amanhecer na porta às 08h da segunda 31/08.</li>
+        <li>Kadu e Bruno ficam de folga no Rio em 29/08 e retornam de carro no domingo 30/08.</li>
+        <li>Em 31/08 o mesmo veículo entra na CG Print e passa a ser o 126.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bloco">
+  <h3>4. Projeto 126 Guarulhos</h3>
+  <div class="cols">
+    <div class="col">
+      <h4 class="r">Virada do veículo</h4>
+      <ul>
+        <li>Mesmo veículo do 133, com nova comunicação. Projeto de empreendedorismo do aeroporto de Guarulhos.</li>
+        <li>Artes entregues em 24/08 e impressão de 24 a 28/08, com a Icleia da CG Print.</li>
+        <li>Desmontagem da arte do 133 em 31/08, instalação de 01 a 03/09, pronto e saída em 04/09.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4 class="k">Operação em campo</h4>
+      <ul>
+        <li>Ação em Guarulhos de 08 a 30/09.</li>
+        <li>Kadu acompanha o começo, a montagem e as duas primeiras semanas, de 08 a 18/09.</li>
+        <li>A partir de 19/09 assume outro coordenador, ainda sem nome definido.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bloco">
+  <h3 class="v">5. Pendências</h3>
+  <p class="intro">Apenas o que ainda não tem decisão. Cada item está marcado em vermelho no dia correspondente.</p>
+  <ol>
+    <li><b>Roteiro do Kadu em 24 e 25/08</b><span>A plotagem do 133 fecha em 24/08 e o caminhão sai de São Paulo em 25/08, mas o Kadu está previsto em São Sebastião na manhã de 24/08 para a abertura do 122. Decidir se ele segue para o Rio ou volta a São Paulo para acompanhar a saída.</span></li>
+    <li><b>Carregamento e compra das tendas</b><span>O carregamento das tendas do depósito precisa acontecer até 19/08, antes de o caminhão ir para a CG Print. Confirmar se as tendas já compradas chegaram, se as 4 tendas brancas 3x3m serão adquiridas a tempo, e se o Bruno fica em São Paulo para acompanhar.</span></li>
+    <li><b>Orçamentos para conferência</b><span>Os anexos ainda serão enviados e a primeira conferência é em 14/08. Se não chegarem a tempo, a checagem toda cai em 20/08, junto com a plotagem.</span></li>
+    <li><b>Remoção da arte anterior em 31/08</b><span>A definir com o Edu, com possível impacto no orçamento. A janela até 04/09 não tem folga.</span></li>
+    <li><b>Coordenador do 126 de 19 a 30/09</b><span>Confirmado que haverá um, sem nome definido. São doze dias de ação em Guarulhos sem responsável nomeado.</span></li>
+    <li><b>Deslocamento do Kadu em São Paulo de 08 a 18/09</b><span>O carro vai com o Bruno em 08/09. Transporte urbano em Guarulhos não previsto nem orçado.</span></li>
+    <li><b>Passagem do Kadu para o Rio em 22/09</b><span>Verificar o crédito Gol já existente.</span></li>
+    <li><b>Escopo da CRF com o caminhão sozinho</b><span>São Sebastião de 26/08 a 11/09, Rio de 28/09 a 02/10 e Paraty de 05 a 09/10 correm sem equipe da NTICS. Confirmar que a abertura e o fechamento diários da exposição estão no contrato.</span></li>
+  </ol>
+</div>
+
+<footer>Atualizado em 13/08/2026</footer>
+</div>
+
+<script>
+(function(){
+  var estado={pessoa:'todos',proj:'todos',tipo:'todos'};
+  function aplicar(){
+    document.querySelectorAll('.tag').forEach(function(t){
+      var who=t.dataset.who||'';
+      var projs=(t.dataset.proj||'geral').split(' ');
+      var tipo=t.dataset.tipo||'';
+      if(who==='x'){t.hidden=false;return;}
+      var okP;
+      if(estado.pessoa==='todos'){okP=true;}
+      else if(who==='m'){okP=true;}
+      else if(estado.pessoa==='kb'){okP=(who==='kb');}
+      else {okP=(who===estado.pessoa||who==='kb');}
+      var okJ=(estado.proj==='todos')||projs.indexOf(estado.proj)>-1||projs.indexOf('geral')>-1;
+      var okT=(estado.tipo==='todos')||tipo===estado.tipo;
+      t.hidden=!(okP&&okJ&&okT);
+    });
+    document.querySelectorAll('.dia').forEach(function(d){
+      if(d.classList.contains('vazio'))return;
+      var tags=d.querySelectorAll('.tag');
+      var vis=Array.prototype.some.call(tags,function(t){return !t.hidden;});
+      d.classList.toggle('apagado',tags.length>0&&!vis);
+    });
+  }
+  document.querySelectorAll('.chip').forEach(function(c){
+    c.addEventListener('click',function(){
+      var g=c.dataset.g;
+      estado[g]=c.dataset.v;
+      document.querySelectorAll('.chip[data-g="'+g+'"]').forEach(function(o){
+        o.setAttribute('aria-pressed',o===c?'true':'false');
+      });
+      aplicar();
+    });
+  });
+  aplicar();
+})();
+</script>
+</body>
+</html>

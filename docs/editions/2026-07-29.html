@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-07-29</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-07-29</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Seu Dinheiro</div><h2><a href="https://www.seudinheiro.com/2026/empresas/sonhando-com-o-ipo-na-nasdaq-grupo-transire-compra-empresa-da-getnet-e-avanca-estrategia-de-crescimento-em-ate-dois-anos-bdap/">Grupo Transire compra Mobyan, braço de logística da Getnet, mirando IPO na Nasdaq</a></h2><p class="resumo">O Grupo Transire anunciou nesta terça-feira (28/07) a aquisição da Mobyan, empresa de logística, gestão de ativos e tecnologia ligada à Getnet (Grupo Santander), que atende mais de 5.500 municípios brasileiros com transporte e manutenção de maquininhas de cartão. A operação marca a transição da Transire para um modelo mais focado em serviços e software, com margens maiores que a manufatura de equipamentos. A companhia mira um IPO na Nasdaq nos próximos dois anos.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,12</div><div class="var up">▲ +0.17%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,83</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">176.565</div><div class="var up">▲ +0.70%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.429</div><div class="var up">▲ +0.21%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">24.877</div><div class="var down">▼ -0.22%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Seu Dinheiro</div><h3><a href="https://www.seudinheiro.com/2026/empresas/sonhando-com-o-ipo-na-nasdaq-grupo-transire-compra-empresa-da-getnet-e-avanca-estrategia-de-crescimento-em-ate-dois-anos-bdap/">Grupo Transire compra Mobyan, braço de logística e tecnologia da Getnet</a></h3><p class="resumo">O Grupo Transire anunciou nesta terça-feira (28/07) a aquisição da Mobyan, empresa de logística, gestão de ativos e tecnologia ligada à Getnet (Grupo Santander). A companhia atende mais de 5.500 municípios brasileiros com transporte e manutenção de maquininhas de cartão. A operação integra a estratégia de verticalização da Transire, que mira um IPO na Nasdaq nos próximos dois anos.</p></article><article class="item"><div class="eyebrow fonte">Seu Dinheiro</div><h3><a href="https://www.seudinheiro.com/2026/empresas/santander-brasil-sanb11-encara-o-maior-teste-do-ano-resultado-do-2t26-dira-se-o-pior-ficou-para-tras-miql/">Santander abre temporada de balanços dos bancos no 2T26</a></h3><p class="resumo">O Santander Brasil (SANB11) divulga nesta quarta-feira (29/07) o primeiro resultado trimestral entre os grandes bancos do país. O consenso Bloomberg projeta lucro líquido de R$ 3,487 bilhões e ROE de 14,5%, ainda distante da meta de 20% de rentabilidade da instituição. Itaú Unibanco apresenta seus números em 4 de agosto, Bradesco em 5 de agosto e Banco do Brasil em 12 de agosto.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">TI Inside</div><h3><a href="https://tiinside.com.br/27/07/2026/fundo-ancorado-pela-tim-investe-na-legaltech-enter/">Fundo ligado à TIM investe na legaltech Enter, unicórnio de IA jurídica</a></h3><p class="resumo">Um fundo de venture capital ancorado pela TIM, gerido pela Upload Ventures Growth, fez um novo aporte na Enter, primeiro unicórnio brasileiro de inteligência artificial, focado em automação de processos jurídicos. O valor do investimento não foi divulgado. Em maio, a Enter havia captado mais de US$ 100 milhões em rodada liderada pela Founders Fund, atingindo valuation de US$ 1,2 bilhão.</p></article><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/insight/startup-brasileira-einship-capta-r-5-milhoes-com-fundo-americano/p">Einship capta US$ 1 milhão em rodada seed com fundo americano</a></h3><p class="resumo">A Einship, startup brasileira de inteligência de dados para operações de comércio exterior, captou US$ 1 milhão em rodada seed liderada pelo fundo norte-americano Parceiro Ventures. Os recursos serão usados para desenvolver novas funcionalidades de IA, expandir o time comercial e iniciar a internacionalização da empresa. A companhia cresceu mais de 400% em 2025 e já atende clientes como APM Terminals e Allog Group.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/agro/cafe-arabica-avanca-454-em-nova-york-e-renova-maxima-com-clima-no-brasil/">Café arábica renova máxima e avança mais de 4,5% em Nova York</a></h3><p class="resumo">O café arábica fechou em alta de 4,54% na bolsa de Nova York nesta semana, renovando a máxima do ano, impulsionado pelo atraso da colheita no Brasil e pela redução na fluidez da oferta de curto prazo. O movimento reflete a pressão climática sobre as lavouras brasileiras, principal produtor mundial do grão, em meio a preocupações sobre a qualidade do arábica e os estoques certificados.</p></article>
+<footer><span>Radar Diário</span><span>2026-07-29</span></footer>
+</body></html>

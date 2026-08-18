@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-17</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-17</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Correio Braziliense</div><h2><a href="https://www.correiobraziliense.com.br/economia/2026/08/7480824-casas-bahia-fecha-lojas-no-pais-e-atrasa-divulgacao-de-balanco.html">Casas Bahia fecha 298 lojas e demite cerca de 1,9 mil funcionários</a></h2><p class="resumo">A Casas Bahia fechou 298 lojas em todo o país — 28,7% de sua rede física, que terminou 2025 com pouco mais de mil unidades — e demitiu cerca de 1,9 mil funcionários entre quinta e sexta-feira. O corte, um dos maiores já feitos de uma só vez pela varejista, ocorre em meio a prejuízos bilionários: quase R$ 1,1 bilhão negativos no primeiro trimestre de 2026 e cerca de R$ 3 bilhões em 2025. A companhia, que já recorreu à recuperação extrajudicial em 2024 para renegociar cerca de R$ 4 bilhões em dívidas, adiou a divulgação do balanço do segundo trimestre para sexta-feira, com teleconferência marcada para 17 de agosto.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,22</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 6,04</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">166.934</div><div class="var down">▼ -0.10%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.786</div><div class="var down">▼ -0.17%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.729</div><div class="var down">▼ -0.28%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/onde-investir/liquidacao-da-simpala-fgc-estima-r-622-milhoes-em-garantias-a-credores/">Banco Central liquida financeira Simpala e FGC estima R$ 622 milhões em garantias</a></h3><p class="resumo">O Banco Central decretou a liquidação extrajudicial da Simpala S.A. Crédito, Financiamento e Investimento e da Simpala Lançadora e Administradora de Consórcios, ambas de Porto Alegre e classificadas no segmento S4. O Fundo Garantidor de Créditos (FGC) estima uma base de 21 mil credores com depósitos elegíveis à garantia, somando R$ 622 milhões, respeitado o limite de R$ 250 mil por credor. O BC apontou comprometimento da situação econômico-financeira das instituições e violações graves às normas do setor como motivos da liquidação.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/onde-investir/estresse-chega-aos-juros-tesouro-direto-dispara-com-saida-de-estrangeiros/">Tesouro Direto dispara com saída de estrangeiros e tensão no Oriente Médio</a></h3><p class="resumo">As negociações do Tesouro Direto foram temporariamente suspensas na tarde de sexta-feira (14/08) e, na retomada, os juros dos títulos públicos dispararam para os maiores níveis do ano. O Tesouro IPCA+ com vencimentos intermediários e longos passou a oferecer juros reais acima de IPCA + 6,65% ao ano, e os prefixados com vencimento em 2029 e 2031 encostaram em 14,20% ao ano. O movimento foi atribuído à saída de investidores estrangeiros — mais de R$ 11,9 bilhões em agosto —, à escalada do dólar e ao agravamento das tensões no Oriente Médio.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Fairmind</div><h3><a href="https://fairmind.com.br/noticias/condutive-capta-r-25-milhoes-em-rodada-pre-seed-com-domovc">Condutive capta R$ 2,5 milhões em rodada pré-seed liderada pela DOMO.VC</a></h3><p class="resumo">A Condutive, marketplace de energia renovável fundado em 2024, levantou R$ 2,5 milhões em rodada pré-seed liderada pela DOMO.VC, com participação da Bossa Invest e de investidores-anjo. A startup conecta pessoas físicas e empresas a soluções de energia limpa — assinatura de energia, mercado livre e projetos fotovoltaicos — com curadoria de cerca de 30 fornecedores parceiros, entre eles EDP, Matrix e Casa dos Ventos. A empresa já está presente em 25 estados e mira se tornar o maior marketplace de utilities do país.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Fortune</div><h3><a href="https://fortune.com/2026/08/16/stripe-7-billion-deal-ai-firm-openrouter-acquisition/">Stripe fecha acordo de mais de US$ 7 bilhões para comprar a startup de IA OpenRouter</a></h3><p class="resumo">A processadora de pagamentos Stripe finalizou a compra da OpenRouter, startup que opera um marketplace para empresas escolherem entre diferentes modelos de inteligência artificial, por mais de US$ 7 bilhões. O valor representa um salto expressivo em relação à rodada Série B da OpenRouter, avaliada em US$ 1,3 bilhão em maio de 2026. A plataforma oferece um ponto único de acesso a diversos modelos de IA, evitando que clientes fiquem presos a um único fornecedor, e a aquisição amplia a presença da Stripe em infraestrutura de inteligência artificial.</p></article><article class="item"><div class="eyebrow fonte">TIME</div><h3><a href="https://time.com/article/2026/08/14/claude-fired-worker-ai-job-disruption/">Agente de IA da Anthropic recomenda demissão de funcionário humano em experimento de loja</a></h3><p class="resumo">Segundo reportagem da revista TIME, um agente de IA baseado no Claude, apelidado de Luna, recomendou a demissão de um funcionário humano em um experimento de varejo conduzido pela startup Andon Labs em São Francisco. O trabalhador havia se atrasado em 17 dos 23 turnos programados; Luna inicialmente sugeriu apenas uma advertência e só recomendou o desligamento após ser orientada por um gestor humano a reavaliar se o funcionário era adequado ao cargo. A decisão final foi revisada e executada por humanos, mas o caso é citado como um dos primeiros episódios conhecidos de demissão recomendada por um agente de IA.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Exame ESG</div><h3><a href="https://exame.com/esg/everest-aposta-em-eficiencia-energetica-e-menos-plastico-para-crescer-32-com-purificadores/">Everest aposta em eficiência energética e menos plástico para crescer 32% com purificadores</a></h3><p class="resumo">A fabricante brasileira Everest, que completa 60 anos, projeta crescimento de 32% na receita da linha de purificadores de água em 2026 apoiada em produtos mais sustentáveis. A empresa lançou o purificador Foz, com eficiência energética Classe A e 71% menos plástico pintado, e o modelo Inverter+, que reduz em até 70% o consumo de energia. Segundo a companhia, a sustentabilidade deixou de ser apenas pauta institucional e passou a integrar a proposta de valor dos produtos.</p></article><article class="item"><div class="eyebrow fonte">Stellantis Media</div><h3><a href="https://www.media.stellantis.com/br-pt/corporate/press/circular-autopecas-reforca-estrategia-de-economia-circular-da-stellantis-no-reciclaauto-2026">Circular Autopeças, da Stellantis, reforça estratégia de economia circular no ReciclaAuto 2026</a></h3><p class="resumo">A Circular Autopeças, marca de economia circular da Stellantis, apresentou no ReciclaAuto 2026, em São Paulo, um novo e-commerce próprio e uma plataforma para transformar representantes comerciais em distribuidores regionais. A companhia também expôs peças recuperadas em seu Centro de Desmontagem Veicular de Osasco e detalhou sua estratégia de circularidade baseada nos 4Rs: remanufaturar, reparar, reutilizar e reciclar. O evento reuniu representantes dos setores de desmontagem e reciclagem automotiva e do governo.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Portal do ISS - Prefeitura do Rio de Janeiro</div><h3><a href="https://portaldoiss.prefeitura.rio/2026/07/31/edital-do-contribuinte-incentivador-n11-2026/">Prefeitura do Rio abre Edital do Contribuinte Incentivador nº 11/2026 para patrocínio cultural via ISS</a></h3><p class="resumo">A Prefeitura do Rio de Janeiro publicou o Edital do Contribuinte Incentivador nº 11/2026, que permite a empresas pagadoras de ISS destinarem até 20% do imposto recolhido para patrocinar projetos culturais aprovados na Lei Municipal de Incentivo à Cultura. As inscrições estão abertas até 31 de agosto de 2026, pelo sistema vinculado ao login da Nota Carioca. O valor total disponível para incentivo em 2027 é de R$ 91.832.871,34, distribuído entre cinco linhas: instituições culturais, festivais, produção municipal, literatura e fomento artístico. Empresas do Simples Nacional ou inadimplentes com o ISS não podem participar.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Farmnews</div><h3><a href="https://farmnews.com.br/mercado/preco-do-bezerro-boi-gordo-milho-e-soja-na-1a-metade-de-agosto-de-2026/">Soja renova máxima do ano e boi gordo sobe 13,5% na 1ª metade de agosto</a></h3><p class="resumo">Na primeira metade de agosto de 2026, os grãos tiveram movimento firme enquanto a pecuária ficou mais estável. A soja liderou os ganhos, com alta de 2,8% no período, a R$ 149,0 por saca, renovando a máxima nominal do ano; o milho subiu 1,7%, a R$ 66,4 por saca. O boi gordo teve média de R$ 347,6 por arroba, 13,5% acima de agosto de 2025, e o bezerro avançou 10,4% no período, marcando recorde nominal para a época do ano.</p></article><article class="item"><div class="eyebrow fonte">Canal Rural</div><h3><a href="https://www.canalrural.com.br/economia/eua-reduzem-cota-de-importacao-de-acucar-bruto-destinada-ao-brasil-para-2027/">EUA reduzem em 36% a cota de açúcar brasileiro com tarifa baixa para 2027</a></h3><p class="resumo">Washington cortou de 156 mil para 100 mil toneladas a cota de açúcar bruto brasileiro que entra nos EUA pagando tarifa baixa a partir de 2027, uma redução de quase 36%. Segundo apuração do setor, o governo americano sinalizou que pode recompor o volume caso o Brasil ceda em negociações sobre o etanol americano, atrelando o açúcar a uma disputa mais ampla sobre biocombustíveis. A medida pressiona o setor sucroenergético brasileiro, que já enfrenta o tarifaço americano em outras frentes.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Acessa.com</div><h3><a href="https://www.acessa.com/economia/2026/08/337038-lucro-da-m-dias-branco-cai-22-e-atinge-rs-1689-milhoes-do-2-trimestre.html">M. Dias Branco eleva investimentos em 97% mesmo com lucro em queda no 2T26</a></h3><p class="resumo">A M. Dias Branco reportou lucro líquido de R$ 168,9 milhões no segundo trimestre de 2026, queda de 22% ante igual período de 2025, com EBITDA de R$ 284,4 milhões (-17,5%). Apesar da pressão sobre margens, o volume vendido cresceu 4,4%, para 477,3 mil toneladas, e a margem bruta subiu de 33,4% para 34,2%. A companhia investiu R$ 101,8 milhões no trimestre, 97,3% a mais que no 2T25, um quarto direcionado à expansão e automação de fábricas — sinal de apetite de capex mesmo em cenário de lucro pressionado, o que pode sustentar conversas de patrocínio institucional.</p></article><article class="item"><div class="eyebrow fonte">Acessa.com</div><h3><a href="https://www.acessa.com/economia/2026/08/337030-samarco-registra-prejuizo-liquido-de-uss-3285-milhoes-no-2-trimestre-de-2026.html">Samarco reduz prejuízo e tem receita em recuperação no 2T26</a></h3><p class="resumo">A Samarco registrou prejuízo líquido de US$ 328,5 milhões no segundo trimestre de 2026, bem menor que a perda de US$ 1,69 bilhão no mesmo período de 2025. A receita ficou praticamente estável em US$ 469,7 milhões na comparação anual, mas avançou 16% frente ao trimestre anterior, com vendas de 3,9 milhões de toneladas (+23%) e EBITDA ajustado de US$ 234,7 milhões (+22% no trimestre). Não houve dividendos dado o resultado negativo, mas a trajetória de recuperação sequencial de receita e volume é um indicador a monitorar para eventual retomada de apetite institucional.</p></article><article class="item"><div class="eyebrow fonte">O Jornal da Região</div><h3><a href="https://ojornaldaregiao.com.br/espetaculo-a-ultima-gota-ganha-nova-temporada-com-patrocinio-da-auren-energia-enercan-e-cesp-e-reforca-debate-sobre-sustentabilidade/">Auren, Enercan e Cesp patrocinam nova temporada do espetáculo &#x27;A Última Gota&#x27; em escolas públicas</a></h3><p class="resumo">O espetáculo teatral &#x27;A Última Gota&#x27;, parte do projeto &#x27;Heróis da Terra em Ação: Aventuras Sustentáveis em Cena&#x27; (3ª edição), ganhou nova temporada em escolas públicas do interior de São Paulo, Mato Grosso do Sul, Pernambuco e Piauí, com patrocínio da Auren Energia, da Enercan e da Cesp. A produção usa teatro para debater sustentabilidade e conservação de recursos hídricos com estudantes da rede pública. O patrocínio recorrente, já na terceira edição, confirma apetite consolidado da Enercan para investimento cultural via lei de incentivo — um gancho direto para propostas de patrocínio.</p></article><article class="item"><div class="eyebrow fonte">ClimaInfo</div><h3><a href="https://climainfo.org.br/2026/08/12/justica-suspende-venda-de-blocos-de-exploracao-de-petroleo-por-risco-ambiental/">Justiça suspende 39 blocos de exploração de petróleo, incluindo áreas arrematadas pela Imetame</a></h3><p class="resumo">A Justiça Federal determinou a suspensão definitiva de 39 blocos terrestres de exploração de petróleo nas bacias Potiguar, Sergipe-Alagoas e Espírito Santo até que a ANP comprove regularidade técnica e ambiental com pareceres favoráveis de ICMBio, IBAMA e órgãos estaduais/municipais. A Imetame está entre as empresas que já haviam arrematado blocos nessa oferta e assinado contratos em fase de licenciamento. O caso, decorrente de ação civil pública do Instituto Arayara, expõe a empresa a risco regulatório-ambiental que pode travar parte de sua frente de exploração de óleo e gás.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-08-17</span></footer>
+</body></html>

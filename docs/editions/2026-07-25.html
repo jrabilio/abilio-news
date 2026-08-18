@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-07-25</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-07-25</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">CNBC</div><h2><a href="https://www.cnbc.com/2026/07/22/amd-anthropic-ai-chip-investment.html">AMD vai investir até US$ 5 bi na Anthropic em acordo bilionário de chips de IA</a></h2><p class="resumo">A AMD fechou acordo para investir até US$ 5 bilhões na Anthropic, dona do Claude, combinando aporte financeiro com um contrato de fornecimento de chips. A Anthropic vai comprar até dois gigawatts de processadores Instinct MI450 e usar as soluções de rack Helios da AMD, com despacho a partir do primeiro semestre de 2027. O negócio é mais um dos chamados &#x27;acordos circulares&#x27; do setor de IA, em que fabricantes de chips investem nas próprias clientes.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,083</div><div class="var down">▼ -0.21%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,770</div><div class="var down">▼ -0.27%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">174.042</div><div class="var down">▼ -1.52%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.412</div><div class="var up">▲ +0.05%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">24.976</div><div class="var down">▼ -0.64%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">SEGS</div><h3><a href="https://www.segs.com.br/seguros/451769-sompo-compra-fator-seguradora-em-movimento-estrategico-para-ampliar-presenca-no-setor-de-seguros">Sompo Seguros compra Fator Seguradora e reforça presença em grandes riscos no Brasil</a></h3><p class="resumo">A japonesa Sompo Seguros anunciou em 21 de julho a aquisição da Fator Seguradora, especializada em seguros corporativos, com foco em Property, Garantia e Linhas Financeiras. O valor não foi revelado, mas foi calculado com base em múltiplo do patrimônio da Fator, superando R$ 200 milhões. A Sompo superou o interesse de concorrentes europeias como Generali, AXA e Mapfre. A conclusão do negócio depende de aprovação regulatória.</p></article><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/economia/negocios/nubank-anuncia-compra-do-banco-porto-real-em-busca-de-nova-licenca-bancaria/">Nubank anuncia compra do Banco Porto Real para manter licença bancária</a></h3><p class="resumo">O Nubank anunciou na noite de 20 de julho acordo para adquirir 100% do Banco Porto Real de Investimentos, fundado em 1992 no Rio de Janeiro e focado em crédito para grandes empresas. O movimento visa garantir à fintech uma licença bancária própria, já que a partir de novembro instituições sem autorização não poderão usar a palavra &#x27;bank&#x27; no nome. O valor da operação não foi divulgado e o negócio ainda depende de aprovação do Banco Central.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">TELETIME</div><h3><a href="https://teletime.com.br/24/07/2026/tim-investe-startup-ia-enter/">Fundo ligado à TIM investe na Enter, startup brasileira de IA jurídica</a></h3><p class="resumo">A Upload Ventures Growth, gestora de venture capital ligada à TIM, anunciou em 24 de julho um aporte na Enter, startup brasileira que desenvolve ferramentas de inteligência artificial para automatizar rotinas jurídicas e apoiar departamentos legais. O valor do investimento e a fatia adquirida não foram revelados. A Enter já havia sido avaliada em US$ 1,2 bilhão em rodada anterior liderada pela Founders Fund.</p></article><article class="item"><div class="eyebrow fonte">Paraíba Total</div><h3><a href="https://paraibatotal.com.br/2026/07/24/startups-podem-receber-ate-r-6-milhoes-em-investimentos-do-fundo-capital-semente-do-bnb/">Startups do Nordeste podem receber até R$ 6 milhões do Fundo Capital Semente do BNB</a></h3><p class="resumo">Empresas inovadoras em estágio inicial na área de atuação do Banco do Nordeste podem receber investimentos de até R$ 6 milhões pelo Fundo de Investimento Capital Semente, criado pelo BNB em parceria com a Finep e o Sebrae. O apoio começa com aporte inicial de até R$ 1 milhão; empresas com bom desempenho podem receber nova rodada de até R$ 5 milhões. O anúncio foi divulgado em 24 de julho.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">TI Inside</div><h3><a href="https://tiinside.com.br/23/07/2026/axia-energia-investe-r-18-milhao-em-ia-generativa-para-gerenciar-mais-de-4-mil-condicionantes-ambientais/">AXIA Energia investe R$ 1,8 milhão em IA generativa para gestão ambiental</a></h3><p class="resumo">A AXIA Energia lançou em 23 de julho o Sigma, sistema de inteligência artificial generativa que integra dados e automação para gerenciar mais de 4 mil condicionantes ambientais da companhia, que soma cerca de 400 licenças de operação. O investimento foi de R$ 1,8 milhão e faz parte da transformação digital da gestão ambiental da empresa.</p></article><article class="item"><div class="eyebrow fonte">Jornal do Comércio</div><h3><a href="https://www.jornaldocomercio.com/cadernos/empresas-e-negocios/2026/07/1257295-receita-da-panvel-sobe-rs-271-milhoes-com-uso-de-inteligencia-artificial.html">Uso de inteligência artificial eleva receita da Panvel em R$ 27,1 milhões</a></h3><p class="resumo">A rede de farmácias Panvel registrou aumento de R$ 27,1 milhões na receita do primeiro trimestre de 2026 atribuído ao uso de inteligência artificial em atendimento ao cliente, precificação de produtos e gestão de estoque. A companhia consolidou o uso da tecnologia a partir de 2024. A reportagem foi publicada em 23 de julho.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">SEGS</div><h3><a href="https://www.segs.com.br/seguros/451708-metlife-apresenta-relatorio-de-sustentabilidade-2025-com-foco-em-inclusao-e-impacto-social/amp">MetLife Brasil apresenta Relatório de Sustentabilidade 2025 com foco em inclusão</a></h3><p class="resumo">A MetLife Brasil divulgou em 20 de julho seu Relatório de Sustentabilidade 2025, destacando avanços do programa MetLife Xcelerator, que ampliou o acesso a soluções digitais de proteção financeira para mais de 5 milhões de pessoas na América Latina. O documento detalha a estratégia de inovação e acessibilidade da seguradora ao longo do ano.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/agro/soja-anec-eleva-projecao-de-exportacao-em-julho-para-137-mi-de-toneladas/">Anec eleva projeção de exportação de soja do Brasil em julho para 13,7 milhões de toneladas</a></h3><p class="resumo">A Associação Nacional dos Exportadores de Cereais (Anec) revisou para cima a projeção de exportações de soja em julho, de 12,2 milhões para 13,7 milhões de toneladas, alta de 15% ante o mesmo mês de 2025. A entidade também elevou a previsão para farelo de soja, para 2,57 milhões de toneladas, enquanto reduziu a estimativa para milho, a 3,43 milhões de toneladas, queda de 14% na comparação anual.</p></article><article class="item"><div class="eyebrow fonte">Investing.com (Reuters)</div><h3><a href="https://br.investing.com/news/commodities-news/zennoh-adquire-30-de-grupo-cereal-no-brasil-2013357">Zen-Noh Brasil adquire 30% do Grupo Cereal, do agronegócio goiano</a></h3><p class="resumo">A Zen-Noh Brasil Trading, subsidiária da cooperativa japonesa Zen-Noh, anunciou em 24 de julho acordo para adquirir 30% do Grupo Cereal, empresa da família Barauna com mais de 40 anos de atuação no agronegócio brasileiro, sediada em Rio Verde (GO). O Grupo Cereal atua em originação de grãos, insumos agrícolas, processamento e biocombustíveis.</p></article>
+<footer><span>Radar Diário</span><span>2026-07-25</span></footer>
+</body></html>

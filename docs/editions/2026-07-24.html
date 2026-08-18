@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-07-24</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-07-24</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">AMD Newsroom</div><h2><a href="https://newsroom.amd.com/news/amd-anthropic-strategic-partnership/">AMD e Anthropic anunciam parceria estratégica de US$ 5 bilhões</a></h2><p class="resumo">A AMD e a Anthropic anunciaram em 22 de julho uma parceria estratégica para implantar até 2 gigawatts de GPUs AMD Instinct MI450 em soluções de rack da AMD, com a primeira leva prevista para o primeiro semestre de 2027. A AMD também se comprometeu a investir até US$ 5 bilhões em participação acionária na Anthropic. As empresas vão colaborar para otimizar cargas de trabalho do Claude nas GPUs da AMD e acelerar o desenvolvimento do software ROCm, num dos maiores acordos de infraestrutura de IA já fechados.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,084</div><div class="var up">▲ +0.31%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,79</div><div class="var up">▲ +0.38%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">176.724</div><div class="var down">▼ -0.46%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.408</div><div class="var down">▼ -1.21%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">25.138</div><div class="var down">▼ -2.15%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/economia/mercado/mercado-financeiro-ibovespa-dolar-23-julho-2026/">Ibovespa recua e dólar sobe com escalada das tensões entre EUA e Irã</a></h3><p class="resumo">O Ibovespa fechou a quinta-feira (23) em queda de 0,57%, aos 176.503,20 pontos, pressionado pela aversão a risco global após nova rodada de ataques dos EUA ao Irã, a 12ª consecutiva. O petróleo Brent disparou para perto de US$ 100 o barril, o que também levou o dólar comercial a subir para R$ 5,08. Wall Street fechou em forte queda no mesmo pregão, refletindo o mesmo movimento de cautela.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">LatamRepublic</div><h3><a href="https://www.latamrepublic.com/brendi-lands-us-6-6m-led-by-propel-ventures-to-transform-restaurant-ordering/">Brendi capta US$ 6,6 milhões para IA de pedidos de restaurante via WhatsApp</a></h3><p class="resumo">A foodtech brasileira Brendi captou US$ 6,6 milhões em rodada liderada pela Propel Ventures, fundo americano especializado em fintechs e IA. A empresa automatiza pedidos e atendimento de restaurantes pelo WhatsApp usando inteligência artificial para texto e voz, e hoje atende mais de 8 mil restaurantes. A rodada também contou com Big Bets, Norte Ventures, Citrino e investidores anjo como o cofundador do iFood, Patrick Sigrist; o recurso será usado para ampliar a equipe e alcançar até 15 mil restaurantes até o fim do ano.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">AMD Newsroom</div><h3><a href="https://newsroom.amd.com/news/amd-anthropic-strategic-partnership/">AMD e Anthropic anunciam parceria estratégica de US$ 5 bilhões</a></h3><p class="resumo">A AMD e a Anthropic anunciaram em 22 de julho uma parceria estratégica para implantar até 2 gigawatts de GPUs AMD Instinct MI450 em soluções de rack da AMD, com a primeira leva prevista para o primeiro semestre de 2027. A AMD também se comprometeu a investir até US$ 5 bilhões em participação acionária na Anthropic. As empresas vão colaborar para otimizar cargas de trabalho do Claude nas GPUs da AMD e acelerar o desenvolvimento do software ROCm.</p></article><article class="item"><div class="eyebrow fonte">Acessa.com</div><h3><a href="https://www.acessa.com/noticias/2026/07/334710-nubank-itau-bradesco-e-bb-lideram-ranking-de-ia-entre-bancos-da-america-latina.html">Nubank, Itaú, Bradesco e BB lideram ranking de maturidade em IA entre bancos da América Latina</a></h3><p class="resumo">O primeiro Evident AI Index for Banks in Latin America, divulgado nesta semana, colocou Nubank, Itaú Unibanco, Bradesco e Banco do Brasil nas quatro primeiras posições entre as instituições financeiras mais maduras na aplicação de inteligência artificial na região. O Nubank liderou o índice, destacando-se pela alta concentração de especialistas em IA em seu quadro. O ranking reforça a posição do Brasil como referência regional na adoção de IA pelo setor bancário.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Brasil de Fato</div><h3><a href="https://www.brasildefato.com.br/2026/07/23/sigma-deu-informacao-falsa-e-operou-no-jequitinhonha-antes-de-autorizacao-revela-feam/">Feam revela que Sigma Lithium operou sem autorização e prestou informação falsa no Vale do Jequitinhonha</a></h3><p class="resumo">A Fundação Estadual do Meio Ambiente de Minas Gerais (Feam) suspendeu licenças de duas cavas da mineradora Sigma Lithium e cancelou outras três, após constatar que a empresa omitiu intervenções em cursos d&#x27;água e áreas de preservação permanente ao licenciar o projeto. Imagens de satélite mostraram que a empresa interveio na região dois meses antes de obter a licença ambiental. A fiscalização ocorreu entre 25 e 29 de maio, e a decisão embarga a extração de lítio nos municípios de Araçuaí e Itinga, no Vale do Jequitinhonha.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Jornal de Brasília / MDIC</div><h3><a href="https://jornaldebrasilia.com.br/noticias/economia/balanca-registrou-superavit-de-us-5263-milhoes-na-3a-semana-de-julho/">Balança comercial tem superávit de US$ 4,95 bilhões na 3ª semana de julho, alta de 25,2%</a></h3><p class="resumo">A Secretaria de Comércio Exterior do MDIC divulgou que, na terceira semana de julho, as exportações brasileiras cresceram 6,7% ante igual período de 2025, somando US$ 19,38 bilhões, enquanto as importações subiram 1,6%, resultando em superávit de US$ 4,95 bilhões. O agronegócio manteve papel central no resultado, com vendas externas de 6,5%, a US$ 4,31 bilhões, puxadas por soja, algodão em bruto e tabaco em bruto. No acumulado do ano até a mesma semana, o superávit soma US$ 47,31 bilhões, alta de 36,7%.</p></article>
+<footer><span>Radar Diário</span><span>2026-07-24</span></footer>
+</body></html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-07-23</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-07-23</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">AgFeed (Financial Times)</div><h2><a href="https://agfeed.com.br/economia/brasil-deve-ultrapassar-eua-como-maior-exportador-agricola-do-mundo-em-2026-aponta-financial-times/">Brasil se aproxima dos EUA e pode virar o maior exportador agrícola do mundo em 2026</a></h2><p class="resumo">Reportagem especial do Financial Times, publicada em 21 de julho, mostra que a diferença entre as exportações agrícolas dos Estados Unidos (US$ 171 bilhões em 2025) e do Brasil (US$ 169,2 bilhões) caiu para apenas 1,2%, a menor já registrada. No primeiro semestre de 2026, as vendas externas do agro brasileiro cresceram 6%, atingindo US$ 87 bilhões, com liderança global em soja, carne bovina, frango e algodão. Segundo o jornal britânico, se a tendência continuar, o Brasil pode ultrapassar os EUA neste ano.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,0526</div><div class="var down">▼ -0.42%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,77</div><div class="var down">▼ -0.26%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">177.548</div><div class="var up">▲ +2.44%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.499</div><div class="var down">▼ -0.14%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">25.691</div><div class="var down">▼ -0.57%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Terra</div><h3><a href="https://www.terra.com.br/economia/trafigura-compra-contrato-de-r750-mi-e-comercializara-energia-da-chinesa-cgn-no-brasil,0d27940d67e7fba995f304174eb45104fr37rybv.html">Trafigura estreia no mercado livre de energia do Brasil com contrato de R$ 750 milhões</a></h3><p class="resumo">A trading holandesa Trafigura fechou sua primeira transação no mercado elétrico brasileiro, assumindo um contrato de longo prazo antes em posse da Grupo Bolt para comprar energia da chinesa CGN Brazil Energy. O negócio, avaliado em cerca de R$ 750 milhões, ocorre após a empresa obter licença da Aneel em junho para comercializar energia no atacado no país. A operação reforça o interesse de grandes players globais pelo Ambiente de Contratação Livre (ACL) brasileiro.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/negocios/startup-de-plano-de-medicamentos-capta-r-25-milhoes-e-mira-r-150-milhoes-ate-2030/">Medipreço capta R$ 2,5 milhões com fundo do Vale do Silício para expandir plataforma de IA</a></h3><p class="resumo">A Medipreço, startup que oferece planos de medicamentos como benefício corporativo, recebeu aporte de R$ 2,5 milhões da BDev Ventures, fundo de venture capital sediado no Vale do Silício. O recurso será usado para acelerar a expansão comercial da empresa e ampliar o uso de inteligência artificial na plataforma. A rodada foi anunciada nesta semana e integra o movimento de startups brasileiras de saúde que buscam capital estrangeiro.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Consumidor Moderno</div><h3><a href="https://consumidormoderno.com.br/youtube-monetizacao-ia/">YouTube endurece regras de monetização contra vídeos em massa feitos por IA</a></h3><p class="resumo">O YouTube passou a aplicar, desde 16 de julho, novas diretrizes de monetização que restringem vídeos considerados inautênticos, repetitivos ou emocionalmente manipuladores produzidos em escala com inteligência artificial. A plataforma dividiu esse tipo de conteúdo em três categorias para facilitar a fiscalização, mas afirma que não pretende proibir o uso da tecnologia por criadores que produzem material original. A medida vale para todos os participantes do Programa de Parcerias do YouTube.</p></article><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/marketing/google-usa-ia-para-recriar-o-gol-mais-bonito-de-pele-que-ninguem-viu/">Google usa IA para recriar gol histórico de Pelé que nunca foi filmado</a></h3><p class="resumo">O Google, em parceria com a família de Pelé, historiadores e o Museu Pelé, usou modelos de inteligência artificial do DeepMind — incluindo Nano Banana para imagens estáticas e Veo 3 para vídeo — para recriar o gol que o próprio Pelé considerava o mais bonito da carreira, marcado em 1959 na Rua Javari e nunca registrado por câmeras. A recriação, batizada &#x27;O Gol Mais Bonito Que Ninguém Viu&#x27;, passou a integrar o acervo permanente do museu em Santos.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Agência Brasil</div><h3><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-07/financiamentos-projetos-rurais-sustentaveis-terao-juros-mais-baixos">Governo reduz juros de crédito rural para projetos de baixo carbono na safra 2026/27</a></h3><p class="resumo">O Conselho Monetário Nacional aprovou novas regras de crédito rural para os Fundos Constitucionais de Financiamento (FNO, FNE e FCO), com taxas a partir de 7,52% ao ano para produtores que investirem em agricultura de baixo carbono, preservação ambiental, energia renovável para consumo próprio e ampliação de armazenagem. As condições valem de 15 de julho de 2026 a 30 de junho de 2027 e representam os menores juros da safra entre as linhas dos fundos.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/agro/fpa-critica-plano-safra-e-diz-que-governo-inflou-recursos-do-programa/">FPA critica Plano Safra 2026/27 e aponta corte real de recursos para custeio</a></h3><p class="resumo">A Frente Parlamentar da Agropecuária (FPA) criticou o Plano Safra 2026/27, afirmando que o governo incluiu recursos que não pertencem ao escopo tradicional do crédito rural para inflar o valor total anunciado, enquanto o custeio efetivo caiu 7,18% frente ao ciclo anterior, para R$ 384,9 bilhões. A entidade destacou ainda queda de 54% nos recursos do Moderfrota e de 28% no programa de armazenagem (PCA), apesar do déficit de armazenagem do país. A senadora Tereza Cristina afirmou que o plano não resolve o endividamento rural dos produtores.</p></article>
+<footer><span>Radar Diário</span><span>2026-07-23</span></footer>
+</body></html>

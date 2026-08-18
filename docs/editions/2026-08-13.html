@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-13</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-13</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Bloomberg Línea</div><h2><a href="https://www.bloomberglinea.com.br/negocios/ecopetrol-conclui-oferta-por-25-da-brava-e-avanca-rumo-ao-controle-da-empresa-brasileira/">Ecopetrol conclui leilão por 25% da Brava Energia e avança rumo ao controle da petroleira brasileira</a></h2><p class="resumo">A colombiana Ecopetrol concluiu com sucesso o leilão da Oferta Pública de Aquisição Voluntária (OPAV) para adquirir 25% das ações ordinárias da Brava Energia (BRAV3), comprando 116,1 milhões de ações a R$ 23 cada na B3. A liquidação está prevista para 17 de agosto, quando a empresa também formalizará a compra de outros 26% junto a acionistas relevantes — avançando para uma participação controladora de 51% do capital votante. O preço oferecido representa um prêmio sobre a cotação de mercado da Brava.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,18</div><div class="var up">▲ +0.27%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,97</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">167.491</div><div class="var down">▼ -0.23%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.748</div><div class="var up">▲ +0.26%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.588</div><div class="var up">▲ +0.54%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/economia/mercado/mercado-financeiro-ibovespa-dolar-12-agosto-2026-2/">Ibovespa cai pelo sétimo pregão seguido; dólar sobe a R$ 5,18 com temor fiscal e eleitoral</a></h3><p class="resumo">O Ibovespa recuou 0,23% nesta quarta-feira (12/8), aos 167.491 pontos, marcando o sétimo pregão consecutivo de queda em meio à saída de capital estrangeiro da bolsa — R$ 7,2 bilhões só em agosto, segundo a B3. O dólar fechou em alta de 0,27%, a R$ 5,1776, interrompendo três sessões de queda, pressionado pela proximidade da campanha eleitoral (início oficial em 16/8) e por incertezas fiscais. Analistas citam a expectativa de manutenção dos juros nos EUA em setembro como fator de algum alívio.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/inteligencia-artificial/nvidia-fecha-parceria-para-financiar-us-500-bilhoes-em-infraestrutura-de-ia/">Nvidia fecha memorandos com seis gestoras para financiar US$ 500 bi em infraestrutura de IA</a></h3><p class="resumo">A Nvidia assinou memorandos de entendimento com Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs e KKR para mobilizar mais de US$ 500 bilhões em capital de terceiros destinados à construção de infraestrutura de inteligência artificial. Segundo a empresa, os recursos vêm inteiramente de terceiros, sem comprometer capital próprio, e devem usar a capacidade computacional da Nvidia como garantia em ofertas privadas. Os acordos ainda não estão fechados — são o primeiro passo formal antes da estruturação definitiva das operações.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">SpaceMoney</div><h3><a href="https://www.spacemoney.com.br/agronegocio/soja-recua-no-brasil-com-dolar-e-chicago/">Soja recua no Brasil na sexta-feira com dólar fraco e queda em Chicago</a></h3><p class="resumo">O mercado brasileiro de soja encerrou a sexta-feira (12/8) com volume reduzido de negócios e recuo nas cotações, refletindo a desvalorização do dólar frente ao real e a queda da Bolsa de Chicago ao longo da semana. Segundo Rafael Silveira, analista da Safras &amp; Mercado, os prêmios de exportação para embarques do segundo semestre subiram, mas não compensaram os fatores externos, e produtores cautelosos ficaram afastados das negociações. A ampla oferta global da commodity segue limitando qualquer recuperação mais consistente dos preços.</p></article><article class="item"><div class="eyebrow fonte">Conab (via IndexBox)</div><h3><a href="https://www.indexbox.io/blog/conab-preos-do-algodo-sobem-no-brasil-e-exterior-na-primeira-semana-de-agosto/">Preços do algodão sobem no Brasil e no exterior na primeira semana de agosto, mas liquidez interna segue restrita</a></h3><p class="resumo">Segundo relatório semanal da Conab, os preços do algodão subiram no Brasil e no exterior entre 3 e 7 de agosto de 2026, impulsionados pela valorização em Nova York, petróleo e demanda chinesa. Em Mato Grosso, o preço médio ao produtor foi de R$ 130,22 por arroba (+0,4% na semana); na Bahia, R$ 136,33 (+0,24%). No mercado interno, porém, a liquidez segue restrita, com negócios pontuais e a safra 2025/2026 com 43,7% da área colhida.</p></article>
+<footer><span>Radar Diário</span><span>2026-08-13</span></footer>
+</body></html>

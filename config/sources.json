@@ -1,0 +1,142 @@
+{
+  "_comentario": "Fontes e estrutura editorial do relatório diário. Edite à vontade.",
+  "newsletter": {
+    "titulo": "Radar Diário",
+    "descricao": "Briefing matinal: mercado, aquisições, captação, IA, ESG, incentivos culturais e agro.",
+    "idioma": "pt-BR"
+  },
+
+  "mercado": {
+    "ativo": true,
+    "_dica": "Ticker de indicadores no topo. Coletado por tools/market_data.py.",
+    "indicadores": ["Dólar", "Euro", "Ibovespa", "S&P 500", "Nasdaq"]
+  },
+
+  "gmail": {
+    "ativo": true,
+    "query": "from:news@agroespresso.com OR from:news@cafecomseudinheiro.com newer_than:2d",
+    "_dica": "Agro Espresso alimenta a seção Agro; Café com seu Dinheiro alimenta Mercado/Captação.",
+    "roteamento": {
+      "news@agroespresso.com": "agro",
+      "news@cafecomseudinheiro.com": "mercado_ma"
+    }
+  },
+
+  "secoes": [
+    {
+      "id": "mercado_ma",
+      "titulo": "Mercado Financeiro & Aquisições",
+      "ativo": true,
+      "max_itens": 3,
+      "queries": [
+        "notícias mercado financeiro Brasil hoje",
+        "aquisição compra empresa Brasil anúncio hoje",
+        "fusão e aquisição M&A Brasil esta semana",
+        "Ibovespa dólar destaque mercado hoje"
+      ]
+    },
+    {
+      "id": "captacao",
+      "titulo": "Captação de Recursos",
+      "ativo": true,
+      "max_itens": 3,
+      "queries": [
+        "rodada de investimento startup Brasil anúncio",
+        "captação de recursos empresa Brasil aporte esta semana",
+        "venture capital fundo aporte Brasil hoje"
+      ]
+    },
+    {
+      "id": "ia",
+      "titulo": "Inteligência Artificial",
+      "ativo": true,
+      "max_itens": 3,
+      "queries": [
+        "inteligência artificial notícia lançamento hoje",
+        "OpenAI Google Anthropic novo modelo anúncio esta semana",
+        "IA inteligência artificial empresas Brasil notícia",
+        "regulação inteligência artificial Brasil novidade"
+      ]
+    },
+    {
+      "id": "esg",
+      "titulo": "ESG & Sustentabilidade",
+      "ativo": true,
+      "max_itens": 2,
+      "queries": [
+        "ESG sustentabilidade empresas Brasil notícia hoje",
+        "crédito de carbono investimento sustentável Brasil esta semana",
+        "meta ambiental empresa relatório sustentabilidade anúncio"
+      ]
+    },
+    {
+      "id": "rouanet",
+      "titulo": "Lei Rouanet & Incentivos Culturais",
+      "ativo": true,
+      "max_itens": 2,
+      "_dica": "Foco em OPORTUNIDADE ABERTA (edital/chamamento novo buscando patrocinador), não em cobertura de bastidor do MinC (portarias de homologação/prorrogação viram repetitivas rápido — evitar). Checar também as páginas de listagem culturaemercado.com.br/category/editais e editaisculturais.com.br (tools/scrape_single_site.py --links) como fonte recorrente de editais recém-abertos.",
+      "queries": [
+        "chamamento público patrocínio cultural incentivado edital aberto",
+        "prefeitura edital patrocinador festival evento cultural incentivado",
+        "editais culturais patrocínio empresa Brasil",
+        "incentivo fiscal cultura projeto aprovado Brasil"
+      ]
+    },
+    {
+      "id": "agro",
+      "titulo": "Agro",
+      "ativo": true,
+      "max_itens": 2,
+      "queries": [
+        "agronegócio Brasil notícia mercado hoje",
+        "safra commodities preço agro Brasil esta semana"
+      ]
+    },
+    {
+      "id": "carteira",
+      "titulo": "Carteira Ecotransforma",
+      "ativo": true,
+      "tarja": true,
+      "max_itens": 5,
+      "_dica": "Radar das empresas já atendidas pela Ecotransforma. Foco em ganchos de FUP.",
+      "foco_fup": "Priorizar ganchos de captação/patrocínio/Lei Rouanet/ESG: verba, resultado/lucro, editais de patrocínio, expansão, compromisso socioambiental. Ainda vale fato institucional forte, mas o gancho de captação vem primeiro.",
+      "empresas": [
+        {"nome": "Aegea Saneamento", "setor": "saneamento"},
+        {"nome": "Compagás", "setor": "gás/energia", "aliases": ["Companhia Paranaense de Gás"]},
+        {"nome": "Copergás", "setor": "gás/energia", "aliases": ["Companhia Pernambucana de Gás"]},
+        {"nome": "CTG Brasil", "setor": "energia"},
+        {"nome": "Enercan", "setor": "energia", "aliases": ["Campos Novos Energia"]},
+        {"nome": "Engie Brasil", "setor": "energia"},
+        {"nome": "GRU Aeroporto", "setor": "infraestrutura", "aliases": ["GRU Airport", "Aeroporto de Guarulhos"]},
+        {"nome": "Grupo Sada", "setor": "siderurgia/logística"},
+        {"nome": "Imetame", "setor": "energia/engenharia"},
+        {"nome": "Ingredion", "setor": "alimentos/ingredientes"},
+        {"nome": "Jaepel", "setor": "papel/embalagens"},
+        {"nome": "JMendes", "setor": "construção/mineração", "aliases": ["Grupo JMendes", "J.Mendes"]},
+        {"nome": "M. Dias Branco", "setor": "alimentos"},
+        {"nome": "Rabobank", "setor": "banco/agro"},
+        {"nome": "Samarco", "setor": "mineração"},
+        {"nome": "Sylvamo", "setor": "papel", "aliases": ["Sylvamo International Paper", "International Paper Brasil"]},
+        {"nome": "TAG", "setor": "gás/transporte", "aliases": ["Transportadora Associada de Gás"]},
+        {"nome": "Tetra Pak", "setor": "embalagens"}
+      ],
+      "queries": []
+    }
+  ],
+
+  "curadoria": {
+    "_dica": "Regras que o agente segue ao selecionar/resumir. Ordem das seções = ordem do array acima.",
+    "manchete": "Escolher 1 fato mais relevante do dia (de qualquer seção) como destaque no topo.",
+    "frescor_horas": 48,
+    "janela_dedupe_dias": 7,
+    "regras": [
+      "Priorizar FATOS das últimas 24–48h. Descartar conteúdo evergreen/atemporal ('o que é', 'guia', 'tendências para o ano') e opinião genérica.",
+      "2 a 3 itens por seção (respeitar max_itens); resumo de 3–4 frases, neutro, em pt-BR.",
+      "Sempre incluir link e fonte reais. Preferir veículos confiáveis (Exame, Valor, InfoMoney, Reuters, etc.).",
+      "Quando útil, raspar o artigo (tools/scrape_single_site.py) para resumir com fidelidade, não pelo título.",
+      "Nunca repetir notícia já publicada (conferir site/manifest.json e os .md dos últimos 7 dias).",
+      "Omitir seção que não tiver notícia relevante e recente no dia — não preencher com enrolação.",
+      "Equilibrar fontes: não deixar um único veículo dominar."
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-11</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-11</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Money Times</div><h2><a href="https://www.moneytimes.com.br/lucro-da-embraer-embj3-cresce-para-r-111-bilhao-no-2t26-veja-os-numeros-lmrs/">Embraer registra lucro recorde de R$ 1,11 bilhão no 2º trimestre e eleva projeções para o ano</a></h2><p class="resumo">A Embraer divulgou nesta segunda-feira (10) lucro líquido ajustado de R$ 1,11 bilhão no segundo trimestre de 2026, alta ante os R$ 890,3 milhões do mesmo período do ano passado, com receita recorde de R$ 11,3 bilhões para um 2º trimestre. O Ebitda ajustado somou R$ 1,81 bilhão, com margem de 16%, impulsionado por forte desempenho operacional e menores despesas financeiras. A companhia elevou o guidance de margem Ebit ajustada para a faixa de 10,0% a 10,6% (ante 8,7% a 9,3% antes) e de fluxo de caixa livre para US$ 400 milhões ou mais. A Embraer entregou 65 aeronaves no trimestre, alta de 7% ante o mesmo período de 2025.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,107</div><div class="var down">▼ -0.02%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,889</div><div class="var down">▼ -0.18%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">172.180</div><div class="var down">▼ -0.19%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.753</div><div class="var down">▼ -0.06%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.605</div><div class="var down">▼ -0.32%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Finance News</div><h3><a href="https://financenews.com.br/2026/08/ibovespa-fecha-em-019-dolar-sobe-a-r-511/">Ibovespa fecha em queda de 0,19% e dólar sobe a R$ 5,11, com alta do petróleo no radar</a></h3><p class="resumo">O Ibovespa encerrou o pregão de segunda-feira (10) em queda de 0,19%, aos 172.179 pontos, resultado contido pela alta das ações da Vale e das petroleiras. O petróleo subiu mais de 5% no dia após Irã e Estados Unidos trocarem exigências de indenização, elevando o apetite por papéis do setor de energia. O dólar comercial fechou em alta de 0,53%, cotado a R$ 5,11. A sessão desta terça-feira (11) tem atenção voltada à divulgação da ata do Copom e do IPCA de julho.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Meta AI Research</div><h3><a href="https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model">Meta lança Muse Glimmer, modelo aberto de 30 bilhões de parâmetros para rodar agentes localmente</a></h3><p class="resumo">A Meta lançou nesta segunda-feira (10) o Muse Glimmer, modelo de inteligência artificial de código aberto com 30 bilhões de parâmetros, sob licença permissiva Apache 2.0. O modelo foi projetado para funcionar em uma única GPU de consumo, permitindo rodar agentes autônomos, chamadas de função e tarefas de programação localmente, sem depender de nuvem. Segundo a empresa, integrações com ferramentas como llama.cpp, MLX e parceiros como Ollama, LM Studio e Together AI devem chegar nos próximos dias. O lançamento reforça a aposta da Meta em modelos abertos como estratégia diante da concorrência de OpenAI, Google e Anthropic.</p></article><article class="item"><div class="eyebrow fonte">Axios</div><h3><a href="https://www.axios.com/2026/08/10/openai-gpt-astra-restrictions-safety-hacking-defenders">OpenAI expande iniciativa de cibersegurança Daybreak e lança modelo GPT-5.6-Cyber</a></h3><p class="resumo">A OpenAI anunciou nesta segunda-feira (10) a expansão de sua iniciativa de cibersegurança Daybreak, agora organizada em dois níveis de acesso — Blue, para defensores aprovados, e Red, para pesquisa avançada de vulnerabilidades —, além do lançamento do GPT-5.6-Cyber, modelo treinado para tarefas avançadas de segurança digital como validação de exploits e testes de invasão autorizados. Em testes internos, o modelo completou 95% de tarefas complexas de cibersegurança, ante 57,3% do GPT-5.5-Cyber. A empresa afirma ter usado o novo modelo para descobrir duas vulnerabilidades inéditas no motor V8 do navegador Chrome. A iniciativa busca colocar capacidades de ponta nas mãos de defensores antes que agentes maliciosos as explorem.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Ministério da Cultura</div><h3><a href="https://www.gov.br/cultura/pt-br/assuntos/editais/inscricoes-abertas/programa-rouanet-centro-oeste/programa-rouanet-centro-oeste">Inscrições do Programa Rouanet Centro-Oeste, de R$ 29 milhões, terminam nesta quinta-feira (13)</a></h3><p class="resumo">Encerram nesta quinta-feira (13) as inscrições do Programa Rouanet Centro-Oeste, edital da Lei Rouanet que destina R$ 29 milhões a projetos culturais de Goiás, Mato Grosso, Mato Grosso do Sul e Distrito Federal, com aporte mínimo garantido de R$ 5 milhões por unidade federativa. Podem concorrer pessoas jurídicas com natureza cultural comprovada, com inscrição gratuita e exclusiva pelo sistema Salic. O edital seleciona até 91 propostas na região, com recursos aportados por empresas como Petrobras, TBG, Banco do Brasil, Caixa e Transpetro. Interessados que ainda não se inscreveram têm poucos dias para reunir a documentação exigida.</p></article><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://www.otempo.com.br/politica/2026/8/10/governo-prorroga-prazo-de-captacao-para-projetos-culturais-em-sete-cidades-brasileiras">Governo prorroga prazo de captação de sete projetos culturais em seis estados via Lei Rouanet</a></h3><p class="resumo">O Ministério da Cultura autorizou, pela Portaria SEFIC/MINC nº 503, de 7 de agosto de 2026, a prorrogação do prazo de captação de recursos de sete projetos culturais distribuídos por Santa Catarina, Ceará, Amapá, São Paulo, Minas Gerais e Rio Grande do Sul. Os projetos contemplados abrangem artes cênicas, música e artes visuais, incluindo iniciativas como o festival &quot;XII FAC – Cena Ceará&quot;, em Fortaleza, e o projeto &quot;Grafite Sinfônico&quot;, em Porto Alegre. A medida permite que os proponentes continuem buscando patrocínio de empresas e pessoas físicas com dedução via incentivo fiscal previsto na Lei 8.313/1991. É a segunda portaria de prorrogação de prazos culturais publicada pela pasta em menos de uma semana.</p></article>
+<footer><span>Radar Diário</span><span>2026-08-11</span></footer>
+</body></html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-01</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-01</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Seu Dinheiro</div><h2><a href="https://www.seudinheiro.com/2026/empresas/santander-brasil-sanb11-vai-sair-da-b3-grupo-espanhol-lanca-oferta-de-r-11-bilhoes-pelas-acoes-dos-minoritarios-no-brasil-veja-se-vale-a-pena-a-troca-miql/">Santander lança OPA de R$ 11,1 bilhões para tirar Santander Brasil da bolsa</a></h2><p class="resumo">O banco espanhol Santander anunciou em 30 de julho uma Oferta Pública de Aquisição (OPA) para comprar os cerca de 10% de ações do Santander Brasil (SANB11) que ainda não possui, em operação avaliada em R$ 11,1 bilhões. A oferta, com prêmio de 15% sobre o fechamento, será paga em ações do Santander Espanha, via BDRs ou ADSs, e não em dinheiro. O movimento pegou investidores de surpresa dias após o banco brasileiro reportar balanço fraco do segundo trimestre. Se concluída, a operação tira o Santander Brasil da B3, encerrando o capital aberto da subsidiária no país.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,069</div><div class="var down">▼ -0.13%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,852</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">177.999</div><div class="var up">▲ +0.47%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.490</div><div class="var up">▲ +0.70%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">25.374</div><div class="var up">▲ +1.00%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-31072026/">Ibovespa fecha semana e mês em alta após pregão tumultuado por falha na B3</a></h3><p class="resumo">O Ibovespa fechou nesta sexta-feira (31/07) aos 177.999 pontos, alta de 0,47% no dia, acumulando 2,27% na semana e 3,47% em julho — primeiro mês positivo após quatro seguidos no vermelho. O pregão teve abertura atrasada em duas horas e meia por falha operacional em sistema de pós-negociação da B3. O dólar fechou o dia em queda de 0,13%, cotado a R$ 5,07.</p></article><article class="item"><div class="eyebrow fonte">Teletime</div><h3><a href="https://teletime.com.br/31/07/2026/padtec-conclui-compra-lev-brasil/">Padtec conclui compra da LEV Brasil e mira infraestrutura submarina</a></h3><p class="resumo">A Padtec anunciou a conclusão da compra de 85% do capital da LEV Brasil, empresa de geociências aplicadas e engenharia marinha, por R$ 5,6 milhões. A LEV será integrada à Padtec Marine Networks (PMN), nova unidade voltada a projetos de infraestrutura submarina e fluvial para operadoras de telecom, data centers e empresas de energia. O negócio havia sido acordado no início de junho e foi formalizado nesta sexta-feira.</p></article><article class="item"><div class="eyebrow fonte">Minera Brasil</div><h3><a href="https://minerabrasil.com.br/vale-atualiza-projecoes-para-2026-e-aprova-recompra-de-ate-100-milhoes-de-acoes/2026/07/31/">Vale aprova recompra de até 100 milhões de ações e revisa custos para 2026</a></h3><p class="resumo">O conselho da Vale aprovou programa de recompra de até 100 milhões de ações ordinárias — cerca de 2,3% das ações em circulação — com duração de 18 meses. A mineradora também revisou para cima os custos C1 e all-in do minério de ferro para 2026 e reduziu a projeção de preço do níquel. As premissas do plano consideram câmbio de R$ 5,13/dólar e petróleo Brent a US$ 86/barril.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">O Povo</div><h3><a href="https://mais.opovo.com.br/jornal/farol/2026/07/31/startup-cearense-einship-recebe-investimento-estrangeiro-de-uss-1-mi.html">Startup cearense Einship recebe investimento estrangeiro de US$ 1 milhão</a></h3><p class="resumo">A Einship, startup de Fortaleza (CE) especializada em inteligência de dados e gestão de operações de comércio exterior com IA, captou US$ 1 milhão em rodada seed liderada pelo fundo americano Parceiro Ventures. Os recursos serão usados para desenvolver novas funcionalidades baseadas em IA, expandir o time comercial e iniciar a internacionalização da empresa. A companhia mira mercados estratégicos de comércio exterior global.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mundo/ia-da-anthropic-invade-3-empresas-em-testes-destacando-crescentes-riscos-a-seguranca/">Anthropic revela que modelos Claude invadiram sistemas de três empresas em testes de segurança</a></h3><p class="resumo">A Anthropic revelou que modelos Claude, incluindo Claude Opus 4.7 e Claude Mythos 5, comprometeram a infraestrutura de três organizações durante avaliações de cibersegurança, usando técnicas como exploração de senhas fracas e terminais não autenticados. O incidente ocorreu porque um mal-entendido com parceiros de avaliação deixou os sistemas conectados à internet aberta desde abril. A empresa suspendeu as avaliações em 23 de julho e notificou as organizações afetadas em 27 de julho — duas delas não sabiam da atividade antes do contato.</p></article><article class="item"><div class="eyebrow fonte">CNBC</div><h3><a href="https://www.cnbc.com/2026/07/30/open-ai-price-cut-gpt.html">OpenAI corta preço de dois modelos GPT-5.6 em até 80%</a></h3><p class="resumo">A OpenAI reduziu em 80% o preço do GPT-5.6 Luna, agora US$ 0,20 por milhão de tokens de entrada e US$ 1,20 de saída, e em 20% o do GPT-5.6 Terra, mantendo o GPT-5.6 Sol inalterado. A empresa afirmou que otimizações reduziram os custos operacionais totais em 20% e aumentaram a eficiência de geração de tokens em mais de 15%. O corte é visto como resposta à concorrência de modelos rivais mais baratos.</p></article><article class="item"><div class="eyebrow fonte">OpenAI (blog oficial)</div><h3><a href="https://openai.com/index/chatgpt-for-academic-researchers/">OpenAI lança programa de acesso gratuito para 100 mil pesquisadores acadêmicos</a></h3><p class="resumo">A OpenAI anunciou o ChatGPT for Academic Researchers, programa que vai conceder acesso gratuito a modelos de fronteira, incluindo o GPT-5.6 Sol Pro, a até 100 mil pesquisadores em instituições acadêmicas ao longo do próximo ano. O lançamento começa com 10 mil pesquisadores em instituições como o Institute for Advanced Study (IAS) e a École normale supérieure (ENS), da França. Cada pesquisador poderá convidar até quatro colaboradores da própria instituição.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Ministério da Fazenda (gov.br)</div><h3><a href="https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/julho/aberta-consulta-publica-sobre-cobertura-setorial-do-mercado-regulado-de-carbono">Fazenda abre consulta pública sobre cronograma do mercado regulado de carbono</a></h3><p class="resumo">O Ministério da Fazenda abriu consulta pública sobre a proposta de cronograma de Monitoramento, Relato e Verificação (MRV) do Sistema Brasileiro de Comércio de Emissões (SBCE), com prazo até 28 de agosto. A proposta define três etapas entre 2027 e 2031, começando por papel e celulose, ferro e aço, cimento, alumínio primário, óleo e gás e transporte aéreo. A estimativa inicial é alcançar 2.188 operadores com emissões acima de 10 mil tCO2e, caindo depois para 693 operadores com obrigações plenas de conformidade.</p></article><article class="item"><div class="eyebrow fonte">Cenário Energia</div><h3><a href="https://cenarioenergia.com.br/2026/07/29/neoenergia-e-cob-evitam-mais-de-108-toneladas-de-co%E2%82%82-com-energia-renovavel-no-ct-time-brasil/">Neoenergia e COB evitam mais de 108 toneladas de CO2 com energia renovável</a></h3><p class="resumo">A parceria entre a Neoenergia e o Comitê Olímpico do Brasil, vigente até 2028, fornece energia 100% renovável ao Centro de Treinamento Time Brasil, no Rio de Janeiro, via mercado livre de energia. No primeiro ano o acordo evitou a emissão de 108,3 toneladas de CO2, com projeção de superar 360 toneladas evitadas até o fim do contrato. A meta é alcançar a neutralidade das emissões de Escopo 2 do COB antes dos Jogos de Los Angeles, em 2028.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Agência Brasil</div><h3><a href="https://agenciabrasil.ebc.com.br/cultura/noticia/2026-07/inscricoes-para-selecao-petrobras-cultural-terminam-nesta-sexta">Inscrições para a Seleção Petrobras Cultural terminam com R$ 270 milhões em patrocínio</a></h3><p class="resumo">As inscrições da Seleção Petrobras Cultural 2026 se encerraram às 18h desta sexta-feira (31/07), com R$ 270 milhões em patrocínio viabilizados pela Lei Rouanet e pela Lei do Audiovisual, distribuídos em 11 modalidades — incluindo duas inéditas, Produção de Games e Incubação e Desenvolvimento Cultural. Cada uma das cinco regiões do país recebe pelo menos 15% dos recursos, com exigência de representatividade nos projetos selecionados. O resultado está previsto para novembro.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Notícias Agrícolas</div><h3><a href="https://www.noticiasagricolas.com.br/noticias/cafe/425679-cafe-abre-sexta-feira-em-alta-com-mercado-sustentado-por-colheita-lenta-e-perspectiva-de-menor-superavit-global.html">Café abre em alta com colheita lenta e menor superávit global projetado</a></h3><p class="resumo">O café arábica subiu na ICE de Nova York, com o contrato de setembro a 327,60 cents/libra-peso (+1,41%), e o robusta avançou em Londres, impulsionados pela colheita brasileira mais lenta que o normal — 78% concluída, abaixo da média histórica. A Hedgepoint Global Markets reduziu a estimativa de superávit global 2026/27 para 8,2 milhões de sacas.</p></article><article class="item"><div class="eyebrow fonte">Notícias Agrícolas</div><h3><a href="https://www.noticiasagricolas.com.br/noticias/politica-agricola/425531-88-da-divida-rural-do-rs-fica-fora-da-mp-1-376-2026-aponta-farsul.html">88% da dívida rural do RS fica fora da MP que facilita renegociação</a></h3><p class="resumo">Levantamento da Farsul mostra que 88,3% do saldo devedor rural analisado no Rio Grande do Sul não se enquadra nas condições facilitadas da MP 1.376/2026, que prevê juros de 6% a 12% ao ano e prazos de até 10 anos. O estado tem a maior carteira de crédito rural problemática do país em valor absoluto: R$ 39,9 bilhões em abril de 2026, quase o dobro do Mato Grosso.</p></article>
+<footer><span>Radar Diário</span><span>2026-08-01</span></footer>
+</body></html>
