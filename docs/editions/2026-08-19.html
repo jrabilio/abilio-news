@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-19</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-19</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">CNN Brasil</div><h2><a href="https://www.cnnbrasil.com.br/economia/money/mercado/mercado-financeiro-ibovespa-dolar-18-agosto-2026/">Ibovespa cai pela 11ª sessão seguida e dólar sobe com temores sobre crédito</a></h2><p class="resumo">O Ibovespa fechou terça-feira (18/8) em queda de 0,22%, aos 166.409,56 pontos, marcando a 11ª sessão consecutiva de perdas — a mais longa desde agosto de 2023. No mês, o índice acumula recuo de 6,51%. Bancos exerceram a principal pressão negativa em meio a preocupações com o cenário de crédito no país, enquanto Petrobras ajudou a limitar as perdas. O dólar subiu no dia, também pressionado pelo avanço no Senado da PEC que acaba com a escala de trabalho 6x1 e por incertezas do ciclo eleitoral de 2026.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,223</div><div class="var up">▲ +0.10%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,974</div><div class="var up">▲ +0.10%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">166.335</div><div class="var down">▼ -0.27%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.692</div><div class="var down">▼ -0.69%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.290</div><div class="var down">▼ -1.33%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Money Times</div><h3><a href="https://www.moneytimes.com.br/ecopetrol-compra-25-da-brava-energia-brav3-por-r-267-bilhoes-e-assume-controle/">Ecopetrol conclui liquidação da OPA e assume 51% do controle da Brava Energia</a></h3><p class="resumo">A liquidação financeira das ações adquiridas no leilão de oferta pública voluntária (OPA) da Ecopetrol por Brava Energia ocorreu em 17 de agosto, data em que a colombiana passou a deter 236.924.207 ações ordinárias, equivalentes a 51% do capital social da petroleira brasileira. O leilão, realizado em 5 de agosto, envolveu a compra de cerca de 25% do capital por R$ 23 por ação, totalizando R$ 2,67 bilhões. A operação é a segunda etapa de um negócio que somou aproximadamente R$ 5,6 bilhões, após compra direta de outra fatia de 26% em abril.</p></article><article class="item"><div class="eyebrow fonte">Baguete</div><h3><a href="https://www.baguete.com.br/noticias/webmotors-adquire-syonet">Webmotors anuncia aquisição da Syonet, líder em CRM para concessionárias</a></h3><p class="resumo">A Webmotors tornou pública nesta terça-feira (18/8), durante o Congresso &amp; ExpoFenabrave, a aquisição de 100% da Syonet, empresa gaúcha especializada em CRM para o setor automotivo. A Syonet, fundada em 2003, atende cerca de 4 mil concessionárias no país e tem mais de 200 funcionários. Os termos e o valor da operação não foram revelados pelas partes. Com o negócio, a Webmotors amplia sua atuação em tecnologia para o segmento de veículos novos.</p></article><article class="item"><div class="eyebrow fonte">Finance News</div><h3><a href="https://financenews.com.br/2026/08/braskem-idesa-inicia-processo-de-reestruturacao-judicial-nos-eua/">Braskem Idesa fecha acordo de reestruturação e entra com Chapter 11 nos EUA</a></h3><p class="resumo">A Braskem Idesa anunciou em 18 de agosto um acordo abrangente de reestruturação com acionistas, credores de dívida e o credor de seu empréstimo a prazo. O plano reduz a dívida sênior da companhia de cerca de US$ 2,5 bilhões para aproximadamente US$ 1,6 bilhão, eliminando mais de US$ 920 milhões em débitos, com aporte de US$ 476 milhões da controladora brasileira. Para viabilizar a reestruturação, a empresa protocolou pedido pré-acordado sob o Chapter 11 nos Estados Unidos, com conclusão prevista em 60 a 90 dias.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Business Moment</div><h3><a href="https://businessmoment.com.br/larian-ai-rodada-10-milhoes-tecnologia-turismo-b2b/">Larian AI abandona intermediação de viagens e abre rodada seed de R$ 10 milhões</a></h3><p class="resumo">A Larian AI, startup que atuava com intermediação de viagens B2B, decidiu concentrar o negócio na tecnologia própria e passou a operar como fornecedora de infraestrutura white label para agências e consolidadoras de turismo. A empresa abriu uma rodada seed de R$ 10 milhões, com possibilidade de evoluir para uma pré-série A, destinada principalmente à infraestrutura de engenharia. A operação, que processava cerca de R$ 3 milhões por dia, passou a movimentar R$ 10 milhões diários em 90 dias.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">OpenAI (blog oficial)</div><h3><a href="https://openai.com/index/pacing-model-development-cyber-capabilities/">OpenAI diz que pausou treinamento de modelos de fronteira por risco cibernético</a></h3><p class="resumo">Em post oficial de 18 de agosto de 2026, a OpenAI afirmou que desacelerou deliberadamente o desenvolvimento de seus modelos mais avançados, citando o crescimento dos riscos de capacidades críticas em cibersegurança. A empresa disse ter pausado por duas semanas o treinamento por reforço (RL) de modelos destinados a lançamento, para reforçar monitoramento, red-teaming e segurança dos ambientes de pesquisa. O maior treinamento de RL de fronteira planejado pela empresa segue em espera enquanto rodadas menores de avaliação são conduzidas.</p></article><article class="item"><div class="eyebrow fonte">CNBC</div><h3><a href="https://www.cnbc.com/2026/08/18/openai-chatgpt-for-teens-safety.html">OpenAI lança o ChatGPT for Teens com controles parentais e restrições de conteúdo</a></h3><p class="resumo">A OpenAI lançou em 18 de agosto de 2026 uma versão do ChatGPT voltada a adolescentes de 13 a 17 anos, com restrições reforçadas sobre automutilação, conteúdo sexual ou romântico e violência. A ferramenta inclui o recurso Study Mode, controles parentais e passa a ser ativada automaticamente quando o sistema identifica ou o usuário informa ser menor de idade. A empresa afirma que o chatbot também foi instruído a não sugerir que possui sentimentos ou consciência ao interagir com esse público.</p></article><article class="item"><div class="eyebrow fonte">TI Inside</div><h3><a href="https://tiinside.com.br/17/08/2026/no-brasil-76-das-empresas-ja-operam-agentes-de-ia-e-66-ampliarao-investimentos/">Estudo global aponta Brasil à frente dos EUA na adoção de agentes de IA em produção</a></h3><p class="resumo">Levantamento da Sinch com 2.527 líderes empresariais de dez países, divulgado em 17 de agosto de 2026, mostra que 76% das empresas brasileiras já operam agentes de IA em produção, acima da média global de 62% e dos 67% registrados nos Estados Unidos. O estudo também aponta que 66% das empresas no Brasil planejam ampliar investimentos em mais de 25% e que 48% avaliam trocar de fornecedores. Por outro lado, 80% das organizações brasileiras precisaram interromper ou reverter implementações de IA por problemas de governança, taxa acima da média global de 74%.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Safras &amp; Mercado</div><h3><a href="https://safras.com.br/expointer-2026-sera-carbono-neutro-pela-primeira-vez-na-historia-da-feira/">Governo do RS anuncia que Expointer 2026 será a primeira edição carbono neutro da feira</a></h3><p class="resumo">O governador Eduardo Leite anunciou, em 17 de agosto, que a 49ª edição da Expointer, marcada para 29 de agosto a 6 de setembro em Esteio (RS), será a primeira carbono neutro da história do evento. A compensação das emissões de gases de efeito estufa geradas pela feira será feita pela CRVR (Companhia Riograndense de Valorização de Resíduos) por meio de créditos de carbono certificados, oriundos da captura de gases no tratamento de resíduos sólidos urbanos. A secretária estadual do Meio Ambiente, Marjorie Kauffmann, destacou que os créditos possuem certificação das Nações Unidas.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">FDR</div><h3><a href="https://fdr.com.br/2026/08/18/rouanet-nas-favelas-oferece-ate-r-200-mil-por-projeto-inscricoes-vao-ate-13-de-outubro/">Programa Rouanet nas Favelas 2 abre inscrições com até R$ 200 mil por projeto</a></h3><p class="resumo">O Ministério da Cultura e a Vale lançaram a segunda edição do Rouanet nas Favelas, com inscrições abertas de 15 de agosto a 13 de outubro de 2026 pelo sistema Salic. O edital destina no mínimo R$ 10 milhões e prevê a seleção de ao menos 50 projetos culturais sediados em favelas e periferias de oito capitais, entre elas Rio de Janeiro, São Paulo e Belo Horizonte. Podem concorrer pessoas jurídicas culturais estabelecidas na mesma localidade de execução do projeto. O resultado final está previsto para dezembro de 2026.</p></article><article class="item"><div class="eyebrow fonte">Agora Paraná</div><h3><a href="https://www.agoraparana.com.br/curitiba/prefeitura-de-curitiba-lanca-edital-de-patrocinio-para-o-natal-2026/">Prefeitura de Curitiba lança edital de patrocínio para o Natal 2026</a></h3><p class="resumo">A Prefeitura de Curitiba publicou, em 12 de agosto, o Edital de Chamamento Público nº 2/2026 para captação de patrocínio da programação natalina da cidade. Empresas interessadas devem apresentar propostas até 2 de setembro de 2026 pelo Processo Eletrônico de Curitiba (Procec), após cadastro no sistema de compras eletrônicas do município. O edital oferece 38 oportunidades de patrocínio para atrações, decoração e outras iniciativas do Natal de Curitiba 2026.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Canal Rural</div><h3><a href="https://www.canalrural.com.br/economia/fazenda-autoriza-r-258-bilhoes-para-renegociacao-de-dividas-rurais/">Fazenda libera R$ 25,8 bilhões para renegociar dívida rural, apenas 13% da carteira problemática</a></h3><p class="resumo">O Ministério da Fazenda assinou portaria que autoriza a equalização de juros e destrava R$ 25,8 bilhões para renegociação de dívidas rurais. A carteira problemática do crédito rural chegou a R$ 197,2 bilhões em junho, o que faz o valor liberado corresponder a apenas 13% do problema. Do total, R$ 24,1 bilhões vão para a agricultura empresarial e R$ 1,6 bilhão para a familiar, com dez instituições autorizadas a operar a linha, entre elas Banco do Brasil, Sicredi, Sicoob e Cresol. O produtor tem 90 dias de prazo para acessar a linha depois que os bancos adaptarem as normas internas.</p></article><article class="item"><div class="eyebrow fonte">Canal Rural</div><h3><a href="https://www.canalrural.com.br/agricultura/primeiro-biofungicida-brasileiro-100-a-base-de-metabolitos-e-registrado-para-soja/">Bioma registra primeiro biofungicida brasileiro 100% à base de metabólitos</a></h3><p class="resumo">A Bioma anunciou o registro no Mapa do primeiro biofungicida brasileiro feito só de metabólitos — o que o microrganismo produz, não o microrganismo vivo. O produto mira antracnose e mancha-alvo, doenças que podem tirar até 40% da produtividade da soja em anos favoráveis ao fungo. A fórmula reúne cerca de quarenta metabólitos, mais de vinte agindo direto no patógeno e dezessete estimulando a defesa da planta. O mercado de biológicos no Brasil já cresceu 41% e movimentou R$ 1,4 bilhão em 26 milhões de hectares.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Forbes Brasil</div><h3><a href="https://forbes.com.br/geral/2026/08/aegea-aumento-capital-21-bi/">Aegea conclui aumento de capital de R$ 2,1 bilhões para reforçar caixa</a></h3><p class="resumo">A Aegea Saneamento concluiu aumento de capital de R$ 2,1 bilhões, direcionado sobretudo à redução de dívida em meio a um ciclo de forte expansão de concessões de água e esgoto pelo país. Em 2025 a empresa já havia investido R$ 7,3 bilhões em infraestrutura, e no 1T26 outros R$ 1,6 bilhão, conectando 1,1 milhão de novas economias. O reforço de caixa, mesmo com foco em desalavancagem, sinaliza fôlego financeiro e pode ser gancho para retomar conversa sobre patrocínio ESG ligado a saneamento e impacto social.</p></article><article class="item"><div class="eyebrow fonte">Samarco Mineração</div><h3><a href="https://www.samarco.com/samarco-participa-da-mec-show-2026-maior-feira-industrial-do-espirito-santo/">Samarco patrocina Mec Show 2026, maior feira industrial do Espírito Santo</a></h3><p class="resumo">A Samarco foi uma das patrocinadoras da Mec Show 2026, realizada de 4 a 6 de agosto em Serra (ES), levando seis executivos para debater operações, grandes projetos e gestão de pessoas em painéis técnicos. O patrocínio a um evento setorial de grande porte confirma que a mineradora mantém orçamento ativo para ações institucionais e de relacionamento, mesmo em meio à recuperação financeira pós-desastre — gancho direto para aproximar a conversa de patrocínio cultural/ESG.</p></article><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://www.otempo.com.br/sada-50-anos/2026/8/4/futuro-do-grupo-sada-passa-por-negocios-verdes-e-diversificacao">Grupo Sada cria diretoria de sustentabilidade e mira diversificação para negócios verdes</a></h3><p class="resumo">Em cobertura especial dos 50 anos, o Grupo Sada revelou plano de diversificação que deve levar a logística — seu negócio original — a representar apenas 30% das atividades até a próxima década, com o restante distribuído entre indústria, bioenergia e novos negócios verdes. A companhia criou em 2025 uma Diretoria de Sustentabilidade, liderada por Luisa Medioli, institucionalizando a agenda ESG na governança do grupo — sinal de espaço orçamentário crescente para iniciativas ESG e patrocínio.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-08-19</span></footer>
+</body></html>
