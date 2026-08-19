@@ -1,3 +1,11 @@
+# Credenciais — completando o bloco em 19/08/2026. Este repositório é o único PÚBLICO,
+# e era justamente o que não cobria credentials.json / token.json.
+credentials.json
+token.json
+secrets.env
+**/secrets.env
+!**/secrets.env.example
+
 # Segredo — NUNCA versionar. Este repositório é PÚBLICO por definição.
 .env
 .env.*
