@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-22</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-22</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Globo Rural</div><h2><a href="https://globorural.globo.com/especiais/fazenda-sustentavel/noticia/2026/08/em-dois-anos-8percent-do-gado-vendido-a-frigorificos-na-amazonia-teve-problema-socioambiental.ghtml">Auditoria do TAC da Carne aponta irregularidade em 7,51% do gado comprado direto na Amazônia</a></h2><p class="resumo">A nova auditoria do TAC da Carne, acordo que impede frigoríficos de comprar boi de área irregular na Amazônia, mostrou que 7,51% do gado adquirido diretamente do criador teve algum problema socioambiental — quase o dobro do limite de 4% tolerado pelo Ministério Público Federal. Os grandes frigoríficos avaliados (JBS, Minerva e Frigol) ficaram próximos de 100% de conformidade; o índice pior reflete o sistema como um todo, incluindo fornecedores que não entregaram auditoria. A partir de janeiro de 2027, o controle passa a alcançar também as compras indiretas de gado.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,144</div><div class="var down">▼ -1.04%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,883</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">171.032</div><div class="var up">▲ +1.85%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.674</div><div class="var up">▲ +0.43%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.180</div><div class="var up">▲ +0.43%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/agro/cosan-vai-deixar-bolsa-de-nova-york/">Cosan notifica a NYSE sobre saída voluntária da bolsa de Nova York</a></h3><p class="resumo">A Cosan comunicou à Bolsa de Nova York o desligamento voluntário de seus ADSs (recibos de ações), com último pregão previsto para 18 de setembro. As ações da companhia continuarão sendo negociadas normalmente no Novo Mercado da B3, em São Paulo. A medida reduz custos regulatórios de manter listagem dupla e acompanha um movimento recente de outras empresas brasileiras de concentrar a negociação no mercado doméstico.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-21082026/">Ibovespa fecha em forte alta de 1,85% na sexta-feira, puxado pelos bancos</a></h3><p class="resumo">O Ibovespa encerrou a sessão de sexta-feira (21) aos 171.032 pontos, alta de 1,85%, a melhor sessão da recuperação recente do índice, com ganho semanal acumulado de 2,45%. Bradesco (+3,1%), Itaú (+2,9%) e Banco do Brasil (+2,2%) lideraram as altas em meio a forte volume negociado. O dólar recuou 1,04% ante o real, fechando a R$ 5,14. Petrobras foi a exceção, encerrando estável.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Globo Rural</div><h3><a href="https://globorural.globo.com/especiais/fazenda-sustentavel/noticia/2026/08/em-dois-anos-8percent-do-gado-vendido-a-frigorificos-na-amazonia-teve-problema-socioambiental.ghtml">Auditoria do TAC da Carne aponta irregularidade em 7,51% do gado comprado direto na Amazônia</a></h3><p class="resumo">A nova auditoria do TAC da Carne, acordo que impede frigoríficos de comprar boi de área irregular na Amazônia, mostrou que 7,51% do gado adquirido diretamente do criador teve algum problema socioambiental — quase o dobro do limite de 4% tolerado pelo Ministério Público Federal. Os grandes frigoríficos avaliados (JBS, Minerva e Frigol) ficaram próximos de 100% de conformidade; o índice pior reflete o sistema como um todo, incluindo fornecedores que não entregaram auditoria. A partir de janeiro de 2027, o controle passa a alcançar também as compras indiretas de gado.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Globo Rural</div><h3><a href="https://globorural.globo.com/especiais/caminhos-da-safra/noticia/2026/08/cofco-embarca-primeira-grande-carga-de-sorgo-do-brasil-para-a-china.ghtml">Cofco embarca a primeira grande carga de sorgo brasileiro para a China</a></h3><p class="resumo">A trading Cofco International embarcou em Santos 69 mil toneladas de sorgo brasileiro no graneleiro Guoyuan 26, com destino ao porto chinês de Nansha, onde o grão vira ração animal e baijiu. É a primeira grande remessa do produto com protocolo sanitário assinado entre os dois países. O movimento decorre da disputa comercial entre China e Estados Unidos, maior exportador mundial de sorgo — dinâmica parecida com a que abriu o mercado chinês ao milho brasileiro em 2021.</p></article><article class="item"><div class="eyebrow fonte">Globo Rural</div><h3><a href="https://globorural.globo.com/agricultura/cana/noticia/2026/08/safra-de-cana-de-acucar-deve-crescer-47percent-em-202627-diz-conab.ghtml">Conab eleva projeção da safra de cana-de-açúcar 2026/27 para 705,2 milhões de toneladas</a></h3><p class="resumo">O segundo levantamento da Conab projetou a safra de cana 2026/27 em 705,2 milhões de toneladas, alta de 4,7% sobre o ciclo anterior, mas quase 4 milhões de toneladas abaixo da própria estimativa feita em abril. A área plantada ficou estável, em 9,1 milhões de hectares; o que recuou foi a produtividade por hectare. Na conta da usina, a produção de açúcar deve cair 2,9% e a de etanol de cana subir 9,7%.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Samarco</div><h3><a href="https://www.samarco.com/samarco-registra-recuperacao-de-23-nas-vendas-no-segundo-trimestre-enquanto-producao-segue-em-patamar-elevado/">Samarco recupera 23% nas vendas no 2º trimestre e mantém retomada operacional no cronograma</a></h3><p class="resumo">A Samarco registrou alta de 23% nas vendas de minério de ferro no 2T26 ante o trimestre anterior, com produção de 3,9 milhões de toneladas de pelotas e finos — 4% acima do 1T26. No acumulado do semestre, a produção soma 7,7 milhões de toneladas, 8% acima do mesmo período de 2025. A Fase 3 da retomada operacional segue no prazo, com 10,8% de avanço físico. Recuperação financeira consistente reabre espaço para pauta de patrocínio/ESG.</p></article><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://www.otempo.com.br/sada-50-anos/2026/8/4/grupo-sada-planeja-ter-70-das-atividades-em-novos-setores">Grupo Sada celebra 50 anos com plano de reduzir peso da logística para 30% das atividades até 2030</a></h3><p class="resumo">O Grupo Sada completou 50 anos em agosto investindo R$ 1,1 bilhão na expansão das plantas de etanol de milho em Jaíba (MG) e Montes Claros (GO), dentro de um ciclo recente de mais de R$ 1,3 bilhão em investimentos privados que incluiu também a maior recicladora integrada de veículos do país. O grupo, hoje dividido meio a meio entre logística e indústria/bioenergia, projeta que a logística caia para 30% das atividades até a próxima década. Expansão e diversificação financeira sinalizam apetite para novos compromissos institucionais.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-08-22</span></footer>
+</body></html>
