@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-24</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-24</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">CNN Brasil</div><h2><a href="https://www.cnnbrasil.com.br/economia/money/macroeconomia/defasagem-do-diesel-no-brasil-beira-os-r-3-e-pressiona-importadores/">Defasagem do diesel da Petrobras chega a 72% nas refinarias</a></h2><p class="resumo">Mesmo com a queda do petróleo Brent, a defasagem do diesel vendido pela Petrobras chegou a 72% em algumas refinarias, segundo dados da Abicom. No porto de Suape, o litro é vendido a R$ 5,44, cerca de R$ 2,27 abaixo do preço de paridade de importação, e na média das refinarias o combustível está cerca de 69% abaixo do preço internacional. O último reajuste da estatal foi em 1º de junho, quando o preço caiu R$ 0,35 por litro — a conta de repasse pressiona diesel, frete e, por tabela, o preço dos alimentos.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,143</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 6,006</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">170.449</div><div class="var up">▲ +1.50%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.674</div><div class="var up">▲ +0.43%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.180</div><div class="var up">▲ +0.43%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Metrópoles</div><h3><a href="https://www.metropoles.com/brasil/uniao-volta-a-negar-responsabilidade-em-operacao-ligada-ao-brb">Governo mantém apoio ao BRB, mas descarta aval da União no empréstimo</a></h3><p class="resumo">A Advocacia-Geral da União e o Ministério da Fazenda afirmaram na sexta-feira (21/8) que seguem dispostos a colaborar com a capitalização do BRB (Banco de Brasília), desde que a operação não tenha aval nem garantia financeira da União. O governo do Distrito Federal e bancos privados pressionam pela garantia federal ao empréstimo de até R$ 6,6 bilhões junto ao FGC. O banco ainda não publicou o balanço de 2025, o que mantém incerto o tamanho do rombo deixado pelo Banco Master.</p></article><article class="item"><div class="eyebrow fonte">Gazeta do Povo</div><h3><a href="https://www.gazetadopovo.com.br/economia/gol-preve-forte-reajuste-passagens-disparada-combustivel/">Abra, dona de Gol e Avianca, vê espaço para alta de até 20% nas passagens</a></h3><p class="resumo">A Abra, holding controladora da Gol e da Avianca, prevê repassar até 100% do aumento do combustível de aviação às tarifas até o fim de 2026, com alta de até 20% no período. Segundo o CFO Manuel Irarrázaval, a demanda segue firme mesmo com passagens mais caras, o que abre espaço para novos reajustes nos próximos meses. O custo do querosene de aviação praticamente dobrou no trimestre por causa da guerra no Oriente Médio.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Patrocínio.org.br</div><h3><a href="https://www.patrocinio.org.br/post/petrobras-abre-sele%C3%A7%C3%A3o-cultural-2026-com-r-270-milh%C3%B5es-em-patroc%C3%ADnio">Petrobras abre Seleção Cultural 2026 com R$ 270 milhões em patrocínio</a></h3><p class="resumo">A Petrobras lançou a Seleção Petrobras Cultural 2026, com R$ 270 milhões destinados a projetos culturais via Lei Rouanet em todo o país. O edital tem 11 modalidades de patrocínio, incluindo duas categorias novas: Produção de Jogos e Incubação e Desenvolvimento Cultural. As inscrições seguem até 30 de setembro pela plataforma Prosas, com garantia de que cada uma das cinco regiões do país receba ao menos 15% do orçamento total.</p></article><article class="item"><div class="eyebrow fonte">IstoÉ Dinheiro</div><h3><a href="https://istoedinheiro.com.br/edital-ambev-economia-criativa">Ambev abre Edital Brasilidades 2026 com R$ 67 milhões para cultura e esporte</a></h3><p class="resumo">A Ambev lançou a segunda edição do Edital Brasilidades, com R$ 67 milhões para projetos de cultura, esporte e economia criativa — 67,5% a mais que a primeira edição. As inscrições vão até 30 de setembro pela plataforma Prosas e contemplam música, dança, audiovisual, literatura, cultura urbana, gastronomia e iniciativas ligadas à Copa do Mundo de 2026. Podem participar pessoas físicas e jurídicas, com ou sem fins lucrativos, com projetos já aprovados em leis estaduais de incentivo.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Canal Rural</div><h3><a href="https://www.canalrural.com.br/economia/balanca-comercial-registra-superavit-de-us-6353-milhoes-na-segunda-semana-de-agosto">Agropecuária puxa balança comercial com alta de 10,4% em agosto</a></h3><p class="resumo">A balança comercial brasileira registrou superávit de US$ 3,05 bilhões até a segunda semana de agosto, alta de 7% ante o mesmo período de 2025. O setor agropecuário liderou o avanço, com crescimento de 10,4% e US$ 3,49 bilhões movimentados no período. O MDIC revisou para cima a projeção de superávit comercial de 2026, de US$ 72,1 bilhões para US$ 90 bilhões.</p></article><article class="item"><div class="eyebrow fonte">UDOP</div><h3><a href="https://www.udop.com.br/noticia/2026/8/19/graos-anec-corta-exportacao-de-soja-para-10-56-mi-t-em-agosto-e-eleva-milho-para-5-63-mi-t">Anec reduz estimativa de exportação de soja em agosto e eleva a de milho</a></h3><p class="resumo">A Anec cortou a projeção de exportação de soja do Brasil em agosto para 10,56 milhões de toneladas, ainda 30% acima do mesmo mês de 2025, e elevou a estimativa para o milho, para 5,63 milhões de toneladas. O preço da soja (Cepea/Paranaguá) renovou a máxima de 2026, no maior patamar desde 2023, enquanto o milho acumula leve queda no ano.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Editora Brasil Energia</div><h3><a href="https://brasilenergia.com.br/energia/gas/compagas-fecha-acordo-para-ampliar-gas-no-transporte-pesado">Compagás fecha acordo para ampliar gás natural e biometano no transporte pesado</a></h3><p class="resumo">A Compagás e a Cia Verde firmaram parceria para ampliar o uso de gás natural e biometano no transporte rodoviário de cargas, com a instalação de um ponto de abastecimento na sede da companhia em Araucária (PR). A Cia Verde já opera 36 caminhões a gás e planeja chegar a 100 veículos na renovação da frota, como parte de sua estratégia de transição energética — sinal de apetite por pauta ESG que pode render gancho de patrocínio.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-08-24</span></footer>
+</body></html>
