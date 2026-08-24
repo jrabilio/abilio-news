@@ -198,11 +198,28 @@ def main() -> int:
         print(f"ERRO de rede ao enviar WhatsApp: {exc}", file=sys.stderr)
         return 1
 
-    # CallMeBot devolve texto/HTML. 200 normalmente = enfileirado com sucesso.
-    if resp.status_code == 200:
+    # O CallMeBot devolve HTML e responde 200 TAMBÉM quando recusa a mensagem —
+    # chave inválida, número não autorizado, limite atingido. Confiar só no
+    # status code fez a rotina reportar "Aviso enviado" em 21, 22 e 23/08
+    # enquanto nada chegava, e o problema passou três dias invisível porque o
+    # resumo final dizia que tinha dado certo.
+    #
+    # A confirmação real é a resposta dizer que a mensagem foi enfileirada.
+    corpo = (resp.text or "").strip()
+    enfileirada = "queued" in corpo.lower() or "message sent" in corpo.lower()
+
+    if resp.status_code == 200 and enfileirada:
         print("Aviso enviado no WhatsApp.")
         return 0
-    print(f"ERRO CallMeBot (HTTP {resp.status_code}): {resp.text[:300]}", file=sys.stderr)
+
+    if resp.status_code == 200:
+        # O caso perigoso: aceito na aparência, recusado no conteúdo.
+        print("ERRO CallMeBot: HTTP 200 mas a resposta não confirma envio — "
+              "a mensagem NÃO foi entregue.", file=sys.stderr)
+        print(f"Resposta: {corpo[:400]}", file=sys.stderr)
+        return 1
+
+    print(f"ERRO CallMeBot (HTTP {resp.status_code}): {corpo[:300]}", file=sys.stderr)
     return 1
 
 
