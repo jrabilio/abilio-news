@@ -72,6 +72,13 @@ def public_base() -> str:
     return ""
 
 
+def _formata_destaque(titulo_secao: str, titulo_item: str, largura_item: int | None) -> str:
+    """'• Seção: Item', truncando o item (não a seção) quando largura_item é dada."""
+    if largura_item is not None and len(titulo_item) > largura_item:
+        titulo_item = titulo_item[: max(largura_item - 1, 1)].rstrip() + "…"
+    return f"• {titulo_secao}: {titulo_item}"
+
+
 def compor_de_edicao(caminho: str) -> str:
     """Monta a mensagem-resumo a partir de um edition.json."""
     with open(caminho, encoding="utf-8") as fh:
@@ -114,31 +121,40 @@ def compor_de_edicao(caminho: str) -> str:
     if ed.get("manchete", {}).get("titulo"):
         linhas += [f'🔦 {ed["manchete"]["titulo"]}', ""]
 
-    destaques = []
+    pares = []
     for sec in ed.get("secoes", []):
         itens = sec.get("itens", [])
         if itens:
-            destaques.append(f'• {sec["titulo"]}: {itens[0]["titulo"]}')
+            pares.append((sec["titulo"], itens[0]["titulo"]))
 
-    # Nunca cortar no meio de uma linha: só inclui destaques inteiros que
-    # ainda cabem no orçamento de caracteres. O link já enviado no topo
-    # garante que o leitor acessa o resto mesmo se algo ficar de fora aqui.
+    # O pedido é trazer o item de verdade, não uma contagem: em vez de
+    # cortar seções inteiras e assinalar "(+N seção(ões) no link acima)",
+    # encurta o título do item até a lista inteira caber no orçamento.
+    # O link já enviado no topo cobre o que ainda assim não couber.
     base = "\n".join(linhas)
-    if destaques:
-        # Tenta o máximo de destaques e vai cedendo até caber. Medir com o
-        # aviso "(+N)" já dentro é o ponto: acrescentá-lo depois da conferência
-        # estourava o teto pelo tamanho do próprio aviso -- a mensagem de
-        # 21/07 dava 608 caracteres com MAX_MSG_CHARS em 600.
-        for cabidos in range(len(destaques), -1, -1):
-            bloco = ["Nesta edição:"] + destaques[:cabidos]
-            if cabidos < len(destaques):
-                bloco.append(f"(+{len(destaques) - cabidos} seção(ões) no link acima)")
+    if pares:
+        cabecalho = "Nesta edição:"
+        for largura in (None, 120, 90, 70, 55, 45, 35, 28, 22, 18):
+            bloco = [cabecalho] + [
+                _formata_destaque(sec, item, largura) for sec, item in pares
+            ]
             tentativa = "\n".join([base] + bloco)
             if len(tentativa) <= MAX_MSG_CHARS:
                 base = tentativa
                 break
-        # Nenhuma combinação coube: manchete e link vão sozinhos, que é o
-        # essencial. O leitor alcança o resto pelo link.
+        else:
+            # Mesmo no truncamento mínimo não coube tudo: inclui quantas
+            # linhas inteiras couberem (na ordem das seções) em vez de
+            # listar uma contagem. Manchete e link já garantem o essencial.
+            bloco = [cabecalho]
+            for sec, item in pares:
+                candidato = _formata_destaque(sec, item, 18)
+                tentativa = "\n".join([base] + bloco + [candidato])
+                if len(tentativa) > MAX_MSG_CHARS:
+                    break
+                bloco.append(candidato)
+            if len(bloco) > 1:
+                base = "\n".join([base] + bloco)
 
     return base.strip()
 

@@ -117,6 +117,16 @@ em stderr em vez de mandar em silêncio sem link.
 _(Atualize: queries que trazem notícia fresca de verdade, veículos mais confiáveis por
 seção, sites que exigem tratamento especial no scrape, etc.)_
 
+- **2026-08-24:** A estratégia de 2026-08-14 (cortar seções inteiras e assinalar
+  "(+N seção(ões) no link acima)" quando a lista não coubesse) resolvia o
+  estouro do teto, mas o Abilio não queria uma contagem no fim da mensagem —
+  queria os itens de verdade. Trocado por truncamento do **título do item**
+  (não da seção): `compor_de_edicao` tenta larguras decrescentes até a lista
+  inteira caber, cortando cada título com "…" em vez de omitir seções. Só se
+  nem o truncamento mínimo (18 caracteres) couber tudo é que alguma linha
+  fica de fora — e mesmo aí sem nota de contagem, o link no topo cobre o
+  resto. Dias fracos (poucas seções) não são afetados: continuam com o
+  título inteiro.
 - **2026-08-14:** `notify_whatsapp.py` chegou truncada no meio de uma palavra
   ("Lei Rouane...") num dia forte, com as 6 seções + carteira preenchidas —
   a mensagem tinha 1058 caracteres (1130 bytes UTF-8), e o corte aconteceu

@@ -39,10 +39,11 @@ morriam em `FileNotFoundError` por não criarem a pasta antes de escrever. Hoje 
 ferramenta nova que gere arquivo, criar o diretório.
 
 **A mensagem do WhatsApp tem teto.** O gateway do CallMeBot corta acima de ~750 caracteres sem
-avisar. `tools/notify_whatsapp.py` limita em 600, só inclui destaque inteiro que caiba, e sinaliza
-`(+N seção(ões) no link acima)` — **medindo o orçamento com esse aviso já dentro**. A primeira
-versão media antes de anexá-lo e estourava pelo tamanho do próprio aviso. Conferir com
-`--dry-run`, nunca disparando de verdade.
+avisar. `tools/notify_whatsapp.py` limita em 600 e, se a lista "Nesta edição" não couber inteira,
+**encurta o título do item** (com "…") em vez de cortar seções e assinalar uma contagem tipo
+"(+N seção(ões) no link acima)" — o pedido é o item de verdade na mensagem, não um número. Ver
+aprendizado de 2026-08-24 no [SOP](workflows/gerar_newsletter.md). Conferir com `--dry-run`, nunca
+disparando de verdade.
 
 ## Onde o link é resolvido
 
