@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-25</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-25</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Seu Dinheiro</div><h2><a href="https://www.seudinheiro.com/2026/empresas/braskem-protocola-pedido-de-recuperacao-extrajudicial-kaes/">Braskem entra com recuperação extrajudicial para renegociar R$ 56,48 bi em dívidas</a></h2><p class="resumo">A Braskem protocolou nesta segunda-feira (24/08) um pedido de recuperação extrajudicial na 2ª Vara de Falências e Recuperações Judiciais de São Paulo para reorganizar cerca de US$ 10,9 bilhões (R$ 56,48 bi) em dívidas financeiras sem garantia. A petroquímica entrou no processo com apoio de credores que representam 39,6% desse valor, acima do mínimo de um terço exigido por lei. Agora tem 90 dias para conseguir adesão de credores que somem mais da metade da dívida incluída no plano.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,15</div><div class="var up">▲ +0.20%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">6,00</div><div class="var down">▼ -0.20%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">171.907</div><div class="var up">▲ +0.51%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.653</div><div class="var down">▼ -0.28%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">25.980</div><div class="var down">▼ -0.77%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/onde-investir/bolsa-pode-cair-35-em-dolar-apos-eleicao-sem-plano-fiscal-crivel-diz-morgan-stanley/">Morgan Stanley projeta queda de até 35% no Ibovespa em cenário fiscal adverso</a></h3><p class="resumo">O Morgan Stanley afirmou em relatório de 24/08 que o Ibovespa pode cair cerca de 35% em dólar (25% em reais) no cenário mais adverso pós-eleição, caso o próximo governo não apresente um plano fiscal crível. O banco avalia que o mercado hoje precifica uma hipótese negativa branda demais. No cenário pessimista, a economia cresceria apenas 0,2% e a Selic ficaria em 15,5%.</p></article><article class="item"><div class="eyebrow fonte">Brasil 247</div><h3><a href="https://www.brasil247.com/negocios/abecip-eleva-para-25-projecao-de-alta-do-credito-imobiliario/">Abecip eleva para 25% a projeção de crescimento do crédito imobiliário em 2026</a></h3><p class="resumo">A Abecip revisou para cima sua projeção de concessões de financiamento imobiliário em 2026, de 16% para 25% de alta ante 2025, puxada pela ampliação do orçamento do FGTS para habitação e por recursos do Fundo Social do Pré-Sal. A expectativa para a linha do Minha Casa Minha Vida saltou de 5% para 38% de crescimento no ano.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Startupz</div><h3><a href="https://www.startupz.com.br/artigo/start-growth-abre-batch-2026-e-vai-investir-r-5-milhoes-em-dez-startups-b2b-saas">Start Growth abre Batch 2026 e vai investir R$ 5 milhões em dez startups B2B SaaS</a></h3><p class="resumo">A gestora Start Growth abriu inscrições, até 28/08, para seu Batch 2026, que vai selecionar dez startups B2B SaaS com negócio validado e tração inicial. Cada uma é elegível a um cheque de até R$ 500 mil, somando R$ 5 milhões em aportes. O programa chega num momento de maior seletividade do venture capital brasileiro, com foco em unit economics consistente.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Forbes Brasil</div><h3><a href="https://forbes.com.br/forbes-agro/2026/08/mombak-entrega-creditos-de-carbono-a-compradores-dois-anos-antes-do-prazo/">Mombak entrega créditos de carbono a Google e McKinsey dois anos antes do prazo</a></h3><p class="resumo">A startup brasileira de reflorestamento Mombak anunciou em agosto a entrega antecipada — mais de dois anos antes do previsto — de seus primeiros créditos de remoção de carbono a compradores como Google, McKinsey, McLaren Racing, Bain &amp; Company, Climeworks e Union Square Ventures. O marco é visto como reforço de confiança num mercado voluntário de carbono ainda marcado por dúvidas sobre qualidade de projetos e atrasos de entrega.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Prefeitura de Ribeirão Preto</div><h3><a href="https://www.ribeiraopreto.sp.gov.br/portal/noticia/secretaria-da-cultura-e-turismo-lanca-edital-de-r-13-milhao-para-fomentar-projetos-culturais-em-ribe">Ribeirão Preto lança edital de R$ 1,3 milhão para projetos culturais, com prazo até 26/08</a></h3><p class="resumo">A Secretaria da Cultura e Turismo de Ribeirão Preto (SP) abriu edital de fomento de R$ 1,3 milhão para projetos culturais, com inscrições exclusivamente pela plataforma CriArte até 26 de agosto. O edital contempla artes visuais, audiovisual, dança, literatura, música, patrimônio e teatro.</p></article><article class="item"><div class="eyebrow fonte">Prefeitura de São Paulo</div><h3><a href="https://prefeitura.sp.gov.br/web/se/w/prefeitura-de-s%C3%A3o-paulo-abre-inscri%C3%A7%C3%B5es-para-edital-do-programa-municipal-de-apoio-a-projetos-culturais-promac-2026">São Paulo abre inscrições do Promac 2026 para projetos culturais incentivados</a></h3><p class="resumo">A Prefeitura de São Paulo abriu inscrições para o edital do Programa Municipal de Apoio a Projetos Culturais (Promac) 2026, que abrange artes visuais, música, teatro, literatura, patrimônio e audiovisual. Empresas e contribuintes podem atuar como incentivadores, destinando parte do ISS ou IPTU a propostas aprovadas.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Notícias Agrícolas</div><h3><a href="https://www.noticiasagricolas.com.br/noticias/carnes/422211-brasil-fica-fora-de-lista-da-ue-para-exportacao-de-produtos-de-origem-animal-sob-novas-regras-de-antimicrobianos.html">Brasil fica fora de lista da UE para exportar produtos de origem animal sob novas regras</a></h3><p class="resumo">A partir de 3 de setembro, boa parte da proteína animal brasileira pode perder acesso ao mercado europeu por causa de novas regras sobre uso de antimicrobianos na criação. A vistoria da UE que poderia manter o acesso começa nesta semana e só termina em 4 de setembro — um dia depois do prazo europeu — e o colegiado que decide o tema só se reúne no fim do ano.</p></article><article class="item"><div class="eyebrow fonte">BiodieselBR</div><h3><a href="https://www.biodieselbr.com/noticias/materia-prima/macauba/acelen-agripark-obtem-avancos-na-viabilizacao-do-plantio-comercial-da-macauba-210826">Acelen aposta R$ 15,5 bilhões em macaúba para produzir combustível de aviação na Bahia</a></h3><p class="resumo">A Acelen Renováveis avança no projeto de transformar óleo de macaúba em combustível sustentável de aviação, com aporte de R$ 15,5 bilhões numa fábrica baiana que liga em 2029. O plantio comercial da palmeira ainda está no início, então a produção vai começar com óleo de fritura e de soja importados enquanto os pés de macaúba amadurecem. O decreto que criou o combustível verde de aviação ainda não definiu quem banca o incentivo.</p></article>
+<footer><span>Radar Diário</span><span>2026-08-25</span></footer>
+</body></html>
