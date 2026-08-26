@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-26</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-26</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">CNN Brasil</div><h2><a href="https://www.cnnbrasil.com.br/economia/money/mercado/acoes-da-braskem-tem-forte-queda-apos-pedido-de-recuperacao-extrajudicial/">Braskem pede recuperação extrajudicial de R$ 56 bilhões e é excluída do Ibovespa</a></h2><p class="resumo">O conselho da Braskem aprovou o pedido de recuperação extrajudicial para renegociar cerca de R$ 56 bilhões (US$ 10,9 bilhões) em dívidas financeiras, em meio a crise ambiental e sucessivos rebaixamentos de crédito. As ações (BRKM5) caíram mais de 13% na sessão de terça-feira, e a B3 retirou os papéis do Ibovespa, IBrX, IBrX-50 e Small Caps a partir de 25 de agosto. A empresa afirma que o processo afeta apenas obrigações financeiras, mantendo normalmente os contratos com fornecedores e clientes. Caso as negociações não avancem, o processo pode ser convertido em recuperação judicial.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,141</div><div class="var down">▼ -0.23%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 6,013</div><div class="var up">▲ +0.06%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">174.577</div><div class="var up">▲ +1.55%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.677</div><div class="var up">▲ +0.32%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.151</div><div class="var up">▲ +0.66%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-25082026/">Ibovespa fecha na 5ª alta seguida puxado por Vale e bancos; dólar cai a R$ 5,14</a></h3><p class="resumo">O Ibovespa avançou 1,55% nesta terça-feira (25/8), aos 174.576,80 pontos, marcando a quinta sessão consecutiva de alta mesmo com saída recorde de investidores estrangeiros. Vale subiu 2,04% com planos de expansão de capacidade produtiva, enquanto o setor bancário liderou os ganhos: Banco do Brasil disparou 5,22%, Bradesco avançou 3,13% e Itaú subiu 1,83%. O dólar caiu 0,25%, fechando a R$ 5,139, favorecido pelo recuo dos treasuries americanos. Na ponta negativa, Petrobras recuou 1,80% com a queda do petróleo.</p></article><article class="item"><div class="eyebrow fonte">TipRanks</div><h3><a href="https://www.tipranks.com/news/company-announcements/wetzel-expands-automotive-aluminum-footprint-with-martinrea-honsel-brasil-acquisition">Wetzel adquire 100% da Martinrea Honsel Brasil e amplia atuação em alumínio automotivo</a></h3><p class="resumo">A Wetzel S.A., por meio de sua subsidiária Wetzel Investimentos e Participações, anunciou a aquisição de 100% das quotas da Martinrea Honsel Brasil, fabricante de peças de alumínio de alta complexidade para montadoras, sediada em Monte Mor (SP). A operação foi comunicada como fato relevante aos reguladores do mercado de capitais. A empresa adquirida seguirá operando como sociedade própria, com patrimônio e operações independentes, adotando novo nome corporativo após os trâmites societários. A administração da Wetzel espera gerar valor de longo prazo a partir de sinergias em expertise de alumínio e capacidade industrial.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Bloomberg Línea</div><h3><a href="https://www.bloomberglinea.com.br/startups/rodadas-da-semana-flash-capta-r-150-milhoes-para-acelerar-expansao/">Flash capta R$ 150 milhões em rodada Série D para acelerar expansão em RH e benefícios</a></h3><p class="resumo">A Flash, plataforma de gestão de RH, benefícios e gastos corporativos, captou R$ 150 milhões em rodada Série D com participação de investidores já presentes no cap table, Battery Ventures e Kevin Efrusy, além da entrada do fundo Endeavor Catalyst. Os recursos serão direcionados a inteligência artificial, novos produtos, expansão comercial e fortalecimento da estrutura de capital, com previsão de investimento próprio adicional de R$ 400 milhões em 2026. A empresa cresceu 100% em receita e base de usuários em 2025 e se posiciona hoje como a quinta maior do mercado brasileiro de benefícios corporativos.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Claude (Anthropic)</div><h3><a href="https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it">Anthropic unifica memória do Claude entre chat e Cowork</a></h3><p class="resumo">A Anthropic anunciou, em 25 de agosto, que a memória do Claude passa a funcionar de forma unificada entre as conversas de chat e o ambiente colaborativo Cowork, eliminando a necessidade de repetir contexto entre os dois modos. Por padrão, a ferramenta não armazena temas sensíveis como saúde, etnia, religião, política e identidade de gênero, mas o usuário pode habilitar esse registro nas configurações. É possível ver, editar ou apagar qualquer item memorizado, tópico por tópico, e o aplicativo avisa sempre que um assunto sensível é salvo.</p></article><article class="item"><div class="eyebrow fonte">Febraban</div><h3><a href="https://portal.febraban.org.br/noticia/4485/pt-br/">Febraban Tech 2026 reúne presidentes de bancos para debater agentes de IA</a></h3><p class="resumo">O painel de abertura do Febraban Tech 2026, em 24 de agosto em São Paulo, reuniu os presidentes de Itaú Unibanco, Banco do Brasil, Bradesco, Nubank, Santander Brasil, Caixa e BTG Pactual para discutir o avanço de agentes de inteligência artificial no setor financeiro. O tema da 36ª edição do evento, &#x27;Agentes Inteligentes, liderança humana&#x27;, tratou de sistemas capazes de executar processos e agir com maior autonomia dentro dos bancos. Os executivos afirmaram que a IA deixou de ser promessa e passou a integrar decisões operacionais do dia a dia das instituições. O evento seguiu até o dia 26 de agosto no Distrito Anhembi.</p></article><article class="item"><div class="eyebrow fonte">OpenAI Help Center</div><h3><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">OpenAI retira modelo o3 do ChatGPT nesta quarta-feira</a></h3><p class="resumo">A OpenAI encerrou nesta quarta-feira, 26 de agosto, a disponibilidade do modelo o3 dentro do ChatGPT, ao fim de um período de descontinuação de 90 dias anunciado previamente pela empresa. Conversas antigas que usavam o o3 passam a ser direcionadas automaticamente para um modelo da família GPT-5. A mudança vale apenas para o aplicativo ChatGPT: usuários da API que já integraram o o3 continuam podendo utilizá-lo até que uma descontinuação separada seja anunciada. A retirada faz parte de uma limpeza contínua de modelos mais antigos e menos usados no aplicativo.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Agência Senado</div><h3><a href="https://www12.senado.leg.br/radio/1/noticia/2026/08/24/ccj-pode-votar-plano-de-acoes-para-zerar-desmatamento">CCJ do Senado avalia plano para zerar desmatamento no Brasil</a></h3><p class="resumo">A Comissão de Constituição e Justiça do Senado analisou, em 24 de agosto, o PL 6.616/2025, do senador Beto Faro (PT-PA), que incorpora à Política Nacional de Mudança do Clima um mapa de transição para uma economia de baixo carbono e desmatamento zero. A proposta transforma em política de Estado iniciativas apresentadas pelo Brasil na COP30, em Belém, que não haviam sido formalmente incorporadas aos textos finais da conferência. O texto prevê financiamento de tecnologias limpas e fiscalização ambiental, com o objetivo de orientar o planejamento de longo prazo do país para reduzir emissões e combater o desmatamento, em linha com o Acordo de Paris.</p></article><article class="item"><div class="eyebrow fonte">France24 (Bloomberg)</div><h3><a href="https://www.france24.com/en/live-news/20260821-china-mulls-bid-to-host-2028-un-climate-talks-sources">China avalia disputar sede da COP33 de 2028</a></h3><p class="resumo">Segundo apuração da Bloomberg, o governo chinês discute internamente uma possível candidatura para sediar a COP33, em 2028, com conversas em estágio inicial envolvendo o Ministério das Relações Exteriores e autoridades ambientais do país. A possibilidade ganhou força depois que a Índia retirou sua proposta de sediar o evento em abril, conferência que reuniu mais de 40 mil pessoas na edição anterior, realizada em Belém. Qualquer candidatura chinesa ainda depende de aval das instâncias mais altas do governo do país, que vem sinalizando interesse em ampliar sua influência na governança climática global.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Secretaria da Cultura do RS</div><h3><a href="https://cultura.rs.gov.br/edital-da-lic-para-eventos-culturais-do-1-semestre-de-2027-esta-com-inscricoes-abertas">RS abre edital da Lei de Incentivo à Cultura para eventos do 1º semestre de 2027</a></h3><p class="resumo">A Secretaria da Cultura do Rio Grande do Sul publicou o Edital SEDAC nº 27/2026 da Lei de Incentivo à Cultura (LIC), voltado a eventos culturais programados entre janeiro e junho de 2027. Serão selecionados 53 projetos, que passam a poder captar recursos de empresas patrocinadoras mediante abatimento no ICMS devido ao estado. As inscrições, feitas pela plataforma Pró-Cultura, seguem abertas até 30 de setembro de 2026, às 16h59. O edital não fixa um valor total de investimento, apenas o número de vagas por segmento cultural.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Folha Agrícola</div><h3><a href="https://folhaagricola.com.br/2026/08/24/nova-cota-dos-eua-pode-beneficiar-carne-brasileira/">Nova cota dos EUA para carne moída pode beneficiar exportações brasileiras</a></h3><p class="resumo">O governo dos Estados Unidos abriu uma janela de 90 dias para importar até 300 mil toneladas de carne bovina destinada à produção de carne moída sem cobrança da tarifa extracota. Segundo estimativas do setor, o Brasil pode conquistar entre 90 mil e 120 mil toneladas dessa cota, caso obtenha de 30% a 40% do volume total liberado. Atualmente a carne brasileira exportada aos EUA integra uma cota compartilhada que se esgota rapidamente, fazendo com que embarques adicionais paguem tarifa extra de 26,4%. A Associação Brasileira das Indústrias Exportadoras de Carnes (Abiec) avalia a medida como positiva, mas diz aguardar regulamentação oficial sobre critérios e países contemplados.</p></article><article class="item"><div class="eyebrow fonte">Bloomberg Línea</div><h3><a href="https://www.bloomberglinea.com.br/agro/chuvas-no-brasil-reduzem-oferta-de-cafe-premium-e-pressionam-starbucks-lavazza-e-illy/">Chuvas no Cerrado Mineiro reduzem oferta de café premium e pressionam Starbucks, Lavazza e Illy</a></h3><p class="resumo">Chuvas intensas em junho e julho durante a colheita no Cerrado Mineiro derrubaram para cerca de metade do normal a proporção de grãos de café que atendem ao padrão de qualidade exigido pela bolsa de Nova York. O problema afeta compradores de café fino como Starbucks, Lavazza e Illy, que disputam um lote menor de grãos premium. Com isso, o café arábica subiu quase 6% em um dia em Nova York, também influenciado pelo ritmo lento da colheita e pela retenção de vendas por parte dos produtores.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Mais Minas</div><h3><a href="https://maisminas.org/samarco-completa-49-anos-operando-a-60-e-investe-r-138-bilhoes-para-chegar-a-capacidade-total-em-2028/">Samarco completa 49 anos e anuncia investimento de R$ 13,8 bilhões para retomar capacidade total até 2028</a></h3><p class="resumo">A Samarco completou 49 anos de operação em 24 de agosto, marco celebrado durante sua participação na Exposibram 2026, em Belo Horizonte (24 a 27 de agosto). A empresa opera hoje a cerca de 60% da capacidade instalada e prevê investir R$ 13,8 bilhões — o maior ciclo de investimentos de sua história — para voltar a operar em capacidade plena a partir de 2028. O ciclo de expansão deve gerar até 12,9 mil postos de trabalho até 2031, com impacto em fornecedores e arrecadação em Mariana e Ouro Preto (MG). Gancho de FUP: maior ciclo de investimentos da história da empresa, associado a um evento setorial de grande visibilidade — janela para pauta de patrocínio institucional ou de marca junto à companhia.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-08-26</span></footer>
+</body></html>
