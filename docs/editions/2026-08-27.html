@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-27</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-27</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Bloomberg Línea</div><h2><a href="https://www.bloomberglinea.com.br/negocios/vibra-adquire-50-restantes-da-comerc-por-r-35-bi-e-avanca-em-transicao-energetica/">Vibra antecipa e conclui compra dos 50% restantes da Comerc Energia por R$ 3,5 bi</a></h2><p class="resumo">A Vibra Energia antecipou a compra dos 50% restantes da Comerc Energia por R$ 3,525 bilhões, em operação inicialmente prevista apenas para 2026 em diante. Com o negócio, a Comerc passa a ser subsidiária integral da Vibra, consolidando a plataforma multienergia da companhia — que já detinha os outros 50% da Comerc desde 2022.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,15</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 6,01</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">174.586</div><div class="var up">▲ +0.01%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.676</div><div class="var down">▼ -0.02%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.130</div><div class="var down">▼ -0.08%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">TELETIME</div><h3><a href="https://teletime.com.br/25/08/2026/desktop-98-milhoes-30-fasternet/">Desktop compra os 30% restantes da Fasternet por R$ 98 milhões</a></h3><p class="resumo">A Desktop (DESK3) fechou acordo em 25 de agosto para comprar a fatia de 30% da Fasternet ainda em mãos de acionista minoritário, por R$ 98 milhões. Com isso, passa a deter 100% da provedora, que atua em cerca de 40 cidades do interior de São Paulo, como Sorocaba e Piracicaba. A Desktop já havia comprado os 70% iniciais em 2023, por R$ 209 milhões.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/business/com-divida-de-r-265-milhoes-dono-do-habibs-anuncia-recuperacao-judicial/">Habib&#x27;s entra em recuperação judicial com dívida de R$ 265 milhões</a></h3><p class="resumo">O Grupo Gennius, dono das marcas Habib&#x27;s, Ragazzo e Tendal, pediu recuperação judicial em 24 de agosto, com dívida declarada de R$ 265,2 milhões, aceita pela 1ª Vara de Falências e Recuperações Judiciais de São Paulo. A operação reúne 119 lojas Habib&#x27;s, 26 unidades Ragazzo e seis churrascarias Tendal. O grupo tem 60 dias, sem prorrogação, para apresentar um plano de reestruturação.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/inteligencia-artificial/primero-capta-r-62-mi-para-levar-ia-a-grandes-empresas-na-america-latina-incluindo-smart-fit/">Primero capta R$ 62 milhões para levar IA a grandes empresas na América Latina</a></h3><p class="resumo">A startup Primero, que usa inteligência artificial para conectar sistemas como ERP, CRM e ferramentas financeiras em grandes empresas latino-americanas, captou R$ 62 milhões (US$ 12 milhões) em rodada seed anunciada em 25 de agosto. A rodada foi colideração por Kaszek e General Catalyst, com participação de Definition, Conviction, 8VC e investidores-anjo ligados a FEMSA e Bimbo. Entre os clientes está a operação mexicana da rede Smart Fit.</p></article><article class="item"><div class="eyebrow fonte">Startups.com.br</div><h3><a href="https://startups.com.br/negocios/speedbird-abre-serie-b-de-us-30m-para-ser-a-embraer-dos-drones/">Speedbird Aero busca Série B de US$ 30 milhões para expandir drones de entrega</a></h3><p class="resumo">A Speedbird Aero, fabricante brasileira de drones autônomos para entregas e logística, está captando uma rodada Série B de US$ 30 milhões, reportada em 10 de agosto, para acelerar a expansão nos Estados Unidos e na Europa e consolidar a liderança no Brasil. A empresa já soma mais de 43 mil entregas comerciais realizadas por drone.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Money Times</div><h3><a href="https://www.moneytimes.com.br/o-numero-que-importa-no-balanco-da-nvidia-nvda-saiba-o-que-esperar-dos-resultados-da-gigante-de-ia-rens/">Nvidia dobra receita e lucra US$ 59,7 bilhões no trimestre</a></h3><p class="resumo">A Nvidia registrou lucro líquido de US$ 59,7 bilhões no segundo trimestre fiscal, encerrado em 26 de julho, alta de 126% sobre um ano antes, com receita de US$ 96,2 bilhões, mais que o dobro do período anterior. A divisão de data centers, usada para treinar e operar sistemas de inteligência artificial, respondeu sozinha por US$ 89 bilhões do total. Para o próximo trimestre, a empresa projeta receita de US$ 108 bilhões, acima da estimativa dos analistas.</p></article><article class="item"><div class="eyebrow fonte">Olhar Digital</div><h3><a href="https://olhardigital.com.br/2026/08/20/inteligencia-artificial/brasil-anuncia-pacote-de-r-2-5-bilhoes-para-ia-e-supercomputador-no-rn/">Governo anuncia pacote de R$ 2,5 bilhões para infraestrutura de IA, com supercomputador no RN</a></h3><p class="resumo">O presidente Lula anunciou em 20 de agosto um pacote de R$ 2,5 bilhões para ampliar a infraestrutura brasileira de inteligência artificial. O destaque é um supercomputador de cerca de R$ 1 bilhão a ser instalado no Rio Grande do Norte, com desempenho de 7,2 mil petaflops em FP16. O pacote inclui ainda uma estrutura de computação avançada no Rio de Janeiro, via parceria entre a RNP e a chinesa Huawei, e uma infraestrutura de nuvem brasileira.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Ministério da Cultura</div><h3><a href="https://www.gov.br/cultura/pt-br/assuntos/noticias/minc-prorroga-periodo-de-inscricao-do-programa-rouanet-nordeste-ate-sexta-feira-5">MinC prorroga inscrições do Programa Rouanet Nordeste até 5 de setembro</a></h3><p class="resumo">O Ministério da Cultura prorrogou, por portaria de 20 de agosto, o prazo de inscrições do Programa Rouanet Nordeste até 5 de setembro. O edital destina ao menos R$ 40 milhões em patrocínios via Lei Rouanet para projetos culturais no Nordeste, além de municípios do norte de Minas Gerais e do Espírito Santo, com até R$ 1 milhão por projeto e ao menos 103 propostas a serem selecionadas. Inscrições gratuitas, pelo sistema Salic.</p></article><article class="item"><div class="eyebrow fonte">Ministério da Cultura</div><h3><a href="https://www.gov.br/cultura/pt-br/assuntos/noticias/rouanet-nas-favelas-2-minc-e-vale-lancam-nova-edicao-do-programa-com-investimento-de-r-10-milhoes-para-regioes-perifericas">MinC e Vale abrem inscrições do Rouanet nas Favelas 2, com R$ 10 milhões</a></h3><p class="resumo">O Ministério da Cultura e a Vale, em parceria com a Cufa, abriram em 15 de agosto as inscrições do programa Rouanet nas Favelas 2, com prazo até 13 de outubro. O programa destina ao menos R$ 10 milhões para selecionar pelo menos 50 propostas culturais em territórios de favelas e periferias de oito capitais, com até R$ 200 mil por projeto selecionado.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/agro/exclusivo-mosaic-preve-falta-de-fosfatados-no-brasil-a-partir-de-setembro/">Mosaic prevê falta de fosfatados no Brasil a partir de setembro</a></h3><p class="resumo">A Mosaic, maior fornecedora de fosfatado do país, avisou que o estoque formado no início do ano se esgota agora e que a falta de produto deve começar em setembro. A empresa já parou ou reduziu quase metade de suas fábricas no Brasil e colocou a unidade de Araxá à venda. A causa é a alta do enxofre, insumo usado para transformar rocha em fosfatado: metade do enxofre mundial passava pelo Estreito de Ormuz, hoje afetado por conflito, e seu preço subiu de um quinto para dois terços do valor de uma tonelada de MAP.</p></article><article class="item"><div class="eyebrow fonte">Globo Rural</div><h3><a href="https://globorural.globo.com/economia/noticia/2026/08/cmn-flexibiliza-regra-para-renegociacao-de-dividas-com-recursos-obrigatorios.ghtml">CMN libera bancos a usar até 40% do crédito rural obrigatório para renegociar dívidas</a></h3><p class="resumo">O Conselho Monetário Nacional decidiu, em 24 de agosto, liberar os bancos a usar até 40% dos recursos obrigatórios do crédito rural para rolar dívidas antigas de produtores, em vez de só emprestar dinheiro novo, com juro abaixo do praticado no mercado livre. A medida vale até 12 de novembro, com teto de 40% por agência. O volume total de crédito não aumenta: o mesmo montante que financiaria novas safras passa a poder cobrir também a renegociação de dívidas vencidas.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://www.otempo.com.br/minas-sa/2026/8/26/samarco-completa-49-anos">Samarco completa 49 anos e projeta R$ 13,8 bi para retomar 100% da produção</a></h3><p class="resumo">A Samarco completou 49 anos em 24 de agosto e iniciou a contagem regressiva para o cinquentenário, em 2027. A mineradora projeta investir R$ 13,8 bilhões em seu novo ciclo, um dos maiores do país atualmente, para retomar 100% da capacidade produtiva a partir de 2028. Também registrou alta de 8% na produção de minério de ferro no primeiro semestre — gancho institucional forte para pauta de patrocínio e reparação socioambiental.</p></article><article class="item"><div class="eyebrow fonte">Cenário Energia</div><h3><a href="https://cenarioenergia.com.br/2026/08/20/compagas-cia-verde-caminhoes-gas-biometano-parana/">Compagás fecha acordo para ampliar gás e biometano no transporte pesado</a></h3><p class="resumo">A Compagás fechou acordo com a Cia Verde para abastecimento privativo, prevendo a renovação da frota com até 100 novos caminhões a gás e biometano no Paraná, anunciado em 19 de agosto. A iniciativa integra o programa Corredores Sustentáveis da distribuidora paranaense, que amplia o fornecimento de gás ao longo de rodovias, ligando o ecossistema produtivo ao Porto de Paranaguá — sinal de expansão e agenda ESG ativa.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-08-27</span></footer>
+</body></html>
