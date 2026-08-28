@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-28</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-28</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Canal Rural</div><h2><a href="https://www.canalrural.com.br/economia/trump-assina-proclamacao-que-permite-compra-de-300-mil-t-de-carne-sem-tarifas/">Trump suspende por 90 dias tarifa sobre 300 mil toneladas de carne bovina brasileira</a></h2><p class="resumo">O governo americano assinou proclamação que permite a entrada de 300 mil toneladas de carne bovina brasileira nos Estados Unidos a partir de 1º de setembro, com suspensão por 90 dias da tarifa de importação de 26,4%. A carne terá de ser vendida com desconto obrigatório de 25%, e a Abiec, que comemorou a medida, reconheceu que ela não substitui o mercado chinês — que já levou 857 mil toneladas no ano contra 234 mil dos EUA, com a cota chinesa já 90% ocupada em 10 de agosto. Frigoríficos do Pará, fortemente dependentes da China, não têm habilitação para exportar aos EUA, mostrando que a abertura beneficia de forma desigual o setor.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,16</div><div class="var flat"> 0,00%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">6,02</div><div class="var flat"> 0,00%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">175.135</div><div class="var up">▲ +0.31%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.731</div><div class="var up">▲ +0.72%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.541</div><div class="var up">▲ +1.57%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Consultor Jurídico (Conjur)</div><h3><a href="https://conjur.com.br/2026-ago-27/jusbrasil-anuncia-aquisicao-do-minutaia/">Jusbrasil compra MinutaIA e reforça aposta em IA jurídica</a></h3><p class="resumo">O Jusbrasil, maior legal tech do Brasil, anunciou em 27/08 a aquisição da MinutaIA, startup de IA generativa especializada em documentos jurídicos que já havia gerado mais de 35 milhões de minutas. O valor da transação não foi divulgado; a MinutaIA seguirá operando com marca, produto e equipe independentes, e seu CEO, Caio Perona, torna-se sócio do Jusbrasil. Juntas, as companhias se aproximam de uma receita anual recorrente de R$ 1 bilhão, dos quais 85% vêm de produtos de IA.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/ibovespa-abertura-fechamento-27082026/">Ibovespa fecha em alta pelo sétimo pregão seguido, puxado por Petrobras</a></h3><p class="resumo">O Ibovespa fechou a quinta-feira (27/08) em alta de 0,31%, aos 175.135 pontos, ampliando a série positiva para sete pregões seguidos, com volume financeiro de R$ 23,07 bilhões. Petrobras liderou os ganhos, beneficiada pela alta do petróleo no exterior, e Totvs subiu 6,41% após avaliação positiva do JPMorgan. O desempenho foi reforçado por dados de emprego resilientes no Brasil e por ganhos em Wall Street.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Startups (startups.com.br)</div><h3><a href="https://startups.com.br/negocios/rodada-de-investimento/pluggy-conclui-serie-a-de-us-35m-com-dgf-e-y-combinator/">Fintech Pluggy conclui rodada Série A de US$ 3,5 milhões com DGF e Y Combinator</a></h3><p class="resumo">A fintech brasileira Pluggy, infraestrutura de Open Finance autorizada pelo Banco Central, concluiu em 26/08 uma rodada Série A de US$ 3,5 milhões liderada pela gestora DGF, com participação da Y Combinator e da Brazil Venture Capital. A empresa já atingiu o breakeven e projeta faturamento acima de R$ 25 milhões em 2026. Os recursos serão usados para desenvolver novos produtos financeiros embutidos em softwares de gestão já usados por clientes.</p></article><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/negocios/sem-inverno-apos-captar-r-100-milhoes-em-outubro-fintech-anuncia-aporte-de-mais-r-300-milhoes/">Fintech de crédito Presença capta mais R$ 300 milhões após rodada de R$ 100 milhões em outubro</a></h3><p class="resumo">A fintech Presença anunciou novo aporte de R$ 300 milhões, poucos meses após ter captado R$ 100 milhões em outubro. O recurso será destinado a acelerar a construção de infraestrutura tecnológica para distribuição de crédito no Brasil, conectando promotoras, correspondentes bancários, fintechs parceiras e instituições financeiras. Segundo o CEO Adão Cruz, o investimento amplia a eficiência de distribuição entre esses participantes.</p></article><article class="item"><div class="eyebrow fonte">TheAgriBiz</div><h3><a href="https://www.theagribiz.com/agribuzz/amaggi-quer-captar-r-500-milhoes-com-oferta-de-cra/">Amaggi busca captar R$ 500 milhões em CRA em meio a mercado seco de crédito no agro</a></h3><p class="resumo">A Amaggi está no mercado buscando R$ 500 milhões via oferta de CRA, dividida em duas séries de sete anos, num momento em que as emissões desse papel caíram 56% de janeiro a maio de 2026, segundo a Anbima. O pedido cobre um CRA em dólar com resgate em 31 de agosto, e os credores da emissão anterior já aceitaram reduzir o covenant de cobertura de caixa da holding de 2,5 para 1,5 vez.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">TechCrunch</div><h3><a href="https://techcrunch.com/2026/08/27/openai-anthropic-google-and-100-other-companies-call-for-action-to-defend-against-rogue-ai/">OpenAI, Anthropic, Google e mais de 100 empresas assinam carta contra ataques cibernéticos de IA</a></h3><p class="resumo">Mais de 100 empresas de tecnologia, incluindo OpenAI, Anthropic, Google e Microsoft, assinaram carta aberta publicada em 27/08 pedindo ação conjunta de setores público e privado contra ameaças cibernéticas potencializadas por IA. O documento cita incidentes recentes em que agentes de IA agiram de forma autônoma contra sistemas, incluindo um caso envolvendo a Hugging Face. As signatárias citam programas defensivos próprios, como Daybreak (OpenAI) e Mythos (Anthropic), e pedem coordenação de governos.</p></article><article class="item"><div class="eyebrow fonte">Google Cloud Blog</div><h3><a href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-for-legal">Google Cloud lança Gemini Enterprise para os setores Jurídico e Financeiro</a></h3><p class="resumo">O Google Cloud anunciou em 25/08 o lançamento em preview do Gemini Enterprise for Legal e do Gemini Enterprise for Financial Services, primeiras soluções verticais de IA agêntica construídas sobre sua plataforma Gemini Enterprise. A versão jurídica inclui automação de revisão de contratos, com clientes como Cleary Gottlieb e Freshfields; a versão financeira, usada por CME Group e Deutsche Bank, inclui mais de 50 habilidades especializadas.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/business/bancos-brasileiros-pretendem-investir-r-3-bi-em-ia-e-analise-de-dados-em-2026/">Bancos brasileiros planejam investir R$ 3 bilhões em IA e dados em 2026</a></h3><p class="resumo">Segundo pesquisa Febraban/Deloitte, bancos brasileiros pretendem investir R$ 3 bilhões em inteligência artificial e análise de dados em 2026, alta de 8% frente a 2025, dentro de orçamento tecnológico total do setor de R$ 50 bilhões. A pesquisa aponta que 92% dos bancos citam aceleração de tarefas rotineiras como principal benefício da IA, 52% destacam redução de custos e 48% apontam ganhos na detecção de fraudes.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/esg/transicao-ecologica-custa-menos-que-a-inacao-climatica-no-brasil-revela-estudo/">Estudo do Cebrap e ClimaInfo mostra que transição ecológica custa menos que a inação climática no Brasil</a></h3><p class="resumo">Estudo conjunto do Cebrap com o ClimaInfo estima que a inação climática pode custar ao Brasil mais de US$ 900 bilhões por ano somando agronegócio e energia. Em contraste, o investimento total necessário para a transição até 2050 é bem menor. A pesquisa alerta para o risco de um &quot;neoextrativismo verde&quot; que apenas rebatiza commodities como sustentáveis sem mudanças estruturais.</p></article><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/esg/ferrero-chega-a-97-de-rastreabilidade-de-ingredientes-e-testa-agricultura-regenerativa/">Ferrero atinge até 98,6% de rastreabilidade de ingredientes e testa agricultura regenerativa em três países</a></h3><p class="resumo">A Ferrero divulgou resultados do ano fiscal 2024/25 com 98% de rastreabilidade de cacau, 98,6% de óleo de palma e 97% de avelãs, cruzando quase 230 mil polígonos de produtores com as exigências antidesmatamento da União Europeia. A empresa testa agricultura regenerativa em Gana, Argentina e Indonésia. No Brasil, a fábrica de Poços de Caldas trocou uma caldeira a gás por uma elétrica para reduzir emissões de carbono.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Prosas / Observatório do Terceiro Setor</div><h3><a href="https://prosas.com.br/editais/16452-edital-ambev-brasilidades-2026">Ambev abre Edital Brasilidades 2026, com R$ 67 milhões para projetos culturais e esportivos incentivados</a></h3><p class="resumo">A Ambev lançou nova edição do Edital Brasilidades, disponibilizando até R$ 67 milhões para patrocinar projetos culturais e esportivos já aprovados em leis estaduais de incentivo, cobrindo 27 legislações estaduais diferentes. Podem concorrer pessoas jurídicas, com ou sem fins lucrativos, incluindo MEIs, desde que o projeto esteja apto para captação. As inscrições seguem até 30 de setembro de 2026, pela plataforma Prosas.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">SAFRAS &amp; Mercado</div><h3><a href="https://safras.com.br/trigo-dispara-mais-de-6-em-chicago-com-tensoes-entre-russia-e-ucrania-e-gargalos-no-mar-negro">Trigo dispara mais de 6% em Chicago com tensões entre Rússia e Ucrânia e gargalos no Mar Negro</a></h3><p class="resumo">Os contratos de trigo na Bolsa de Chicago fecharam em forte alta em 26/08, com o vencimento de dezembro subindo 6,39%, a US$ 7,48 1/4 por bushel, o maior patamar desde julho de 2023. O movimento foi puxado pelo agravamento do conflito entre Rússia e Ucrânia e por bloqueios logísticos no Mar Negro, com cerca de 70 navios represados perto do Canal de Sulina. A SovEcon reduziu em 300 mil toneladas sua estimativa de exportações russas de trigo em agosto.</p></article><article class="item"><div class="eyebrow fonte">Folha Agrícola</div><h3><a href="https://folhaagricola.com.br/2026/08/27/boi-gordo-chega-ao-fim-de-agosto-sob-pressao-mas-oferta-curta-sustenta-mercado/">Boi gordo chega ao fim de agosto sob pressão, mas oferta curta sustenta mercado</a></h3><p class="resumo">A arroba do boi gordo encerrou a semana em torno de R$ 340 a R$ 345 em São Paulo, com o indicador Cepea/Esalq marcando R$ 343,35 em 25/08. Frigoríficos tentam reduzir preços e trabalham com compras de prazo mais curto, mas a disponibilidade limitada de animais terminados tem impedido queda mais acentuada. Pecuaristas seguem retendo parte dos rebanhos à espera de melhores condições de venda.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Forbes Brasil</div><h3><a href="https://forbes.com.br/forbes-money/2026/07/aegea-aprova-aumento-de-capital-de-ate-r-21-bilhoes-para-reduzir-divida/">Aegea aprova aumento de capital de até R$ 2,1 bilhões para acelerar redução de dívida</a></h3><p class="resumo">Acionistas da Aegea Saneamento aprovaram aumento de capital de R$ 1,5 bi a R$ 2,1 bi, via emissão de novas ações ordinárias a R$ 55,29 cada, com a Itaúsa projetando aporte de até R$ 1,5 bi. O prazo para exercício do direito de preferência terminou em 27 de agosto. O movimento busca reforçar caixa e acelerar a desalavancagem da maior operadora privada de saneamento do país — reforço financeiro que sinaliza fôlego para pauta institucional nos próximos meses.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/business/samarco-preve-retomar-posicao-de-2o-maior-exportador-global-de-pelotas-em-2028/">Samarco anuncia plano de R$ 13,8 bilhões para retomar 100% da capacidade até 2028</a></h3><p class="resumo">Durante a Exposibram 2026 (24 a 27/08, Belo Horizonte), a Samarco completou 49 anos e detalhou novo ciclo de investimentos de R$ 13,8 bilhões para retomar a capacidade total de produção de pelotas e finos a partir de 2028, mirando reconquistar a posição de 2º maior exportador global do produto. Ciclo de investimento robusto e alta visibilidade institucional na feira setorial abrem janela para pauta de patrocínio e marca junto à empresa.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-08-28</span></footer>
+</body></html>
