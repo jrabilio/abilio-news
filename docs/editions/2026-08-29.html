@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-08-29</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-08-29</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">InfoMoney</div><h2><a href="https://www.infomoney.com.br/mercados/centaurus-tera-de-fazer-oferta-publica-de-acoes-da-oncoclinicas-decide-cvm/">CVM determina que Oncoclínicas faça oferta de compra de ações</a></h2><p class="resumo">A Comissão de Valores Mobiliários (CVM) decidiu, por unanimidade, que a gestora americana Centaurus deve fazer uma oferta pública obrigatória de compra de ações da Oncoclínicas, rede de oncologia listada na B3. Estima-se que a operação exija o desembolso de mais de R$ 6 bilhões para adquirir a fatia dos acionistas minoritários. O regulador ainda não definiu o preço final nem o prazo da oferta, e o fundo Josephina III, que discorda da decisão, já abriu um procedimento na Câmara de Arbitragem do Mercado da B3.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,19</div><div class="var up">▲ +0.02%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">6,02</div><div class="var up">▲ +0.12%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">175.665</div><div class="var up">▲ +0.30%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.712</div><div class="var down">▼ -0.25%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.402</div><div class="var down">▼ -0.52%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-28082026/">Ibovespa emenda oitava alta seguida e acumula 2,7% na semana</a></h3><p class="resumo">O Ibovespa fechou a sessão de sexta-feira (28/08) em alta de 0,30%, aos 175.664,62 pontos, emendando a oitava sessão consecutiva de ganhos e acumulando valorização semanal de 2,7%. O movimento reverteu três semanas seguidas de perdas e reagiu, entre outros fatores, a declarações do presidente do Federal Reserve, Kevin Warsh, no simpósio de Jackson Hole.</p></article><article class="item"><div class="eyebrow fonte">Rio Times Online</div><h3><a href="https://www.riotimesonline.com/brazils-financial-morning-call-for-friday-august-28-2026/">Dívida pública bate 81,9% do PIB, maior patamar em 5 anos</a></h3><p class="resumo">A dívida bruta do setor público brasileiro atingiu 81,9% do PIB em junho, o maior patamar em mais de cinco anos, segundo dado de julho divulgado nesta semana. O presidente Lula disse não estar preocupado com o indicador, comparando-o ao de países como Estados Unidos, Japão e Itália, e descartou a venda dos Correios.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/business/globe-investimentos-dos-irmaos-batista-notifica-aquisicao-da-avibras-de-armas/">Família Batista notifica ao Cade compra da fabricante de mísseis Avibras</a></h3><p class="resumo">A Globe Investimentos, veículo de investimentos da família Batista (dona da JBS), notificou o Cade sobre a aquisição de 100% da Nova AVB, controladora da fabricante de mísseis Avibras. Os compradores pediram análise em rito sumário ao órgão antitruste, argumentando que a operação não afeta a concorrência nos mercados de defesa e aeroespacial.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">CNBC</div><h3><a href="https://www.cnbc.com/2026/08/28/judge-blocks-pentagon-blacklist--anthropic-.html">Juíza dos EUA bloqueia veto do Pentágono à Anthropic</a></h3><p class="resumo">Uma juíza federal americana, Rita Lin, decidiu que o Pentágono agiu de forma ilegal e infundada ao classificar a Anthropic como risco à cadeia de suprimentos de segurança nacional. A empresa havia recusado usar seu modelo Claude para vigilância militar ou armas autônomas, e a corte apontou violação de devido processo e da primeira emenda na retaliação do órgão.</p></article><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/economia/money/tecnologia/governo-anuncia-r-23-bi-para-ia-e-busca-equilibrio-entre-eua-e-china/">Governo federal anuncia R$ 2,3 bi para infraestrutura de IA</a></h3><p class="resumo">O governo federal anunciou um pacote de R$ 2,3 bilhões para infraestrutura de inteligência artificial no país. Os recursos financiam um projeto de supercomputação em parceria com as chinesas Huawei e iFlytek no Rio de Janeiro (R$ 1,3 bi) e uma chamada pública para um supercomputador nacional entre os dez mais potentes do mundo (cerca de R$ 1 bi), buscando equilíbrio entre parcerias com EUA e China.</p></article><article class="item"><div class="eyebrow fonte">Tecnoblog</div><h3><a href="https://tecnoblog.net/noticias/novo-app-do-banco-brasil-e-oficial-e-tem-assistente-de-ia-como-destaque/">Banco do Brasil lança app com assistente de IA por voz e texto</a></h3><p class="resumo">O Banco do Brasil começou a liberar progressivamente, até setembro, um novo aplicativo com assistente de inteligência artificial batizado de Meu Assistente BB. A ferramenta interpreta pedidos em linguagem natural por voz e texto e personaliza a tela inicial conforme o comportamento de cada cliente.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Ministério da Fazenda</div><h3><a href="https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/julho/aberta-consulta-publica-sobre-proposta-de-cronograma-para-monitoramento-relato-e-verificacao-mrv)-no-mercado-regulado-de-carbono">Consulta pública sobre verificação do mercado de carbono se encerra</a></h3><p class="resumo">Encerrou-se em 28/08 a consulta pública da Secretaria Extraordinária do Mercado de Carbono, do Ministério da Fazenda, sobre o cronograma de obrigações de Monitoramento, Relato e Verificação (MRV) do Sistema Brasileiro de Comércio de Emissões (SBCE). A proposta prevê início do monitoramento setorial gradual a partir de 2027.</p></article><article class="item"><div class="eyebrow fonte">CartaCapital</div><h3><a href="https://www.cartacapital.com.br/economia/floresta-em-pe-e-rentavel/">Chamada do BNDES para restauração florestal atrai petroleiras</a></h3><p class="resumo">Uma chamada pública do BNDES para a segunda fase do ProFloresta+, voltada à restauração florestal via créditos de carbono, pode arrecadar até R$ 6 bilhões. A iniciativa já despertou interesse de ao menos uma dezena de empresas, incluindo grandes companhias de óleo e gás.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">PE Notícias</div><h3><a href="https://penoticias.com.br/blog/secretaria-de-cultura-de-pernambuco-publica-edital-com-investimento-de-r-9684-mil-para-acoes-culturais-nas-escolas/">Secult-PE abre chamamento de R$ 968,4 mil para cultura nas escolas</a></h3><p class="resumo">A Secretaria de Cultura de Pernambuco publicou o Chamamento Público nº 023/2026, em parceria com o MinC e o MEC, destinando R$ 968,4 mil a ações culturais em escolas estaduais. As inscrições vão de 28/08 a 06/09/2026 e vão selecionar 84 propostas para 50 escolas de tempo integral nas quatro macrorregiões do estado.</p></article><article class="item"><div class="eyebrow fonte">Prefeitura Municipal de Corumbá</div><h3><a href="https://corumba.ms.gov.br/public/uploads/galeria/2026/CULTURA/EDITALEXECUCAOCULTURAL/EDITAL%20DE%20CHAMAMENTO%20P%C3%9ABLICO%20N%C2%BA%20022026PNABFCC%20%E2%80%93%20EXECU%C3%87%C3%83O%20CULTURAL.pdf">Corumbá (MS) abre chamamento para execução cultural via PNAB/FCC</a></h3><p class="resumo">A Prefeitura de Corumbá (MS) publicou o Edital de Chamamento Público nº 02/2026, ligado ao PNAB/FCC, para captação de patrocínio e execução de projetos culturais no município com recursos do Fundo de Cultura. As inscrições ficam abertas de 24/08 a 17/09/2026.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Money Times</div><h3><a href="https://www.moneytimes.com.br/apos-recuperacao-judicial-de-r-2-bilhoes-fertilizantes-heringer-fher3-volta-a-justica-e-pede-protecao-de-60-dias-contra-credores-pads/">Heringer pede proteção da Justiça e inicia mediação com credores</a></h3><p class="resumo">A fabricante de fertilizantes Heringer pediu à Justiça paulista, em 25/08, proteção temporária de 60 dias contra execução de dívidas por credores e iniciou um processo de mediação. A companhia, que já havia passado por recuperação judicial entre 2019 e 2022, encerrou o primeiro semestre com patrimônio líquido negativo de R$ 1,34 bilhão.</p></article><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/agro/importacao-de-trigo-pelo/">Importação de trigo deve bater maior volume em quase duas décadas</a></h3><p class="resumo">A área plantada de trigo no Brasil encolheu 20,4% nesta safra, deixando os moinhos dependentes de importações até a chegada da nova safra argentina, em dezembro. O Sindustrigo já avisou que o custo deve subir, e o país deve importar 7,103 milhões de toneladas de trigo — o maior volume em quase duas décadas.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Eu Quero Investir</div><h3><a href="https://euqueroinvestir.com/mercados/engie-2t26">Engie Brasil tem lucro líquido de R$ 1,9 bi no 2T26, alta de 246%</a></h3><p class="resumo">A Engie Brasil registrou lucro líquido de R$ 1,9 bilhão no segundo trimestre de 2026, impulsionado por um ganho não recorrente; o lucro ajustado subiu 23%, para R$ 694 milhões, e o Ebitda ajustado avançou 16,8%, para R$ 2,18 bilhões. A empresa também assinou a concessão de transmissão Colibri e ampliou em 42,3% sua base de consumidores livres — resultado forte que abre janela para agenda de patrocínio.</p></article><article class="item"><div class="eyebrow fonte">Forbes Brasil</div><h3><a href="https://forbes.com.br/forbes-money/2026/08/samarco-tem-prejuizo-de-us3285-mi-no-2o-tri/">Samarco tem prejuízo de US$ 328,5 milhões no 2T26, mas vendas sobem 23%</a></h3><p class="resumo">A Samarco teve prejuízo líquido de US$ 328,5 milhões no segundo trimestre de 2026, resultado de obrigações de reparação e efeito cambial, mas bem menor que o prejuízo de US$ 1,69 bilhão registrado um ano antes. A produção cresceu 4% no trimestre e as vendas avançaram 23%, sinal de recuperação operacional da mineradora.</p></article><article class="item"><div class="eyebrow fonte">Blog do Adonis</div><h3><a href="https://www.blogdoadonis.com.br/2026/08/27/tetra-pak-sem-conservantes/79511/">Tetra Pak Brasil lança campanha sobre embalagem cartonada e amplia reciclagem</a></h3><p class="resumo">A Tetra Pak Brasil lançou, em 27/08, uma campanha para explicar como a embalagem cartonada preserva bebidas sem conservantes nem refrigeração. Em paralelo, a empresa ampliou sua atuação em reciclagem no país, com um guia prático de coleta seletiva voltado a prefeituras e cooperativas — agenda de sustentabilidade que reforça o gancho ESG da marca.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-08-29</span></footer>
+</body></html>
