@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-01</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-01</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">MoneyReport</div><h2><a href="https://www.moneyreport.com.br/economia/andre-esteves-ve-espaco-para-juros-de-7-e-cobra-controle-da-divida-publica/">Esteves, do BTG, diz que Selic poderia estar em 7% com dívida sob controle</a></h2><p class="resumo">André Esteves, chairman do BTG Pactual, afirmou na abertura do BTG Macro Day que o Brasil tem uma &quot;oportunidade de ouro&quot; para levar a Selic dos atuais 14% para 7%. Segundo ele, o obstáculo não é ideológico, mas institucional: o crescimento acelerado da dívida pública. Esteves estimou que o efeito da queda de juros equivaleria a 30 programas sociais, beneficiando sobretudo a base da pirâmide.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,187</div><div class="var down">▼ -0.28%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 6,017</div><div class="var down">▼ -0.14%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">177.419</div><div class="var up">▲ +1.00%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.686</div><div class="var down">▼ -0.33%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.371</div><div class="var down">▼ -0.12%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Migalhas</div><h3><a href="https://www.migalhas.com.br/quentes/463574/ifood-denuncia-keeta-ao-cade-por-suposta-pratica-de-precos-predatorios">iFood denuncia Keeta ao Cade por preço predatório no delivery</a></h3><p class="resumo">O iFood formalizou denúncia ao Cade contra a Keeta, controlada pela chinesa Meituan, por suposta prática de preços predatórios no delivery brasileiro. Segundo o iFood, a rival opera com prejuízo por pedido, subsidiada por capital da matriz, para conquistar mercado e eliminar concorrentes. A empresa pede abertura de processo administrativo e medida preventiva para suspender a prática. A Keeta rebateu, classificando a denúncia como estratégia monopolista do iFood.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/business/fgc-inicia-pagamentos-de-r-635-milhoes-a-investidores-de-financeira-liquidada/">FGC começa a pagar R$ 635 milhões a clientes da Simpala</a></h3><p class="resumo">O Fundo Garantidor de Créditos (FGC) iniciou o pagamento de R$ 635,3 milhões a cerca de 22 mil clientes da financeira Simpala, liquidada extrajudicialmente pelo Banco Central. Cada beneficiário pode receber até R$ 250 mil por CPF ou CNPJ. Pessoas físicas fazem o pedido pelo aplicativo do FGC, e empresas, pelo site. O caso se soma a uma sequência de liquidações que já levou o FGC a devolver dezenas de bilhões de reais neste ciclo.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Canal Rural</div><h3><a href="https://www.canalrural.com.br/politica/consulta-publica-define-cobertura-setorial-do-mercado-regulado-de-carbono/">Consulta pública define cobertura setorial do mercado regulado de carbono</a></h3><p class="resumo">A Secretaria Extraordinária do Mercado de Carbono (SEMC) encerrou em 28/08 a consulta pública sobre a minuta de portaria que define quais setores serão obrigados a monitorar, relatar e verificar (MRV) suas emissões no Sistema Brasileiro de Comércio de Emissões (SBCE). Os critérios usados foram maturidade de MRV, estrutura de mercado e intensidade energética/de emissões. A obrigação começa de forma gradual, por etapas setoriais, a partir de 2027.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Prefeitura de Corumbá</div><h3><a href="https://corumba.ms.gov.br/noticias/prefeitura-abre-inscricoes-para-premiacao-de-pontos-e-pontoes-de-cultura-pela-lei-aldir-blanc">Corumbá abre chamamento público de R$ 195 mil pela Lei Aldir Blanc</a></h3><p class="resumo">A Prefeitura de Corumbá (MS) publicou o Edital de Chamamento Público nº 01/2026/PNAB/FCC – Cultura Viva, para premiar iniciativas de Pontos e Pontões de Cultura do município. Inscrições gratuitas vão de 24/08 até 10/09, com R$ 195 mil distribuídos entre 12 iniciativas: três vagas de R$ 20 mil para entidades formais e nove de R$ 15 mil para coletivos informais.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Forbes Brasil</div><h3><a href="https://forbes.com.br/forbes-agro/2026/08/soja-tem-alta-expressiva-no-brasil-e-atinge-maior-nivel-em-mais-de-3-anos-diz-cepea/">Soja bate maior preço em mais de três anos no Brasil</a></h3><p class="resumo">O indicador Cepea/Esalq de Paranaguá (PR) para a soja atingiu o maior patamar nominal desde 2023, avançando 5,2% entre 13 e 20 de agosto. A alta ocorre em plena entressafra brasileira, com demanda aquecida tanto para processamento doméstico quanto para exportação, incertezas climáticas e menor oferta de vendedores pressionando os preços para cima.</p></article><article class="item"><div class="eyebrow fonte">BPMoney</div><h3><a href="https://bpmoney.com.br/agro/exportacoes-agro-recorde-87-bilhoes-semestre-2026">Exportações do agro batem recorde de US$ 87 bilhões no 1º semestre</a></h3><p class="resumo">O agronegócio brasileiro exportou US$ 87 bilhões no primeiro semestre de 2026, novo recorde para o período, com a China como maior destino, respondendo por 35,1% das vendas. O resultado reforça a trajetória do Brasil para superar os Estados Unidos como maior exportador agrícola do mundo em 2026, à medida que compradores chineses deslocam parte das compras de soja e algodão dos americanos para os brasileiros.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">TN Petróleo</div><h3><a href="https://tnpetroleo.com.br/noticia/engie-brasil-energia-registra-lucro-liquido-de-r-19-bilhao-246-no-segundo-trimestre-de-2026/">Engie Brasil tem lucro de R$ 1,9 bilhão no 2º tri, alta de 246%</a></h3><p class="resumo">A Engie Brasil Energia registrou lucro líquido de R$ 1,9 bilhão no segundo trimestre de 2026, alta de 246% ante igual período de 2025; o lucro ajustado cresceu 23%, para R$ 694 milhões. A receita operacional líquida somou R$ 3,5 bilhões (+13,8%) e o Ebitda ajustado, R$ 2,2 bilhões (+16,8%). A companhia mantém ciclo de investimentos de R$ 44,2 bilhões em renováveis e transmissão — resultado forte e caixa reforçado abrem janela para pauta de patrocínio.</p></article><article class="item"><div class="eyebrow fonte">Investidor10</div><h3><a href="https://investidor10.com.br/noticias/m-dias-branco-mdia3-lucra-r-169-milhoes-no-2t26-queda-de-22-122054/">M. Dias Branco lucra R$ 168,9 milhões no 2T26 e inicia novo ciclo de investimentos</a></h3><p class="resumo">A M. Dias Branco reportou lucro líquido de R$ 168,9 milhões no segundo trimestre de 2026, queda de 22% ante 2025, mas com quarto trimestre seguido de expansão em volume vendido (477,3 mil toneladas, +4,4%) e margem bruta de 34,2%. Com cerca de R$ 2 bilhões em caixa e R$ 767 milhões em caixa líquido, a companhia sinalizou início de um novo ciclo de investimentos em unidades industriais — gancho para retomar conversa de patrocínio.</p></article><article class="item"><div class="eyebrow fonte">Notícias ao Minuto</div><h3><a href="https://www.noticiasaominuto.com.br/economia/2405723/samarco-registra-prejuizo-liquido-de-us-328-5-milhoes-no-2-trimestre-de-2026">Samarco tem prejuízo no 2T26, mas mantém investimento de R$ 13,8 bi na retomada</a></h3><p class="resumo">A Samarco registrou prejuízo líquido de US$ 328,5 milhões no segundo trimestre de 2026, ante perda de US$ 1,69 bilhão um ano antes, com produção de 3,9 milhões de toneladas (+4% no trimestre). A Fase 3 do plano de retomada segue no cronograma, com licenças obtidas, engenharia concluída e 10,8% de avanço físico, dentro do investimento total de R$ 13,8 bilhões previsto para alcançar 100% da capacidade até 2028.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-09-01</span></footer>
+</body></html>
