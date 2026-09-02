@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-02</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-02</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Forbes Brasil</div><h2><a href="https://forbes.com.br/forbes-money/2026/09/ibovespa-fecha-em-alta-com-impulso-de-petrobras-e-pib/">Ibovespa fecha no maior nível em quase quatro meses com alta do petróleo</a></h2><p class="resumo">O Ibovespa fechou em alta nesta terça-feira, superando os 181 mil pontos e atingindo o maior patamar em quase quatro meses, puxado por blue chips e principalmente pela Petrobras. O avanço acompanhou a disparada do petróleo Brent, que subiu 4,6% e fechou a US$ 94,65, após a retomada de ataques entre Estados Unidos e Irã renovar temores sobre o fornecimento da commodity. O dólar recuou frente ao real na sessão.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,1553</div><div class="var down">▼ -0.54%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,9737</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">179.722</div><div class="var up">▲ +1.30%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.631</div><div class="var down">▼ -0.71%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.100</div><div class="var down">▼ -1.03%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/economia/diretor-do-bc-diz-que-e-indiscutivel-que-bets-sao-elemento-central-para-endividamento/">Diretor do BC diz que apostas são elemento central do endividamento das famílias</a></h3><p class="resumo">O diretor de fiscalização do Banco Central, Ailton de Aquino Santos, afirmou nesta terça-feira que é indiscutível que as casas de apostas (bets) são elemento central do endividamento das famílias brasileiras. Ele disse que a autarquia trabalha em uma agenda de transparência voltada às linhas de crédito mais caras, como cartão de crédito e crédito não consignado, e que medidas devem ser debatidas com o Conselho Monetário Nacional nos próximos meses. O diretor também questionou o uso de carteiras digitais para abastecer apostas com crédito.</p></article><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/invest/minhas-financas/pix-amplia-prazo-de-estornos-para-evitar-golpes-entenda/">Banco Central amplia de 30 para 80 dias prazo para contestar devolução de Pix</a></h3><p class="resumo">O Banco Central ampliou de 30 para 80 dias o prazo para contestar uma devolução de Pix feita por engano ou sob suspeita de fraude, usando o Mecanismo Especial de Devolução (MED). A mudança, em vigor desde terça-feira, mira o golpe da devolução em dobro, em que o criminoso pede o estorno de um Pix e depois aciona o mecanismo para recuperar o valor original, ficando com as duas quantias. A medida deve beneficiar principalmente comerciantes, alvos frequentes desse tipo de fraude.</p></article><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/economia/macroeconomia/abimaq-espera-desaceleracao-em-vendas-de-maquinas-e-equipamentos-em-2026/">Abimaq piora projeção e agora prevê queda de 8,4% nas vendas de máquinas em 2026</a></h3><p class="resumo">A Abimaq, entidade que representa fabricantes de máquinas e equipamentos, revisou de 3,2% para 8,4% sua projeção de queda nas vendas totais do setor em 2026. A entidade atribui a piora aos juros altos, que encarecem o financiamento de máquinas, e ao avanço de importados chineses, que já respondem por quase metade do consumo nacional. A expectativa para exportações também piorou, de alta de 6,4% para queda de 1,1% em receita em dólar.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Google (blog oficial)</div><h3><a href="https://blog.google/intl/pt-br/novidades/tecnologia/google-for-brasil-2026/">Google anuncia novidades de IA para pequenas empresas e futebol no Google for Brasil 2026</a></h3><p class="resumo">No evento anual Google for Brasil, realizado nesta terça-feira, a empresa anunciou uma nova sede do Google for Startups em São Paulo, novos recursos do app Gemini voltados a pequenas empresas e uma parceria com Sebrae, Itaú e a plataforma Tera para capacitação em IA. A Google DeepMind também trouxe ao Brasil o TacticAI, assistente tático de futebol com IA, em colaboração com Palmeiras e CBF.</p></article><article class="item"><div class="eyebrow fonte">Google Cloud Blog</div><h3><a href="https://blog.google/intl/pt-br/produtos/nas-nuvens/breeze-comet-uma-ameaca-de-motivacao-financeira-no-brasil/">Google identifica grupo hacker que usa IA generativa contra pagamentos no Brasil</a></h3><p class="resumo">Um relatório do Google (Mandiant) identificou o grupo BREEZE COMET, que desde 2024 ataca empresas brasileiras dos setores financeiro, varejista e de e-commerce para manipular sistemas de pagamento como Pix, STR e boleto. Segundo a investigação, o grupo usa engenharia social e ferramentas de acesso remoto para invadir redes, e passou a usar inteligência artificial generativa para acelerar a criação de malware e scripts de ataque.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">AgFeed</div><h3><a href="https://agfeed.com.br/esg/fs-acerta-venda-futura-de-creditos-de-carbono-e-preve-beccs-para-2026/">FS fecha primeiras vendas de créditos de remoção de carbono do Brasil via BECCS</a></h3><p class="resumo">A FS (Fueling Sustainability) anunciou nesta terça-feira acordos para venda futura de créditos de carbono gerados por seu projeto de Bioenergia com Captura e Armazenamento de Carbono (BECCS) em Lucas do Rio Verde (MT), nas primeiras transações desse tipo no Brasil. A usina tem potencial para injetar no solo 423 mil toneladas de carbono por ano ao longo de 30 anos, com capacidade de armazenamento estimada em 12 milhões de toneladas no período.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Forbes Brasil</div><h3><a href="https://forbes.com.br/forbes-money/2026/09/pib-segundo-trimestre-2026/">Agropecuária cresce 2,8% e é principal motor do PIB no 2º trimestre</a></h3><p class="resumo">O PIB brasileiro cresceu 0,5% no segundo trimestre de 2026 ante os três primeiros meses do ano, segundo o IBGE, com desaceleração frente à alta de 1,1% do primeiro trimestre. A agropecuária foi o destaque, com expansão de 2,8%, enquanto serviços variaram 0,2% e a indústria, 0,1%. O consumo das famílias caiu 0,4%, mas os investimentos (FBCF) cresceram 1,2% na comparação trimestral.</p></article><article class="item"><div class="eyebrow fonte">Canal Rural</div><h3><a href="https://www.canalrural.com.br/agricultura/projeto-soja-brasil/fechamento-do-mercado-da-soja-no-brasil-confira-os-precos-do-grao/">Soja abre setembro em alta nos mercados físico e futuro no Brasil</a></h3><p class="resumo">O mercado físico de soja no Brasil abriu setembro em alta nesta terça-feira, acompanhando a valorização dos contratos futuros em Chicago, que atingiram os melhores níveis em mais de dois anos e meio. A saca subiu em praças como Passo Fundo (RS), Cascavel (PR) e Rondonópolis (MT), com referências de até R$ 162 nos portos de Paranaguá (PR) e Rio Grande (RS).</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/suzano-suzb3-fecha-acordo-para-ter-10-de-complexo-portuario-no-espirito-santo/">Suzano compra 10% de complexo portuário bilionário da Imetame em Aracruz</a></h3><p class="resumo">A Suzano fechou acordo para adquirir 10% da Imetame Logística Porto, projeto em construção em Aracruz (ES) que prevê cinco terminais portuários — contêineres, carga geral, granéis sólidos, granéis líquidos e ship-to-ship. A operação será feita via aporte de terrenos, sem desembolso relevante de caixa, e ainda depende de aprovação regulatória. Gancho de FUP: expansão bilionária em curso na Imetame, com nova sócia estratégica — janela para pauta institucional/patrocínio.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-09-02</span></footer>
+</body></html>
