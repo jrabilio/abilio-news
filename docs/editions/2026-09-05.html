@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-05</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-05</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">NVIDIA Blog</div><h2><a href="https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/">Nvidia confirma compra da Hugging Face por US$ 12,9 bilhões</a></h2><p class="resumo">A Nvidia confirmou a aquisição da Hugging Face, maior plataforma de compartilhamento de modelos de IA aberta do mundo, por US$ 12,93 bilhões — sendo US$ 11,9 bilhões para acionistas e o restante em retenção para funcionários que ingressarem na empresa. É a segunda maior aquisição já feita pela fabricante de chips. O CEO Jensen Huang afirmou que a Hugging Face manterá o apoio a modelos abertos, com fechamento da operação previsto para o primeiro semestre de 2027.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,1058</div><div class="var down">▼ -0.03%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,9580</div><div class="var up">▲ +0.36%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">185.147</div><div class="var down">▼ -0.02%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.719</div><div class="var down">▼ -0.38%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.507</div><div class="var down">▼ -0.29%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/mercados-day-trade-hoje-analistas-04092026/">Ibovespa fecha em queda e interrompe sequência de 11 altas</a></h3><p class="resumo">O Ibovespa encerrou o pregão de sexta-feira (04/09) em queda de 0,02%, aos 185.147 pontos, interrompendo uma sequência de 11 pregões consecutivos de alta. O movimento refletiu a repercussão de dados de emprego dos Estados Unidos e pesquisas eleitorais no Brasil. Mesmo assim, o índice acumula ganho mensal de 4,36% e alta de 14,91% no ano.</p></article><article class="item"><div class="eyebrow fonte">Metrópoles</div><h3><a href="https://www.metropoles.com/sao-paulo/casas-bahia-assai-dia-beneficiarios">MP-SP aponta Casas Bahia, Assaí e Dia entre beneficiários de propina no ICMS</a></h3><p class="resumo">O Ministério Público de São Paulo identificou Casas Bahia, Assaí e a rede Dia entre as empresas beneficiadas por um esquema de propina que acelerava a liberação de créditos de ICMS no Estado, na Operação Ícaro. O advogado que representava as redes foi preso preventivamente, assim como um ex-diretor da Sefaz-SP. As empresas negam irregularidades.</p></article><article class="item"><div class="eyebrow fonte">Anbima</div><h3><a href="https://www.anbima.com.br/pt_br/imprensa/investimentos-das-pessoas-fisicas-crescem-6-4-e-somam-r-9-1-trilhoes-no-1-semestre-de-2026.htm">Pessoas físicas somam R$ 9,1 trilhões em investimentos no 1º semestre</a></h3><p class="resumo">Segundo a Anbima, o total investido por pessoas físicas no Brasil chegou a R$ 9,14 trilhões no primeiro semestre de 2026, alta de 6,4% ante dezembro de 2025. A renda fixa respondeu por 65% do crescimento patrimonial, com destaque para os títulos públicos (+32,9%). Fundos de ações foram os únicos a registrar queda no período.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">NVIDIA Blog</div><h3><a href="https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/">Nvidia confirma compra da Hugging Face por US$ 12,9 bilhões</a></h3><p class="resumo">A Nvidia confirmou a aquisição da Hugging Face, maior plataforma de compartilhamento de modelos de IA aberta do mundo, por US$ 12,93 bilhões. A operação é a segunda maior aquisição já feita pela fabricante de chips e reforça sua aposta em modelos abertos, disputando espaço com concorrentes chineses nesse segmento. Fechamento previsto para o primeiro semestre de 2027, sujeito a aprovações regulatórias.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">CEBDS</div><h3><a href="https://cebds.org/en/release/reporting-matters-estudo-analisa-relatorios-de-sustentabilidade-de-77-grandes-empresas-com-atuacao-no-brasil/">CEBDS lança 3ª edição do Reporting Matters Brasil</a></h3><p class="resumo">O Conselho Empresarial Brasileiro para o Desenvolvimento Sustentável (CEBDS) divulgou nesta quinta-feira a terceira edição do estudo Reporting Matters Brasil, que avaliou 82 relatórios de sustentabilidade de grandes empresas com atuação no país. O levantamento mostra que 84% dos relatórios já passam por auditoria externa e 97% usam o padrão GRI; 75% adotam dupla materialidade. Pela primeira vez, o estudo combinou avaliação técnica com ferramentas de inteligência artificial.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Embratur</div><h3><a href="https://embratur.com.br/2025/12/16/embratur-abre-edital-de-patrocinio-2026-e-busca-projetos-de-turismo-sustentavel-e-inclusivo-que-fortalecam-a-imagem-do-brasil-no-exterior/">Embratur abre edital de patrocínio 2026 para turismo e cultura</a></h3><p class="resumo">A Embratur abriu o Edital de Patrocínios 2026, que vai selecionar projetos de cultura, turismo, gastronomia, economia criativa e ESG que promovam a imagem do Brasil no exterior. O patrocínio pode cobrir até 60% do custo do projeto, exceto quando o valor solicitado for inferior a R$ 200 mil. As inscrições vão até 3 de outubro, pela plataforma oficial da agência.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Farmnews</div><h3><a href="https://www.farmnews.com.br/mercado/preco-futuro-do-boi-gordo-nova-maxima-para-contratos-a-partir-de-outubro/">Frigoríficos compram contratos futuros na B3 apostando em alta do boi gordo</a></h3><p class="resumo">Frigoríficos brasileiros aumentaram as compras de contratos futuros de boi gordo na B3 para se proteger da valorização sazonal esperada para setembro, mês que historicamente registra alta média de 2,3% na arroba por causa da entressafra de animais prontos para abate. Os contratos para os próximos meses já refletem o movimento: R$ 358,80/@ para setembro, R$ 367,95/@ para outubro e acima de R$ 372/@ para novembro e dezembro.</p></article><article class="item"><div class="eyebrow fonte">Money Times</div><h3><a href="https://www.moneytimes.com.br/soja-e-milho-o-que-pode-acontecer-com-os-precos-e-o-que-pode-virar-o-jogo-ceci/">Plantio da soja 2026/27 começa a ser liberado em setembro</a></h3><p class="resumo">Com o fim do vazio sanitário, o plantio da safra de soja 2026/27 passa a ser autorizado em setembro nos principais estados produtores: Mato Grosso a partir do dia 7, Mato Grosso do Sul do dia 16 e Goiás do dia 25. O mercado segue precificando expectativa de déficit global da oleaginosa em 2026/27, o que dá suporte às cotações mesmo após as máximas recentes.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">SpaceMoney</div><h3><a href="https://www.spacemoney.com.br/investimentos/acoes/m-dias-branco-lucra-2t26/">M. Dias Branco lucra R$ 168,9 milhões e investe R$ 273,5 milhões no semestre</a></h3><p class="resumo">A M. Dias Branco fechou o segundo trimestre de 2026 com lucro líquido de R$ 168,9 milhões e receita líquida de R$ 2,7 bilhões, recuperação sequencial após um primeiro trimestre mais fraco. No semestre, a empresa destinou R$ 273,5 milhões a investimentos, com foco em automação e eficiência energética das fábricas — resultado e caixa fortalecidos que abrem janela para pauta de patrocínio. O caixa líquido dobrou frente ao mesmo período de 2025, para R$ 767 milhões.</p></article><article class="item"><div class="eyebrow fonte">Airway</div><h3><a href="https://www.airway.com.br/gru-airport-12-aeroportos-regionais-investimentos/">GRU Airport investe R$ 2,5 bilhões e assume mais 12 aeroportos regionais</a></h3><p class="resumo">A concessionária GRU Airport, do Aeroporto de Guarulhos, prevê investir R$ 2,5 bilhões até 2029 na expansão do terminal, incluindo um novo píer internacional (T3B) com capacidade para mais 12 milhões de passageiros por ano. A empresa também assumiu a gestão de 12 aeroportos regionais do Nordeste e da Amazônia Legal, com aporte previsto de R$ 630 milhões — expansão institucional que reforça o apetite da companhia por visibilidade de marca.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-09-05</span></footer>
+</body></html>
