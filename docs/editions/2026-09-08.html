@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-08</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-08</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">CNN Brasil</div><h2><a href="https://www.cnnbrasil.com.br/infra/motiva-conclui-venda-de-todos-os-20-aeroportos-para-asur-por-r-122-bilhoes/">Motiva vende plataforma de 20 aeroportos para grupo mexicano Asur por R$ 12,2 bi</a></h2><p class="resumo">A Motiva (ex-CCR) concluiu, em 1º de setembro, a venda de sua plataforma de 20 aeroportos para o grupo mexicano Asur por R$ 12,2 bilhões: R$ 5,187 bilhões pagos por 100% da CPC Holding e R$ 7,024 bilhões em dívida assumida. O pacote inclui 17 terminais no Brasil — entre eles Confins, Pampulha, Curitiba e Foz do Iguaçu — e 3 no exterior, e marca a saída da Motiva do segmento aeroportuário para focar em rodovias.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,12</div><div class="var down">▼ -0.01%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,96</div><div class="var up">▲ +0.02%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">185.147</div><div class="var down">▼ -0.02%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.719</div><div class="var down">▼ -0.38%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.507</div><div class="var down">▼ -0.29%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Gazeta Mercantil</div><h3><a href="https://gazetamercantil.com/cofco-compra-duas-usinas-bunge-sao-paulo">COFCO compra duas usinas de açúcar da Bunge no Brasil</a></h3><p class="resumo">A COFCO International fechou acordo, anunciado em 1º de setembro, para comprar as usinas Rio Vermelho e Nova Unialco, da Bunge, em Junqueirópolis e Guararapes (SP). A aquisição amplia em 50% o número de usinas da COFCO no país, somando cerca de 7 milhões de toneladas de capacidade de moagem de cana por safra.</p></article><article class="item"><div class="eyebrow fonte">NeoFeed</div><h3><a href="https://neofeed.com.br/negocios/alexandre-birman-e-roberto-jatahy-chegam-a-acordo-e-dividem-azzas-2154-em-duas-empresas/">Azzas 2154 anuncia cisão em Arezzo&amp;Co e SOMA</a></h3><p class="resumo">A Azzas 2154 informou, em 2 de setembro, acordo entre os acionistas Alexandre Birman e Roberto Jatahy para reorganização societária que separa a companhia em duas empresas abertas independentes no Novo Mercado da B3: Arezzo&amp;Co (Bloco Birman) e SOMA (Bloco Jatahy), com a FARM Rio ficando em holding conjunta. A conclusão é esperada para o primeiro trimestre de 2027, sujeita a aprovações societárias e do Cade.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">OpenAI (blog oficial)</div><h3><a href="https://openai.com/index/gpt-6-astra/">OpenAI lança GPT-6 Astra e fala em &#x27;era da IA geral&#x27;</a></h3><p class="resumo">A OpenAI anunciou em 3 de setembro o GPT-6 Astra, novo modelo com foco em uso autônomo de computador, programação, ciência e cibersegurança, treinado com mais de 100 mil GPUs no complexo Stargate (Texas). O modelo estreia primeiro para participantes do programa Daybreak, de cibersegurança, antes de chegar a assinantes pagos do ChatGPT e à API. O presidente Greg Brockman declarou que &#x27;a era da AGI começou&#x27;.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Observatório do Terceiro Setor</div><h3><a href="https://observatorio3setor.org.br/ambev-abre-inscricoes-para-o-edital-brasilidades-2026-em-apoio-a-projetos-culturais-e-esportivos/">Ambev mantém aberto Edital Brasilidades 2026, com R$ 67 milhões para cultura e esporte</a></h3><p class="resumo">A Ambev mantém abertas até 30 de setembro as inscrições do Edital Brasilidades 2026, com R$ 67 milhões via leis de incentivo para projetos de música, dança, audiovisual, festivais regionais e esporte em todo o país. É a segunda edição do programa, com aumento de 67,5% no investimento frente à primeira.</p></article><article class="item"><div class="eyebrow fonte">Gov.br / Ministério da Cultura</div><h3><a href="https://www.gov.br/cultura/pt-br/assuntos/editais/inscricoes-abertas">Embratur mantém aberta seleção de patrocínio 2026 até 30 de setembro</a></h3><p class="resumo">A Embratur mantém aberto até 30 de setembro o edital de Seleção de Eventos e Projetos para Concessão de Patrocínio 2026, voltado a iniciativas de promoção e apoio institucional que fortaleçam a imagem do Brasil como destino turístico sustentável e inovador.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Canal Rural</div><h3><a href="https://www.canalrural.com.br/agricultura/vazio-sanitario-da-soja-termina-em-6-de-setembro-em-mato-grosso/">Fim do vazio sanitário libera plantio da soja 2026/27 em Mato Grosso</a></h3><p class="resumo">O vazio sanitário da soja em Mato Grosso, maior estado produtor do país, terminou em 6 de setembro, liberando a semeadura da safra 2026/27 a partir de 7 de setembro. O Imea recomenda cautela aos produtores: o fim do período apenas permite o plantio, mas não significa que as condições de umidade já sejam ideais — a expectativa é de plantio mais concentrado na segunda quinzena do mês, conforme as chuvas se regularizem.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Aegea (release)</div><h3><a href="https://www.aegea.com.br/2026/05/14/aegea-registra-ebitda-de-r-3-bi-e-amplia-caixa-em-33/">Aegea registra EBITDA de R$ 3 bi e amplia caixa em 33%</a></h3><p class="resumo">A Aegea Saneamento divulgou resultado financeiro forte, com EBITDA de R$ 3 bilhões e caixa 33% maior, sustentando plano de investir R$ 26 milhões em melhorias de abastecimento e R$ 190 milhões em ampliação de coleta e tratamento de esgoto — resultado robusto abre janela para pauta de patrocínio.</p></article><article class="item"><div class="eyebrow fonte">Agência Brasil</div><h3><a href="https://agenciabrasil.ebc.com.br/radioagencia-nacional/geral/audio/2026-04/gru-airport-assume-gestao-de-12-aeroportos-do-nordeste-e-da-amazonia">GRU Airport assume gestão de 12 aeroportos do Nordeste e da Amazônia</a></h3><p class="resumo">A concessionária de GRU Airport passou a administrar 12 aeroportos regionais do Nordeste e da Amazônia Legal, após termo aditivo com o Ministério de Portos e Aeroportos — movimento de forte expansão de escopo que amplia a presença institucional da companhia em novas regiões.</p></article><article class="item"><div class="eyebrow fonte">Revista Minérios</div><h3><a href="https://revistaminerios.com.br/j-mendes-investimento-expansao-mineracao/">Grupo J. Mendes projeta R$ 1,3 bilhão em expansão e tecnologia em MG</a></h3><p class="resumo">A J.Mendes anunciou o Projeto Guariba (disposição de rejeitos, R$ 800 milhões) e o Projeto F6, que deve elevar a produção de pellet feed para 6 milhões de toneladas/ano, além de R$ 150 milhões para modernizar filtros — plano de expansão de peso que sinaliza fôlego financeiro.</p></article><article class="item"><div class="eyebrow fonte">aRede</div><h3><a href="https://arede.info/ponta-grossa/623552/tetra-pak-brasil-investe-r-271-milhoes-em-acoes-de-sustentabilidade-em-2025">Tetra Pak Brasil investe R$ 27,1 milhões em sustentabilidade e é reconhecida pelo CDP</a></h3><p class="resumo">A Tetra Pak Brasil aplicou R$ 27,1 milhões em reciclagem de embalagens longa vida e projetos incentivados, beneficiando cerca de 230 cooperativas de catadores; a atuação ambiental da companhia foi reconhecida pelo CDP, sistema global de divulgação socioambiental — compromisso ESG forte, gancho direto para pauta de patrocínio.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-09-08</span></footer>
+</body></html>
