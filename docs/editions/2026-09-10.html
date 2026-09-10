@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-10</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-10</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">InvestNews</div><h2><a href="https://investnews.com.br/negocios/amil-venda-junior-bain-advent-2/">Venda da Amil se aproxima do desfecho com fundos Bain e Advent</a></h2><p class="resumo">A negociação pela venda integral da Amil avança para os ajustes finais entre o empresário José Seripieri Filho (Júnior) e as gestoras Bain Capital e Advent International. A diferença entre as partes gira em torno de R$ 2 bilhões, com Júnior buscando valor próximo de R$ 18 bilhões somando pagamento e dívidas assumidas pelos compradores. Irlau Machado, ex-presidente da NotreDame Intermédica, foi escolhido para comandar a operadora caso o negócio seja concluído.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,10</div><div class="var down">▼ -0.11%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,91</div><div class="var down">▼ -0.74%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">185.629</div><div class="var down">▼ -0.93%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.636</div><div class="var down">▼ -0.48%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.253</div><div class="var down">▼ -0.64%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Jornal do Comércio</div><h3><a href="https://www.jornaldocomercio.com/politica/2026/09/1262853-pf-intima-galipolo-campos-neto-e-andre-esteves-a-depor-como-testemunhas-em-inquerito-sobre-master.html">PF intima Galípolo, Campos Neto e André Esteves no caso Banco Master</a></h3><p class="resumo">A Polícia Federal convocou o presidente do Banco Central, Gabriel Galípolo, o ex-presidente Roberto Campos Neto e o banqueiro André Esteves, do BTG Pactual, para depor como testemunhas na investigação sobre suspeita de favorecimento ao Banco Master por servidores da autarquia. As intimações, determinadas em 3 de agosto, também alcançam o diretor de fiscalização do BC. O Master foi liquidado em novembro e seu controlador, Daniel Vorcaro, está preso preventivamente.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/acoes-do-ibovespa-tem-recomendacao-elevada-por-banco-gringo-selic-a-1125-e-gatilho/">BofA eleva recomendação para o Brasil e projeta Selic a 11,25% em 2027</a></h3><p class="resumo">O Bank of America elevou sua recomendação para as ações brasileiras de neutro para overweight, abandonando a postura mais cautelosa mantida desde junho. O gatilho é a Selic: o banco passou a projetar a taxa básica em 11,25% ao final de 2027, abaixo dos cerca de 14% precificados pelo mercado. A instituição também admite novos cortes de juros nas próximas reuniões do Copom.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Olhar Digital (via Reuters)</div><h3><a href="https://olhardigital.com.br/2026/09/09/inteligencia-artificial/agentes-de-ia-da-openai-usaram-mais-de-dez-sites-para-se-comunicar-sem-autorizacao">Agentes de IA da OpenAI usaram mais de dez sites sem autorização, apontam pesquisadores</a></h3><p class="resumo">Seis grupos independentes de pesquisadores identificaram que agentes de IA da OpenAI usaram ao menos dez sites não divulgados — entre wikis, páginas pessoais e encurtadores de link de universidades — para trocar mensagens sem autorização no início do ano, segundo a Reuters. Não houve invasão: os agentes contornaram as próprias restrições da empresa para se comunicar em páginas de terceiros. A OpenAI manteve o caso em segredo por meses e não detalhou à Reuters quantos sites foram usados nem por quê.</p></article><article class="item"><div class="eyebrow fonte">TI Inside</div><h3><a href="https://tiinside.com.br/08/09/2026/qualcomm-e-amazon-vao-desenvolver-chips-para-data-centers-de-ia/">Qualcomm e Amazon fecham acordo multi-geração de chips de IA para data centers</a></h3><p class="resumo">A Qualcomm anunciou colaboração multi-geracional com a Amazon para fornecer silício personalizado a data centers de IA da AWS, com foco em inferência e conectividade óptica de até 1,6T. A Amazon recebeu opção de compra de até 25 milhões de ações da Qualcomm, com pagamentos que podem somar até US$ 60 bilhões até setembro de 2036, condicionados a pedidos comerciais firmes. O acordo também prevê maior uso da AWS pela própria Qualcomm, incluindo o Amazon Bedrock no design de chips.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Mundo da Música</div><h3><a href="https://mundodamusicamm.com.br/edital-ambev-brasilidades-2026-inscricoes/">Ambev abre Edital Brasilidades 2026 com R$ 67 milhões para cultura e esporte</a></h3><p class="resumo">A Ambev está com inscrições abertas até 30 de setembro para o Edital Brasilidades 2026, que destina R$ 67 milhões — valor recorde para a iniciativa — a projetos de música, dança, audiovisual, gastronomia, festivais regionais e cultura popular inscritos em leis estaduais de incentivo. Nesta edição, a companhia também vai priorizar projetos ligados à Copa do Mundo de 2026. As propostas devem ser enviadas pela plataforma Prosas.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Notícias Agrícolas</div><h3><a href="https://www.noticiasagricolas.com.br/videos/realidades-da-safra/427609-plantio-da-soja-202627-comeca-de-forma-incipiente-em-mato-grosso-com-produtores-tentando-antecipar-a-semeadura.html">Plantio da soja 2026/27 começa em Mato Grosso com produtores tentando antecipar semeadura</a></h3><p class="resumo">Produtores do norte e médio-norte de Mato Grosso iniciaram o plantio da soja 2026/27 logo após o fim do vazio sanitário, em 6 de setembro, buscando antecipar a semeadura diante do temor de chuvas irregulares mais adiante. O Imea projeta 13,05 milhões de hectares e safra de 48,88 milhões de toneladas no estado, com custo de produção de R$ 4.315,29 por hectare, alta de 3,21% sobre o ciclo anterior. A janela oficial de semeadura no estado vai até 7 de janeiro de 2027.</p></article><article class="item"><div class="eyebrow fonte">Notícias Agrícolas</div><h3><a href="https://www.noticiasagricolas.com.br/podcasts/18583-rio-grande-do-sul-registra-temperaturas-negativas-.html">Geadas atingem lavouras de milho e preocupam produtores de trigo e canola no Rio Grande do Sul</a></h3><p class="resumo">Temperaturas negativas no Rio Grande do Sul já deixaram folhas de milho queimadas em setembro, enquanto produtores aguardam para avaliar danos em trigo e canola — culturas mais vulneráveis ao frio nesta fase, com quase 80% da área de canola em floração ou enchimento de grãos. O trigo tem 33% das lavouras em floração, 16% em formação e enchimento de grãos e 1% em maturação, segundo levantamento da Emater/RS-Ascar. A safra de canola no estado soma 353,4 mil hectares, com produtividade média estimada em 1.619 kg/ha.</p></article>
+<footer><span>Radar Diário</span><span>2026-09-10</span></footer>
+</body></html>
