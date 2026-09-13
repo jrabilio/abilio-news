@@ -93,6 +93,15 @@ Monte `.tmp/edition.json`:
 ### 6. Publicar
 `tools/publish_git.py --data AAAA-MM-DD` (use `--dry-run` para testar sem push).
 
+### 6.5. Confirmar que o Pages publicou (antes do WhatsApp)
+`tools/verify_pages.py --data AAAA-MM-DD`
+O push do passo 6 só garante que o commit chegou ao `main` — não garante que o GitHub Pages
+rebuildou o site (ver aprendizado de 2026-09-13). Este passo espera o link público da edição
+responder 200 e, se não responder dentro do prazo, força um retrigger (novo push trivial) e
+espera de novo. **Não pule este passo antes do passo 7**: é ele que evita mandar no WhatsApp um
+link que ainda vai dar 404. Se sair com erro mesmo após o retrigger, RELATE no resumo final —
+não mande o aviso do passo 7 mesmo assim.
+
 ### 7. Avisar no WhatsApp
 `tools/notify_whatsapp.py --edition .tmp/edition.json`
 Compõe automaticamente a mensagem-resumo (manchete + 1 destaque por seção + link direto
@@ -111,12 +120,30 @@ em stderr em vez de mandar em silêncio sem link.
   o total ficar muito baixo.
 - **Só resultados evergreen numa seção** → melhor omitir a seção do que publicar algo atemporal.
 - **Falha no push** → checar `GITHUB_TOKEN`.
+- **Push OK mas Pages não publicou** → `tools/verify_pages.py` (passo 6.5) já tenta um retrigger
+  automático; se ainda assim falhar, RELATE — não há `GITHUB_TOKEN`/API para forçar por outra via
+  neste ambiente, então a falha é do lado do GitHub Pages, não deste repositório.
 - **WhatsApp não chega** → checar setup CallMeBot; a edição já está publicada (aviso reenviável).
 
 ## Aprendizados
 _(Atualize: queries que trazem notícia fresca de verdade, veículos mais confiáveis por
 seção, sites que exigem tratamento especial no scrape, etc.)_
 
+- **2026-09-13:** A edição do dia publicou normalmente (commit `cd4c755` chegou ao `main`,
+  confirmado via API), mas o WhatsApp saiu com um link que dava 404 — o GitHub Pages
+  simplesmente não rebuildou para aquele commit. Não houve nenhum run de "pages build and
+  deployment" para o commit, nem com sucesso nem com falha — o evento de build nem chegou a
+  ser criado. Coincidiu com uma degradação do GitHub Actions no mesmo horário (confirmada e já
+  marcada como resolvida em githubstatus.com); o hook interno de build do Pages depende do
+  Actions para disparar, e nesse tipo de degradação o evento pode ser descartado silenciosamente
+  em vez de falhar de forma visível — por isso nunca apareceu como erro em lugar nenhum que o
+  `publish_git.py` pudesse detectar (ele só sabe que o *push* funcionou, não que o Pages
+  rebuildou). Um push trivial novo (retrigger) resolveu na hora: o build do Pages sempre usa a
+  árvore inteira do HEAD, então a edição já commitada saiu no mesmo build do retrigger. Criado
+  `tools/verify_pages.py` (passo 6.5) para fechar essa lacuna sozinho todo dia: espera o link
+  público responder 200 e, se não responder, força o retrigger automaticamente antes do
+  WhatsApp — sem isso, a rotina considerava sucesso só por o push ter funcionado, o que não
+  garante que o link enviado é válido.
 - **2026-08-24:** A estratégia de 2026-08-14 (cortar seções inteiras e assinalar
   "(+N seção(ões) no link acima)" quando a lista não coubesse) resolvia o
   estouro do teto, mas o Abilio não queria uma contagem no fim da mensagem —
