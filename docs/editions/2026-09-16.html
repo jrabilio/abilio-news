@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-16</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-16</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Bloomberg</div><h2><a href="https://www.bloomberg.com/news/articles/2026-09-15/openai-says-it-s-working-with-anthropic-google-on-ai-safety">OpenAI, Anthropic e Google DeepMind coordenam esforços de segurança em IA</a></h2><p class="resumo">A OpenAI confirmou que trabalha há semanas com Anthropic e Google DeepMind em medidas conjuntas de segurança em inteligência artificial, movimento que se soma à preocupação crescente do setor com riscos econômicos e de segurança da tecnologia. O policy chief da OpenAI, Chris Lehane, disse que as empresas não veem necessidade de isenção antitruste para cooperar no tema. A articulação ganhou força após um ensaio do CEO da Anthropic, Dario Amodei, pedindo cautela no desenvolvimento dos sistemas mais avançados, posição que recebeu apoio público de líderes rivais, incluindo Sam Altman.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,15</div><div class="var up">▲ +0.02%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,94</div><div class="var up">▲ +0.10%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">186.503</div><div class="var up">▲ +0.54%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.586</div><div class="var down">▼ -0.45%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">25.982</div><div class="var down">▼ -0.78%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/onde-investir/febre-dos-fidcs-derruba-taxas-e-relacao-risco-retorno-comeca-a-preocupar/">Febre dos FIDCs derruba taxas e acende alerta de risco</a></h3><p class="resumo">O mercado de fundos de direitos creditórios (FIDCs) se aproxima de R$ 1 trilhão em patrimônio no Brasil, mas o excesso de dinheiro disputando poucas operações de crédito derrubou a remuneração paga ao investidor. Cotas seniores que pagavam CDI+4% no ano passado já pagam apenas CDI+2%, patamar que gestoras avaliam não compensar mais o risco de calote das empresas cedentes. O desequilíbrio entre oferta de capital e demanda por crédito é apontado como a causa central da compressão de taxas.</p></article><article class="item"><div class="eyebrow fonte">Money Times</div><h3><a href="https://www.moneytimes.com.br/renault-geely-reforca-investimentos-no-brasil-em-r-2-bi-para-producao-de-carro-eletrificado/">Renault e Geely investem mais R$ 2 bilhões no Brasil</a></h3><p class="resumo">A Renault e a chinesa Geely anunciaram um novo aporte de R$ 2 bilhões na operação brasileira, elevando o ciclo de investimentos da parceria a R$ 5,8 bilhões até 2027. O dinheiro vai para o desenvolvimento de um novo automóvel eletrificado da marca Renault sobre plataforma da Geely, a ser fabricado em São José dos Pinhais (PR) a partir de 2027. A fábrica paranaense já produz desde este mês o primeiro híbrido da Geely feito no país.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Bloomberg</div><h3><a href="https://www.bloomberg.com/news/articles/2026-09-15/openai-says-it-s-working-with-anthropic-google-on-ai-safety">OpenAI, Anthropic e Google DeepMind negociam há semanas medidas de segurança em IA</a></h3><p class="resumo">O policy chief da OpenAI, Chris Lehane, confirmou nesta semana que a empresa vem discutindo com Anthropic e Google DeepMind ações conjuntas de segurança em inteligência artificial, sem necessidade de isenção antitruste para a cooperação. A articulação ganhou força depois que o CEO da Anthropic, Dario Amodei, publicou um ensaio defendendo cautela no desenvolvimento dos sistemas mais avançados, ideia apoiada publicamente por Sam Altman (OpenAI), Demis Hassabis (Google) e Elon Musk. O episódio reflete a preocupação crescente do setor com riscos econômicos e de segurança da tecnologia.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Forbes/Reuters</div><h3><a href="https://forbes.com.br/forbes-agro/2026/09/exportacao-de-cafe-do-brasil-salta-no-inicio-de-setembro-embarque-de-petroleo-tambem-dispara/">Exportação de café do Brasil salta no início de setembro</a></h3><p class="resumo">Os embarques de café verde do Brasil somaram 107,9 mil toneladas (1,8 milhão de sacas de 60 kg) até a segunda semana de setembro, média diária 51% acima da registrada em todo o mês de setembro de 2025, segundo dados do Cecafé. O resultado vem na esteira de um recorde histórico de exportações do grão em agosto. As exportações brasileiras totais também aceleraram no período, com alta de 9,2% ante o mesmo mês do ano passado.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">PANROTAS</div><h3><a href="https://www.panrotas.com.br/aviacao/aeroportos/2026/09/guarulhos-sera-o-primeiro-aeroporto-do-brasil-a-ganhar-um-sistema-antidrones_231923.html">Guarulhos será o 1º aeroporto do Brasil com sistema antidrones</a></h3><p class="resumo">O Ministério de Portos e Aeroportos enviou diretrizes à Anac para implantar um sistema antidrones no Aeroporto Internacional de Guarulhos, tornando-o o primeiro do país com essa tecnologia, com custo e operação a cargo da concessionária GRU Airport. A medida prevê detecção, monitoramento, mitigação e neutralização de drones não autorizados, resposta a episódios de fechamento de pista por drones em fevereiro e agosto. O investimento institucional em segurança operacional é gancho para pauta comercial junto à concessionária.</p></article><article class="item"><div class="eyebrow fonte">Portal Democrata</div><h3><a href="https://portaldemocrata.com.br/2026/09/14/samarco-se-destaca-na-abm-week-2026-ao-receber-dois-premios-de-inovacao-e-reforcar-seu-compromisso-com-a-industria-sustentavel/">Samarco recebe dois prêmios de inovação na ABM Week 2026</a></h3><p class="resumo">Na 10ª edição da ABM Week, em São Paulo, a Samarco recebeu o Prêmio Brazil Green Steel (Sustentabilidade) e o Prêmio Vesuvius (Automação e TI) pela tecnologia de queimador Low NOx da unidade de Ubu (ES), que reduz emissões na pelotização. O reconhecimento reforça o discurso ESG da mineradora na mesma semana em que repassou R$ 421 milhões a municípios da bacia do Rio Doce — janela para pauta de patrocínio ligada a inovação e ESG.</p></article><article class="item"><div class="eyebrow fonte">Tecnologística</div><h3><a href="https://www.tecnologistica.com.br/noticias/estrutura/21851/grupo-sada-inaugura-base-propria-de-gnv-em-sao-bernardo-do-campo-sp">Grupo Sada inaugura base própria de GNV e é finalista do Prêmio AutoData</a></h3><p class="resumo">O Grupo Sada inaugurou sua primeira base própria de abastecimento de GNV para transporte pesado em São Bernardo do Campo (SP), dentro do Programa de Descarbonização da Frota Pesada. Na mesma semana, a empresa foi anunciada finalista do Prêmio AutoData 2026, concorrendo com a Gerdau e outras companhias. Os movimentos, somados à expansão de 20% prevista para 2026, indicam fôlego financeiro e exposição institucional — gancho moderado para pauta de patrocínio ligada a descarbonização e logística.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-09-16</span></footer>
+</body></html>
