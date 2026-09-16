@@ -1,6 +1,6 @@
 # Instruções — repositório da newsletter
 
-**Este repositório é PÚBLICO.** É o único público dos seis do Abilio, e é público por uma razão
+**Este repositório é PÚBLICO.** É o único público dos **doze** do Abilio, e é público por uma razão
 só: o GitHub Pages exige repositório público no plano grátis, e é ele que serve
 https://jrabilio.github.io/abilio-news/.
 
@@ -22,7 +22,7 @@ criou. O que separa os dois agora é a fronteira do repositório, que não depen
 ## Como a edição do dia é feita
 
 Uma Cloud Routine dispara às 6h (BRT), clona este repositório e segue
-[workflows/gerar_newsletter.md](workflows/gerar_newsletter.md). O `README.md` descreve os seis
+[workflows/gerar_newsletter.md](workflows/gerar_newsletter.md). O `README.md` descreve os
 passos. Se você for mexer no pipeline, leia o SOP antes — ele carrega o aprendizado de cada falha
 que já aconteceu em produção.
 
