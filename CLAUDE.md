@@ -1,6 +1,6 @@
 # Instruções — repositório da newsletter
 
-**Este repositório é PÚBLICO.** É o único público dos **doze** do Abilio, e é público por uma razão
+**Este repositório é PÚBLICO.** É o único público dos **onze** do Abilio, e é público por uma razão
 só: o GitHub Pages exige repositório público no plano grátis, e é ele que serve
 https://jrabilio.github.io/abilio-news/.
 
