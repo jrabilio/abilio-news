@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-18</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-18</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">TI Inside</div><h2><a href="https://tiinside.com.br/17/09/2026/ifood-anuncia-investimento-recorde-de-r-24-bilhoes-no-brasil/">iFood anuncia investimento recorde de R$ 24 bilhões, com R$ 2 bi em IA</a></h2><p class="resumo">A iFood anunciou, durante o evento iFood MOVE 2026 (16 e 17/09, em São Paulo), investimento recorde de R$ 24 bilhões para o ciclo fiscal de abril de 2026 a março de 2027, alta de 41% sobre o ciclo anterior. Mais de R$ 2 bilhões serão destinados a tecnologia e inteligência artificial, incluindo a evolução de agentes de IA e do Large Commerce Model (LCM), modelo de IA generativa desenvolvido com a Prosus. A companhia também vai expandir o crédito a pequenos negócios via iFood Pago.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,14</div><div class="var down">▼ -0.24%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,90</div><div class="var down">▼ -0.52%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">185.992</div><div class="var up">▲ +0.24%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.638</div><div class="var up">▲ +1.14%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.418</div><div class="var up">▲ +1.69%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/bradsaude-saud3-e-rede-dor-rdor3-ampliam-parceria-com-novo-projeto-em-jundiai/">Rede D&#x27;Or e Bradsaúde compram ativos para novo hospital em Jundiaí (SP)</a></h3><p class="resumo">A Atlântica D&#x27;Or, parceria entre Rede D&#x27;Or (RDOR3) e Bradsaúde (SAUD3), concluiu a aquisição de ativos imobiliários no bairro Anhangabaú, em Jundiaí, para construir e operar um novo hospital. A operação amplia a parceria entre as duas companhias, com a Rede D&#x27;Or respondendo pela gestão da futura unidade. Nem o valor da transação nem a data de abertura foram divulgados, mas analistas de mercado receberam o anúncio de forma positiva.</p></article><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/invest/mercados/ibovespa-ibov-fechamento-17-09-2026/">Fed eleva juros pela 1ª vez em 3 anos; Ibovespa fecha em alta após sessão volátil</a></h3><p class="resumo">O Federal Reserve elevou sua taxa básica em 0,25 ponto percentual, para a faixa de 3,75% a 4,00%, primeiro aperto monetário americano em três anos, com sinalização de mais uma alta ainda em 2026. Apesar do cenário externo mais restritivo, o Ibovespa fechou em alta de 0,24% nesta quinta-feira (17/09), aos 185.992 pontos, com o dólar recuando 0,24% para R$ 5,139. A sessão foi volátil, influenciada também pelo reajuste do Bolsa Família e pelo cenário eleitoral.</p></article><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://www.otempo.com.br/politica/governo/2026/9/17/governo-lula-anuncia-reajuste-de-15-para-o-bolsa-familia-beneficio-sobe-para-r-691-reais">Governo decreta reajuste de 15% no Bolsa Família, a R$ 691, e mercado reage</a></h3><p class="resumo">O presidente Lula assinou decreto nesta quinta-feira (17/09) reajustando em 15% o piso do Bolsa Família, de R$ 600 para R$ 691, com o benefício médio subindo a R$ 777 a partir de outubro. O custo fiscal é estimado em R$ 5,8 bilhões em 2026 e R$ 22 bilhões em 2027. A medida, tomada a menos de 20 dias das eleições, provocou reação na curva de juros e pressionou as taxas do Tesouro Direto no mesmo pregão.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Startups.com.br</div><h3><a href="https://startups.com.br/negocios/rodada-de-investimento/nuvia-levanta-r-10m-para-emplacar-agentes-de-ia-para-vendas/">Nuvia capta R$ 10 milhões e atrai três fundos internacionais ao Brasil</a></h3><p class="resumo">A Nuvia, startup brasileira de agentes de IA para vendas B2B, levantou US$ 1,8 milhão (cerca de R$ 10 milhões) em rodada liderada pelos fundos latino-americanos Amador Capital e Nascent, com participação da gestora já investidora NXTP, além de Crivo Ventures, Delusional Capital e Spectra Investimentos. É a estreia dos três fundos internacionais líderes no país. O aporte será usado para acelerar a expansão da empresa no Brasil e em outros mercados latino-americanos.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">TI Inside</div><h3><a href="https://tiinside.com.br/17/09/2026/ifood-anuncia-investimento-recorde-de-r-24-bilhoes-no-brasil/">iFood anuncia investimento recorde de R$ 24 bilhões, com R$ 2 bi em IA</a></h3><p class="resumo">A iFood anunciou, durante o evento iFood MOVE 2026 (16 e 17/09, em São Paulo), investimento recorde de R$ 24 bilhões para o ciclo fiscal de abril de 2026 a março de 2027, alta de 41% sobre o ciclo anterior. Mais de R$ 2 bilhões serão destinados a tecnologia e inteligência artificial, incluindo a evolução de agentes de IA e do Large Commerce Model (LCM), modelo de IA generativa desenvolvido com a Prosus. A companhia também vai expandir o crédito a pequenos negócios via iFood Pago.</p></article><article class="item"><div class="eyebrow fonte">The Washington Post</div><h3><a href="https://www.washingtonpost.com/technology/2026/09/17/anthropic-says-its-chatbot-claude-is-taking-over-work-building-its-own-successor/">Anthropic diz que Claude já lidera mais de 1/4 do P&amp;D da empresa</a></h3><p class="resumo">A Anthropic afirmou nesta quinta-feira (17/09) que mais de um quarto de seu trabalho de pesquisa e desenvolvimento já é conduzido por seu próprio chatbot, Claude, uma fatia que saltou de zero há poucos meses. A empresa descreve o avanço como um passo em direção a uma IA capaz de contribuir para a construção de sua própria sucessora, sem depender de intervenção humana direta nessas tarefas específicas de P&amp;D.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">XP Investimentos (Café com ESG)</div><h3><a href="https://conteudos.xpi.com.br/esg/google-anuncia-maior-compra-de-remocao-de-carbono-da-historia-da-companhia-cafe-com-esg-17-09/">Google anuncia maior compra de remoção de carbono da história da empresa</a></h3><p class="resumo">O Google anunciou sua maior compra de créditos de remoção de carbono já feita, ampliando os compromissos climáticos da companhia. O movimento foi destacado na edição de 17/09 do boletim Café com ESG, da XP Investimentos, que acompanha diariamente movimentações do mercado de sustentabilidade. A iniciativa reforça a tendência de grandes empresas de tecnologia ampliarem investimentos em soluções de captura e remoção de carbono para compensar suas emissões.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">BS9</div><h3><a href="https://www.bs9.com.br/litoral/2026/09/17/programa-incentivar-prepara-entidades-de-santos-para-captacao-de-recursos-para-projetos-culturais.html">Programa Incentivar ajuda entidades de Santos a captar recursos para cultura</a></h3><p class="resumo">O Programa Incentivar, realizado pela Rumo em parceria com o Ministério da Cultura, promoveu em Santos (SP), no dia 15/09, um encontro para ampliar a capacidade de entidades culturais locais de captar recursos via leis de incentivo fiscal. A iniciativa busca aproximar produtores culturais de potenciais patrocinadores e qualificar propostas para editais como a Lei Rouanet. A reportagem foi publicada em 17/09.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Folha Agrícola</div><h3><a href="https://folhaagricola.com.br/2026/09/16/preco-da-soja-volta-a-subir-com-demanda-aquecida-pelo-grao-brasileiro/">Preço da soja volta a subir com demanda aquecida pelo grão brasileiro</a></h3><p class="resumo">O mercado brasileiro de soja registrou valorização na quarta-feira (16/09), impulsionado pela demanda aquecida pelo grão nacional. Em Ponta Grossa (PR), a saca de 60 kg avançou R$ 2, para R$ 158; em Primavera do Leste (MT), a alta foi de R$ 1, a R$ 143. Os contratos futuros em Chicago também ajudaram a sustentar as cotações domésticas, em meio a uma sessão de volatilidade elevada no mercado internacional.</p></article><article class="item"><div class="eyebrow fonte">Portal SGC</div><h3><a href="https://sgc.com.br/noticia/17/448893/safra-202627-pode-marcar-virada-e-dar-folego-ao-produtor-rural">Safra 2026/27 pode marcar virada e dar fôlego ao produtor rural</a></h3><p class="resumo">Levantamento do Imea mostra avanço mensal no custeio das principais culturas da safra 2026/27, com maior alta percentual no milho, enquanto o produtor rural brasileiro ainda enfrenta crédito caro e endividamento. Menor crescimento da oferta mundial de grãos, estoques mais baixos e maior risco climático podem, no entanto, abrir espaço para recuperação de preços na nova safra. Chuvas irregulares e a força do El Niño ainda devem influenciar o ritmo da semeadura.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Portal Logweb</div><h3><a href="https://logweb.com.br/suzano-adquire-participacao-imetame-logistica-porto-espirito-santo/">Suzano adquire 10% do Imetame Logística Porto, no Espírito Santo</a></h3><p class="resumo">A Suzano adquiriu 10% de participação no empreendimento Imetame Logística Porto, complexo portuário em construção em Aracruz (ES) com cinco terminais especializados (contêineres, carga geral, granel sólido, granel líquido e ship-to-ship). O acordo prevê cessão de terrenos estrategicamente localizados da Suzano, sem previsão de aporte de capital da companhia no projeto durante 2026. A operação de carga geral deve começar no início de 2027, e o terminal de contêineres — joint venture com a Hanseatic Global Terminals, da Hapag-Lloyd — até meados de 2028.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-09-18</span></footer>
+</body></html>
