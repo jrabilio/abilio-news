@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-20</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-20</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Startups.com.br</div><h2><a href="https://startups.com.br/negocios/fintech/a5x-levanta-r-360m-para-competir-com-a-b3-em-derivativos/">A5X capta R$ 360 milhões em rodada Série D para desafiar a B3 em derivativos</a></h2><p class="resumo">A A5X, que constrói uma nova bolsa de derivativos e infraestrutura de contraparte central no Brasil, levantou R$ 360 milhões em rodada Série D anunciada em 14 de setembro, liderada por Morgan Stanley, Goldman Sachs e Kaszek, atingindo valuation de R$ 2,7 bilhões. A rodada contou ainda com acionistas já presentes na base, como IMC, Jump Trading, Optiver e XTX Markets, além da XP, que exerceu opção de compra e entrou no cap table. A empresa já acumula mais de R$ 730 milhões captados em quatro rodadas e prevê lançar a operação no segundo trimestre de 2027.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,158</div><div class="var up">▲ +0.11%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,91</div><div class="var down">▼ -0.33%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">185.229</div><div class="var down">▼ -0.41%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.650</div><div class="var up">▲ +0.17%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.523</div><div class="var up">▲ +0.39%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Revista Oeste</div><h3><a href="https://revistaoeste.com/economia/grupo-arabe-anuncia-compra-da-aeroespacial-brasileira-akaer/">Grupo dos Emirados Árabes anuncia compra da Akaer, aeroespacial brasileira</a></h3><p class="resumo">O Edge, grupo dos Emirados Árabes especializado em tecnologia de defesa, anunciou em 16 de setembro acordo para adquirir a Akaer, empresa brasileira de engenharia aeroespacial. A operação amplia a atuação do grupo em drones, sensores de observação e tecnologias espaciais. A Akaer seguirá operando no Brasil, mantendo colaboradores e clientes locais. É a terceira aquisição de uma empresa brasileira de defesa pela Edge desde 2023, após Siatt e Condor Tecnologias Não Letais.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-18092026/">Ibovespa fecha em queda na sexta, sob leitura eleitoral do aumento do Bolsa Família</a></h3><p class="resumo">O Ibovespa encerrou a sessão de 18 de setembro em queda de 0,41%, aos 185.229 pontos, interrompendo sequência de quatro semanas de alta. O pregão foi marcado por venda generalizada após edição extra do Diário Oficial anunciar alta de 15% no piso do Bolsa Família, movimento que traders leram como posicionamento eleitoral e não como mudança duradoura na trajetória fiscal. O volume financeiro do dia somou R$ 26,8 bilhões.</p></article><article class="item"><div class="eyebrow fonte">Reuters (via Acessa.com)</div><h3><a href="https://www.acessa.com/noticias/2026/09/340224-warren-buffett-deixa-presidencia-do-conselho-de-administracao-da-berkshire-hathaway.html">Warren Buffett deixa presidência do conselho da Berkshire Hathaway</a></h3><p class="resumo">A Berkshire Hathaway anunciou em 18 de setembro que Warren Buffett, aos 96 anos, deixou a presidência do conselho de administração e passou à posição de presidente emérito. Howard Buffett, membro do conselho desde 1993, assume a presidência. Buffett já havia deixado o cargo de CEO da companhia, hoje ocupado por Greg Abel. A Berkshire é um conglomerado avaliado em US$ 1,1 trilhão, com negócios em seguros, ferrovias, energia e varejo.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Conexão In</div><h3><a href="https://conexaoin.com.br/corporate-venture-in-brasil-2026-reune-mais-de-700-participantes-e-aproxima-capital-global-da-inovacao-brasileira/">Corporate Venture in Brasil 2026 conecta 45 fundos brasileiros a investidores internacionais</a></h3><p class="resumo">A ApexBrasil e a Global Corporate Venturing realizaram em 15 e 16 de setembro, em São Paulo, a nova edição do Corporate Venture in Brasil, reunindo mais de 700 participantes entre executivos, gestores de fundos de venture capital e corporate venture capital e líderes de startups. O evento recebeu mais de 40 investidores estrangeiros das Américas, Europa e Ásia, conectou 45 fundos brasileiros a capital internacional e viabilizou mais de 250 reuniões de negócios B2B.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Olhar Digital</div><h3><a href="https://olhardigital.com.br/2026/09/19/inteligencia-artificial/eleicao-de-2026-no-brasil-sera-teste-para-uso-de-ia-em-pleitos-futuros-diz-executivo-da-openai">Brasil será o grande teste mundial para uso de IA em eleições, diz executivo da OpenAI</a></h3><p class="resumo">Bruno Lewicki, chefe de Políticas Públicas da OpenAI na América Latina, afirmou em entrevista publicada em 19 de setembro que a eleição brasileira de 2026 será um dos principais testes globais para o uso de inteligência artificial em processos eleitorais. Segundo ele, conteúdo gerado pela ferramenta recebe etiqueta digital com metadados de origem e marca d&#x27;água invisível. Em levantamento citado na reportagem, o modelo se recusou a ranquear ou recomendar candidatos em 32 de 33 tentativas, e o TSE já proibiu que sistemas de IA recomendem ou favoreçam candidatos e partidos.</p></article><article class="item"><div class="eyebrow fonte">Mix Vale</div><h3><a href="https://www.mixvale.com.br/2026/09/17/openai-projeta-avaliacao-de-us-15-tri-em-nova-captacao/">OpenAI avalia nova rodada de capital com avaliação de US$ 1,5 trilhão</a></h3><p class="resumo">A OpenAI está avaliando uma nova rodada de captação que a avaliaria em até US$ 1,5 trilhão, segundo informações divulgadas em 16 de setembro. A empresa teria recusado proposta de investidores a US$ 1,2 trilhão, argumentando que a tração comercial de seu assistente de código Codex e dos modelos GPT-6 Astra e GPT-5.6 Sol justificam valor maior. A OpenAI gerou mais de US$ 40 bilhões em receita anualizada no último mês. O CEO Sam Altman disse que um IPO antes de 2027 é improvável.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Agribrasilis</div><h3><a href="https://agribrasilis.com/2026/09/18/descarbonizacao-da-industria/">Banco Mundial e BNDES mobilizam US$ 1,06 bilhão para descarbonizar indústria brasileira</a></h3><p class="resumo">O Banco Mundial anunciou em 18 de setembro operação de US$ 1,06 bilhão para financiar a descarbonização da indústria brasileira, executada com o BNDES, com potencial de mobilizar mais US$ 1,8 bilhão adicionais. Os recursos vão financiar projetos nos setores de aço, cimento, químico, alumínio e vidro, além de combustíveis de baixo carbono como biometano, combustível sustentável de aviação e e-metanol. A iniciativa apoia a meta brasileira de reduzir em 30% a intensidade de emissões de gases de efeito estufa do PIB industrial até 2033.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">O Capixaba</div><h3><a href="https://ocapixaba.com.br/oportunidades/2026/09/cachoeiro-lanca-edital-para-acoes-culturais/">Cachoeiro de Itapemirim abre chamamento público para financiar projetos culturais</a></h3><p class="resumo">A Prefeitura de Cachoeiro de Itapemirim (ES) publicou o Edital de Chamamento Público nº 16/2026 para selecionar projetos de execução de ações culturais no município, com inscrições até as 12h do dia 30 de setembro. A seleção segue a Política Nacional Aldir Blanc de Fomento à Cultura (PNAB) e normas federais e municipais de financiamento cultural. As inscrições devem ser feitas exclusivamente pelo Mapa Cultural ES.</p></article><article class="item"><div class="eyebrow fonte">AC24horas</div><h3><a href="https://ac24horas.com/2026/09/17/assis-brasil-lanca-edital-para-artistas-e-produtores-culturais-com-inscricoes-ate-outubro/">Assis Brasil lança edital para artistas e produtores culturais com inscrições até outubro</a></h3><p class="resumo">A Prefeitura de Assis Brasil (AC) publicou em 17 de setembro o Edital de Chamamento Público nº 003/2026 para selecionar projetos artísticos e culturais financiados com recursos da Política Nacional Aldir Blanc (PNAB), com inscrições gratuitas até 5 de outubro. O edital prevê cotas afirmativas de 25% para pessoas negras, 10% para indígenas e 5% para pessoas com deficiência, e seleciona até três projetos.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/agro/processamento-de-soja-de-635-milhoes-de-toneladas-sera-recorde-em-2026/">Abiove eleva estimativa de processamento de soja e projeta recorde em 2026</a></h3><p class="resumo">A Abiove (Associação Brasileira das Indústrias de Óleos Vegetais) elevou para 63,5 milhões de toneladas sua estimativa de processamento de soja em 2026, volume que seria recorde e supera em cerca de 8,5% a marca de 58,5 milhões de toneladas de 2025, segundo levantamento divulgado em 18 de setembro. A entidade também elevou a projeção de exportação de óleo de soja para 1,8 milhão de toneladas, alta de 36% sobre 2025, e reduziu marginalmente a previsão de exportação do grão, de 115,4 para 115 milhões de toneladas.</p></article><article class="item"><div class="eyebrow fonte">Passando a Limpo MT</div><h3><a href="https://passandoalimpomt.com.br/agronegocio/primavera-chega-terca-com-previsao-de-safra-recorde-mesmo-sob-ameaca-de-el-nino-historico/">Plantio da safra 2026/27 começa sob El Niño forte e chuva abaixo da média</a></h3><p class="resumo">O plantio da soja da safra 2026/27 começou nesta semana sob um dos cenários climáticos mais contrastantes dos últimos anos, com prognóstico de chuva abaixo da média no Centro-Norte do país. Mato Grosso, maior produtor nacional, liberou o plantio, mas produtores avançam devagar à espera de a chuva se firmar diante de um El Niño de forte intensidade, segundo reportagem publicada em 19 de setembro.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Folha Vitória</div><h3><a href="https://www.folhavitoria.com.br/economia/suzano-compra-10-do-porto-da-imetame-e-entra-em-projeto-de-cinco-terminais-no-es/">Suzano adquire 10% do complexo portuário Imetame Logística Porto, no Espírito Santo</a></h3><p class="resumo">A Suzano fechou acordo para adquirir 10% de participação na Imetame Logística Porto, empreendimento portuário em construção em Aracruz (ES), por meio de aporte de terras da companhia, sem desembolso relevante de caixa. O projeto prevê complexo com cinco terminais — contêineres, carga geral, granéis sólido e líquido e operações navio-a-navio — com 17 metros de profundidade, superior aos 12 metros do Portocel, terminal em que a Suzano já detém 51%. Gancho de FUP: movimento de expansão logística da Imetame sinaliza apetite para novos projetos de infraestrutura.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-09-20</span></footer>
+</body></html>
