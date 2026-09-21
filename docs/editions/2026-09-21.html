@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-21</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-21</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Metrópoles</div><h2><a href="https://www.metropoles.com/brasil/petrobras-adere-subvencao-r-1-litro-diesel">Petrobras adere a subvenção e anula alta de R$ 1 no diesel</a></h2><p class="resumo">O Conselho de Administração da Petrobras aprovou no sábado (19/9) a adesão da estatal ao novo programa federal de subvenção ao diesel, criado pela Medida Provisória 1.391/2026. O governo paga R$ 1 por litro de diesel A por 30 dias, prorrogáveis, cancelando na prática o aumento de R$ 1 que a própria Petrobras havia anunciado dias antes. O benefício é cumulativo com a subvenção de R$ 1,12 já em vigor, somando R$ 2,12 por litro de alívio às distribuidoras — que devem repassar o alívio a caminhoneiros e, na ponta, aos preços de alimentos e frete.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,14</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,91</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">185.229</div><div class="var down">▼ -0.41%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.650</div><div class="var up">▲ +0.17%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.523</div><div class="var up">▲ +0.39%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Metrópoles</div><h3><a href="https://www.metropoles.com/brasil/petrobras-adere-subvencao-r-1-litro-diesel">Petrobras adere a subvenção e anula alta de R$ 1 no diesel</a></h3><p class="resumo">O Conselho de Administração da Petrobras aprovou no sábado (19/9) a adesão ao novo programa federal de subvenção ao diesel, da Medida Provisória 1.391/2026. O governo paga R$ 1 por litro de diesel A por 30 dias, prorrogáveis, anulando o aumento que a própria Petrobras havia anunciado dias antes. A medida soma R$ 2,12 por litro de alívio às distribuidoras, cumulativa com a subvenção de R$ 1,12 já vigente.</p></article><article class="item"><div class="eyebrow fonte">The Rio Times</div><h3><a href="https://www.riotimesonline.com/brazils-financial-morning-call-for-monday-september-21-2026">Mercado começa a semana atento à trajetória da Selic</a></h3><p class="resumo">O Ibovespa recuou 0,41% nesta segunda-feira (21/9), em sessão sem resultados corporativos ou eventos relevantes agendados na B3. Com a Selic em 13,75%, o mercado local ficou concentrado no Boletim Focus, divulgado pela manhã, e na expectativa pela ata do Copom, que sai na terça (22/9), seguida do Relatório de Política Monetária na quinta (24/9). O real seguiu praticamente estável frente ao dólar.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/economia/money/inteligencia-artificial/anthropic-considera-lancar-um-novo-modelo-de-ia-antes-do-ipo/">Anthropic avalia lançar novo modelo de IA antes do IPO</a></h3><p class="resumo">A Anthropic está avaliando lançar um novo modelo de inteligência artificial antes de seu esperado IPO, segundo reportagem da Reuters publicada na sexta-feira (18/9) com base em três fontes. O objetivo seria contrabalançar o avanço da OpenAI desde o lançamento do GPT-6 Astra. O momento chama atenção por vir logo depois de o CEO Dario Amodei pedir publicamente uma desaceleração no ritmo de lançamento de novas capacidades de IA no setor, por preocupações de segurança.</p></article><article class="item"><div class="eyebrow fonte">Notícias Favoritas (Financial Times)</div><h3><a href="https://www.noticiasfavoritas.com.br/blog/big-techs-usam-outras-empresas-para-deixar-us-300-bi-fora-dos-balancos-20-09-2026-ia">Big techs deixam US$ 300 bi de exposição a IA fora dos balanços</a></h3><p class="resumo">Levantamento do Financial Times, publicado no domingo (20/9), mostra que grandes empresas de tecnologia emitiram até US$ 300 bilhões em garantias para financiar data centers e chips de IA em menos de um ano, com pouca dessa exposição aparecendo em seus balanços. A Nvidia deu US$ 105 bilhões em garantias a um complexo de data centers para a OpenAI, e a Broadcom assumiu US$ 29 bilhões ligados a um financiamento de chips para a Anthropic. O Morgan Stanley soma mais de US$ 3,1 trilhões em compromissos fora do balanço de sete grandes empresas do setor.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Diário do Grande ABC</div><h3><a href="https://www.dgabc.com.br/Noticia/4348010/brasil-se-firma-como-fiador-alimentar-mas-insumos-ameacam-margens">Brasil reforça papel de fiador alimentar global, mas insumos pressionam margens</a></h3><p class="resumo">Reportagem publicada no domingo (20/9) mostra que o Índice de Preços de Alimentos da FAO subiu para 133,3 pontos em agosto, alta de 1,9% ante julho, em meio a eventos climáticos extremos e tensões geopolíticas. A Conab estima a safra brasileira de grãos em 361,7 milhões de toneladas, e as exportações do agronegócio somaram US$ 57,85 bilhões entre janeiro e agosto, alta de 9,45% sobre 2025. O desafio do setor é a dependência de cerca de 85% de fertilizantes importados, limitador estrutural de longo prazo.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Portal 27</div><h3><a href="https://www.portal27.com.br/samarco-completa-49-anos-e-anuncia-plano-de-investimentos-de-r-138-bilhoes-ate-2028/">Samarco anuncia plano de R$ 13,8 bi para retomar 100% da capacidade até 2028</a></h3><p class="resumo">A Samarco anunciou na sexta-feira (18/9), durante visita à comunidade no complexo de Ubu, em Anchieta (ES), um novo ciclo de investimentos de R$ 13,8 bilhões para retomar 100% da capacidade produtiva a partir de 2028. A mineradora opera hoje a cerca de 60% da capacidade instalada, em retomada gradual desde o rompimento da barragem de Mariana — sinal institucional forte, com janela para pauta de patrocínio e ESG à medida que a retomada avança.</p></article><article class="item"><div class="eyebrow fonte">Diário do Grande ABC</div><h3><a href="https://www.dgabc.com.br/Noticia/4345498/governo-inclui-no-pac-obra-de-gasoduto-privado-que-vai-abastecer-termoeletricas">Governo inclui novo gasoduto da TAG de R$ 1,5 bi no Novo PAC</a></h3><p class="resumo">O governo federal incluiu no Novo PAC, por decisão do comitê gestor em 14/7 e noticiado em 7/9, uma obra de gasoduto privado de R$ 1,5 bilhão da TAG para abastecer termelétricas no Nordeste. O projeto amplia a capacidade de transporte entre Alagoas e Ceará, com conclusão prevista para outubro de 2028, financiado integralmente pela própria empresa — expansão relevante que reforça o apetite de investimento da companhia.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-09-21</span></footer>
+</body></html>
