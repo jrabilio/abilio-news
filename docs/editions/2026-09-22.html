@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-22</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-22</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">ECO (com base em Financial Times)</div><h2><a href="https://eco.sapo.pt/2026/09/20/garantias-de-300-bilioes-fora-dos-balancos-das-tecnologicas/">Big techs usam garantias para manter US$ 300 bi de exposição a IA fora do balanço</a></h2><p class="resumo">Levantamento do Financial Times mostra que grandes empresas de tecnologia emitiram até US$ 300 bilhões em garantias ligadas a data centers e chips de IA no último ano, a maior parte fora dos balanços oficiais. Meta deu garantia de US$ 28 bi em projeto na Louisiana, Broadcom assumiu US$ 29 bi em financiamento de chips para a Anthropic, e a Nvidia concedeu US$ 105 bi em garantias a um data center da OpenAI. O risco aparece se a demanda por IA desacelerar com a infraestrutura já construída.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,108</div><div class="var down">▼ -0.70%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,86</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">186.596</div><div class="var up">▲ +0.74%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.765</div><div class="var up">▲ +1.49%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">27.122</div><div class="var up">▲ +2.26%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/economia/boletim-focus-projecoes-21092026/">Boletim Focus reduz projeção da Selic para 13,50% em 2026 e eleva IPCA</a></h3><p class="resumo">O Boletim Focus do Banco Central, divulgado em 21/09, mostrou que o mercado financeiro reduziu a projeção para a Selic ao fim de 2026, de 13,75% para 13,50%. Ao mesmo tempo, a estimativa para o IPCA do ano subiu de 4,90% para 4,92%. A projeção para o dólar ao fim de 2026 permaneceu em R$ 5,20.</p></article><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/invest/mercados/recuperacao-judicial-vira-industria-e-atrai-dezenas-de-fundos-no-brasil/">Fundos para empresas em crise já superam os de expansão no Brasil</a></h3><p class="resumo">Fundos de special situations tinham R$ 17,4 bilhões disponíveis para novos aportes em junho de 2026, volume que pela primeira vez supera o destinado a financiar a expansão de negócios. O Brasil chegou ao 2º trimestre de 2026 com recorde de 6.341 empresas em recuperação judicial, concentradas em médias empresas. O movimento reflete juros elevados e crédito mais seletivo.</p></article><article class="item"><div class="eyebrow fonte">Agência Brasil</div><h3><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/petrobras-aumenta-diesel-mas-subsitio-mantem-valor-final-entenda">Petrobras adere a subvenção federal e anula alta de R$ 1 no diesel</a></h3><p class="resumo">O conselho da Petrobras aprovou a adesão da companhia a um programa de subvenção federal ao diesel, instituído por medida provisória em setembro. Na prática, a medida anula o reajuste de R$ 1,00 por litro que a própria petroleira havia anunciado dias antes. O desconto, bancado pelo governo, vale por 30 dias prorrogáveis e representa custo mensal de R$ 7 bilhões ao Tesouro.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/business/mombak-fecha-novo-fundo-de-reflorestamento-e-ganha-a-salesforce-como-cliente/">Mombak fecha 1º closing de novo fundo e ganha a Salesforce como cliente</a></h3><p class="resumo">A Mombak, startup brasileira de remoção de carbono, concluiu a primeira etapa de captação do seu segundo fundo de reflorestamento, o Amazon Reforestation Fund II, que mira US$ 150 milhões e terá linha de crédito de R$ 200 milhões do Fundo Clima (BNDES). A empresa também assinou contrato plurianual de venda de créditos de carbono com a Salesforce, que se soma a compradores como Google e Microsoft.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/inteligencia-artificial/openai-pede-que-os-eua-liderem-um-padrao-global-para-a-proxima-fase-da-ia/">OpenAI pede que EUA liderem padrão global de regras para IA de fronteira</a></h3><p class="resumo">A OpenAI pediu, em 21/09, que o governo dos Estados Unidos lidere uma articulação internacional para criar regras técnicas comuns para modelos de IA de ponta, incluindo o monitoramento do chamado aprimoramento recursivo — processo em que um sistema amplia sua própria capacidade sem supervisão humana. A empresa argumenta que a liderança americana definirá se a IA fortalece redes de aliados ou gera um sistema fragmentado.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">XP Investimentos (Café com ESG)</div><h3><a href="https://conteudos.xpi.com.br/esg/natura-capta-r-700-milhoes-em-slbs-com-metas-para-uso-de-plastico-reciclado-cafe-com-esg-21-09/">Natura capta R$ 700 milhões em títulos ligados a metas de plástico reciclado</a></h3><p class="resumo">A Natura captou R$ 700 milhões em SLBs (sustainability-linked bonds), títulos cujo custo está atrelado ao cumprimento de metas de uso de plástico reciclado em suas embalagens. A operação, destacada na coluna Café com ESG de 21/09, reforça a estratégia da companhia de atrelar captação de dívida a compromissos ambientais mensuráveis.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Notícias Agrícolas</div><h3><a href="https://www.noticiasagricolas.com.br/noticias/soja/428223-china-volta-a-comprar-soja-dos-eua-e-anuncia-mais-111-mil-toneladas-antes-de-encontro-trump-xi.html">Soja recupera parte das perdas com nova compra chinesa antes de reunião Trump-Xi</a></h3><p class="resumo">A soja recuperou parte das perdas de sexta-feira nesta segunda-feira (21/09), com o mercado monitorando a demanda chinesa às vésperas do encontro entre Donald Trump e Xi Jinping, previsto para quinta-feira (24/09) em Washington. A China confirmou compra de mais 111 mil toneladas de soja dos EUA para entrega na safra 2026/27, movimento que se soma a outras aquisições feitas ao longo de setembro.</p></article><article class="item"><div class="eyebrow fonte">Safras &amp; Mercado</div><h3><a href="https://safras.com.br/cafe-fecha-em-baixa-em-ny-com-melhora-na-oferta-e-amplas-exportacoes-do-brasil">Café arábica recua em Nova York com oferta ampla e exportações recordes do Brasil</a></h3><p class="resumo">Os contratos futuros de café arábica fecharam em baixa em Nova York, pressionados pela ampla oferta global, pelos fortes embarques do Brasil e do Vietnã e pelo aumento dos estoques certificados. Os preços atingiram os níveis mais baixos em quase três meses no contrato de dezembro, num cenário em que a Organização Internacional do Café projeta superávit de 3 milhões de sacas para 2025/26.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">ES Hoje</div><h3><a href="https://eshoje.com.br/economia/economia-e-mercado/2026/09/samarco-conquista-dois-premios-de-inovacao-na-abm-week-2026-em-sao-paulo/">Samarco recebe dois prêmios de inovação sustentável na ABM Week 2026</a></h3><p class="resumo">A Samarco recebeu dois prêmios na 10ª ABM Week, em São Paulo, entre eles o Prêmio Aço Verde do Brasil na categoria Sustentabilidade, pelo queimador Low NOx — tecnologia própria que reduz emissões de óxido de nitrogênio nos fornos de pelotização da unidade de Ubu (ES), já em operação em 16 unidades. A empresa também elevou vendas de minério em 23% no 2º trimestre de 2026, em processo de retomada gradual da capacidade — reconhecimento que reforça a narrativa ESG da companhia.</p></article><article class="item"><div class="eyebrow fonte">Portal Logweb</div><h3><a href="https://logweb.com.br/sada-siderurgia-modernizacao-industria/">Grupo Sada amplia siderurgia em 60% e mira 70% das atividades em novos setores</a></h3><p class="resumo">O Grupo Sada investiu R$ 22 milhões em tecnologia e Indústria 4.0 para ampliar em 60% a capacidade instalada da SADA Siderurgia, com novas frentes em Nova Lima, Igarapé e Juiz de Fora. A companhia também inaugurou a Igarapé Reciclagem, primeira recicladora integrada de veículos do país, e projeta que negócios verdes e diversificação respondam por 70% de suas atividades até 2030 — sinal de expansão e apetite para pauta ESG que pode virar gancho de patrocínio.</p></article><article class="item"><div class="eyebrow fonte">M. Dias Branco</div><h3><a href="https://mdiasbranco.com.br/m-dias-branco-fortalece-sua-estrategia-energetica-e-avanca-rumo-as-metas-esg/">M. Dias Branco é reconhecida no CDP A-List e completa 5º ano no ISE da B3</a></h3><p class="resumo">A M. Dias Branco foi reconhecida novamente pelo Carbon Disclosure Project (CDP) com nota máxima em mudanças climáticas, integrando a A-List global, e permanece pelo quinto ano consecutivo no Índice de Sustentabilidade Empresarial (ISE) da B3. A empresa também elevou a participação de energia renovável em suas operações de 32% em 2022 para 85% em 2026, a caminho da meta de 90% até 2030 — compromisso ESG consistente que sustenta pauta de patrocínio institucional.</p></article><article class="item"><div class="eyebrow fonte">eixos</div><h3><a href="https://eixos.com.br/gas-natural/copergas-amplia-volumes-contratados-da-petrobras-e-volta-a-ter-estatal-como-principal-fornecedora-de-gas/">Copergás amplia fornecimento com novo contrato com a Galp</a></h3><p class="resumo">A Copergás (Companhia Pernambucana de Gás) assinou contrato com a Galp para aquisição de 10 mil m³/dia de gás natural, com início de fornecimento previsto para outubro de 2026, movimento que diversifica sua base de fornecedores após período de concentração na Petrobras. A distribuidora também renovou contrato firme de 1,55 milhão de m³/dia com a Petrobras até 2034 — expansão operacional que sinaliza fôlego financeiro.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-09-22</span></footer>
+</body></html>
