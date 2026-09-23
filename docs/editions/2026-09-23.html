@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-23</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-23</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Jornal da Mídia</div><h2><a href="https://www.jornaldamidia.com.br/2026/09/22/grupo-gps-compra-80-de-uma-joia-da-engenharia-baiana/">Grupo GPS compra 80% da Qualidados, consultoria de engenharia baiana avaliada em R$ 272 milhões de receita</a></h2><p class="resumo">O Grupo GPS (GGPS3), por meio da subsidiária Top Service, anunciou a aquisição de 80% da Qualidados Consultoria e Sistemas, empresa de Salvador (BA) fundada em 1993 e especializada em consultoria de engenharia, gerenciamento de projetos e paradas industriais para os setores petroquímico, óleo e gás e papel e celulose. A Qualidados registrou receita bruta de aproximadamente R$ 272 milhões nos 12 meses encerrados em agosto de 2026 — a maior aquisição do GPS em 2026 em termos de receita, e a quarta do ano. Os termos financeiros não foram divulgados, e a conclusão do negócio depende de aprovação do CADE.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,106</div><div class="var down">▼ -0.05%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,840</div><div class="var down">▼ -0.01%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">187.423</div><div class="var up">▲ +0.44%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.765</div><div class="var flat"> 0,00%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">27.244</div><div class="var up">▲ +0.45%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/invest/mercados/ibovespa-ibov-fechamento-22-09-2026/">Ibovespa sobe 0,44% e fecha aos 187.422 pontos; dólar recua a R$ 5,10</a></h3><p class="resumo">O Ibovespa fechou a sessão de terça-feira (22/09) em alta de 0,44%, aos 187.422,92 pontos, após oscilar entre mínima de 184.976,81 e máxima de 187.671,74 pontos no dia. O dólar à vista recuou e encerrou cotado a R$ 5,10, descolando-se da valorização do índice DXY no exterior. O mercado repercutiu o cenário eleitoral, a política monetária do Banco Central e novas projeções para a atividade econômica; o volume negociado no Ibovespa ficou em cerca de R$ 0,96 bilhão.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/negocios/startup-de-ia-cresce-750-no-brasil-ao-transformar-sites-em-dados-para-empresas/">Firecrawl, cofundada por brasileiro, capta US$ 75 milhões em Série B e mira expansão no Brasil</a></h3><p class="resumo">A Firecrawl, startup de infraestrutura de dados para agentes de IA cofundada pelo brasileiro Nicolas Silberstein Camara, Caleb Peffer e Eric Ciarla, levantou US$ 75 milhões (cerca de R$ 400 milhões) em rodada Série B liderada pela Smash Capital, com participação de Altos, Nexus, Y Combinator, Freestyle e Offline Ventures. O aporte financia o lançamento da Alexandria, plataforma que organiza conhecimento para agentes de IA, e a abertura de um escritório no Brasil, onde a empresa diz ter crescido 750%. A rodada vem um ano após a Série A de R$ 81 milhões.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Anthropic (blog oficial)</div><h3><a href="https://www.anthropic.com/claude-opus-5-5">Anthropic lança Claude Opus 5.5, com melhor desempenho de segurança já registrado e custo 20% menor</a></h3><p class="resumo">A Anthropic lançou em 22/09/2026 o Claude Opus 5.5, seu modelo Opus mais forte até hoje, com desempenho equivalente ao Claude Fable 5.1 na maioria das tarefas de código e trabalho profissional, mas custando 20% menos para rodar que o Opus 5 (US$4 por milhão de tokens de entrada e US$20 de saída) e gerando respostas mais de 30% mais rápido. Segundo a empresa, o modelo teve o melhor resultado já registrado em sua auditoria automatizada de alinhamento, com cerca de 85% menos tentativas de contornar limites de segurança em relação a versões anteriores. Já está disponível em todas as plataformas, incluindo AWS, Google Cloud e Microsoft Azure/Foundry.</p></article><article class="item"><div class="eyebrow fonte">OpenAI (blog oficial)</div><h3><a href="https://openai.com/index/introducing-gpt-6-sol-and-luna/">OpenAI lança GPT-6 Sol e GPT-6 Luna com preços até 50% menores</a></h3><p class="resumo">A OpenAI lançou em 22/09/2026 dois novos modelos: o GPT-6 Sol, voltado ao trabalho cotidiano com mais capacidade de raciocínio, e o GPT-6 Luna, uma opção ainda mais barata para respostas rápidas em alto volume. Os preços caíram cerca de 50% frente aos modelos anteriores — Sol custa US$2 por milhão de tokens de entrada e US$10 de saída, e Luna, US$0,10/US$0,50 — e a empresa afirma que o Sol comete aproximadamente metade dos erros do GPT-5.6 Sol em tarefas de código. Os modelos já estão disponíveis para usuários pagos do ChatGPT Work e do Codex, com o Luna também liberado para usuários gratuitos no app de desktop.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Agência Gov (EBC)</div><h3><a href="https://agenciagov.ebc.com.br/noticias/202609/decreto-do-hidrogenio-e-publicado-e-marca-nova-etapa-em-regulamentacao">Governo publica decreto que regulamenta política nacional do hidrogênio de baixa emissão</a></h3><p class="resumo">O governo federal publicou nova etapa de regulamentação do Decreto nº 13.096/2026, detalhando o Sistema Brasileiro de Certificação do Hidrogênio, o Rehidro (Regime Especial de Incentivos) e o PHBC (Programa de Desenvolvimento do Hidrogênio de Baixa Emissão de Carbono). A medida vincula benefícios fiscais ao cumprimento de requisitos ambientais, tecnológicos e industriais, e prevê R$ 18,3 bilhões em créditos fiscais distribuídos entre 2030 e 2034, via processo concorrencial conduzido pelo Ministério da Fazenda, priorizando descarbonização de setores como siderurgia e petroquímica.</p></article><article class="item"><div class="eyebrow fonte">AutoIndústria</div><h3><a href="https://www.autoindustria.com.br/2026/09/22/motiva-entra-no-mercado-de-recarga-de-onibus-eletricos-em-sao-paulo/">Motiva entra no mercado de recarga de ônibus elétricos em São Paulo</a></h3><p class="resumo">A Motiva, maior operadora de rodovias do Brasil, investiu R$ 5 milhões para instalar 12 carregadores de 180 kVA no Pátio Guido Caloi (Linha 5-Lilás, concessão da ViaMobilidade em São Paulo), permitindo recarregar 24 ônibus elétricos simultaneamente em até 3 horas. O primeiro contrato foi fechado com a Viação Campo Belo, para atender inicialmente 40 veículos por dia. A empresa já mapeia expansão para Vila Sônia e Capão Redondo, além de soluções de recarga para e-commerce, logística e corredores rodoviários.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Exame Agro</div><h3><a href="https://exame.com/agro/o-diesel-da-safra-2026-27-esta-em-falta-e-especulacao-diz-governo/">Governo descarta desabastecimento de diesel e fertilizantes para a safra 2026/27</a></h3><p class="resumo">O ministro da Agricultura, André de Paula, afirmou durante o 15º Congresso Brasileiro de Algodão, em Belo Horizonte, que as preocupações com falta de diesel para o plantio da safra 2026/27 ainda estão no campo da especulação, sem sinais concretos de desabastecimento, embora reconheça pressão de preços pela instabilidade internacional. Sobre fertilizantes, disse considerar afastado o risco de desabastecimento apesar de mais da metade da produção nacional estar paralisada, citando priorização de navios importados, reativação de fábricas da Petrobras (35% da demanda até 2027) e acordo com o Marrocos para 3,8 milhões de toneladas de fosfatados. Não se comprometeu com o subsídio de R$ 900 milhões a R$ 2 bilhões pedido pela indústria para importação de enxofre.</p></article><article class="item"><div class="eyebrow fonte">Reuters (via Investing.com Brasil)</div><h3><a href="https://br.investing.com/news/commodities-news/chuvas-impulsionam-plantio-de-soja-no-parana-mas-afetam-safra-de-trigo-diz-deral-2072094">Chuvas impulsionam plantio de soja no Paraná, mas afetam safra de trigo, diz Deral</a></h3><p class="resumo">O plantio de soja no Paraná para a safra 2026/27 atingiu 15% da área projetada, avanço de 13 pontos percentuais sobre a semana anterior, no ritmo mais acelerado desde 2023, favorecido por chuvas recentes. As mesmas chuvas, porém, prejudicam a colheita de trigo no estado, causando doenças fúngicas e perda de qualidade dos grãos, com queda estimada de 18% na safra de trigo ante o ano anterior.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">O Especialista (Safra)</div><h3><a href="https://oespecialista.safra.com.br/analise/engie-egie3-encontro-investidores-crescimento/">Engie reafirma foco em geração e transmissão em encontro com investidores</a></h3><p class="resumo">Em encontro anual com investidores em 17/09/2026, o presidente Eduardo Sattamini e executivos da Engie Brasil destacaram vitórias no leilão de reserva de capacidade e no leilão de transmissão, além da renegociação do contrato da usina de Belo Monte (UBP). A empresa sinalizou interesse em participar do próximo leilão de baterias, em dezembro de 2026 — resultados operacionais positivos e ciclo de expansão em curso sinalizam apetite financeiro, janela para pauta de patrocínio.</p></article><article class="item"><div class="eyebrow fonte">Revista Mineração</div><h3><a href="https://revistamineracao.com.br/2026/09/14/samarco-conquista-dois-premios-de-inovacao-na-abm-week-2026/">Samarco conquista dois prêmios de inovação na ABM Week 2026, em São Paulo</a></h3><p class="resumo">Na 10ª edição da ABM Week (8 a 10/09/2026), a Samarco venceu o Prêmio Aço Verde do Brasil (categoria Sustentabilidade) com projeto de queimador de baixo NOx na unidade de Ubu (ES), e o Prêmio Vesuvius (Automação e TI) por projeto de análise hiperespectral com inteligência artificial, entre 41 trabalhos técnicos apresentados — reconhecimento técnico que reforça a agenda ESG da empresa e abre espaço para pauta de patrocínio ligada a inovação industrial.</p></article><article class="item"><div class="eyebrow fonte">Gazeta do Povo</div><h3><a href="https://www.gazetadopovo.com.br/vozes/parana-sa/premio-reclame-aqui-2026-compagas/">Prêmio Reclame AQUI 2026: Compagás está entre indicadas</a></h3><p class="resumo">A Compagás foi indicada pela primeira vez ao Prêmio Reclame Aqui, sendo a única distribuidora regional de gás natural selecionada na categoria Distribuidora de Gás. A nota da empresa na plataforma subiu de 4,7 (2023) para 9,1 atualmente, com 100% dos reclamantes informando problemas resolvidos nos últimos 12 meses — melhoria de reputação que reforça narrativa institucional positiva, janela para pauta de patrocínio/marca.</p></article><article class="item"><div class="eyebrow fonte">Rádio Pampa</div><h3><a href="https://www.radiopampa.com.br/comissao-da-assembleia-sobre-servicos-da-aegea-corsan-encerra-atividades-sem-votar-relatorio-final/">Comissão da Assembleia sobre serviços da Aegea/Corsan encerra atividades sem votar relatório final</a></h3><p class="resumo">A Comissão Especial de Saneamento da Assembleia Legislativa do RS, instalada para investigar falhas nos serviços da Aegea/Corsan, encerrou suas atividades em 22/09/2026 sem votar o relatório final por falta de quórum. O relator sugeriu abertura de CPI, e a presidente do colegiado enviará o levantamento ao Ministério Público e à Defensoria Pública — sinal de risco regulatório/reputacional a monitorar na conta.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-09-23</span></footer>
+</body></html>
