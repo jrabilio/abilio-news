@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-24</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-24</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">O Tempo</div><h2><a href="https://www.otempo.com.br/politica/2026/9/22/cade-da-aval-final-e-copasa-fica-livre-para-concluir-privatizacao-entenda-os-proximos-passos">Cade libera privatização da Copasa pela Equatorial após rejeitar embargos</a></h2><p class="resumo">O Tribunal do Cade rejeitou por unanimidade, nesta terça-feira (22/09), os embargos apresentados pelo sindicato Sindágua-MG contra a aprovação da venda de 30% do capital social da Copasa para a Gerais Saneamento, do Grupo Equatorial. A decisão homologa o aval antitruste já dado e encerra as possibilidades de recurso administrativo dentro da agência. A operação prevê aporte de R$ 5,5 bilhões pela Equatorial pela fatia de 30% da companhia mineira de saneamento, ao preço de R$ 49,03 por ação, liberando o avanço da privatização.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,169</div><div class="var up">▲ +1.27%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,830</div><div class="var up">▲ +0.68%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">185.814</div><div class="var down">▼ -0.86%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.706</div><div class="var down">▼ -0.75%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.936</div><div class="var down">▼ -1.13%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">CNN Brasil (via Click Petróleo e Gás)</div><h3><a href="https://en.clickpetroleoegas.com.br/totalenergies-completes-purchase-of-additional-15-in-casa-dos-ventos-raising-stake-to-49-integrates-renewable-assets-in-brazil-awaiting-rss94">TotalEnergies eleva participação na Casa dos Ventos de 34% para 49%</a></h3><p class="resumo">A TotalEnergies decidiu exercer opção de compra para elevar de 34% para 49% sua participação na Casa dos Ventos, uma das maiores empresas de energia renovável do Brasil, segundo reportagem de 21/09. O anúncio foi feito pelo CEO Patrick Pouyanné durante o evento ROG.e, no Rio de Janeiro, enquanto a documentação da transação está sob análise do Cade. A operação, formalizada em 31 de agosto, também prevê a transferência à Casa dos Ventos dos ativos solares e eólicos que a TotalEnergies detém diretamente no país.</p></article><article class="item"><div class="eyebrow fonte">Agência Brasil</div><h3><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/tcu-recomenda-analise-de-alternativas-caducidade-da-enel-em-sp">TCU recomenda estudo de alternativas antes de decisão sobre caducidade da Enel em SP</a></h3><p class="resumo">O plenário do TCU recomendou nesta quarta-feira (23/09) ao Ministério de Minas e Energia e à Aneel que estudem alternativas antes de qualquer decisão sobre a caducidade da concessão da Enel São Paulo. A determinação pede análise estruturada dos efeitos da medida sobre consumidores e o sistema de distribuição, incluindo cronograma de transição, indenização por ativos reversíveis e impacto tarifário. O tribunal deu 60 dias para o governo e a Aneel apresentarem um cronograma que garanta a continuidade da distribuição de energia em São Paulo após o fim do contrato atual, em 2028.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-23092026/">Ibovespa cai 0,86% puxado por bancos, dólar fecha a R$ 5,17</a></h3><p class="resumo">O Ibovespa fechou a quarta-feira (23/09) em queda de 0,86%, aos 185.814,09 pontos, encerrando dois pregões seguidos de alta. Os grandes bancos lideraram as perdas — Banco do Brasil recuou 2,21%, Bradesco 2,17%, Itaú Unibanco 1,88% e Santander 0,98% —, enquanto a Petrobras subiu na contramão do mercado. O dólar avançou 1,27% e fechou a R$ 5,17, a maior cotação de fechamento desde 31 de agosto, pressionado por pesquisa eleitoral da AtlasIntel e pelo cenário externo.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/future-of-money/fintech-brasileira-capta-r-169-milhoes-em-rodada-de-investimento-com-aporte-da-circle/">BlindPay capta US$ 3,3 milhões com aporte da Circle</a></h3><p class="resumo">A fintech brasileira BlindPay anunciou em 23/09 a captação de US$ 3,3 milhões (cerca de R$ 16,9 milhões) em rodada de investimento com participação da Circle, emissora americana da stablecoin USDC. A rodada contou ainda com Y Combinator, 468 Capital, Circle Ventures, Bitso Business, Transpose Platform e Acacia Venture Capital Partners, além de investidores-anjo. A empresa desenvolve infraestrutura de API para pagamentos internacionais com stablecoins; segundo a companhia, o volume transacionado na plataforma saltou de US$ 500 milhões em 2025 para mais de US$ 2,5 bilhões em 2026.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">TechCrunch</div><h3><a href="https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/">Meta lança &#x27;Charm&#x27;, dispositivo vestível para uso do assistente de IA Muse</a></h3><p class="resumo">Na conferência anual Meta Connect, em 23/09, a Meta apresentou o Muse Charm, um aparelho do tamanho da palma da mão, com tela de cerca de 2 polegadas e modem 5G embutido, criado para interagir com o assistente de IA Muse sem depender de óculos inteligentes ou Wi-Fi. O dispositivo foi desenvolvido pelo laboratório de design da empresa, liderado pelo ex-chefe de design de interface da Apple Alan Dye, junto com o grupo de &#x27;superinteligência&#x27; de IA da Meta. Segundo Mark Zuckerberg, o Muse pode abrir sites, preencher formulários, reservar viagens, enviar e-mails e fazer compras em nome do usuário; a entrega deve começar em dezembro.</p></article><article class="item"><div class="eyebrow fonte">x.ai (anúncio oficial)</div><h3><a href="https://x.ai/news/grok-4-7">xAI lança Grok 4.7 com foco em programação, mantendo o mesmo preço</a></h3><p class="resumo">A xAI, de Elon Musk, lançou em 21/09 o Grok 4.7, novo modelo voltado a tarefas de programação e trabalho de conhecimento profissional, construído sobre uma base maior que o Grok 4.6 e treinado com ciclo mais longo de aprendizado por reforço. O modelo já está disponível no Cursor, no agente de código Grok Build e via API oficial, mantendo o mesmo preço da versão anterior (US$ 2 por milhão de tokens de entrada e US$ 6 de saída). A xAI diz que é o modelo mais resistente a jailbreak que já lançou, embora análises independentes apontem que ainda fica atrás de rivais em algumas tarefas de codificação.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">O Povo</div><h3><a href="https://mais.opovo.com.br/jornal/economia/2026/09/24/qair-brasil-vai-construir-ate-dois-data-centers-no-pecem-a-partir-de-2027.html">Qair Brasil fecha acordo para data centers 100% renováveis no Pecém (CE)</a></h3><p class="resumo">A Qair Brasil anunciou, durante o Proenergia Summit 2026 em 23/09, o fechamento de acordos para construir até dois data centers no Complexo do Pecém, batizados de &#x27;Grand Réseau&#x27;, com capacidade que pode chegar a 565 MW. Toda a energia consumida pelos data centers será renovável e fornecida pela própria Qair, que já soma cerca de 650 MW em projetos de geração no Ceará e planeja atingir 2.000 MW somando geração renovável, baterias e hidrogênio verde. As obras devem começar no 1º semestre de 2027, com primeiros megawatts entre 2028 e 2029.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Notícias Agrícolas</div><h3><a href="https://www.noticiasagricolas.com.br/noticias/agronegocio/428403-argentina-ve-potencial-para-producao-recorde-de-graos-na-safra-202627.html">Argentina projeta safra recorde de grãos de 157,9 milhões de toneladas em 2026/27</a></h3><p class="resumo">A Bolsa de Cereais de Buenos Aires projeta que a Argentina pode colher um recorde de 157,9 milhões de toneladas de grãos na safra 2026/27, com alta esperada em soja (53,6 milhões de toneladas) e milho (66 milhões de toneladas), enquanto a produção de trigo deve recuar. Como maior exportadora mundial de óleo e farelo de soja e terceira maior de milho, o resultado argentino tende a pressionar preços internacionais e a competir diretamente com a produção brasileira nos mercados globais.</p></article><article class="item"><div class="eyebrow fonte">Folha Agrícola</div><h3><a href="https://folhaagricola.com.br/2026/09/22/trigo-em-meio-a-incertezas-quanto-a-safra-cotacoes-seguem-em-alta/">Trigo no Brasil sobe em meio a incertezas sobre volume e qualidade da safra 2026</a></h3><p class="resumo">As cotações do trigo no Brasil seguem em alta em meio a incertezas sobre o volume e a qualidade da safra 2026. Chuvas excessivas e o aumento da umidade do solo prejudicaram lavouras em diversas regiões, comprometendo o desenvolvimento das plantas e elevando a proporção de grãos de qualidade inferior. Produtores relatam desestímulo a investir na cultura nesta safra, o que já vinha reduzindo a área plantada, e a tendência é que o país dependa mais de importações para atender a demanda interna.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://www.otempo.com.br/economia/2026/9/22/grupo-sada-avanca-em-programa-de-descarbonizacao-e-inaugura-base-propria-para-gnv">Grupo Sada inaugura base própria de GNV e avança em descarbonização da frota</a></h3><p class="resumo">O Grupo Sada inaugurou sua primeira base própria de abastecimento de GNV para veículos pesados no pátio Brazul (São Bernardo do Campo/SP), dentro do Programa de Descarbonização da Frota Pesada iniciado em 2024, com Comgás e MWM como parceiros. O investimento contínuo em descarbonização — que já rendeu relatório de sustentabilidade e parcerias com Cemig/Gasmig/Logás — sinaliza apetite e orçamento ativo para pauta ambiental, uma janela para propor patrocínio ligado à agenda ESG do grupo.</p></article><article class="item"><div class="eyebrow fonte">Toledo News</div><h3><a href="https://www.toledonews.com.br/noticia/prefeitura-de-toledo-e-compagas-discutem-viabilidade-de-investimentos-em-biometano">Compagás avalia viabilidade de investimento em biometano em Toledo (PR)</a></h3><p class="resumo">A Prefeitura de Toledo (PR) recebeu representantes da Compagás para discutir demanda de biometano no município, com potencial de aproveitamento de dejetos suínos como matéria-prima; as informações vão embasar estudo de viabilidade de investimento local, incluindo rede subterrânea para interligar produtores. É mais um passo da estratégia de expansão de biometano da Compagás (meta de 15% da rede até 2026) — expansão territorial que pode abrir espaço institucional/patrocínio regional no Paraná.</p></article><article class="item"><div class="eyebrow fonte">Panrotas</div><h3><a href="https://www.panrotas.com.br/aviacao/aeroportos/2026/09/aeroporto-de-guarulhos-esta-na-lista-dos-50-mais-conectados-do-mundo-veja-ranking_232034.html">GRU Airport sobe no ranking mundial dos aeroportos mais conectados</a></h3><p class="resumo">Guarulhos aparece na 47ª posição do estudo Megahubs 2026 da OAG (uma posição acima do ano anterior) e é o 4º mais conectado da América Latina, atrás de Bogotá, Cidade do México e Panamá. É um fato institucional forte de prestígio internacional — janela para pauta institucional ligada a eventos de aviação e conectividade.</p></article><article class="item"><div class="eyebrow fonte">Informe Capixaba</div><h3><a href="https://www.informecapixaba.com.br/2026/09/23/inovacao-mineracao-samarco">Samarco discute inovação em seminário da Folha sobre mineração</a></h3><p class="resumo">Bruno Pimentel, gerente de Desenvolvimento e Inovação da Samarco, participou em 21/09 do seminário &#x27;Inovação Aplicada à Mineração&#x27;, promovido pela Folha de S.Paulo — evento distinto dos prêmios da ABM Week já divulgados anteriormente. Reforça o discurso institucional de tecnologia e inovação da empresa, ainda que sem anúncio de verba específica.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-09-24</span></footer>
+</body></html>
