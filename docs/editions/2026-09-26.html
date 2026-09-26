@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-09-26</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-09-26</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Cenário Energia</div><h2><a href="https://cenarioenergia.com.br/2026/09/24/petrobras-condiciona-aporte-braskem-participacao-acionistas/">Petrobras condiciona eventual aporte na Braskem à participação dos demais acionistas</a></h2><p class="resumo">A presidente da Petrobras, Magda Chambriard, descartou fazer um aporte isolado de recursos na Braskem e afirmou que qualquer suporte financeiro precisaria vir acompanhado de contribuições proporcionais dos demais acionistas, incluindo o fundo IG4 Capital. Credores da petroquímica cobram aporte de cerca de US$ 3 bilhões dos controladores, em meio à negociação extrajudicial de uma dívida de US$ 10,9 bilhões, com prazo até 24/11/2026. A Petrobras detém 47,03% do capital votante da Braskem e diz não ter intenção de ultrapassar 50% de participação.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,18</div><div class="var down">▼ -0.19%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,90</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">183.477</div><div class="var down">▼ -0.27%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.743</div><div class="var up">▲ +0.51%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">27.069</div><div class="var up">▲ +0.48%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Cenário Energia</div><h3><a href="https://cenarioenergia.com.br/2026/09/24/eneva-conclui-liability-management-captacao-divida/">Eneva conclui 1ª etapa de liability management com captação de R$ 2,4 bi</a></h3><p class="resumo">A Eneva (ENEV3) concluiu a primeira etapa de uma operação de gestão de passivos, vendendo debêntures da 12ª série mantidas em tesouraria a instituições financeiras, no valor total de R$ 2,4 bilhões. A operação foi aprovada em assembleia de debenturistas realizada em 22/09/2026, com as novas debêntures remuneradas por IPCA + 8,00% ao ano e vencimento em agosto de 2036. Os recursos serão usados para resgate antecipado de emissões atreladas ao CDI, alongando o prazo médio da dívida refinanciada de cerca de 2,6 para 9,0 anos.</p></article><article class="item"><div class="eyebrow fonte">Diário do Grande ABC</div><h3><a href="https://www.dgabc.com.br/Noticia/4349134/empresa-de-lamacchia-vence-leilao-e-se-aproxima-de-compra-da-saf-do-vasco">Grupo de Marcos Lamacchia vence leilão e se aproxima da compra da SAF do Vasco</a></h3><p class="resumo">A Almirante Participações S/A, ligada ao empresário Marcos Lamacchia, venceu em 25/09/2026 leilão judicial na 4ª Vara Empresarial do Rio de Janeiro e se aproximou da aquisição de 90% das ações da SAF do Vasco da Gama, sendo a única interessada no certame. A proposta prevê aporte de R$ 500 milhões destinados ao departamento de futebol profissional, divididos em cinco parcelas anuais de R$ 100 milhões, dentro do plano de reestruturação do clube.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Startups (startups.com.br)</div><h3><a href="https://startups.com.br/negocios/rodada-de-investimento/prosus-sobe-aposta-em-ia-nos-restaurantes-e-investe-us-15m-na-emilia-ai/">Emilia AI capta US$ 1,5 milhão em rodada liderada pela Prosus, dona do iFood</a></h3><p class="resumo">A Emilia AI, que usa câmeras de segurança para otimizar vendas e combater fraude em restaurantes, levantou uma rodada pré-seed de US$ 1,5 milhão liderada pela Prosus Ventures (controladora do iFood), com o restante vindo de investidores-anjo do setor de tecnologia. Fundada em 2024 pelos colombianos Andrés Cajiao (CEO) e Sebastian Rojo (CTO), a startup planeja usar os recursos para expandir a operação no Brasil e na América Latina.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/inteligencia-artificial/google-cloud-quer-dobrar-infraestrutura-no-brasil-ate-2030-para-acelerar-ia-agentica/">Google vai processar dados do Gemini Enterprise no Brasil e dobrar infraestrutura</a></h3><p class="resumo">Durante o Google Cloud Summit Brasil 2026, o Google anunciou em 24 de setembro que passará a processar localmente no Brasil, a partir de 15 de outubro, os dados de clientes do Gemini Enterprise que usam o modelo Gemini 3.5 Flash. A empresa também informou planos de dobrar sua infraestrutura técnica de nuvem no país até 2030, para atender à demanda por IA agêntica corporativa e a requisitos de residência de dados.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">B3 (comunicado oficial)</div><h3><a href="https://www.b3.com.br/pt_br/noticias/brasil-lanca-piloto-da-primeira-plataforma-de-registro-de-creditos-de-carbono-e-inicia-negociacoes-internacionais.htm">B3 e ACX lançam piloto de plataforma de registro de créditos de carbono</a></h3><p class="resumo">A B3 e a AirCarbon Exchange (ACX) lançaram em 24 de setembro de 2026, durante a Climate Week de Nova York, o piloto da primeira plataforma brasileira de registro de créditos de carbono conectada à rede global de negociação. A iniciativa vai registrar créditos da metodologia PSA Carbonflor, da ECCON Soluções Ambientais em parceria com a Reservas Votorantim, para projetos de conservação na Mata Atlântica. Os primeiros 30 mil créditos estão sendo adquiridos pela Motiva (ex-CCR) e pela EY.</p></article><article class="item"><div class="eyebrow fonte">Seu Dinheiro</div><h3><a href="https://www.seudinheiro.com/2026/empresas/natura-natu3-emite-r-700-milhoes-em-debentures-com-meta-ligada-ao-uso-de-plastico-sustentavel-cbcb/">Natura capta R$ 700 milhões em debêntures ligadas a metas de plástico sustentável</a></h3><p class="resumo">A Natura anunciou, por volta de 21 de setembro de 2026, a emissão de R$ 700 milhões em debêntures sustentáveis coordenada pelo UBS BB, com custo atrelado à participação de plástico reciclado e renovável nas embalagens das marcas Natura e Avon. A empresa se comprometeu a elevar essa participação para 43% em 2028 e 46% em 2029, partindo de 21% em 2022. A operação é apresentada como a primeira debênture corporativa do Brasil alinhada ao guia de títulos sustentáveis para a natureza da ICMA.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Prefeitura de Barbacena</div><h3><a href="https://www1.barbacena.mg.gov.br/portal/noticias/0/3/3461/prefeitura-de-barbacena-abre-edital-para-empresas-patrocinadoras-do-ii-festival-gastronomico-e-cultural">Barbacena (MG) abre edital para empresas patrocinadoras do II Festival Gastronômico e Cultural</a></h3><p class="resumo">A Prefeitura de Barbacena publicou o Edital nº 011/2026, da Secretaria de Cultura e Turismo em ação conjunta com a Secretaria de Desenvolvimento Econômico, abrindo chamada pública para empresas interessadas em patrocinar o II Festival Gastronômico e Cultural. São 22 cotas de patrocínio distribuídas em sete níveis de participação, com investimento revertido em serviços, utilidades ou materiais para a infraestrutura do evento. A segunda fase do festival ocorre entre 8 e 12 de outubro de 2026, integrada ao 54º Festival das Rosas e Flores de Barbacena.</p></article><article class="item"><div class="eyebrow fonte">FCCDA</div><h3><a href="https://www.fccda.com.br/chamamento-publico-pnab-no-001-2026-ciclo-ii-fomento-a-execucao-de-acoes-culturais">Fundação Carlos Drummond de Andrade abre chamamento da PNAB Ciclo II</a></h3><p class="resumo">A Fundação Cultural Carlos Drummond de Andrade (FCCDA) publicou o Chamamento Público PNAB nº 001/2026 - Ciclo II, voltado ao fomento de ações culturais com recursos da Política Nacional Aldir Blanc, com inscrições abertas até 8 de outubro de 2026. A fundação também mantém uma chamada pública para obtenção de patrocínio e/ou apoio cultural para sua programação de 2026, buscando empresas parceiras para projetos e equipamentos culturais sob sua gestão.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Folha Agrícola</div><h3><a href="https://folhaagricola.com.br/2026/09/25/safra-menor-de-trigo-aperta-oferta-e-impulsiona-precos-no-brasil/">Safra de trigo 27% menor pressiona preços e amplia dependência de importação</a></h3><p class="resumo">A Conab estima a safra de trigo 2025/26 em cerca de 5,74 milhões de toneladas, queda de 27,1% ante o ciclo anterior, o que já pressiona a oferta e eleva preços em praças produtoras. No Paraná, o trigo destinado à panificação é negociado entre R$ 1.550 e R$ 1.600 por tonelada; no Rio Grande do Sul, referências ao produtor chegaram a R$ 71 por saca em setembro. A menor produção deve elevar a necessidade de importação, estimada pela Conab em cerca de 7,06 milhões de toneladas.</p></article><article class="item"><div class="eyebrow fonte">Vermelho (com dados de Reuters/Investing)</div><h3><a href="https://vermelho.org.br/2026/09/25/china-e-eua-prorrogam-tregua-tarifaria-por-dois-meses/">EUA e China estendem trégua comercial até janeiro, sem novo pacote agrícola</a></h3><p class="resumo">Trump e Xi Jinping encerraram encontro na Casa Branca em 24/09/2026 prorrogando a trégua comercial entre EUA e China, que venceria em 10 de novembro e agora deve vigorar até 10 de janeiro de 2027, enquanto as equipes econômicas negociam um entendimento mais amplo. O secretário do Tesouro americano afirmou que a China cumpriu o compromisso de comprar 25 milhões de toneladas de soja dos EUA, mas segue abaixo da meta para outros produtos agrícolas. A prorrogação não trouxe anúncio de novo pacote de compras agrícolas, e os futuros de soja em Chicago recuaram na quinta-feira.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Enercan</div><h3><a href="https://www.enercan.com.br/semana-de-sustentabilidade-promove-acoes-em-municipios-da-regiao/">Enercan e Baesa realizam Semana da Sustentabilidade 2026 nos municípios do entorno</a></h3><p class="resumo">Entre 23 e 27/09/2026, a Enercan (Campos Novos Energia), em parceria com a Baesa, promoveu a Semana da Sustentabilidade nos municípios do entorno do reservatório da UHE Campos Novos, com ações de educação ambiental, palestras e atividades comunitárias junto ao Conselho Consultivo local. É um compromisso socioambiental recém-executado, não apenas anunciado — abre janela para pauta de patrocínio/parceria institucional em iniciativas ESG e comunitárias na região.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-09-26</span></footer>
+</body></html>
