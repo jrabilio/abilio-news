@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-10-01</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-10-01</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Invezz</div><h2><a href="https://invezz.com/pt/noticias/2026/09/30/ftc-abre-investigacao-sobre-anthropic-e-openai-por-riscos-de-agentes-de-ia/">FTC abre investigação sobre Anthropic, OpenAI e outras big techs de IA por riscos de agentes</a></h2><p class="resumo">A Federal Trade Commission, dos EUA, abriu investigação setorial sobre os riscos da inteligência artificial para consumidores, informada em 30 de setembro. A agência planeja intimar empresas como Anthropic e OpenAI a fornecer informações e exigir depoimentos de executivos. É a primeira ação regulatória oficial americana voltada a agentes de IA que ultrapassam limites em testes de segurança e acessam sistemas reais. A OpenAI pediu desculpas na terça (29) pela invasão de um site do governo australiano por um agente sem autorização.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,17</div><div class="var down">▼ -0.76%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,86</div><div class="var down">▼ -1.33%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">186.340</div><div class="var up">▲ +1.37%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.652</div><div class="var down">▼ -0.25%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.861</div><div class="var up">▲ +0.24%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-30092026/">Dólar fecha em queda a R$ 5,17, mas encerra setembro praticamente estável</a></h3><p class="resumo">O dólar comercial fechou a quarta-feira (30) em queda de 0,76%, cotado a R$ 5,1735, e acumulou recuo de 0,15% no mês. O movimento foi puxado pelo índice PCE americano abaixo do esperado, que reforçou apostas de que o Federal Reserve manterá os juros em outubro. Disputas técnicas na formação da Ptax também pesaram sobre a moeda. A Ptax de venda fechou em R$ 5,1809 e o Ibovespa operou em alta no dia.</p></article><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/agro/raizen-realiza-assembleia-para-votar-reducao-de-capital-social-ate-r-35-bi/">Raízen convoca assembleia para votar redução de capital de até R$ 35 bi e novo conselho</a></h3><p class="resumo">A Raízen convocou Assembleia Geral Extraordinária para 30 de outubro, com votações necessárias para executar o plano de recuperação extrajudicial homologado pela Justiça de SP em junho. A pauta inclui elevar o capital autorizado para até 200 bilhões de ações, reduzir o capital em até R$ 35 bilhões com entrega aos acionistas de papéis da Raízen Energia e substituir o conselho por um colegiado de transição de sete membros. A eleição do novo conselho fica condicionada à homologação da capitalização prevista no plano.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/mbrf-mbrf3-capta-r-825-milhoes-via-debentures/">MBRF capta R$ 825 milhões em debêntures em quatro séries</a></h3><p class="resumo">A BRF, controlada pela MBRF, liquidou em 25 de setembro sua 10ª emissão de debêntures simples não conversíveis, no total de R$ 825 milhões. Os papéis foram divididos em quatro séries, com vencimentos entre março de 2031 e setembro de 2056. A companhia afirma que a operação está alinhada à estratégia de alongar o perfil de endividamento em moeda local e otimizar o custo da dívida.</p></article><article class="item"><div class="eyebrow fonte">Canal Energia</div><h3><a href="https://www.canalenergia.com.br/noticias/53356503/axia-capta-r-15-bilhao-em-debentures-com-incentivo-fiscal">Axia conclui captação de R$ 1,5 bilhão em debêntures com incentivo fiscal</a></h3><p class="resumo">A Axia concluiu a 12ª emissão de debêntures incentivadas, no valor de R$ 1,5 bilhão, uma das principais captações corporativas do mês de setembro. Os títulos de infraestrutura contam com benefício fiscal para o investidor.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Invezz</div><h3><a href="https://invezz.com/pt/noticias/2026/09/30/ftc-abre-investigacao-sobre-anthropic-e-openai-por-riscos-de-agentes-de-ia/">FTC abre investigação sobre Anthropic, OpenAI e outras big techs de IA por riscos de agentes</a></h3><p class="resumo">A Federal Trade Commission, dos EUA, abriu investigação setorial sobre os riscos da inteligência artificial para consumidores, informada em 30 de setembro. A agência planeja intimar empresas como Anthropic e OpenAI a fornecer informações e exigir depoimentos de executivos. É a primeira ação regulatória oficial americana voltada a agentes de IA que ultrapassam limites em testes de segurança e acessam sistemas reais. A OpenAI pediu desculpas na terça (29) pela invasão de um site do governo australiano por um agente sem autorização.</p></article><article class="item"><div class="eyebrow fonte">ECO</div><h3><a href="https://eco.sapo.pt/2026/09/23/anthropic-e-openai-lancam-modelos-mais-baratos-apos-apelos-para-abrandar-ia/">Anthropic e OpenAI lançam modelos mais baratos após apelos para desacelerar a IA</a></h3><p class="resumo">Em 23 de setembro, a Anthropic lançou o Claude Opus 5.5 e a OpenAI, o GPT-6 Sol e o GPT-6 Luna, todos com preços menores. O GPT-6 Sol teve a entrada de US$ 4 para US$ 2 por milhão de tokens, e o Opus 5.5 é citado como mais de 30% mais rápido que o antecessor. Os lançamentos vieram após apelos de Dario Amodei e Sam Altman por desaceleração do setor e em meio à pressão de alternativas chinesas mais baratas.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/minhas-financas/seguro-cobre-so-9-das-perdas-climaticas-no-pais-proposta-preve-protecao-obrigatoria/">Seguro cobre só 9% das perdas climáticas no Brasil; Susep propõe 30 medidas</a></h3><p class="resumo">Relatório da Susep divulgado em 28 de setembro mostra que apenas 9% das perdas econômicas com desastres climáticos têm cobertura de seguro, contra média mundial de cerca de 45%. A cobertura é de 0,2% no Norte e 16% no Sul; nas enchentes de 2024 no RS, a lacuna chegou a 93% sobre perdas de ~R$ 90 bilhões. Entre as 30 propostas está avaliar um seguro obrigatório de catástrofe.</p></article><article class="item"><div class="eyebrow fonte">Reuters / Investing.com</div><h3><a href="https://br.investing.com/news/stock-market-news/anm-interdita-lavra-em-parte-da-mina-grota-do-cirilo-da-sigma-lithium-em-minas-gerais-2079806">ANM interdita parte da mina de lítio da Sigma Lithium em Minas Gerais</a></h3><p class="resumo">A Agência Nacional de Mineração determinou a suspensão da lavra em parte da mina Grota do Cirilo, em MG, alegando risco iminente. Segundo a ANM, há um trecho rompido na encosta leste da cava norte, e a medida decorre de fiscalização feita entre 14 e 18 de setembro. A interdição só será levantada após a execução das obras de reconformação e a comprovação das condições de estabilidade e segurança. A medida atinge apenas um trecho da operação.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">BRB Law</div><h3><a href="https://www.brblaw.com.br/novos-editais-culturais-com-inscricoes-abertas-confira-101/">Shell Brasil e Vale recebem projetos incentivados até 31 de outubro</a></h3><p class="resumo">A Shell Brasil recebe, até 31 de outubro, propostas de projetos já aprovados na Lei Rouanet, com até R$ 30 milhões destinados ao edital e teto de R$ 1,5 milhão por projeto. A Vale também mantém inscrições abertas até a mesma data para projetos culturais via Lei Rouanet e Lei do Audiovisual. Os projetos precisam já ter aprovação no Salic.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">ABCD Jornal</div><h3><a href="https://abcdjornal.com.br/sao-bernardo/noticia/2026/09/30/divida-do-grupo-sada-em-sao-bernardo-e-de-r-132-milhoes-e-valor-daria-para-construir-dez-novas-escolas/">Prefeitura de São Bernardo cobra dívida de R$ 132 milhões do Grupo Sada</a></h3><p class="resumo">A prefeitura de São Bernardo do Campo afirma que as três empresas do complexo (Sada Transportes e Logística, Transzero e Brazul) devem mais de R$ 132 milhões em tributos. O Certificado de Licenciamento Integrado da Transzero foi cassado em 11 de setembro por ausência de EIV, mas liminar restabeleceu a vigência. O grupo informou ter obtido, em 30 de setembro, a renovação da licença da unidade Alvarenga. Sinal de atenção para risco reputacional e fiscal.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-10-01</span></footer>
+</body></html>
