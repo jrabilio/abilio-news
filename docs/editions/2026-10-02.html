@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-10-02</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-10-02</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Brasil 247</div><h2><a href="https://www.brasil247.com/negocios/mp-muda-de-posicao-e-apoia-homologacao-do-plano-extrajudicial-do-gpa-apos-esclarecimentos/">MP-SP passa a apoiar homologação do plano extrajudicial do GPA</a></h2><p class="resumo">O Ministério Público de São Paulo mudou de posição e deu parecer favorável à homologação do plano de recuperação extrajudicial do GPA, dono do Pão de Açúcar, após esclarecimentos da empresa sobre a lista de credores. Segundo o parecer, 57,49% dos créditos sujeitos ao plano aderiram, acima dos 50% exigidos por lei. A promotoria considerou que as objeções de credores não demonstraram defeito capaz de comprometer o quórum. A decisão final cabe à Justiça.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar (PTAX)</div><div class="valor">5,208</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Euro (ref.)</div><div class="valor">5,85</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">187.197</div><div class="var up">▲ +0.46%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.666</div><div class="var up">▲ +0.19%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.872</div><div class="var up">▲ +0.04%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Brasil 247</div><h3><a href="https://www.brasil247.com/negocios/mp-muda-de-posicao-e-apoia-homologacao-do-plano-extrajudicial-do-gpa-apos-esclarecimentos/">MP-SP passa a apoiar homologação do plano extrajudicial do GPA</a></h3><p class="resumo">O Ministério Público de São Paulo mudou de posição e deu parecer favorável à homologação do plano de recuperação extrajudicial do GPA, dono do Pão de Açúcar, após esclarecimentos da empresa sobre a lista de credores. Segundo o parecer, 57,49% dos créditos sujeitos ao plano aderiram, acima dos 50% exigidos por lei. A promotoria considerou que as objeções de credores não demonstraram defeito capaz de comprometer o quórum. A decisão final cabe à Justiça.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/onde-investir/controle-cambial-no-brasil-gestores-veem-risco-baixo-mas-compram-protecao/">Gestoras compram proteção contra eventual controle cambial no Brasil</a></h3><p class="resumo">Grandes gestoras, entre elas o fundo Verde, de Luis Stuhlberger, estão comprando proteções contra a possibilidade de o próximo governo limitar ou encarecer remessas ao exterior. Os gestores tratam o cenário como risco de baixa probabilidade, ligado a uma eventual dominância fiscal. Stuhlberger avalia que a primeira medida seria elevar o IOF, com custo de 10% a 15% para comprar dólares, e que a proteção custaria cerca de 0,1% ao ano.</p></article><article class="item"><div class="eyebrow fonte">Diário do Comércio</div><h3><a href="https://diariodocomercio.com.br/negocios/paralisacao-cabo-verde/">Cabo Verde Mineração paralisa operação de minério de ferro no Sul de Minas</a></h3><p class="resumo">A Cabo Verde Mineração interrompeu em setembro a operação de minério de ferro da mina Catumbi, no Sul de Minas Gerais, pressionada por preços de referência baixos e pelo custo de transporte rodoviário e marítimo. O frete marítimo passou de US$ 25 por tonelada, o que tornou a unidade inviável. A empresa agora concentra esforços no projeto de terras raras na região, que prevê aporte inicial de cerca de US$ 10 milhões nos próximos dois anos.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Antihype</div><h3><a href="https://antihype.com.br/c/ia/openai-devday-2026-tudo-que-foi-anunciado/">OpenAI cancela GPT-6.1 Astra e leva GPT-6.1 Sol ao DevDay 2026</a></h3><p class="resumo">No DevDay 2026, a OpenAI anunciou 26 produtos, entre eles os agentes sempre ativos &quot;dots&quot;, o ChatGPT como software de trabalho colaborativo e um novo plano Pro de US$ 500 por mês. O modelo GPT-6.1 Astra, muito aguardado, foi cancelado pouco antes do evento por falhas em testes de segurança e substituído pelo GPT-6.1 Sol, mais barato. Sam Altman citou 1,2 bilhão de usuários semanais do ChatGPT.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Folha Agrícola</div><h3><a href="https://folhaagricola.com.br/2026/09/30/boi-gordo-chega-a-r-380-em-negocio-pontual/">Boi gordo chega a R$ 380 por arroba em negócio pontual</a></h3><p class="resumo">A arroba do boi gordo atingiu R$ 380 em negociação pontual em Sertãozinho (SP), e o Indicador DATAGRO avançou 0,92%, para R$ 363,57. A oferta restrita de animais terminados sustenta os preços, e os frigoríficos têm dificuldade para completar as escalas de abate. O contrato futuro de novembro na B3 também subiu.</p></article><article class="item"><div class="eyebrow fonte">AgroRevenda</div><h3><a href="https://agrorevenda.com.br/destaques/agro-abre-outubro-entre-clima-china-e-estoques-dos-eua">Agro abre outubro entre clima, China e estoques dos EUA</a></h3><p class="resumo">O Índice Bloomberg Agriculture Spot subiu 13% no terceiro trimestre, puxado por compras da China e El Niño. Os estoques de milho dos EUA, de 2,095 bilhões de bushels em 1º de setembro, vieram acima do esperado e pressionam os preços. A soja brasileira se beneficia dos estoques americanos apertados e da demanda chinesa por origem sul-americana, e as chuvas no Centro-Oeste favorecem o plantio.</p></article>
+<footer><span>Radar Diário</span><span>2026-10-02</span></footer>
+</body></html>
