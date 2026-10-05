@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-10-05</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-10-05</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Bloomberg Línea</div><h2><a href="https://www.bloomberglinea.com.br/mercados/lideranca-de-flavio-no-primeiro-turno-abre-espaco-para-rali-do-mercado-dizem-gestores/">Gestores projetam forte alta do Ibovespa e queda do dólar após liderança de Flávio no 1º turno</a></h2><p class="resumo">Gestores ouvidos pela Bloomberg Línea projetam alta de 6% a 7% do Ibovespa, valorização de 3% a 4% do real e queda de ao menos 40 pontos-base nos juros após Flávio Bolsonaro terminar o primeiro turno à frente de Lula. O mercado vê a liderança e o bom desempenho da direita no Congresso como sinal favorável a um ajuste fiscal. ETFs de ações brasileiras já disparavam no exterior (quase 14% no Japão). A disputa segue aberta, e a escolha da equipe econômica deve ser o primeiro grande sinal.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,216</div><div class="var down">▼ -0.08%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">192.115</div><div class="var up">▲ +2.63%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.723</div><div class="var up">▲ +0.73%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">27.191</div><div class="var up">▲ +1.19%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/infra/lynas-compra-meteoric-e-projeto-de-terras-raras-em-mg-por-r-35-bilhoes/">Lynas compra Meteoric e o projeto de terras raras Caldeira (MG) por R$ 3,5 bilhões</a></h3><p class="resumo">A australiana Lynas Rare Earths acordou a compra de 100% da Meteoric Resources, dona do projeto Caldeira, em Minas Gerais, em operação all-share de cerca de R$ 3,5 bilhões, com prêmio de 68,4%. O projeto prevê 23 anos de operação e produção média de 12,5 mil toneladas/ano de óxidos de terras raras. A conclusão depende de aprovações do novo regime brasileiro de minerais críticos e é esperada para março de 2027.</p></article><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/infra/petrobras-faz-nova-descoberta-de-petroleo-na-margem-equatorial/">Petrobras anuncia nova descoberta de petróleo no poço Morpho, na Margem Equatorial</a></h3><p class="resumo">A Petrobras comunicou na sexta-feira (2) nova descoberta de petróleo no bloco FZA-M-59, na Bacia da Foz do Amazonas, a cerca de 175 km da costa do Amapá e 2.886 m de lâmina d&#x27;água. O achado, em intervalos mais profundos do mesmo poço da descoberta de agosto, foi identificado por perfis elétricos e amostras de rocha e fluido. A estatal ainda não divulgou estimativa de volume e vai concluir a perfuração e avaliar as formações.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">The Hill</div><h3><a href="https://thehill.com/policy/technology/6124265-ftc-investigates-openai-anthropic/">FTC abre investigação sobre OpenAI e Anthropic por riscos a consumidores</a></h3><p class="resumo">A Federal Trade Commission, dos EUA, confirmou investigação sobre OpenAI, Anthropic e outras empresas de IA sobre possíveis riscos ao consumidor. A apuração envolve pedidos de documentos e depoimentos e examina se as leis atuais bastam para lidar com ações de agentes de IA que ultrapassam as instruções recebidas. Segundo a Reuters, é a primeira ação formal americana focada em incidentes desse tipo.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Reuters</div><h3><a href="https://br.investing.com/news/commodities-news/brasil-ve-china-como-potencial-compradora-de-creditos-de-carbono-e-mira-acordo-ate-a-cop31-2060511">Brasil mira acordo com a China para vender créditos de carbono até a COP31</a></h3><p class="resumo">Após missão de alto nível à China, o Brasil avalia se Pequim pode comprar ITMOs (créditos de carbono entre países sob o Acordo de Paris) e mira um memorando de entendimentos sobre mercados de carbono e investimentos climáticos, a ser anunciado na COP31, em novembro. Em Wuhan, uma coalizão liderada por Brasil, China e União Europeia, com cerca de 42% das emissões globais, discutiu convergência gradual dos sistemas de comércio de emissões.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Lojas Renner</div><h3><a href="https://www.lojasrennersa.com.br/patrocinios-e-projetos/">Renner Cultural 2026 recebe projetos aprovados na Lei Rouanet até 15/11</a></h3><p class="resumo">A Renner Cultural recebe inscrições de projetos aprovados na Lei Rouanet e em leis estaduais de ICMS até 15 de novembro de 2026. Os temas apoiados são patrimônio artístico e cultural, moda, estilo de vida, beleza, inovação e sustentabilidade, nos segmentos de teatro, artes visuais, música e instituições culturais. Os projetos devem estar registrados e aprovados antes da inscrição.</p></article>
+<footer><span>Radar Diário</span><span>2026-10-05</span></footer>
+</body></html>
