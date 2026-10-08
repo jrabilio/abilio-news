@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-10-08</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-10-08</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Eixos</div><h2><a href="https://eixos.com.br/petroleo-e-gas/leiloes/petrobras-domina-leilao-concessao-anp-99-bonus-3-bilhoes/">Petrobras arremata 19 blocos em leilão da ANP e responde por quase todo o bônus de R$ 3 bilhões</a></h2><p class="resumo">No 6º ciclo da Oferta Permanente de Concessão da ANP, realizado na quarta-feira (7), a Petrobras levou 19 blocos, 12 deles sozinha na Bacia de Campos. A arrecadação total em bônus de assinatura foi de cerca de R$ 3 bilhões, dos quais a estatal respondeu por quase 100%. Em cinco blocos do setor SC-AUP1 houve disputa com o consórcio TotalEnergies/QatarEnergy. No mesmo dia, o ciclo de partilha do pré-sal arrematou 7 de 13 blocos, com R$ 530,5 milhões em bônus.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,01</div><div class="var up">▲ +0.70%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">204.302</div><div class="var down">▼ -0.74%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.802</div><div class="var down">▼ -0.22%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">27.539</div><div class="var down">▼ -0.22%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Eixos</div><h3><a href="https://eixos.com.br/petroleo-e-gas/leiloes/petrobras-domina-leilao-concessao-anp-99-bonus-3-bilhoes/">Petrobras arremata 19 blocos em leilão da ANP e responde por quase todo o bônus de R$ 3 bilhões</a></h3><p class="resumo">No 6º ciclo da Oferta Permanente de Concessão da ANP, realizado na quarta-feira (7), a Petrobras levou 19 blocos, 12 deles sozinha na Bacia de Campos. A arrecadação total em bônus de assinatura foi de cerca de R$ 3 bilhões, dos quais a estatal respondeu por quase 100%. Em cinco blocos do setor SC-AUP1 houve disputa com o consórcio TotalEnergies/QatarEnergy. No mesmo dia, o ciclo de partilha do pré-sal arrematou 7 de 13 blocos, com R$ 530,5 milhões em bônus.</p></article><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/economia/money/negocios/justica-homologa-plano-de-recuperacao-extrajudicial-do-gpa/">Justiça homologa plano de recuperação extrajudicial do GPA</a></h3><p class="resumo">A 3ª Vara de Falências e Recuperações Judiciais de São Paulo homologou na quarta-feira (7) o plano do GPA, dono do Pão de Açúcar, que alcança R$ 4,57 bilhões em créditos e teve adesão de credores com 57,49% do valor. O plano prevê conversão de cerca de R$ 1,1 bilhão em participação acionária, novas debêntures e captação de R$ 200 milhões. O prazo médio da dívida não convertida sobe de 2,1 para 6,4 anos. Operações das lojas, fornecedores e dívidas trabalhistas ficam fora do plano.</p></article><article class="item"><div class="eyebrow fonte">Metrópoles</div><h3><a href="https://metropoles.com/brasil/dolar-nesta-quarta">Dólar volta a subir e fecha acima de R$ 5 após dois dias de queda</a></h3><p class="resumo">O dólar fechou a quarta-feira (7) em torno de R$ 5,01, alta de 0,70%, depois de ter encerrado a terça-feira abaixo de R$ 5 pela primeira vez desde maio. O Ibovespa oscilou entre 204 mil e 207 mil pontos no pregão.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Agência Brasil</div><h3><a href="https://agenciabrasil.ebc.com.br/radioagencia-nacional/cultura/audio/2026-10/programa-destina-r-10-mi-para-projetos-culturas-em-favelas">Rouanet nas Favelas 2 recebe projetos até 13 de outubro</a></h3><p class="resumo">Programa do Ministério da Cultura em parceria com a Vale e a CUFA destina R$ 10 milhões a no mínimo 50 propostas culturais em favelas e comunidades urbanas, com até R$ 200 mil por projeto via incentivo fiscal. Podem se inscrever pessoas jurídicas com sede na mesma localidade da ação, pelo Salic, até 13 de outubro. O resultado será divulgado em 27 de novembro.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">SpaceMoney</div><h3><a href="https://www.spacemoney.com.br/agronegocio/arroba-boi-gordo-recorde-nominal-sp">Arroba do boi gordo em SP bate recorde nominal de R$ 372,95</a></h3><p class="resumo">O preço da arroba do boi gordo em São Paulo atingiu recorde nominal de R$ 372,95, segundo matéria de 7 de outubro, melhorando a relação de troca por bezerro para o pecuarista. O indicador Cepea/Esalq fechou em R$ 369,38 em 6 de outubro, alta de 0,56% no dia.</p></article><article class="item"><div class="eyebrow fonte">Cepea/Esalq</div><h3><a href="https://www.cepea.org.br/br/indicador/soja.aspx">Soja em Paranaguá cai a R$ 153,90 por saca, menor nível desde agosto</a></h3><p class="resumo">O indicador Cepea/Esalq da soja em Paranaguá fechou em R$ 153,90 por saca de 60 kg em 7 de outubro, queda de 1,14% no dia e de 4,74% no mês. O preço voltou a ficar abaixo de R$ 160, patamar não visto desde o fim de agosto.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Brasil em Folhas</div><h3><a href="https://www.brasilemfolhas.com.br/2026/10/anp-conclui-etapa-que-define-base-de-ativos-de-5-transportadoras-de-gas/">ANP define base de ativos da TAG: R$ 874 milhões para o Gasfor II e zero para a Malha Nordeste</a></h3><p class="resumo">Em 2 de outubro a ANP aprovou a base regulatória de ativos de abertura de cinco transportadoras de gás. Para a TAG, fixou R$ 874,26 milhões no Gasfor II e R$ 0,00 na Malha Nordeste, por considerar que não há capital prudente não recuperado. Os valores são etapa do cálculo; a receita máxima e as tarifas ainda serão definidas, com conclusão esperada até o fim de novembro. Gancho de FUP: decisão regulatória que pressiona o caixa e o apetite de investimento da transportadora.</p></article><article class="item"><div class="eyebrow fonte">Atlas Público (CVM)</div><h3><a href="https://atlaspublico.com.br/cvm/noticias/aegea-contrata-rs-1-5-bilhao-e-chega-a-rs-6-bilhoes-em-90632">Aegea contrata R$ 1,5 bilhão em novos financiamentos e chega a R$ 6 bilhões captados em 2026</a></h3><p class="resumo">Em comunicado de 2 de outubro, a Aegea informou novas operações de crédito de R$ 1,5 bilhão após o 2T26, elevando as captações do ano a R$ 6 bilhões. Os investimentos do grupo somaram R$ 3,8 bilhões no 1º semestre, incluindo outorgas. Gancho de FUP: companhia em ciclo intenso de investimento e captação, com agenda socioambiental própria do saneamento.</p></article><article class="item"><div class="eyebrow fonte">Economic News Brasil</div><h3><a href="https://economicnewsbrasil.com.br/2026/10/05/igualdade-salarial-m-dias-branco-lideranca-feminina/">M. Dias Branco amplia liderança feminina e patrocina o Siará Tech Summit</a></h3><p class="resumo">No sexto relatório de igualdade salarial, a M. Dias Branco informou que mulheres ocupam 31,4% dos cargos de liderança no 1º semestre de 2026 (28,5% um ano antes), com meta de 40% até 2030. A empresa também patrocina o Siará Tech Summit, de 7 a 9 de outubro em Fortaleza. Gancho de FUP: compromisso ESG público e apetite por patrocínio de eventos.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-10-08</span></footer>
+</body></html>
