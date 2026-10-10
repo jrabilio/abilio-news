@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-10-10</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-10-10</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Forbes Brasil</div><h2><a href="https://forbes.com.br/forbes-money/2026/10/ibovespa-recorde-dolar-abaixo-5-reais-pesquisas-eleitorais/">Ibovespa renova recorde, passa dos 209 mil pontos e dólar fecha abaixo de R$ 5</a></h2><p class="resumo">O Ibovespa encerrou a sexta-feira (9) em alta de 1,38%, aos 209.066,90 pontos, novo recorde histórico de fechamento, com volume financeiro de cerca de R$ 39 bilhões. O dólar recuou 0,76%, a R$ 4,9856, e acumulou queda de 4,44% na semana. O movimento foi associado a pesquisas eleitorais que colocam Flávio Bolsonaro à frente de Lula no segundo turno, leitura que investidores associam a maior chance de controle das contas públicas, mesmo após o IPCA de setembro (0,82%) vir acima do esperado.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 4,99</div><div class="var down">▼ -0.76%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,58</div><div class="var down">▼ -0.79%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">209.067</div><div class="var up">▲ +1.38%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.812</div><div class="var up">▲ +0.59%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">27.366</div><div class="var up">▲ +0.64%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Forbes Brasil</div><h3><a href="https://forbes.com.br/forbes-money/2026/10/ibovespa-recorde-dolar-abaixo-5-reais-pesquisas-eleitorais/">Ibovespa renova recorde, passa dos 209 mil pontos e dólar fecha abaixo de R$ 5</a></h3><p class="resumo">O Ibovespa encerrou a sexta-feira (9) em alta de 1,38%, aos 209.066,90 pontos, novo recorde histórico de fechamento, com volume financeiro de cerca de R$ 39 bilhões. O dólar recuou 0,76%, a R$ 4,9856, e acumulou queda de 4,44% na semana. O movimento foi associado a pesquisas eleitorais que colocam Flávio Bolsonaro à frente de Lula no segundo turno, leitura que investidores associam a maior chance de controle das contas públicas, mesmo após o IPCA de setembro (0,82%) vir acima do esperado.</p></article><article class="item"><div class="eyebrow fonte">Jornal do Comércio</div><h3><a href="https://www.jornaldocomercio.com/economia/2026/10/1266354-tesouro-vende-rs-333-bi-em-prefixados-apos-queda-dos-juros-volume-e-o-maior-desde-dezembro-de-2020.html">Tesouro vende R$ 33,3 bi em prefixados, maior volume desde dezembro de 2020</a></h3><p class="resumo">O Tesouro Nacional vendeu R$ 33,28 bilhões em títulos prefixados na quinta-feira (8), o maior volume em uma primeira rodada de leilão desde dezembro de 2020. Foram R$ 27,86 bilhões em LTN e R$ 5,43 bilhões em NTN-F, com vencimentos entre 2028 e 2037. A procura veio depois de forte queda dos juros futuros na segunda-feira (5), após o resultado do primeiro turno da eleição.</p></article><article class="item"><div class="eyebrow fonte">Brazil Journal</div><h3><a href="https://braziljournal.com/pynt">Small caps sobem 12% em três pregões com aposta em Selic menor</a></h3><p class="resumo">O índice de small caps subiu 12% entre segunda e quarta-feira, segundo o Brazil Journal, enquanto o Ibovespa recuou nos dois pregões após a alta de segunda. Entre os destaques estão Quero-Quero (+47%), Movida (+33%) e Ecorodovias e Pague Menos (+31% cada), conforme levantamento da Elos Ayta. A leitura é de que juros menores favorecem empresas domésticas, com fluxo vindo sobretudo de fundos locais; o cenário depende de ajuste fiscal considerado crível.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Anbima</div><h3><a href="https://www.anbima.com.br/pt_br/imprensa/industria-de-fundos-registra-entradas-liquidas-de-r-251-7-bilhoes-no-ano-ate-setembro-8A2AB296A113EB2801A11D5ABEF85F23-00.htm">Indústria de fundos tem captação líquida de R$ 251,7 bi até setembro</a></h3><p class="resumo">A indústria de fundos de investimento registrou entradas líquidas de R$ 251,7 bilhões nos nove primeiros meses de 2026, segundo a Anbima. Os fundos de renda fixa lideraram a captação, seguidos pelos FIDCs (R$ 56 bilhões) e pelos ETFs (R$ 42,5 bilhões). O dado indica forte apetite por crédito privado e produtos de renda fixa no ano.</p></article>
+<footer><span>Radar Diário</span><span>2026-10-10</span></footer>
+</body></html>
