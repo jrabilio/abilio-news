@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-10-13</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-10-13</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">BPMoney (dados do IBGE)</div><h2><a href="https://bpmoney.com.br/?p=425837">IPCA sobe 0,82% em setembro e inflação em 12 meses chega a 4,58%, acima do teto da meta</a></h2><p class="resumo">O IPCA subiu 0,82% em setembro, após queda de 0,32% em agosto, segundo o IBGE, e o acumulado em 12 meses foi de 4,58%, acima do teto de 4,5% da meta. O grupo Habitação subiu 2,31%, puxado pela energia elétrica residencial (+7,98%), e Alimentação e bebidas avançou 0,83%, interrompendo três meses de queda. O resultado superou a projeção de 0,60% do Boletim Focus. O dado pesa na decisão de juros do Banco Central.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 4,985</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">209.067</div><div class="var up">▲ +1.38%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.807</div><div class="var down">▼ -0.06%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">27.246</div><div class="var down">▼ -0.44%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">BPMoney (dados do IBGE)</div><h3><a href="https://bpmoney.com.br/?p=425837">IPCA sobe 0,82% em setembro e inflação em 12 meses chega a 4,58%, acima do teto da meta</a></h3><p class="resumo">O IPCA subiu 0,82% em setembro, após queda de 0,32% em agosto, segundo o IBGE, e o acumulado em 12 meses foi de 4,58%, acima do teto de 4,5% da meta. O grupo Habitação subiu 2,31%, puxado pela energia elétrica residencial (+7,98%), e Alimentação e bebidas avançou 0,83%, interrompendo três meses de queda. O resultado superou a projeção de 0,60% do Boletim Focus. O dado pesa na decisão de juros do Banco Central.</p></article><article class="item"><div class="eyebrow fonte">DGABC</div><h3><a href="https://www.dgabc.com.br/Noticia/4351915/governo-zera-tributos-federais-da-gasolina-por-30-dias">Governo zera tributos federais da gasolina por 30 dias e amplia subsídio ao diesel importado</a></h3><p class="resumo">O governo anunciou na sexta (9) a zeragem de PIS/Pasep, Cofins e Cide sobre a gasolina por 30 dias, desoneração de R$ 0,89 por litro. O subsídio ao diesel importado ganhou reforço de R$ 1,40 por litro e o apoio ao etanol foi ampliado. O pacote custa cerca de R$ 5,2 bilhões em 30 dias e foi atribuído à alta do petróleo, com o Brent acima de US$ 100. O repasse aos postos não é automático.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Brasil Inovador</div><h3><a href="https://brasilinovador.com.br/applause-capta-r-10-milhoes-com-primus-ventures-para-expandir-gamificacao-e-inteligencia-artificial-no-varejo-b2b">Applause capta R$ 10 milhões em rodada liderada pela Primus Ventures</a></h3><p class="resumo">A startup de gamificação e IA para equipes de vendas B2B captou R$ 10 milhões em rodada liderada pela Primus Ventures, pelo Fundo Sul Ventures. Participaram investidores anteriores, incluindo fundadores da MadeiraMadeira e executivos da Pipefy. Os recursos vão para expandir a força comercial no Brasil, iniciar a internacionalização e aprofundar a tecnologia de IA. A meta é triplicar a operação até o fim de 2027.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">SpaceMoney / Cepea</div><h3><a href="https://www.spacemoney.com.br/commodities/boi-gordo-sobe-soja-recua-outubro">Boi gordo avança 3,7% em outubro no Cepea; soja e milho recuam no mês</a></h3><p class="resumo">Na sexta (9), o indicador Cepea/Esalq do boi gordo fechou a R$ 377,80 por arroba, alta de 3,71% no mês. A soja em Paranaguá foi a R$ 154,75 por saca, queda de 4,22% em outubro, e o milho Esalq/B3 ficou em R$ 67,35, recuo de 1,92% no mês. Dados anteriores ao feriado de segunda (12).</p></article>
+<footer><span>Radar Diário</span><span>2026-10-13</span></footer>
+</body></html>
