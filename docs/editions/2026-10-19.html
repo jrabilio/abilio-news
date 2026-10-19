@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-10-19</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-10-19</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Folha de Pernambuco / Estadão Conteúdo</div><h2><a href="https://www.folhape.com.br/economia/justica-torna-12-ex-executivos-da-americanas-reus-por-fraude/518825/">Justiça torna 12 ex-executivos da Americanas réus por fraude bilionária</a></h2><p class="resumo">A 6ª Vara Federal Criminal do Rio de Janeiro aceitou a denúncia do Ministério Público Federal e transformou em réus 12 ex-executivos da Americanas, ligados às inconsistências contábeis reveladas em janeiro de 2023. A denúncia original atingia 13 pessoas; Márcio Cruz Meirelles fechou acordo de colaboração premiada e ficou fora da lista. O processo tramita em segredo de Justiça. A aceitação da denúncia é ato formal e não implica condenação, mas faz o caso avançar quase quatro anos após vir à tona.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,07</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,69</div><div class="var down">▼ -0.26%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">205.430</div><div class="var up">▲ +0.54%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.659</div><div class="var down">▼ -1.09%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.140</div><div class="var down">▼ -2.14%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Folha de Pernambuco / Estadão Conteúdo</div><h3><a href="https://www.folhape.com.br/economia/justica-torna-12-ex-executivos-da-americanas-reus-por-fraude/518825/">Justiça torna 12 ex-executivos da Americanas réus por fraude bilionária</a></h3><p class="resumo">A 6ª Vara Federal Criminal do Rio de Janeiro aceitou a denúncia do Ministério Público Federal e transformou em réus 12 ex-executivos da Americanas, ligados às inconsistências contábeis reveladas em janeiro de 2023. A denúncia original atingia 13 pessoas; Márcio Cruz Meirelles fechou acordo de colaboração premiada e ficou fora da lista. O processo tramita em segredo de Justiça. A aceitação da denúncia é ato formal e não implica condenação, mas faz o caso avançar quase quatro anos após vir à tona.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Jornal Económico</div><h3><a href="https://jornaleconomico.sapo.pt/noticias/empresa-de-ia-anthropic-destina-5-das-acoes-a-novo-fundo-de-beneficio-publico/">Anthropic destina 5% das ações a novo fundo de benefício público</a></h3><p class="resumo">Em post de blog no domingo (18), a Anthropic anunciou que reservará 5% de suas ações ao Anthropic Public Benefit Fund, cujo valor pode crescer com a cotação da empresa. A companhia diz que o fundo dará mais margem para sua missão, como grandes doações a organizações sem fins lucrativos ou pagamentos diretos a grupos específicos, citando efeitos no mercado de trabalho. Com isso, cerca de 20% das ações ficam dedicadas ao benefício público, e a empresa avalia uma listagem em bolsa, possivelmente já em novembro.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">APET</div><h3><a href="https://apet.org.br/?p=143652">STF derruba cobrança do Funrural anterior a 2018 por 6 votos a 5</a></h3><p class="resumo">Na quinta-feira (15), o Plenário do STF julgou inconstitucional a cobrança do Funrural sobre operações anteriores à vigência da Lei 13.606/2018, na ADI 4.395, proposta pela Abrafrigo. O voto decisivo veio de Dias Toffoli, que mudou de posição ao entender que a Lei 10.256/2001 não definiu o fato gerador, a base de cálculo e a alíquota. Para operações a partir de 2018, a exigência segue válida. Não houve modulação de efeitos na sessão, e a decisão ainda pode ser contestada por embargos de declaração.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">NeoFeed</div><h3><a href="https://neofeed.com.br/negocios/m-dias-branco-interrompe-jejum-de-mas-e-estreia-em-paes-congelados-com-compra-da-grespan/">M. Dias Branco compra 80% da Grespan e estreia em pães congelados</a></h3><p class="resumo">A M. Dias Branco, por meio da subsidiária Jasmine, comprará 80% da Grespan, fabricante de pães congelados de Marília (SP) fundada em 2009 e com receita de cerca de R$ 139 milhões em 2025. O valor não foi divulgado, e há opção de compra do restante em até cinco anos. É a primeira aquisição da companhia em quatro anos e a entrada em categorias adjacentes ao seu negócio principal. Gancho de FUP: a empresa volta a fazer M&amp;A e expande portfólio, sinal de apetite de investimento e de potencial verba de marca.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-10-19</span></footer>
+</body></html>
