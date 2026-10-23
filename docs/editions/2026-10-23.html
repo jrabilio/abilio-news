@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-10-23</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-10-23</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">O Tempo</div><h2><a href="https://www.otempo.com.br/economia/2026/10/22/ppsa-vende-para-a-industria-todos-os-lotes-do-1-leilao-de-gas-da-uniao">Primeiro leilão de gás da União vende todos os lotes a 23 empresas</a></h2><p class="resumo">A PPSA vendeu na quinta-feira (22) todos os 110 lotes ofertados, somando 1,1 milhão de m³/dia, a 23 empresas, entre elas Vale, CSN, Gerdau e Braskem. Segundo o Ministério de Minas e Energia, o preço médio ficou em US$ 5,83 por milhão de BTU, contra a referência de US$ 12, redução de 38% a 57%. A entrega ocorre entre março e dezembro de 2027.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,04</div><div class="var up">▲ +0.21%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">5,65</div><div class="var up">▲ +0.15%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">204.120</div><div class="var down">▼ -1.15%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.663</div><div class="var down">▼ -1.21%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.009</div><div class="var down">▼ -2.60%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/petroleo-abertura-fechamento-ira-eua-22102026/">Petróleo Brent passa de US$ 113 com ataques no Oriente Médio</a></h3><p class="resumo">O Brent fechou em alta de cerca de 4% na quinta-feira (22), a US$ 113,17 por barril, maior valor desde maio, e caminha para a terceira semana seguida de ganhos. A alta veio após ataques ligados aos houthis à infraestrutura energética saudita, incluindo o campo de Shaybah, da Aramco. Os EUA ordenaram a saída de funcionários não essenciais da Arábia Saudita. Na sexta (23), o Brent recuava cerca de 0,2% nas primeiras negociações asiáticas.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/bradesco-bbdc4-resultados-terceiro-trimestre-2026/">Bradesco lucra R$ 7,1 bilhões no 3T26, mas inadimplência sobe a 4,6%</a></h3><p class="resumo">O Bradesco registrou lucro líquido recorrente de R$ 7,1 bilhões no terceiro trimestre, alta de 14,6% em um ano e em linha com o consenso. A inadimplência acima de 90 dias subiu para 4,6%, 0,3 ponto percentual acima do 2T26, puxada por crédito a pequenas e médias empresas com garantia do governo e por operações ligadas à John Deere. A carteira de crédito chegou a cerca de R$ 1,15 trilhão.</p></article><article class="item"><div class="eyebrow fonte">Correio Braziliense</div><h3><a href="https://www.correiobraziliense.com.br/economia/2026/10/7525844-governo-tem-arrecadacao-recorde-de-rs-2393-bi-em-setembro-diz-receita.html">Arrecadação federal soma R$ 239,4 bilhões em setembro, recorde para o mês</a></h3><p class="resumo">A Receita Federal informou na quinta-feira (22) que a arrecadação de setembro somou R$ 239,4 bilhões, alta real de 5,6% sobre setembro de 2025. No acumulado de janeiro a setembro, o total é de cerca de R$ 2,35 trilhões, com alta real de 6,97%. O resultado ficou em linha com a mediana das projeções do mercado.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Money Report</div><h3><a href="https://www.moneyreport.com.br/negocios/tractian-capta-us-130-mi-e-se-torna-novo-unicornio-brasileiro-de-ia/">Tractian capta US$ 130 milhões e vira unicórnio de IA com valuation de US$ 1,4 bilhão</a></h3><p class="resumo">A startup brasileira de IA para equipamentos industriais fechou rodada Série D de US$ 130 milhões, liderada pela Sapphire Ventures com a M&amp;G Catalyst como colíder. Participaram também General Catalyst, Bosch Ventures e Y Combinator. O valuation subiu 75% sobre a Série C, para US$ 1,4 bilhão. Os recursos irão principalmente para pesquisa e desenvolvimento, com novos sensores e treinamento de modelos.</p></article><article class="item"><div class="eyebrow fonte">Brasil Inovador</div><h3><a href="https://brasilinovador.com.br/luria-capta-r-15-milhoes-e-unifica-portfolio-corporativo-de-inteligencia-artificial/">Luria (ex-PX Data) unifica portfólio de IA corporativa após aporte de R$ 15 milhões</a></h3><p class="resumo">A Luria, antiga PX Data, do Rio de Janeiro, reestruturou sua oferta como ecossistema que processa dados e governa IA para grandes empresas. A rodada de R$ 15 milhões, realizada em abril de 2026, foi liderada pelo Bradesco Venture Capital, com participação da Vibra Ventures. A reestruturação foi divulgada em 22/10.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Brasil Inovador</div><h3><a href="https://brasilinovador.com.br/febraban-lanca-assistente-de-inteligencia-artificial-generativa-em-parceria-com-aws-e-flexa-cloud-para-orientar-financas-de-consumidores/">Febraban lança agente de IA generativa para educação financeira no WhatsApp</a></h3><p class="resumo">A Febraban anunciou o que chama de primeiro agente conversacional de IA generativa dedicado à educação financeira doméstica no país, desenvolvido com AWS e Flexa Cloud. Integrado ao programa Meu Bolso em Dia, atende gratuitamente via WhatsApp e web, com orientação sobre orçamento, negociação de dívidas e reservas, sem indicar produtos de crédito. Opera com base restrita a conteúdos educativos oficiais.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Folha Agrícola</div><h3><a href="https://folhaagricola.com.br/2026/10/22/boi-maior-valorizacao-do-boi-gordo-reduz-diferencial-frente-ao-magro/">Boi gordo sobe mais que o magro em outubro e reduz diferencial, aponta Cepea</a></h3><p class="resumo">Segundo nota do Cepea de 22/10, o boi gordo valorizou mais que o boi magro na parcial de outubro, até o dia 20, reduzindo o diferencial entre as categorias. A alta do gordo reflete oferta restrita de animais prontos e escalas de abate mais curtas. O quadro pode tornar o confinamento mais atrativo, a depender dos custos de produção.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://cnnbrasil.com.br/infra/siderurgia-metalurgia-e-mineracao-arrematam-320-mil-m3-dia-de-gas-da-uniao">Samarco está entre as vencedoras do primeiro leilão de gás da União</a></h3><p class="resumo">A Samarco foi uma das cinco vencedoras do segmento de siderurgia, metalurgia e mineração no leilão da PPSA, junto com CSN, Gerdau, Ternium e Vale. O grupo arrematou os 32 lotes do segmento, 320 mil m³/dia, com entrega de março a dezembro de 2027. Gancho de FUP: custo de energia menor tende a melhorar a margem operacional da mineradora.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-10-23</span></footer>
+</body></html>
