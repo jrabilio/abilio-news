@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-10-24</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-10-24</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Campo Grande News</div><h2><a href="https://www.campograndenews.com.br/economia/dolar-comeca-o-dia-em-alta-mas-fecha-a-r-4-99-antes-das-eleicoes">Dólar fecha abaixo de R$ 5 e Ibovespa sobe 0,47% na véspera do 2º turno</a></h2><p class="resumo">O dólar comercial caiu 0,90% na sexta-feira (23) e fechou a R$ 4,993, acumulando queda de 1,57% na semana e de 9,03% em 2026. O Ibovespa subiu 0,47%, aos 205.083 pontos, no último pregão antes do segundo turno, marcado para domingo (25). O mercado acompanhou a pesquisa Datafolha, que mostrou empate técnico entre Flávio Bolsonaro (47%) e Lula (46%), e o IPCA-15 abaixo do esperado.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 4,993</div><div class="var down">▼ -0.90%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 5,59</div><div class="var flat"> </div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">205.083</div><div class="var up">▲ +0.47%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.624</div><div class="var down">▼ -0.52%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">25.955</div><div class="var down">▼ -0.21%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Diário do Sudoeste</div><h3><a href="https://diariodosudoeste.com.br/ipca-15-fraco-da-folego-ao-ibovespa-antes-do-2o-turno/">IPCA-15 de outubro sobe 0,32%, abaixo do esperado, mas acumula 4,62% em 12 meses</a></h3><p class="resumo">A prévia da inflação avançou 0,32% em outubro, abaixo dos 0,43% projetados pela XP e da alta de 0,70% de setembro. No acumulado de 12 meses o índice chega a 4,62%, acima do teto da meta (4,50%). O dado ajudou o Ibovespa, que fechou em alta de 0,47% na sexta-feira (23), com a Petrobras subindo 1,47%.</p></article><article class="item"><div class="eyebrow fonte">NeoFeed</div><h3><a href="https://neofeed.com.br/negocios/sete-ativos-e-ate-r-1-bilhao-de-captacao-o-fundo-imobiliario-que-une-allos-e-kinea/">Allos e Kinea lançam fundo de até R$ 1 bilhão para comprar fatias em sete shoppings</a></h3><p class="resumo">Allos e Kinea criaram o Kinea Allos Malls FII (KAML11), cuja oferta pública de cotas começou em 22/10 com meta de até R$ 1 bilhão e mínimo de R$ 600 milhões. O fundo adquirirá participações em sete shoppings, como Metrô Santa Cruz, Caxias Shopping e Shopping Villa-Lobos, a um cap rate médio estimado de 9,5%. O pagamento será de 80% à vista e 20% em três parcelas, em 24, 36 e 48 meses; a Allos poderá ficar com até 24% das cotas e segue administrando os shoppings.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Mercado &amp; Consumo</div><h3><a href="https://mercadoeconsumo.com.br/15/10/2026/economia/ibge-estima-safra-de-graos-recorde-em-2026-3545-milhoes-de-toneladas/">IBGE eleva estimativa e prevê safra recorde de 354,5 milhões de toneladas em 2026</a></h3><p class="resumo">Segundo o levantamento de setembro do IBGE, divulgado em 15/10, a safra de cereais, leguminosas e oleaginosas deve somar 354,5 milhões de toneladas, alta de 2,4% sobre 2025 e 0,4% acima da estimativa de agosto. A soja deve chegar a 175 milhões de toneladas (+5,4%) e o milho a 143,3 milhões (+1,1%). Em contrapartida, arroz (-11,4%), trigo (-24%) e feijão (-6,6%) devem recuar.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Canal Rural</div><h3><a href="https://www.canalrural.com.br/economia/m-dias-branco-compra-80-da-grespan-e-entra-em-paes-congelados/">M. Dias Branco compra 80% da Grespan e entra no mercado de pães congelados</a></h3><p class="resumo">A M. Dias Branco assinou contrato para adquirir 80% da Grespan, fabricante de pães congelados de Marília (SP), por meio da subsidiária Jasmine; a conclusão depende de aprovação do Cade. A Grespan teve receita bruta de R$ 138,7 milhões em 2025 e atende mais de 1.100 clientes de varejo, e os fundadores seguem no negócio por até cinco anos. Gancho de FUP: movimento de expansão para uma nova categoria, sinal de apetite de investimento da companhia.</p></article><article class="item"><div class="eyebrow fonte">Revista Mineração</div><h3><a href="https://revistamineracao.com.br/2026/10/23/producao-da-samarco-cresce-4-no-3t26-e-atinge-maior-nivel-desde-retomada/">Samarco tem a maior produção trimestral desde a retomada, com 4,3 milhões de toneladas</a></h3><p class="resumo">A Samarco produziu 4,3 milhões de toneladas de pelotas e finos no 3T26, alta de 4% sobre o 3T25 e de 10% sobre o 2T26, o melhor resultado trimestral desde a retomada, no fim de 2020. No acumulado de nove meses a produção soma 12 milhões de toneladas (+7%), e o preço médio realizado das pelotas foi de US$ 125,10 por tonelada, 4% acima do 3T25. Gancho de FUP: melhora operacional e de preços pode abrir espaço para pautas de investimento social e cultural.</p></article><article class="item"><div class="eyebrow fonte">Café com Informação</div><h3><a href="https://cafecominformacao.com.br/leilao-de-gas-natural-destina-44-do-volume-a-industria-quimica-e-de-fertilizantes/">Ingredion está entre os vencedores do 1º leilão de gás natural da União</a></h3><p class="resumo">No leilão realizado pela PPSA em 22/10, todos os 110 lotes (1,1 milhão de m³/dia) foram vendidos, a um preço médio de US$ 5,16 por milhão de BTU segundo a Abiquim, abaixo dos cerca de US$ 10 hoje praticados. Ingredion, Braskem, Rhodia, Evonik e Peróxidos do Brasil contrataram 350 mil m³/dia no segmento químico e petroquímico. O fornecimento vai de março a dezembro de 2027, com retirada em Itaboraí (RJ); o comprador contrata o transporte. Gancho de FUP: custo de energia menor pode melhorar margens da empresa a partir de 2027.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-10-24</span></footer>
+</body></html>
