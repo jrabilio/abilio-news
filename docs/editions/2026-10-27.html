@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-10-27</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-10-27</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Terra</div><h2><a href="https://www.terra.com.br/noticias/eleicoes/dolar-fecha-a-r-540-e-bolsa-desaba-mais-de-13-apos-reeleicao-de-lula,7b95ad593e164fc5882c291a3f503e4ehwf0db65.html">Dólar sobe 8,21% e fecha a R$ 5,40, maior alta diária desde 1999, após reeleição de Lula</a></h2><p class="resumo">O dólar à vista fechou a R$ 5,403 na segunda-feira (26), primeiro pregão após a reeleição de Lula, com alta de 8,21%, a maior desde janeiro de 1999. O Ibovespa caiu 13,88%, aos 176.608 pontos, pior resultado desde março de 2020, e a B3 acionou o circuit breaker pela primeira vez desde então. Parte do mercado apostava na vitória de Flávio Bolsonaro e refez posições, revisando projeções de juros, câmbio e contas públicas.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,40</div><div class="var up">▲ +8.21%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">176.608</div><div class="var down">▼ -13.88%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.677</div><div class="var up">▲ +0.70%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">26.169</div><div class="var up">▲ +0.82%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Terra</div><h3><a href="https://www.terra.com.br/noticias/eleicoes/dolar-fecha-a-r-540-e-bolsa-desaba-mais-de-13-apos-reeleicao-de-lula,7b95ad593e164fc5882c291a3f503e4ehwf0db65.html">Dólar sobe 8,21% e fecha a R$ 5,40, maior alta diária desde 1999, após reeleição de Lula</a></h3><p class="resumo">O dólar à vista fechou a R$ 5,403 na segunda-feira (26), primeiro pregão após a reeleição de Lula, com alta de 8,21%, a maior desde janeiro de 1999. O Ibovespa caiu 13,88%, aos 176.608 pontos, pior resultado desde março de 2020, e a B3 acionou o circuit breaker pela primeira vez desde então. Parte do mercado apostava na vitória de Flávio Bolsonaro e refez posições, revisando projeções de juros, câmbio e contas públicas.</p></article><article class="item"><div class="eyebrow fonte">Itaú Unibanco (Fato Relevante, SEC)</div><h3><a href="https://www.sec.gov/Archives/edgar/data/0001132597/000113259726000245/materialfact_neospace.htm">Itaú assina compra da NeoSpace por R$ 2,925 bilhões</a></h3><p class="resumo">O Itaú Unibanco firmou contrato para adquirir a totalidade das ações da NeoSpace, startup brasileira de IA para o setor financeiro, por R$ 2,925 bilhões, com parte paga no fechamento e o restante diluído em cinco anos. O banco já detinha 15% da empresa desde 2025. A gestão da NeoSpace seguirá autônoma e a equipe será mantida. O fechamento depende de aprovação do Cade e do Banco Central.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Bloomberg Línea</div><h3><a href="https://bloomberglinea.com.br/startups/tractian-capta-us-130-milhoes-e-se-torna-o-mais-novo-unicornio-de-ia-brasileiro">Tractian capta US$ 130 milhões e vira unicórnio de IA industrial</a></h3><p class="resumo">A startup paulista Tractian fechou rodada Série D de US$ 130 milhões, avaliada em US$ 1,4 bilhão, liderada pela Sapphire Ventures com a M&amp;G Catalyst como colíder. A empresa usa sensores e IA para manutenção preditiva em instalações industriais. Segundo a Bloomberg Línea, entra para o grupo de unicórnios brasileiros.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Cointelegraph Brasil</div><h3><a href="https://cointelegraph.com.br/news/anthropic-artificial-intelligence-ipo">Anthropic protocola S-1 para IPO na Nasdaq e mostra prejuízo de US$ 80,7 bilhões no semestre</a></h3><p class="resumo">A Anthropic protocolou na SEC o S-1 para abrir capital na Nasdaq, com listagem possível em meados de novembro. O documento mostra prejuízo líquido de US$ 80,7 bilhões no primeiro semestre de 2026, sobre receita de US$ 16,3 bilhões. Cerca de US$ 72 bilhões da perda vêm de ajuste contábil sem efeito caixa, ligado ao valor justo de títulos conversíveis e SAFEs.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Atual MT</div><h3><a href="https://atualmt.com.br/2026/10/26/mme-abre-consulta-publica-sobre-meta-de-reducao-de-emissoes-no-mercado-de-gas-natural-para-2027-2">MME abre consulta pública para elevar meta de redução de emissões do gás natural em 2027</a></h3><p class="resumo">O Ministério de Minas e Energia abriu consulta pública sobre proposta de elevar de 0,5% para 1% a meta de redução de emissões no mercado de gás natural em 2027, no âmbito da Lei 14.993/2024. A proposta está aberta a contribuições do setor.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">AgroNews</div><h3><a href="https://www.agronews.tv.br/dolar-salta-mais-de-12-apos-resultado-da-eleicao-chicago-afunda-e-mercado-entra-em-aversao-ao-risco">Dólar salta após eleição, Chicago recua e soja brasileira ganha competitividade</a></h3><p class="resumo">O salto do câmbio após o resultado da eleição tornou a soja brasileira mais barata e competitiva para a China frente à norte-americana. Na CBOT, a soja fechou em queda superior a 1% na segunda-feira. O indicador Cepea/Esalq de Paranaguá registrou R$ 155,55 por saca, alta de 2,06%, e o milho ficou em R$ 64,24 por saca.</p></article>
+<footer><span>Radar Diário</span><span>2026-10-27</span></footer>
+</body></html>
