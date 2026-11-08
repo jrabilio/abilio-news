@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-11-08</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-11-08</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Paraíba Business (DOU)</div><h2><a href="https://paraibabusiness.com.br/cade-impugna-novamed-sanofi-acordo/">Cade recomenda aprovar com acordo a compra da Medley pela EMS</a></h2><p class="resumo">O Superintendente-Geral interino do Cade enviou ao Tribunal, em 5/11, o ato de concentração envolvendo a Sanofi e a Novamed (EMS), com recomendação de aprovação condicionada à celebração de um acordo. A operação, estimada em cerca de US$ 600 milhões (R$ 3,15 bilhões), é a compra do negócio de genéricos Medley. Os termos do acordo não foram divulgados e o julgamento pelo Tribunal ainda não tem data.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,51</div><div class="var up">▲ +0.36%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 6,13</div><div class="var down">▼ -0.01%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">168.498</div><div class="var up">▲ +1.39%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.377</div><div class="var up">▲ +0.31%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">24.579</div><div class="var up">▲ +1.09%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Paraíba Business (DOU)</div><h3><a href="https://paraibabusiness.com.br/cade-impugna-novamed-sanofi-acordo/">Cade recomenda aprovar com acordo a compra da Medley pela EMS</a></h3><p class="resumo">O Superintendente-Geral interino do Cade enviou ao Tribunal, em 5/11, o ato de concentração envolvendo a Sanofi e a Novamed (EMS), com recomendação de aprovação condicionada à celebração de um acordo. A operação, estimada em cerca de US$ 600 milhões (R$ 3,15 bilhões), é a compra do negócio de genéricos Medley. Os termos do acordo não foram divulgados e o julgamento pelo Tribunal ainda não tem data.</p></article><article class="item"><div class="eyebrow fonte">Reuters (via boletim A Caneta Caiu, 06/11)</div><h3><a href="https://cafecomseudinheiro.com/p/a-caneta-caiu-06-11-2026">Lula reafirma responsabilidade fiscal enquanto dívida bruta chega a 82,9% do PIB</a></h3><p class="resumo">Em reunião do CNPE, o presidente Lula defendeu o compromisso fiscal, mas minimizou o tamanho da dívida pública. Segundo a Reuters, a dívida bruta atingiu 82,9% do PIB, alta de mais de 11 pontos percentuais no atual ciclo de governo. Após a reeleição, no fim de outubro, os juros futuros subiram, o Ibovespa caiu e o dólar se valorizou; investidores aguardam a definição da equipe econômica.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-06112026/">Ibovespa sobe 1,39% e encerra primeira semana positiva após três de queda</a></h3><p class="resumo">O Ibovespa fechou a sexta-feira (6/11) aos 168.498 pontos, impulsionado por bancos (BB +3,88%, Bradesco +3,12%) e Vale (+2,19%), em rebote técnico após forte estresse global com ações de tecnologia e IA. O dólar comercial subiu 0,36%, a R$ 5,508, após dados de emprego dos EUA (165 mil vagas contra ~65 mil esperadas) reforçarem apostas de alta de juros pelo Fed em dezembro. A semana do índice terminou positiva, ainda abaixo dos níveis pré-eleição.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Brasil Inovador (ACE Ventures)</div><h3><a href="https://brasilinovador.com.br/avanco-da-inteligencia-artificial-vertical-e-liquidez-secundaria-reconfiguram-venture-capital-em-novembro-de-2026/">Rivio capta R$ 180 milhões em extensão de Série A liderada pela Valor Capital</a></h3><p class="resumo">A healthtech brasileira Rivio levantou R$ 180 milhões em uma extensão da rodada Série A, liderada pela Valor Capital Group, com participação de Monashees, Positive Ventures e APL. A avaliação da empresa passou de R$ 500 milhões para mais de R$ 1 bilhão em cerca de um ano de operação. Os dados constam do informe mensal de venture capital compilado pela ACE Ventures.</p></article><article class="item"><div class="eyebrow fonte">Brasil Inovador (ACE Ventures)</div><h3><a href="https://brasilinovador.com.br/avanco-da-inteligencia-artificial-vertical-e-liquidez-secundaria-reconfiguram-venture-capital-em-novembro-de-2026/">Revolut conclui venda secundária de ações avaliada em US$ 115 bilhões</a></h3><p class="resumo">A fintech concluiu uma venda secundária que a avalia em US$ 115 bilhões, alta de 53% sobre os US$ 75 bilhões de novembro de 2025. Entre os compradores estão Coatue, Glade Brook, Durable Capital, Baillie Gifford e contas geridas pela T. Rowe Price. Com o IPO adiado para 2028 ou depois, a operação deu liquidez a acionistas sem oferta pública.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">CNBC</div><h3><a href="https://www.cnbc.com/2026/11/07/anthropic-ipo-ai-data-center-backlash.html">Anthropic mira estreia na Nasdaq em meio a reação contra data centers</a></h3><p class="resumo">Segundo a CNBC, a Anthropic avança para um IPO na Nasdaq (ticker previsto ANT), com estreia apontada para a segunda quinzena de novembro, mas a data, o preço e o número de ações ainda não foram definidos. Investidores veem avaliação-alvo entre US$ 1 trilhão e US$ 1,5 trilhão, abaixo de estimativas anteriores. A oposição a data centers após as eleições de meio de mandato nos EUA e a maior queda da Nasdaq em 19 meses aparecem como fatores de risco.</p></article><article class="item"><div class="eyebrow fonte">SpaceMoney</div><h3><a href="https://www.spacemoney.com.br/tecnologia/semana-de-inovacao-inteligencia-artificial">Semana de Inovação da Enap terá 41 atividades sobre IA no setor público</a></h3><p class="resumo">O evento, de 10 a 12 de novembro, em Brasília e on-line, reunirá 41 atividades dedicadas à inteligência artificial na administração pública.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Economic News Brasil</div><h3><a href="https://economicnewsbrasil.com.br/2026/11/07/creditos-carbono-cop31-brasil-mercado-externo/">Brasil aprova regras para transferência internacional de reduções de emissões antes da COP31</a></h3><p class="resumo">Segundo a Economic News Brasil, o país poderá autorizar transferências de até 50 milhões de toneladas de CO₂ equivalente entre 2026 e 2030. A COP31 acontece em Antália (Turquia), de 9 a 20 de novembro, e o governo mira um memorando de entendimento sobre mercados de carbono com a China, noticiado pela Reuters em setembro.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">NC News (MinC/Salic)</div><h3><a href="https://ncnews.com.br/2026/11/04/lei-rouanet-recorde-projetos-recursos-26/">Lei Rouanet bate recorde: 25,6 mil propostas e R$ 1,67 bilhão captados em 2026</a></h3><p class="resumo">Segundo o Ministério da Cultura (dados do Salic), foram 25.650 propostas inscritas, o maior número desde 1991 e alta de 11,6% sobre 2025. A captação de janeiro a outubro somou R$ 1,67 bilhão, recorde para o período e 3,5% acima de 2025. O prazo de inscrição terminou em 31/10; são propostas recebidas, não projetos aprovados.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Secex/MDIC, levantamento Terra Investimentos</div><h3><a href="https://cafecomseudinheiro.com/p/a-caneta-caiu-06-11-2026">China volta a liderar compras de carne bovina do Brasil, mas em ritmo bem menor</a></h3><p class="resumo">A China comprou 41,9 mil toneladas em outubro (21,4% dos embarques), contra 10,9 mil em setembro e 187,2 mil em outubro de 2025. O Brasil exportou 195,4 mil t de carne in natura (US$ 1,24 bilhão): volume -39% e receita -30% em um ano. Fora da China, os destinos compraram 153,5 mil t, recorde para o mês, com EUA em 32,6 mil t (+201,5%).</p></article><article class="item"><div class="eyebrow fonte">SpaceMoney (Cepea)</div><h3><a href="https://www.spacemoney.com.br/commodities/boi-milho-soja-cepea">Boi gordo encosta em R$ 393 e soja recua em Chicago</a></h3><p class="resumo">O indicador Cepea/Esalq do boi gordo fechou a sexta (6/11) a R$ 392,70/@ (+0,72% sobre 30/10) e o milho a R$ 66,77/saca. Em Chicago, a soja caiu 3,8% na semana, a US$ 11,87/bushel, menor nível em mais de dois meses, o que pressiona os preços no Brasil.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">ClubeFII News</div><h3><a href="https://www.clubefiinews.com.br/acoes/engie-brasil-energia-assembleia-geral-extraordinaria-novembro-2026">Engie Brasil aprova incorporação da comercializadora e convoca AGE para 30/11</a></h3><p class="resumo">O conselho aprovou em 5/11 a incorporação da subsidiária integral ENGIE Brasil Energia Comercializadora, sem aumento de capital ou troca de ações. A AGE será digital em 30/11, às 9h. Gancho FUP: reorganização societária em curso; acompanhar a agenda de investimentos e ESG da companhia.</p></article><article class="item"><div class="eyebrow fonte">Money Times (XP)</div><h3><a href="https://www.moneytimes.com.br/m-dias-branco-mdia3-xp-ve-trimestre-fraco-e-reduz-preco-alvo-das-acoes-pads/">M. Dias Branco divulga 3T26 em 12/11; analistas esperam trimestre fraco</a></h3><p class="resumo">Projeções: receita de R$ 2,7–2,75 bi (-1% a -3%) e lucro de R$ 135–170 mi (até -22%), por pressão de custos de matérias-primas e demanda fraca. Gancho FUP: margem apertada pode limitar verba de patrocínio no curto prazo; vale acompanhar o release e a teleconferência de 13/11.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-11-08</span></footer>
+</body></html>
