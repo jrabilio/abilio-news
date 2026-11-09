@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-11-09</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-11-09</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Agência Brasil / Diario de Pernambuco</div><h2><a href="https://www.diariodepernambuco.com.br/economia/2026/11/11728546-balanca-comercial-tem-maior-superavit-para-outubro-desde-1989.html">Balança comercial tem superávit de US$ 9,32 bi em outubro, maior para o mês desde 1989</a></h2><p class="resumo">O superávit da balança comercial somou US$ 9,32 bilhões em outubro, alta de 39,4% sobre um ano antes, segundo o Mdic. As exportações cresceram 20%, para US$ 31,51 bilhões, puxadas por petróleo, combustíveis, cereais e soja, e as importações subiram 14,8%, para US$ 24,82 bilhões. No acumulado de janeiro a outubro o saldo é de US$ 71,04 bilhões. O ministério reduziu a projeção de superávit de 2026 de US$ 90 bilhões para US$ 84,4 bilhões.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,522</div><div class="var up">▲ +0.32%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 6,161</div><div class="var up">▲ +0.42%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">168.498</div><div class="var up">▲ +1.39%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.377</div><div class="var up">▲ +0.31%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">24.579</div><div class="var up">▲ +1.09%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InvestNews (Bloomberg)</div><h3><a href="https://investnews.com.br/negocios/braskem-petrobras-e-ig4-retiram-proposta-de-aporte-apos-impasse-com-credores/">Petrobras e IG4 retiram proposta de aporte na Braskem após impasse com credores</a></h3><p class="resumo">Após reuniões com credores em Nova York, os acionistas Petrobras e IG4 desistiram de um compromisso de aporte de US$ 1,4 bilhão na Braskem. A proposta, não vinculante, dependia de os detentores de bônus aceitarem converter US$ 3,8 bilhões de dívida em ações, o que foi rejeitado. Segundo a Bloomberg, com as partes distantes em pontos centrais, a recuperação judicial voltou a ser considerada como alternativa. A Braskem diz manter comunicação regular com o mercado.</p></article><article class="item"><div class="eyebrow fonte">Agência Brasil / Diario de Pernambuco</div><h3><a href="https://www.diariodepernambuco.com.br/economia/2026/11/11728546-balanca-comercial-tem-maior-superavit-para-outubro-desde-1989.html">Balança comercial tem superávit de US$ 9,32 bi em outubro, maior para o mês desde 1989</a></h3><p class="resumo">O superávit da balança comercial somou US$ 9,32 bilhões em outubro, alta de 39,4% sobre um ano antes, segundo o Mdic. As exportações cresceram 20%, para US$ 31,51 bilhões, puxadas por petróleo, combustíveis, cereais e soja, e as importações subiram 14,8%, para US$ 24,82 bilhões. No acumulado de janeiro a outubro o saldo é de US$ 71,04 bilhões. O ministério reduziu a projeção de superávit de 2026 de US$ 90 bilhões para US$ 84,4 bilhões.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Bloomberg Línea</div><h3><a href="https://bloomberglinea.com.br/startups/rodadas-da-semana-rivio-capta-r-80-milhoes-e-a-goiana-vereda-recebe-r-35-milhoes">Agtech Vereda capta rodada seed com Valor Capital, Canary e Speedrun, da a16z</a></h3><p class="resumo">A Vereda, agtech de Rio Verde (GO), fechou rodada seed de cerca de R$ 30 milhões coliderada por Valor Capital Group e Canary, com participação do fundo Speedrun, da Andreessen Horowitz. A Bloomberg Línea registra o valor como R$ 30 milhões no corpo do texto e R$ 35 milhões no título. A matéria compõe o resumo semanal de rodadas de 7 de novembro.</p></article><article class="item"><div class="eyebrow fonte">Bloomberg Línea</div><h3><a href="https://bloomberglinea.com.br/startups/rodadas-da-semana-rivio-capta-r-80-milhoes-e-a-goiana-vereda-recebe-r-35-milhoes#lev">Grupo Lev estreia no mercado de capitais com R$ 65 milhões em notas comerciais</a></h3><p class="resumo">O Grupo Lev, de mobilidade elétrica, captou R$ 65 milhões em Notas Comerciais em formato club deal, sua estreia no mercado de capitais. A operação foi coordenada pelo Itaú BBA, com participação do Santander. O dado consta do resumo semanal de rodadas da Bloomberg Línea de 7 de novembro.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">VentureBeat</div><h3><a href="https://venturebeat.com/technology/openai-launches-gpt-6-cyber-with-stronger-exploit-research-and-higher-api-price-than-anthropic-and-google">OpenAI lança GPT-6 Cyber, com acesso restrito e API mais cara do segmento</a></h3><p class="resumo">A OpenAI lançou o GPT-6 Cyber, variante do GPT-6 Astra voltada a pesquisa de vulnerabilidades, disponível apenas para clientes aprovados via programa Daybreak Red. A API custa US$ 20 por milhão de tokens de entrada e US$ 100 de saída, o mais caro da comparação com Anthropic e Google. A empresa afirma 48,5% no benchmark ExploitGym, contra 32,1% do GPT-5.6 Cyber, números sem avaliação independente.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Cliccamaqua</div><h3><a href="https://www.cliccamaqua.com.br/noticias/economia/rio-grande-do-sul-tera-novo-parque-eolico-com-investimento-de-quase-r-25-bilhoes/">Statkraft anuncia complexo eólico de 440 MW e quase R$ 2,5 bi no Rio Grande do Sul</a></h3><p class="resumo">A norueguesa Statkraft anunciou o Complexo Eólico Gran Sul, em Santa Vitória do Palmar (RS), com 440 MW e investimento de quase R$ 2,5 bilhões. As obras devem começar em janeiro de 2027. A empresa soma 2,3 GW de ativos renováveis no Brasil, entre operação e construção.</p></article><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://www.otempo.com.br/economia/2026/11/5/financiamento-do-bdmg-para-projetos-verdes-cresce-114-e-alcanca-r-619-milhoes">BDMG amplia crédito verde em 114% e libera R$ 619 milhões em Minas</a></h3><p class="resumo">O BDMG liberou R$ 619 milhões em financiamentos para projetos sustentáveis entre janeiro e meados de outubro de 2026, alta de 114% sobre o mesmo período de 2025. Entre os exemplos está a central de biomassa da Ecogen na fábrica da Stellantis em Betim, que substitui vapor a gás natural e deve evitar mais de 15 mil toneladas de CO₂e por ano.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Canal do Criador</div><h3><a href="https://canaldocriador.com.br/lance-rural/acordo-mercosul-uniao-europeia-exportacoes-carnes/">Exportações de carnes à União Europeia crescem 103,5% com acordo Mercosul-UE</a></h3><p class="resumo">Levantamento do Ministério da Agricultura mostra que as exportações brasileiras de carnes à União Europeia subiram 103,5% em valor e 170% em volume (de 101 mil para 272 mil toneladas) entre maio e setembro, desde a entrada em vigor provisória do acordo. No total, o agro exportou US$ 12,21 bilhões ao bloco no período, alta de 14,8%.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Atlas Público</div><h3><a href="https://atlaspublico.com.br/noticias/cade-aprova-sem-restricoes-8-operacoes-de-energia-logistica-99476">Cade aprova sem restrições operações que envolvem Imetame Energia e Imetame Logística Porto</a></h3><p class="resumo">Despachos de 5 de novembro, publicados no DOU em 6/11, aprovaram sem restrições a operação entre Capixaba Energia e Imetame Energia e a que envolve Suzano, Imetame Logística Porto e sócios locais. Os valores não foram divulgados. Para a FUP, sinaliza expansão da Imetame nos setores de energia e logística portuária.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-11-09</span></footer>
+</body></html>
