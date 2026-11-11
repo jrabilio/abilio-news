@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-11-11</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-11-11</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Bloomberg Línea</div><h2><a href="https://www.bloomberglinea.com.br/mercados/dolar-sobe-e-atinge-o-nivel-mais-alto-desde-dezembro-de-2025-apos-ata-do-copom/">Dólar sobe 1,24% e fecha a R$ 5,59, maior nível desde dezembro de 2025, após ata do Copom</a></h2><p class="resumo">O dólar à vista fechou a terça-feira (10) em alta de 1,24%, a R$ 5,59, depois de tocar R$ 5,61 durante a sessão, o maior patamar desde dezembro de 2025. A ata do Copom, que manteve a Selic na semana anterior, indicou que a desaceleração da demanda doméstica pode conter a alta mais forte dos preços, leitura que parte do mercado considerou pouco preocupada com a inflação. A inflação de outubro acima do esperado nos EUA reforçou a pressão sobre o real.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,590</div><div class="var up">▲ +1.24%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 6,226</div><div class="var up">▲ +0.82%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">171.337</div><div class="var down">▼ -0.52%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.521</div><div class="var down">▼ -0.38%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">25.066</div><div class="var down">▼ -0.74%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">NeoFeed</div><h3><a href="https://neofeed.com.br/negocios/jbs-adquire-flora-por-us-542-milhoes-e-entra-no-mercado-de-cuidados-pessoais/">JBS compra a Flora por US$ 542 milhões e o Canal Rural por US$ 11 milhões</a></h3><p class="resumo">A JBS anunciou na segunda-feira (9) a compra de 100% da Flora, empresa da J&amp;F dona de marcas como Minuano, Francis, Neutrox e OX, por enterprise value de R$ 2,97 bilhões (US$ 542 milhões). A parcela de equity, de US$ 367 milhões, será paga em ações da própria JBS mantidas em tesouraria e/ou BDRs. A companhia também comprará o Canal Rural por cerca de R$ 61 milhões. As duas operações, entre partes relacionadas, devem ser concluídas em dezembro.</p></article><article class="item"><div class="eyebrow fonte">NeoFeed</div><h3><a href="https://neofeed.com.br/negocios/fleury-se-une-ao-bradesco-em-rede-de-clinicas-de-oncologia/">Fleury e Atlântica, da Bradsaúde, criam a FleuryOnco com sete clínicas de oncologia</a></h3><p class="resumo">O Fleury assinou na terça-feira (10) memorando vinculante com a Atlântica Hospitais, controlada indiretamente pela Bradsaúde, para criar a FleuryOnco. O Fleury terá 50,1% e o controle da nova empresa; a Atlântica, 49,9%. O investimento inicial é de R$ 72 milhões até 2027, em sete clínicas ambulatoriais de oncologia, cinco em São Paulo e duas no Rio. O negócio ainda depende de aprovação do Cade.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Startups</div><h3><a href="https://startups.com.br/negocios/fintech/clara-capta-us-105m-com-serie-c-e-linha-da-general-catalyst/">Clara capta US$ 105 milhões entre Série C e linha da General Catalyst e mira expansão no Brasil</a></h3><p class="resumo">A plataforma de pagamentos corporativos Clara anunciou na terça-feira (10) US$ 105 milhões: US$ 65 milhões em Série C, liderada por Citius, Kaszek e DEG (grupo KfW), e US$ 40 milhões na renovação de linha do Customer Value Fund da General Catalyst. Mais da metade dos recursos irá para o Brasil, seu maior mercado em clientes e perto de metade da receita. A empresa prevê expansão comercial em mais de 20 cidades e novas funcionalidades de IA; o valuation não foi divulgado.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">CNBC</div><h3><a href="https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html">Anthropic define faixa de US$ 70 a US$ 78 por ação no IPO e pode levantar até US$ 64,4 bilhões</a></h3><p class="resumo">A Anthropic iniciou na terça-feira (10) o roadshow de sua oferta inicial de ações, com 825 milhões de ações Classe A na faixa de US$ 70 a US$ 78. No topo da faixa, a captação pode chegar a US$ 64,35 bilhões e a avaliação a cerca de US$ 1,4 trilhão, abaixo dos US$ 2 trilhões ventilados semanas antes. A precificação está prevista para 18 de novembro e a estreia na Nasdaq, sob o ticker ANT, para o dia 19.</p></article><article class="item"><div class="eyebrow fonte">Times Brasil (CNBC)</div><h3><a href="https://timesbrasil.com.br/empresas-e-negocios/nvidia-cai-4-em-meio-a-caso-extraconjugal-de-jensen-huang-com-suposta-espia-chinesa/">Nvidia cai 4,27% após conselho abrir investigação sobre o CEO Jensen Huang</a></h3><p class="resumo">As ações da Nvidia fecharam em queda de 4,27% na segunda-feira (9), depois de o conselho abrir uma investigação independente sobre o relacionamento do CEO Jensen Huang com uma executiva apontada por agências americanas como fonte de informações para Pequim. O conselho manteve Huang no cargo e disse não ter motivos para crer que segredos da empresa ou de segurança nacional foram comprometidos. A China classificou a acusação de espionagem como infundada; o balanço do 3º trimestre sai em 17 de novembro.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">TV Sim Brasil</div><h3><a href="https://tvsimbrasil.com.br/brasil/agro/noticia/2026/11/10/agro-mineracao-energia-descarbonizacao-cop31">Agro, transportes, mineração e energia firmam agenda de descarbonização do CEBDS na COP31</a></h3><p class="resumo">Quatro setores da economia brasileira firmaram, na COP31 em Antália (Turquia), uma agenda conjunta de descarbonização coordenada pelo CEBDS, com apoio de mais de 240 organizações. O Núcleo Intersetorial do Clima reúne 33 alavancas, 190 indicadores e 100 ações habilitadoras, com potencial estimado de cerca de 900 milhões de toneladas de CO2e por ano até 2050. Nestlé e Amaggi lideram o agro, Motiva os transportes, Vale e Ibram a mineração, e CPFL, EDP, Engie, Energisa e Neoenergia a energia elétrica. O CEBDS ressalta que os números são setoriais, não metas por empresa; o lançamento será em 19 de novembro.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Agência Brasil</div><h3><a href="https://agenciabrasil.ebc.com.br/cultura/noticia/2026-11/edital-destina-r-25-milhoes-em-patrocinios-culturais-e-esportivos-0">Transpetro abre edital de R$ 25 milhões para patrocínio cultural e esportivo</a></h3><p class="resumo">O programa Transpetro em Movimento lançou edital de R$ 25 milhões, sendo R$ 15 milhões para cultura e R$ 10 milhões para esporte, com inscrições gratuitas de 11 a 25 de novembro pelo site da Transpetro. Projetos culturais de música e artes cênicas podem receber de R$ 400 mil a R$ 2 milhões; os esportivos, de R$ 400 mil a R$ 1,5 milhão. Há prioridade para municípios de até 50 mil habitantes, para as regiões Norte, Nordeste e Centro-Oeste e para públicos como quilombolas, pessoas com deficiência e jovens. Os projetos podem durar até dois anos, com contratação entre 2027 e 2029.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Notícias Agrícolas</div><h3><a href="https://www.noticiasagricolas.com.br/noticias/soja/431143-precos-da-soja-fecham-com-forte-alta-em-chicago-pelo-usda-e-no-brasil-com-disparada-do-dolar.html">Soja sobe mais de 3% em Chicago após USDA cortar estoques dos EUA; dólar puxa preços no Brasil</a></h3><p class="resumo">O relatório de novembro do USDA cortou os estoques finais de soja dos EUA em 2026/27 de 8,57 para 8,17 milhões de toneladas, contra expectativa de alta, e elevou as exportações em 680 mil toneladas. A soja subiu mais de 3% em Chicago na terça-feira (10), com o contrato de maio, referência para a colheita brasileira, a US$ 12,43 por bushel. No Brasil, a alta do dólar para R$ 5,59 elevou as referências no interior e nos portos.</p></article><article class="item"><div class="eyebrow fonte">Notícias Agrícolas</div><h3><a href="https://www.noticiasagricolas.com.br/noticias/cafe/431149-cafe-arabica-atinge-minima-de-sete-semanas-em-ny-mas-precos-sobem-no-br-com-alta-forte-do-dolar.html">Café arábica atinge mínima de sete semanas em Nova York, mas sobe no Brasil com o dólar</a></h3><p class="resumo">O arábica para dezembro caiu 220 pontos na ICE, a 271,40 centavos de dólar por libra-peso, menor nível em sete semanas, na terça-feira (10). A pressão veio do real fraco, que estimula vendas, das exportações de outubro (alta de 23% no ano) e do maior volume de café brasileiro aguardando certificação em oito meses. No mercado físico, o dólar mais alto sustentou os preços: em Guaxupé (MG), a saca subiu 1,47%, a R$ 1.722.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">SteelOrbis</div><h3><a href="https://www.steelorbis.com/steel-news/latest-news/brazils-samarco-narrows-net-loss-in-third-quarter-on-higher-production-level-1489442.htm">Samarco reduz prejuízo no 3º trimestre e tem maior produção desde a retomada</a></h3><p class="resumo">A Samarco registrou prejuízo líquido de US$ 544,3 milhões no 3º trimestre de 2026, ante US$ 1,045 bilhão um ano antes, com receita líquida 2% maior, a US$ 450,3 milhões. A produção de pelotas subiu 27%, para 3,7 milhões de toneladas, o maior volume trimestral desde a retomada das operações, e o preço médio realizado avançou 6%. O resultado operacional ficou negativo em US$ 246,3 milhões por causa de US$ 461,1 milhões em indenizações ligadas ao rompimento de Fundão. Gancho de FUP: operação em alta mas caixa pressionado por reparação, então a pauta tende a ser patrocínio de impacto territorial em MG e ES, não verba ampla.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-11-11</span></footer>
+</body></html>
