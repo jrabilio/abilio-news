@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-11-12</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-11-12</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">ClimaInfo</div><h2><a href="https://climainfo.org.br/2026/11/11/lula-pede-mais-apoio-financeiro-ao-fundo-de-florestas-na-cop31/">Lula pede novos aportes ao fundo de florestas tropicais na Cúpula de Líderes da COP31</a></h2><p class="resumo">Após discursar na abertura da Cúpula de Líderes da COP31, em Antália (Turquia), nesta quarta-feira (11), o presidente Lula participou do evento de alto nível sobre florestas e pediu novos investimentos no Fundo Florestas Tropicais para Sempre (TFFF). Lançado pelo Brasil na COP30, o mecanismo somava US$ 7,8 bilhões em contribuições de países e de investidores privados, abaixo da meta de US$ 10 bilhões fixada para torná-lo operacional até o fim do ano. O primeiro-ministro da Noruega, Jonas Gahr Støre, que divide com o Brasil a liderança do fundo, confirmou disposição de aportar até 20% do total, cerca de US$ 2 bilhões. Lula destacou que o TFFF não é doação: investidores públicos e privados receberão retorno financeiro sobre os recursos aplicados.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,561</div><div class="var down">▼ -0.42%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 6,171</div><div class="var down">▼ -0.98%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">172.060</div><div class="var up">▲ +0.42%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.619</div><div class="var up">▲ +1.31%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">25.466</div><div class="var up">▲ +1.60%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Hoje Diário</div><h3><a href="https://hojediario.com/2026/11/11/dolar-fecha-em-queda-a-r-556-e-ibovespa-sobe-com-pacote-fiscal-no-radar/">Dólar recua a R$ 5,5628 e Ibovespa sobe a 172.060 pontos com pacote fiscal no radar</a></h3><p class="resumo">O dólar comercial fechou a quarta-feira (11) em queda de 0,42%, a R$ 5,5628, corrigindo parte da alta do dia anterior, quando havia atingido o maior patamar em 15 meses. O Ibovespa subiu 0,42% e encerrou aos 172.060,44 pontos, após oscilar entre 171.335 e 172.987 pontos, com volume financeiro de R$ 28,5 bilhões. A sessão repercutiu a expectativa em torno do pacote de ajuste fiscal em negociação com o Congresso. O PTAX de fechamento do Banco Central confirmou o dólar a R$ 5,5606 e registrou o euro a R$ 6,1706, queda de 0,98% no dia.</p></article><article class="item"><div class="eyebrow fonte">Monitor do Mercado</div><h3><a href="https://monitordomercado.com.br/noticias/empresas-e-acoes/435604-cade-aprova-compra-de-50-3-da-mills-pela-loxam-e-destrava-opa">Cade aprova compra de 50,3% da Mills pela francesa Loxam e destrava OPA</a></h3><p class="resumo">A Superintendência-Geral do Cade aprovou sem restrições a aquisição de 50,3% da Mills pela francesa Loxam, locadora europeia de equipamentos para construção. A companhia comunicou a decisão em fato relevante enviado à CVM na terça-feira (10). A aprovação destrava a oferta pública de aquisição (OPA) das ações remanescentes, etapa seguinte da operação. O negócio consolida a entrada de um grupo estrangeiro no mercado brasileiro de locação de máquinas e plataformas de elevação.</p></article><article class="item"><div class="eyebrow fonte">Money Times</div><h3><a href="https://www.moneytimes.com.br/jbs-jbss32-lucra-us-164-milhoes-no-3t26-pads/">JBS lucra US$ 164 milhões no 3T26, com alavancagem em 3,54 vezes</a></h3><p class="resumo">A JBS reportou lucro líquido de US$ 164 milhões no terceiro trimestre de 2026, queda de cerca de 72% na comparação anual. A alavancagem da companhia subiu para 3,54 vezes o Ebitda, refletindo a pressão de custos no ciclo do gado e margens mais estreitas nas operações de carne bovina. O balanço foi divulgado em 9 de novembro, no mesmo dia em que a empresa anunciou aquisições no setor de cuidados pessoais e em mídia. O resultado contrasta com a trajetória recente de expansão da companhia via compras.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Data Center Dynamics</div><h3><a href="https://www.datacenterdynamics.com/br/not%C3%ADcias/governo-destina-463-milh%C3%B5es-de-reais-para-criar-rede-nacional-de-data-centers/">Governo destina R$ 46,3 milhões a plataforma de IA que distribui processamento entre data centers</a></h3><p class="resumo">O Ministério das Comunicações anunciou investimento de R$ 46,3 milhões na plataforma Prisma, que usará inteligência artificial para distribuir cargas de processamento entre data centers conectados em uma rede nacional. O desenvolvimento será conduzido pelo CPQD, em Campinas (SP), ao longo de 36 meses. A alocação das tarefas considerará eficiência energética e capacidade disponível em cada unidade. O projeto se soma ao Redata, regime de incentivos ao setor de data centers sancionado em setembro, dentro do pacote de soberania tecnológica do governo federal.</p></article><article class="item"><div class="eyebrow fonte">ISTOÉ</div><h3><a href="https://istoe.com.br/china-sao-paulo-data-centers-inteligencia-artificial-energia">Alibaba Cloud anuncia dois data centers no Brasil e energia aparece como gargalo</a></h3><p class="resumo">A Alibaba Cloud anunciou a instalação de dois data centers no Brasil, com São Paulo no centro do plano de expansão da companhia chinesa para sustentar serviços de inteligência artificial na América Latina. A reportagem aponta a disponibilidade de energia e a infraestrutura elétrica como os principais desafios para novos projetos do tipo no país. O movimento acompanha a projeção da consultoria JLL de investimentos recordes de cerca de US$ 8 bilhões em data centers no Brasil em 2026, com entrega prevista de 240 MW de nova capacidade.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">eixos</div><h3><a href="https://eixos.com.br/transicao-energetica/lula-leva-a-cop31-mapa-do-desmatamento-pronto-o-dos-fosseis-fica-para-2027/">CNPE aprova 18 diretrizes do mapa do caminho para reduzir dependência de combustíveis fósseis</a></h3><p class="resumo">Em reunião com o presidente Lula em 6 de novembro, o Conselho Nacional de Política Energética (CNPE) aprovou 18 diretrizes que orientarão o mapa do caminho brasileiro para reduzir a dependência de combustíveis fósseis. O documento final, no entanto, deve ficar pronto apenas para a COP32, em 2027, enquanto o mapa do desmatamento segue para a COP31. O compromisso foi assumido pelo Brasil após a COP30 de Belém e envolve os ministérios da Fazenda, de Minas e Energia, do Meio Ambiente e a Casa Civil. A agenda define o ritmo de futuros incentivos a renováveis e biocombustíveis.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">SpaceMoney</div><h3><a href="https://www.spacemoney.com.br/agronegocio/exportacao-soja-novembro-2026">Line-up aponta 4,37 milhões de toneladas de soja para embarque em novembro</a></h3><p class="resumo">A soja em grão tem 4,371 milhões de toneladas programadas para embarque nos portos brasileiros em novembro de 2026, segundo levantamento da Safras &amp; Mercado. O volume supera em 3,2% as 4,234 milhões de toneladas estimadas para o mesmo mês de 2025. A escala preliminar de dezembro indica 133 mil toneladas. Para o ano fechado de 2026, a consultoria projeta 111,817 milhões de toneladas embarcadas, contra 104,797 milhões registradas pela Secex de janeiro a novembro de 2025.</p></article><article class="item"><div class="eyebrow fonte">Safras &amp; Mercado</div><h3><a href="https://safras.com.br/?p=90322">Plantio de verão 26/27 de milho no Centro-Sul atinge 83,8%</a></h3><p class="resumo">O plantio de milho da safra de verão 2026/27 no Centro-Sul do Brasil alcançou 83,8% da área estimada de 3,548 milhões de hectares até 6 de novembro, segundo levantamento da Safras &amp; Mercado divulgado em 9 de novembro. A semeadura está praticamente concluída nos três estados do Sul: 99,2% no Rio Grande do Sul, 98,9% em Santa Catarina e 99,3% no Paraná. São Paulo aparece em 78,9% da área prevista de 293 mil hectares. A área estimada foi revisada para baixo, com recuo de 1,7% frente à projeção anterior de 3,561 milhões de hectares.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Diário do Grande ABC</div><h3><a href="https://www.dgabc.com.br/Noticia/4368023/engie-brasil-encerrou-o-3-trimestre-de-2026-com-lucro-liquido-ajustado-de-rs-716-milhoes">Engie Brasil tem lucro ajustado de R$ 716 milhões no 3T26 e receita 9,8% maior</a></h3><p class="resumo">A Engie Brasil Energia encerrou o terceiro trimestre de 2026 com lucro líquido ajustado de R$ 716 milhões, recuo anual de 2,1%, em balanço divulgado em 10 de novembro. A receita operacional líquida chegou a R$ 3,67 bilhões, alta de 9,8%, e a dívida líquida somou R$ 25,28 bilhões. A companhia também convocou assembleia geral extraordinária para 30 de novembro, com a incorporação da Engie Brasil Energia Comercializadora na pauta. Gancho de FUP: receita em expansão e reorganização societária em curso sustentam a conversa de patrocínio institucional, embora o lucro estável recomende pleitos de porte moderado.</p></article><article class="item"><div class="eyebrow fonte">Forbes Agro</div><h3><a href="https://forbes.com.br/forbes-agro/2026/11/soja-deve-interromper-ciclo-de-expansao-de-area-no-brasil-em-2027-projeta-rabobank/">Rabobank projeta estabilização de margens do agro brasileiro em 2027</a></h3><p class="resumo">O estudo Perspectivas para o Agronegócio Brasileiro 2027, apresentado pelo Rabobank em 4 de novembro, prevê um período de estabilização após a compressão de margens registrada em 2026, com recuperação gradual e desigual entre as cadeias. Em análise específica sobre soja divulgada em 5 de novembro, o RaboResearch projeta estabilidade da área plantada em 2026/27 e volumes recordes ao fim da temporada. O banco aponta financiamento e câmbio como principais canais de impacto do risco fiscal sobre o setor. Gancho de FUP: o banco segue ativo na agenda de conteúdo e relacionamento com o agro, janela natural para pauta de patrocínio de eventos e projetos socioambientais no campo.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-11-12</span></footer>
+</body></html>
