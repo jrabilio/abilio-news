@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-11-14</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-11-14</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Movimento Econômico</div><h2><a href="https://movimentoeconomico.com.br/senado/2026/11/13/senado-aprova-ajuste-nas-contas-publicas-de-ate-r-60-bilhoes-para-2027/">Senado aprova texto-base do pacote fiscal de até R$ 60 bilhões para 2027</a></h2><p class="resumo">O Senado aprovou na noite de quinta-feira (12), por 45 votos a 31, o texto-base do PLP 299/2026, que reúne medidas de controle das contas públicas para garantir as metas fiscais de 2027. O Ministério do Planejamento estima economia de R$ 50 bilhões a R$ 60 bilhões; o parecer do relator Eduardo Braga (MDB-AM) aponta impacto de R$ 45,1 bilhões a R$ 56,1 bilhões. O texto prevê contingenciamento maior, redução do teto de crescimento das despesas e corte adicional de 10% nos benefícios tributários federais, elevando o corte total a 20%. Os destaques serão votados na terça-feira (17) e o projeto segue depois para a Câmara.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,652</div><div class="var up">▲ +0.67%</div></div><div class="tick"><div class="nome">Euro</div><div class="valor">R$ 6,233</div><div class="var up">▲ +0.32%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">172.458</div><div class="var up">▲ +0.66%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.562</div><div class="var down">▼ -0.40%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">25.136</div><div class="var down">▼ -0.91%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Times Brasil | CNBC</div><h3><a href="https://timesbrasil.com.br/empresas-e-negocios/bancos-fintechs/bb-tem-queda-de-665-no-lucro-e-reduz-previsao-para-2026/">Lucro do Banco do Brasil cai 66,5% no 3º trimestre e banco corta projeção para 2026 pela metade</a></h3><p class="resumo">O Banco do Brasil teve lucro líquido ajustado de R$ 1,27 bilhão no terceiro trimestre, queda de 66,5% ante os R$ 3,8 bilhões de um ano antes, pressionado por provisões para calotes no crédito ao agronegócio. O banco reduziu a projeção de lucro de 2026 de R$ 18 bilhões a R$ 22 bilhões para R$ 9 bilhões a R$ 11 bilhões e elevou a estimativa de custo do crédito para R$ 80 bilhões a R$ 83 bilhões. A rentabilidade sobre o patrimônio caiu para 2,8%, ante 8,4% no 3T25, e as ações BBAS3 chegaram a recuar mais de 11% na quinta-feira (12).</p></article><article class="item"><div class="eyebrow fonte">eixos</div><h3><a href="https://eixos.com.br/combustiveis-e-bioenergia/biocombustiveis/petrobras-paga-r-620-mi-para-ser-dona-de-100-da-logum/">Petrobras paga R$ 620 milhões para ficar com 100% da Logum, de dutos de etanol</a></h3><p class="resumo">A Petrobras fechou acordo para comprar por R$ 620 milhões os 70% que ainda não detém na Logum Logística, informou a estatal na quinta-feira (12). Os vendedores são Raízen (30%), Copersucar (30%) e Uniduto Logística (10%). A Logum transporta etanol por dutos do interior paulista e do Triângulo Mineiro até polos de distribuição em São Paulo e no Rio de Janeiro. O pagamento será feito em três parcelas, sendo R$ 300 milhões no fechamento da operação.</p></article><article class="item"><div class="eyebrow fonte">Times Brasil | CNBC</div><h3><a href="https://timesbrasil.com.br/empresas-e-negocios/banco-central-autoriza-nubank-a-operar-como-banco-no-brasil/">Banco Central autoriza Nubank a comprar banco e obter licença bancária no Brasil</a></h3><p class="resumo">O Nubank recebeu autorização do Banco Central para adquirir o Banco Porto Real de Investimentos, operação anunciada em julho. Com a aprovação, divulgada na sexta-feira (13), a instituição passará a contar com licença bancária no país, e a conclusão da compra está prevista para os próximos dias. A licença permite cumprir a Resolução Conjunta nº 17 do BC e do CMN, que define critérios para o uso do termo “banco” por instituições financeiras.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Brazil Journal</div><h3><a href="https://braziljournal.com/b3-compra-40-da-idex-uma-aposta-no-credito-privado">B3 e Leto aportam R$ 40 milhões na IDEX, e bolsa fica com até 40% da empresa de dados de crédito privado</a></h3><p class="resumo">A B3 vai comprar até 40% da IDEX Analytics, especializada em índices de renda fixa, por meio de um aporte primário conjunto de R$ 40 milhões com a Leto Asset Management, antiga JGP Crédito e controladora da IDEX. A B3 responde pela maior parte do valor e terá opção de comprar o restante a partir de 2031. Os recursos financiam uma plataforma de informações sobre o mercado de crédito privado, segmento que cresce rapidamente no país, segundo o CFO da B3, André Milanez.</p></article><article class="item"><div class="eyebrow fonte">Startupi</div><h3><a href="https://startupi.com.br/bndes-aprova-r-20-milhoes-para-zeev-desenvolver-plataforma-corporativa-de-ia/">BNDES aprova R$ 20 milhões para a Zeev desenvolver plataforma corporativa de IA</a></h3><p class="resumo">O BNDES aprovou financiamento de R$ 20 milhões para a empresa de tecnologia Zeev, com recursos do programa BNDES Mais Inovação. O dinheiro vai bancar uma plataforma de automação baseada em IA que conecta modelos, agentes, documentos, regras de negócio e sistemas corporativos em fluxos rastreáveis e auditáveis. A estrutura sustentará as ferramentas SaaS da empresa e soluções sob medida para operações com alto volume de documentos e exigências de compliance.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Baguete</div><h3><a href="https://www.baguete.com.br/noticias/fim-de-linha-para-jensen-huang">Jensen Huang deixa o comando da Nvidia; CFO Colette Kress assume como CEO interina</a></h3><p class="resumo">Jensen Huang pediu para deixar o cargo de CEO da Nvidia na quinta-feira (12), em meio ao escândalo envolvendo uma executiva que agências de segurança dos EUA suspeitam ter trabalhado para a China. A diretora financeira, Colette Kress, atuará como CEO interina, e o conselho iniciou a busca por um sucessor, considerando nomes internos e externos. A saída abalou ações de tecnologia em Wall Street na sexta-feira (13).</p></article><article class="item"><div class="eyebrow fonte">Baguete</div><h3><a href="https://www.baguete.com.br/noticias/nuplia-estreia-no-brasil-com-aluguel-de-gpus">Nuplia estreia no Brasil com aluguel de GPUs e plano de US$ 40 milhões em hardware da Nvidia</a></h3><p class="resumo">A Nuplia, nova empresa de infraestrutura para inteligência artificial, começou a operar no Brasil alugando GPUs sob demanda para tarefas de inferência. Criada por Murillo Piotrovski, ex-vice-presidente de operações da EssilorLuxottica nos EUA, a empresa planeja investir US$ 40 milhões (cerca de R$ 223 milhões) em equipamentos da Nvidia até o fim de 2027. A proposta é processar IA no país para reduzir o tempo de resposta e atender às regras locais de proteção de dados.</p></article><article class="item"><div class="eyebrow fonte">Baguete</div><h3><a href="https://www.baguete.com.br/noticias/anthropic-lanca-aplicativos-de-trabalho">Anthropic lança Claude Sheets e Whiteboards e apresenta prévia do Claude Meetings</a></h3><p class="resumo">A Anthropic lançou novos aplicativos de trabalho integrados ao Claude, entrando em terreno dominado por Microsoft e Google. O Claude Sheets cria e edita planilhas com abas, fórmulas e menus a partir de pedidos em linguagem natural, e o Claude Whiteboards é um quadro colaborativo que converte discussões em cronogramas, documentos ou slides. A empresa também apresentou uma prévia do Claude Meetings, que registra e organiza anotações durante videochamadas.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/esg/cop31-bndes-pretende-mobilizar-r-39-billhoes-para-projetos-de-descarbonizacao/">BNDES quer mobilizar até R$ 39 bilhões para descarbonização com três fundos anunciados na COP31</a></h3><p class="resumo">O BNDES anunciou na quinta-feira (12), durante a COP31, em Antália (Turquia), um plano para mobilizar até R$ 39 bilhões em projetos de descarbonização no Brasil. O valor reúne recursos de três fundos de investimento e financiamentos adicionais que as empresas beneficiadas poderão contratar. Segundo o presidente do banco, Aloizio Mercadante, a estratégia combina dinheiro público, capital internacional e investidores privados para a economia de baixo carbono.</p></article><article class="item"><div class="eyebrow fonte">Reuters (via Notícias Agrícolas)</div><h3><a href="https://www.noticiasagricolas.com.br/noticias/agronegocio/431363-negociacoes-da-cop31-enfrentam-atritos-logo-no-inicio-sobre-futuro-dos-combustiveis-fosseis.html">COP31 fecha primeira semana com resistência a metas para abandonar combustíveis fósseis</a></h3><p class="resumo">Grandes produtores e consumidores de combustíveis fósseis resistem, nas negociações da COP31, a qualquer acordo com metas concretas de transição para longe de petróleo, gás e carvão, segundo observadores ouvidos na sexta-feira (13). Arábia Saudita e Rússia se opõem a restrições ao uso de fósseis, e a Índia rejeita medidas que possam limitar seu desenvolvimento. Turquia, anfitriã, e Austrália, principal negociadora, têm mais uma semana para fechar um acordo.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Agência Senado (via Notícias Agrícolas)</div><h3><a href="https://www.noticiasagricolas.com.br/noticias/sucroenergetico/431356-lei-libera-apoio-a-produtores-de-cana-e-ate-r-14-5-bi-para-renovar-frota-de-caminhoes.html">Lei garante R$ 12 por tonelada a produtores de cana do Nordeste e libera até R$ 14,5 bi para renovar frotas</a></h3><p class="resumo">A Lei 15.528/2026, sancionada pelo presidente em exercício Geraldo Alckmin e publicada no Diário Oficial na quinta-feira (12), assegura subvenção de R$ 12 por tonelada de cana entregue a usinas do Nordeste na safra 2025/26. O benefício atende produtores prejudicados pelas tarifas dos EUA ou por eventos climáticos extremos e deve custar cerca de R$ 270 milhões em 2026. A lei também autoriza até R$ 14,5 bilhões em financiamentos para renovação sustentável da frota de cargas e passageiros. O pagamento ainda depende de regulamentação do governo federal.</p></article><article class="item"><div class="eyebrow fonte">Reuters (via Notícias Agrícolas)</div><h3><a href="https://www.noticiasagricolas.com.br/noticias/boi/431367-imea-eleva-em-53-previsao-de-confinamento-bovino-em-mt-em-2026.html">Imea eleva em 5,3% a previsão de confinamento bovino em Mato Grosso em 2026</a></h3><p class="resumo">O confinamento de bovinos em Mato Grosso foi estimado em 1,4 milhão de cabeças, alta de 5,3% sobre o levantamento de julho e de 13,78% sobre 2025, segundo o Imea na sexta-feira (13). As entregas de animais confinados se concentram em novembro e dezembro, com maior demanda interna e retomada de compras de frigoríficos para a cota chinesa de 2027. O Imea também cita o câmbio mais alto como fator de competitividade para a carne brasileira no exterior.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Exame</div><h3><a href="https://exame.com/esg/parcerias-do-bem-da-engie-brasil-beneficia-110-mil-pessoas-em-cinco-anos/">Engie Brasil celebra cinco anos do Parcerias do Bem, com 110 mil pessoas beneficiadas</a></h3><p class="resumo">A Engie Brasil apresentou na quinta-feira (12), em Florianópolis, os resultados de cinco anos do programa social Parcerias do Bem, que beneficiou 110 mil pessoas. O encontro foi aberto pelo CEO Eduardo Sattamini e reuniu casos de projetos apoiados pela iniciativa. Gancho de FUP: programa de investimento social ativo e valorizado pela alta direção, o que é uma porta para propor projetos incentivados alinhados ao Parcerias do Bem.</p></article><article class="item"><div class="eyebrow fonte">TradeMap</div><h3><a href="https://trademap.com.br/noticias/news-8599995">M. Dias Branco tem lucro de R$ 157,8 milhões no 3º trimestre, queda de 27%</a></h3><p class="resumo">A M. Dias Branco (MDIA3) teve lucro líquido de R$ 157,8 milhões no terceiro trimestre de 2026, queda de 27% ante os R$ 216,1 milhões do 3T25. A receita líquida somou R$ 2,74 bilhões, recuo de 1,7%, embora a empresa tenha registrado o quinto trimestre seguido de alta nos volumes vendidos. Gancho de FUP: com lucro ainda expressivo, a empresa mantém base de IR para patrocínio incentivado em 2027, mas a margem pressionada pede proposta enxuta e de impacto claro.</p></article><article class="item"><div class="eyebrow fonte">eixos</div><h3><a href="https://eixos.com.br/gas-natural/mercado-de-gas/petrobras-vai-pagar-r-36-bilhoes-a-tag-por-garantia-dada-na-privatizacao/">Petrobras reconhece R$ 3,6 bilhões a pagar à TAG por garantia da privatização</a></h3><p class="resumo">A Petrobras registrou no balanço do 3º trimestre, publicado na terça-feira (10), uma obrigação de R$ 3,6 bilhões a pagar à Transportadora Associada de Gás (TAG). O valor decorre do contrato de venda da TAG, de 2019, que previa pagamentos ligados à revisão tarifária dos gasodutos conduzida pela ANP. Gancho de FUP: entrada relevante de caixa prevista para a TAG, o que reforça a capacidade de investimento socioambiental e cultural.</p></article><article class="item"><div class="eyebrow fonte">Brazil Journal</div><h3><a href="https://braziljournal.com/o-novo-cfo-da-aegea-e-sua-complexa-missao">Aegea contrata Marco Rabello, ex-CSN, como novo CFO</a></h3><p class="resumo">A Aegea anunciou Marco Rabello, que liderava a diretoria financeira da CSN, como seu novo CFO. Na CSN, ele conduziu vendas de ativos para reduzir a dívida, incluindo a venda da CSN Cimentos à chinesa Huaxin, e antes passou pela Odebrecht durante a recuperação judicial. Na Aegea, ele herda alavancagem de 3,83 vezes no fim do 3º trimestre. Gancho de FUP: troca na área financeira é momento de mapear o novo interlocutor do orçamento de patrocínio.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-11-14</span></footer>
+</body></html>
