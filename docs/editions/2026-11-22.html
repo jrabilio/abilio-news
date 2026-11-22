@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-11-22</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-11-22</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">Reuters / The Motley Fool</div><h2><a href="https://www.fool.com/investing/2026/11/21/after-its-worst-week-in-18-years-nvidia-now-faces-an-sec-investigation-what-it-means-for-investors/">SEC investiga contabilidade da Nvidia após pior semana da ação desde 2008</a></h2><p class="resumo">A SEC, regulador do mercado de capitais dos EUA, abriu investigação sobre as práticas contábeis da Nvidia, segundo a Reuters; dias antes, o Wall Street Journal havia noticiado a apuração sem detalhar o motivo. A ação caiu 14% na sexta-feira (20), para US$ 125,53, e acumulou queda de 23% na semana, a pior desde outubro de 2008, com perda de cerca de US$ 1 trilhão em valor de mercado. A SEC não comentou e a Nvidia não respondeu de imediato. A empresa também enfrenta apurações de outros órgãos federais e passa por troca no comando após a saída de Jensen Huang.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,93</div><div class="var up">▲ +1.10%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">166.376</div><div class="var down">▼ -0.69%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">6.910</div><div class="var down">▼ -3.70%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">22.618</div><div class="var down">▼ -5.28%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Seu Dinheiro</div><h3><a href="https://www.seudinheiro.com/2026/criptomoedas/maior-tombo-mensal-desde-2022-bitcoin-btc-fura-o-piso-cai-abaixo-de-us-60-mil-e-arrasta-outras-criptomoedas-ccgg/">Bitcoin cai abaixo de US$ 60 mil e caminha para o pior mês desde 2022</a></h3><p class="resumo">O bitcoin rompeu o piso de US$ 60 mil na sexta-feira (20) e era negociado perto de US$ 58,9 mil à tarde, com queda de cerca de 23% em novembro, rumo ao pior mês desde junho de 2022. A criptomoeda caminha para a sétima semana seguida de baixa, arrastando ether e BNB, que recuaram mais de 7% em 24 horas. Pesam a venda generalizada de ativos ligados à IA em Wall Street, os juros altos e resgates de cerca de US$ 3,5 bilhões dos ETFs de bitcoin à vista nos EUA no mês. A máxima histórica, acima de US$ 126 mil, foi registrada em outubro de 2025.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Suno Notícias</div><h3><a href="https://www.suno.com.br/noticias/axia3-axia-energia-aprova-emissao-debentures/">Axia Energia aprova emissão de até R$ 1,2 bilhão em debêntures</a></h3><p class="resumo">O conselho da Axia Energia (AXIA3) aprovou a 15ª emissão de debêntures simples, de R$ 1 bilhão, que pode chegar a R$ 1,2 bilhão com lote adicional. A oferta terá até duas séries: uma de 7 anos, com vencimento em dezembro de 2033, e outra de 10 anos, até dezembro de 2036, com taxas definidas em bookbuilding a partir de 15,07% e 15,25% ao ano no piso prefixado. A distribuição será pública, pelo rito automático da Resolução CVM 160, e ainda não tinha registro na CVM no anúncio. Os juros serão pagos semestralmente.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">Reuters / The Motley Fool</div><h3><a href="https://www.fool.com/investing/2026/11/21/after-its-worst-week-in-18-years-nvidia-now-faces-an-sec-investigation-what-it-means-for-investors/">SEC investiga contabilidade da Nvidia após pior semana da ação desde 2008</a></h3><p class="resumo">A SEC, regulador do mercado de capitais dos EUA, abriu investigação sobre as práticas contábeis da Nvidia, segundo a Reuters; dias antes, o Wall Street Journal havia noticiado a apuração sem detalhar o motivo. A ação caiu 14% na sexta-feira (20), para US$ 125,53, e acumulou queda de 23% na semana, a pior desde outubro de 2008, com perda de cerca de US$ 1 trilhão em valor de mercado. A SEC não comentou e a Nvidia não respondeu de imediato. A empresa também enfrenta apurações de outros órgãos federais e passa por troca no comando após a saída de Jensen Huang.</p></article><article class="item"><div class="eyebrow fonte">TV Sim Brasil</div><h3><a href="https://tvsimbrasil.com.br/brasil/tecnologia/noticia/2026/11/22/brasil-mira-hub-data-centers-ia-trava-congresso">Decreto do Redata, regime para data centers, deve sair por volta de 27/11</a></h3><p class="resumo">O Redata, regime de incentivo a data centers sancionado em setembro, ainda não vale na prática porque falta o decreto de regulamentação, previsto para por volta de 27 de novembro, após o retorno do governo da COP31. Para ter a tarifa de importação de servidores reduzida de 38% para quase zero, o data center precisará operar com energia 100% renovável e sem consumo de água. O setor mira R$ 560 bilhões em projetos, como o Rio AI City (R$ 360 bilhões) e a unidade da ByteDance no Pecém (R$ 200 bilhões). Um vice-presidente da Scala Data Centers atribui à demora a perda de um investimento bilionário para a Índia.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">Euronews</div><h3><a href="https://pt.euronews.com/2026/11/22/novo-rascunho-da-cop31-aprofunda-divisoes-nas-negociacoes-climaticas">COP31: novo rascunho omite combustíveis fósseis e UE fala em retrocesso</a></h3><p class="resumo">A presidência da COP31, em Antália (Turquia), divulgou no início deste domingo (22) um novo rascunho de acordo, já bem após o prazo de encerramento. O texto não cita combustíveis fósseis — apenas reconhece um acordo global anterior sobre a transição —, mas mantém metas de eletrificação e a expansão da captura e armazenamento de carbono. Um representante da União Europeia chamou a proposta de retrocesso e alertou para a possibilidade real de a conferência terminar sem acordo. O documento precisa de consenso de quase 200 países na plenária final de domingo.</p></article><article class="item"><div class="eyebrow fonte">Gazeta da Amazônia</div><h3><a href="https://gazetadaamazonia.com.br/20/11/2026/embrapii-edital-baixo-carbono/">Embrapii abre edital de R$ 81 milhões para descarbonizar aço e cimento</a></h3><p class="resumo">A Embrapii lançou em 20 de novembro, com a agência alemã GIZ, uma chamada de até R$ 81 milhões para projetos de inovação que reduzam as emissões de CO₂ por tonelada de aço ou cimento, dentro do Programa Induz Brasil-Alemanha. Cada proposta precisa reunir ao menos duas unidades Embrapii e uma empresa âncora siderúrgica ou cimenteira com operação ou projeto avançado no país. As propostas vão até 29 de janeiro de 2027, com resultado em 12 de abril. Entre as rotas citadas estão hidrogênio de baixas emissões, menor uso de clínquer e captura de carbono.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Metrópoles</div><h3><a href="https://metropoles.com/colunas/demetrio-vecchioli/concessionario-do-pacaembu-fez-doacao-ilegal-via-rouanet-a-evento-da-esposa">Concessionária do Pacaembu doou R$ 760 mil via Rouanet a evento ligado ao próprio CEO</a></h3><p class="resumo">A Progen, concessionária do Pacaembu, doou R$ 760 mil em dezembro de 2023 pela Lei Rouanet à ARPA, empresa também presidida por seu CEO, Eduardo Barella, para a feira de arte ArPa 2024, coordenada pela esposa dele. A lei proíbe doação ou patrocínio incentivado a pessoas ou entidades vinculadas ao incentivador. A Progen admite um possível erro, diz não ter usado o abatimento fiscal e se ofereceu para devolver o valor com correção. Segundo a reportagem, o processo no Ministério da Cultura segue aberto, com prestação de contas em diligência.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">TV Sim Brasil</div><h3><a href="https://tvsimbrasil.com.br/brasil/agro/noticia/2026/11/18/ue-adia-votacao-retomada-compras-frango-brasil">UE adia para dezembro votação sobre retomar compras de frango e mel do Brasil</a></h3><p class="resumo">A União Europeia tirou de pauta a votação, prevista para 17 de novembro, sobre a volta das importações de frango e mel brasileiros, suspensas desde 3 de setembro, e remarcou o tema para 7 e 8 de dezembro. Países-membros pediram mais informações sobre o controle de antimicrobianos na produção animal, e o adiamento atendeu a pedido da Avec, associação de processadores europeus. A ABPA criticou a decisão e cobrou reciprocidade; o Ministério da Agricultura diz que o país já teve avaliação favorável. Antes da suspensão, o Brasil havia embarcado 314,9 mil toneladas de frango ao bloco em 2026.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Diário do Nordeste</div><h3><a href="https://diariodonordeste.verdesmares.com.br/opiniao/colunistas/egidio-serpa/carta-de-m-dias-branco-reafirma-governanca-corporativa-1.3806582">M. Dias Branco publica sua primeira Carta de Governança nos 20 anos de Novo Mercado</a></h3><p class="resumo">A M. Dias Branco divulgou, de forma voluntária, sua primeira Carta de Governança Corporativa, no ano em que completa 20 anos no Novo Mercado da B3. O documento trata de integridade, gestão de riscos, controles internos e agenda ESG, e cita a presença no ISE B3 e a certificação antissuborno ISO 37001. A carta será atualizada anualmente no site de RI. Gancho de FUP: reforço público do compromisso ESG abre espaço para pauta de projetos incentivados alinhados a essa agenda.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-11-22</span></footer>
+</body></html>
