@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-11-24</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-11-24</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">InfoMoney</div><h2><a href="https://www.infomoney.com.br/mercados/petrobras-petr3-petr4-aprova-investimentos-de-us-122-bi-em-plano-de-negocios-2027-2031/">Petrobras aprova plano 2027-2031 com US$ 122 bilhões em investimentos e R$ 15,6 bi em proventos extras</a></h2><p class="resumo">A Petrobras divulgou na noite de segunda-feira (23) o Plano de Negócios 2027-2031, com investimentos de US$ 122 bilhões: US$ 113 bilhões em projetos já em implantação e US$ 9 bilhões em avaliação. Exploração e produção fica com mais de 70% do total (US$ 86 bilhões), 60% dele no pré-sal, e a produção comercial deve chegar a 3,1 milhões de boed em 2027 e 3,2 milhões de boed de 2028 a 2031. A estatal estima dividendos ordinários de US$ 55 bilhões a US$ 60 bilhões no período e o conselho aprovou R$ 15,6 bilhões em proventos intercalares extraordinários, a serem pagos em 23 de dezembro. Para transição energética estão previstos cerca de US$ 13,5 bilhões.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,926</div><div class="var down">▼ -0.14%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">164.796</div><div class="var down">▼ -0.95%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.237</div><div class="var up">▲ +4.73%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">24.090</div><div class="var up">▲ +6.51%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/petrobras-petr3-petr4-aprova-investimentos-de-us-122-bi-em-plano-de-negocios-2027-2031/">Petrobras aprova plano 2027-2031 com US$ 122 bilhões em investimentos e R$ 15,6 bi em proventos extras</a></h3><p class="resumo">A Petrobras divulgou na noite de segunda-feira (23) o Plano de Negócios 2027-2031, com investimentos de US$ 122 bilhões: US$ 113 bilhões em projetos já em implantação e US$ 9 bilhões em avaliação. Exploração e produção fica com mais de 70% do total (US$ 86 bilhões), 60% dele no pré-sal, e a produção comercial deve chegar a 3,1 milhões de boed em 2027 e 3,2 milhões de boed de 2028 a 2031. A estatal estima dividendos ordinários de US$ 55 bilhões a US$ 60 bilhões no período e o conselho aprovou R$ 15,6 bilhões em proventos intercalares extraordinários, a serem pagos em 23 de dezembro. Para transição energética estão previstos cerca de US$ 13,5 bilhões.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/economia/dolar-bate-6-reais-impacto-inflacao-divida-publica/">Dólar bate R$ 6 pela primeira vez desde abril de 2025 e economistas alertam para efeito em cadeia</a></h3><p class="resumo">O dólar chegou a R$ 6,006 na máxima de segunda-feira (23), patamar que não era visto desde abril de 2025, mas devolveu os ganhos e fechou em baixa de 0,14%, a R$ 5,926; o Ibovespa caiu 0,95%, aos 164.796 pontos, na terceira queda seguida. Economistas ouvidos pelo InfoMoney atribuem a pressão à desconfiança fiscal, à indefinição sobre a equipe econômica e à expectativa de juros mais altos nos EUA, e veem chance de a moeda testar de novo os R$ 6 até o 1º trimestre de 2027. Leandro Padulla, do ASA, calcula que o câmbio nesse nível, se persistir, pode somar 0,8 a 1 ponto percentual ao IPCA em 12 meses. No mesmo dia, o presidente do BC, Gabriel Galípolo, sinalizou que o juro é o principal instrumento contra essa pressão.</p></article><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/mercados/cvm-suspende-registro-do-brb-e-instituicao-fica-impedida-de-negociar-acoes-na-bolsa/">CVM suspende registro do BRB, que fica impedido de negociar ações na B3</a></h3><p class="resumo">A CVM suspendeu na segunda-feira (23) o registro de companhia aberta do Banco de Brasília (BRB), que está há mais de um ano sem divulgar balanços trimestrais. Com a decisão, as ações BSLI3 e BSLI4 deixam de ser negociadas na bolsa; o banco afirma que a medida não afeta suas operações bancárias. A divulgação de resultados do BRB está suspensa desde as suspeitas de envolvimento com o Banco Master, investigadas na operação Compliance Zero da PF. Ambipar, K-Infra, Refinaria de Manguinhos e Environmental ESG também tiveram o registro suspenso — todas, exceto o BRB, em recuperação judicial.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Bloomberg Línea</div><h3><a href="https://www.bloomberglinea.com.br/negocios/braskem-e-credores-chegam-a-acordo-sobre-reestruturacao-extrajudicial-da-divida/">Braskem fecha acordo com credores para capitalização de até US$ 4,9 bilhões</a></h3><p class="resumo">A Braskem e seus credores chegaram a acordo sobre os principais termos da reestruturação extrajudicial, segundo fontes ouvidas pela Bloomberg; o Valor noticiou primeiro. Os controladores Petrobras e IG4 farão injeção de US$ 1,3 bilhão e os credores converterão US$ 3,6 bilhões em dívida em capital, por meio de uma oferta pública de ações de até US$ 4,9 bilhões, aberta também aos minoritários nas mesmas condições. A operação reduz a dívida de cerca de US$ 12 bilhões para aproximadamente US$ 7 bilhões, com carência de juros até o fim de 2028. Detalhes ainda pendentes levaram a empresa a pedir à Justiça a prorrogação do prazo de 22 de novembro.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">TechCrunch</div><h3><a href="https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/">Anthropic lança Claude Ship, agentes que revisam, corrigem e aprovam mudanças de código</a></h3><p class="resumo">A Anthropic anunciou na segunda-feira (23) o Claude Ship, conjunto de agentes de IA para revisar pull requests no GitHub. O pacote reúne o Code Review, já disponível, e dois agentes em beta: o PR Steward, que trata falhas de CI, conflitos de merge e comentários da revisão, e o Claude Approvals, que aprova automaticamente mudanças rotineiras segundo políticas escritas pela equipe. A ferramenta está sendo liberada para os planos Team e Enterprise, e desenvolvedores individuais podem testá-la pelo comando /ship no Claude Code. A empresa recomenda começar por um repositório e em modo de observação, e alerta que o sistema pode deixar passar bugs e falhas de segurança.</p></article><article class="item"><div class="eyebrow fonte">TV Sim Brasil</div><h3><a href="https://tvsimbrasil.com.br/brasil/tecnologia/noticia/2026/11/23/trump-quer-taxar-data-center-fora-eua-mira-brasil">Trump ameaça taxar data centers de empresas americanas no exterior e pressiona plano do Brasil</a></h3><p class="resumo">O presidente dos EUA, Donald Trump, disse que empresas americanas serão impedidas de construir data centers em outros países sob pena de um &#x27;imposto enorme&#x27;, sem informar alíquota, data ou mecanismo legal. A ameaça atinge o plano brasileiro de atrair data centers de IA via Redata (Lei 15.504), cujo incentivo custa R$ 5,2 bilhões em receita em 2026 e cujo decreto de regulamentação ainda não saiu. O Brasil atraiu US$ 8 bilhões em investimentos no setor em 2026 e concentra 49% da capacidade instalada da América Latina. A medida se soma à exigência, em vigor desde 16 de novembro, de licença para exportar chips de IA a data centers no exterior.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">BRA 1</div><h3><a href="https://www.bra1.com.br/artigos/id-731133/poucas_empresas_no_brasil_levam_a_sustentabilidade_a_serio__aponta_estudo">Só 2,5% de 765 empresas brasileiras atingem o nível mais avançado de maturidade ESG</a></h3><p class="resumo">Levantamento do Pacto Global da ONU Rede Brasil com o Instituto para o Desenvolvimento do Investimento Social (IDIS) analisou 765 empresas brasileiras e encontrou apenas 2,5% no nível mais avançado de maturidade em ESG. Segundo a análise publicada na segunda-feira (23), a distância entre discurso e prática aparece em decisões de orçamento, como troca de equipamentos ineficientes, manutenção preventiva e capacitação, que costumam ser avaliadas só pelo custo imediato. O estudo indica que a sustentabilidade está na agenda, mas ainda não integrada à estratégia da maioria das empresas.</p></article><article class="item"><div class="eyebrow fonte">Brasil Inovador</div><h3><a href="https://brasilinovador.com.br/ativa-logistica-reporta-aporte-de-r-54-milhoes-em-iniciativas-de-descarbonizacao-e-infraestrutura-sustentavel">Ativa Logística informa R$ 54 milhões investidos em descarbonização e infraestrutura sustentável</a></h3><p class="resumo">A transportadora Ativa Logística destinou R$ 54,1 milhões em seis anos a programas de sustentabilidade, governança e eficiência, somando 40 projetos ESG em suas 27 unidades até novembro de 2026, segundo o fundador Clóvis A. Gil. A empresa diz ter trocado toda a frota pesada por veículos de menor emissão, ampliado energia solar e eólica nas filiais e montado oficinas para reaproveitar componentes. O movimento responde a auditorias socioambientais mais rígidas de clientes de saúde, beleza e farmacêutico sobre fornecedores de transporte.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Atlas Público</div><h3><a href="https://atlaspublico.com.br/noticias/secretaria-de-fomento-homologa-218-projetos-da-lei-rouanet-104119">MinC homologa 218 projetos da Lei Rouanet com limite de R$ 298,4 milhões para captação</a></h3><p class="resumo">A Portaria Sefic/MinC nº 798, publicada em 23 de novembro, homologa 218 projetos culturais aptos a captar até R$ 298,45 milhões em patrocínios e doações via Lei Rouanet. Os valores são tetos de incentivo fiscal, não repasses do governo: dependem de empresas e pessoas físicas que destinem parte do imposto devido.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">Compre Rural</div><h3><a href="https://www.comprerural.com/exportacoes-de-carnes-novembro-2026-terceira-semana/">Exportações de carnes somam US$ 2,02 bilhões até a terceira semana de novembro</a></h3><p class="resumo">Os embarques brasileiros de carnes somaram US$ 2,02 bilhões e 567,9 mil toneladas até a terceira semana de novembro, segundo dados da Secex divulgados na segunda-feira (23). A carne de frango respondeu por 305,18 mil toneladas e US$ 579,12 milhões. A carne bovina perdeu ritmo: a média diária da terceira parcial ficou 14% abaixo da de novembro de 2025.</p></article><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://otempo.com.br/agro/2026/11/23/cotacoes-do-agro-em-minas-23-11-2026">Café sobe 0,95% em Minas e acumula alta de 4,57% em cinco dias</a></h3><p class="resumo">A saca de 60 kg de café subiu em média 0,95% na segunda-feira (23) nas cinco praças mineiras acompanhadas pela BBM, chegando a R$ 1.832 em Guaxupé. O grão acumula alta de 4,57% em cinco dias e de 6,26% no mês, mas ainda cai 19,75% no ano e segue longe da máxima de 12 meses, de R$ 2.284 (11/12/2025). O feijão é a cultura de maior alta em 12 meses na bolsa mineira: +48,31%, a R$ 313,52 a saca em Paracatu e Unaí.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Rondoniaovivo</div><h3><a href="https://www.rondoniaovivo.com/noticia/geral/2026/11/21/gestao-forte-gru-airport-assume-aeroporto-de-cacoal-com-previsao-de-r-498-milhoes-em-investimentos.html">GRU Airport assume aeroporto de Cacoal (RO) com R$ 49,8 milhões de investimento previsto</a></h3><p class="resumo">A GRU Airport assumiu a administração do Aeroporto Capital do Café, em Cacoal (RO), com investimentos privados de R$ 49,8 milhões previstos em contrato de 30 anos para pista, pátio, terminal e segurança operacional. O movimento se soma aos aeroportos regionais que a concessionária vem assumindo no Nordeste e à operação de São Raimundo Nonato (PI), prevista para 2 de dezembro. Gancho de FUP: a expansão para praças regionais abre espaço para pauta de patrocínio/investimento social com recorte territorial nos novos municípios.</p></article><article class="item"><div class="eyebrow fonte">M. Dias Branco</div><h3><a href="https://mdiasbranco.com.br/qualificacao-em-areas-estrategicas-ganha-reforco-com-pos-graduacao-gratuita-na-m-dias-branco">M. Dias Branco amplia pós-graduação gratuita in company com a Unifor</a></h3><p class="resumo">A M. Dias Branco divulgou a ampliação de seu programa de pós-graduações in company, custeadas integralmente pela empresa e desenvolvidas com a Universidade de Fortaleza (Unifor) por meio da universidade corporativa. Já são duas especializações: Tecnologia de Fabricação de Biscoitos, Bolos e Torradas e Logística Integrada e Performance. Gancho de FUP: a parceria com a Unifor e o investimento em formação reforçam a agenda social e educacional da companhia, terreno para pauta de projetos incentivados nessa linha.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-11-24</span></footer>
+</body></html>
