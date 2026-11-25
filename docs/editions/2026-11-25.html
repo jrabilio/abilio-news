@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-11-25</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-11-25</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">CNN Brasil</div><h2><a href="https://www.cnnbrasil.com.br/economia/money/mercado/mercado-financeiro-ibovespa-dolar-24-novembro-2026/">Dólar cai a R$ 5,91 após Lula autorizar PEC para limitar despesas obrigatórias</a></h2><p class="resumo">O dólar recuou nesta terça-feira (24) depois de notícias de que o presidente Lula autorizou o envio ao Congresso de uma proposta de emenda à Constituição para conter o crescimento das despesas obrigatórias, com limites para gastos com saúde, educação e emendas. Na mínima do dia a moeda chegou a R$ 5,81, e fechou perto de R$ 5,91. Parte do mercado havia considerado insuficiente o pacote fiscal aprovado na véspera pela Câmara, sancionado no mesmo dia. O Ibovespa devolveu os ganhos e fechou em queda de 0,43%, aos 164.089 pontos.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">R$ 5,91</div><div class="var down">▼ -0.26%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">164.090</div><div class="var down">▼ -0.43%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.201</div><div class="var down">▼ -0.50%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">23.734</div><div class="var down">▼ -1.48%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">Petrobras / SEC (Form 6-K)</div><h3><a href="https://www.sec.gov/Archives/edgar/data/0001119639/000129281426005382/pbr20261123_6k2.htm">Petrobras volta ao etanol com compra de 42% da Neomille por R$ 2,8 bilhões</a></h3><p class="resumo">A Petrobras informou à SEC que fechou acordo para adquirir participação de 42% na Neomille, marcando seu retorno à produção de etanol. Do valor total de R$ 2,8 bilhões, R$ 1,8 bilhão será aporte primário de capital na empresa, e o restante vai para a compra de ações de acionistas atuais, incluindo earn-out de até R$ 397 milhões. A conclusão depende das condições precedentes do contrato. A estatal liga o negócio à aquisição da infraestrutura de dutos da Logum, em 12 de novembro.</p></article><article class="item"><div class="eyebrow fonte">Insmed / SEC (Form 8-K)</div><h3><a href="https://www.sec.gov/Archives/edgar/data/0001104506/000114036126045364/ef20086426_ex99-1.htm">Sanofi fecha compra da americana Insmed por US$ 41 bilhões</a></h3><p class="resumo">A Sanofi vai adquirir todas as ações da farmacêutica americana Insmed a US$ 175 por ação, em dinheiro, num negócio de cerca de US$ 41 bilhões. O preço representa prêmio de cerca de 46% sobre o fechamento de 18 de novembro, véspera das primeiras reportagens sobre a operação. A compra inclui o Brinsupri (brensocatib) e o Arikayce, além de um ativo em fase 3 para doenças respiratórias raras. Segundo a LSEG, é o maior acordo do setor farmacêutico no ano.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Startups</div><h3><a href="https://startups.com.br/negocios/zippy-capta-pre-seed-e-aposta-em-ia-para-proteger-criancas-na-internet/">Zippy capta US$ 490 mil em pré-seed para IA de proteção infantil na internet</a></h3><p class="resumo">A startup brasileira Zippy fechou uma rodada pré-seed de US$ 490 mil, com valuation de US$ 6,5 milhões. A rodada foi liderada pela investidora-anjo Müge Nallar Bouillon, que assina cheque de US$ 250 mil. A empresa usa inteligência artificial para proteger crianças na internet. Os recursos devem acelerar o desenvolvimento do produto.</p></article><h2 class="secao">Inteligência Artificial</h2><article class="item"><div class="eyebrow fonte">O Tempo</div><h3><a href="https://www.otempo.com.br/mundo/2026/11/23/apos-reconducao-de-jensen-huang-ao-cargo-de-ceo-acoes-da-nvidia-sobem-mais-de-30">Nvidia reconduz Jensen Huang ao comando e ações sobem mais de 30%</a></h3><p class="resumo">O conselho da Nvidia aprovou por unanimidade, na segunda-feira (23), o retorno de Jensen Huang aos cargos de presidente e CEO, 11 dias depois de aceitar sua renúncia. Huang havia deixado a empresa após ter o nome associado a uma investigação sobre suposta operação de espionagem ligada à compra de chips. As ações chegaram a subir mais de 30% na Nasdaq no dia do anúncio. A investigação independente segue em andamento, com apoio do executivo, segundo a empresa.</p></article><article class="item"><div class="eyebrow fonte">Brasil Inovador</div><h3><a href="https://brasilinovador.com.br/accor-implementa-inteligencia-artificial-proprietaria-para-monitoramento-de-reputacao-e-otimizacao-operacional-nas-americas/">Accor consolida IA proprietária para monitorar reputação e operação de hotéis nas Américas</a></h3><p class="resumo">A rede hoteleira Accor anunciou a consolidação de uma ferramenta própria de inteligência artificial voltada ao diagnóstico da experiência dos hóspedes e à gestão operacional dos empreendimentos nas Américas. A solução cruza avaliações e dados operacionais para apontar prioridades de melhoria por hotel. O anúncio foi feito em 24 de novembro. A iniciativa se soma ao movimento de grandes grupos de serviços de levar IA para a operação, e não apenas para pilotos.</p></article><h2 class="secao">ESG &amp; Sustentabilidade</h2><article class="item"><div class="eyebrow fonte">ESG Inside</div><h3><a href="https://esginside.com.br/2026/11/24/acg-investe-em-tecnologia-de-recuperacao-de-energia-termica-para-reduzir-1-140-toneladas-de-co2-por-ano/">ACG instala bomba de calor em Pouso Alegre para cortar 1.140 toneladas de CO2 por ano</a></h3><p class="resumo">A farmacêutica ACG instalou uma bomba de calor para recuperação de energia térmica em sua fábrica de Pouso Alegre (MG). O equipamento tem potencial de reduzir cerca de 1.140 toneladas de CO2 por ano. Em 2025, a unidade já havia evitado cerca de 858 toneladas com o consumo de energia de fontes renováveis. A empresa liga a iniciativa à meta de emissões líquidas zero até 2050.</p></article><article class="item"><div class="eyebrow fonte">Boa Informação</div><h3><a href="https://boainformacao.com.br/2026/11/meta-abandona-meta-de-carbono-zero-para-2030-e-nao-define-novo/">Meta abandona meta de carbono zero para 2030 e não define novo prazo</a></h3><p class="resumo">A Meta deixou de lado o compromisso de zerar emissões líquidas até 2030 e não estabeleceu novo prazo, segundo reportagem baseada no TechCrunch. A mudança é atribuída ao aumento das emissões dos data centers usados para IA e à saída da empresa da iniciativa RE100. O relatório de sustentabilidade de 2026 da companhia, publicado em 19 de novembro, foi criticado pela organização Green America. O caso ilustra a pressão que a expansão da IA impõe às metas climáticas das big techs.</p></article><h2 class="secao">Lei Rouanet &amp; Incentivos Culturais</h2><article class="item"><div class="eyebrow fonte">Transpetro</div><h3><a href="https://transpetro.com.br/transpetro-institucional/noticias/destinamos-r-25-milhoes-a-patrocinios-culturais-e-esportivos-por-meio-das-leis-de-incentivo-federal.htm">Transpetro encerra hoje inscrições de edital de R$ 25 milhões para projetos incentivados</a></h3><p class="resumo">A segunda edição do Transpetro em Movimento recebe inscrições até 25 de novembro. O edital destina até R$ 25 milhões a projetos culturais e esportivos de todas as regiões do país, via leis federais de incentivo, com contratação prevista entre 2027 e 2029. No eixo cultural, são aceitos projetos de música e artes cênicas, como festivais, mostras e espetáculos. A inscrição é gratuita e o resultado está previsto para 26 de abril de 2027.</p></article><article class="item"><div class="eyebrow fonte">Blog do Lago</div><h3><a href="https://blogdolago.com.br/editais-patrocinio-itaipu-2027-esporte-cultura/">Itaipu publica editais de patrocínio de até R$ 8 milhões para cultura e esporte em 2027</a></h3><p class="resumo">A Itaipu Binacional publicou os regulamentos dos editais ESPP 01/2027 (esporte) e ESPP 02/2027 (cultura), que somam até R$ 8 milhões. As inscrições vão de 11 de janeiro a 19 de fevereiro de 2027. Os projetos devem ser realizados no Paraná ou em municípios contemplados de Mato Grosso do Sul. As ações precisam começar entre 1º de junho e 31 de dezembro de 2027.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">CNN Brasil</div><h3><a href="https://www.cnnbrasil.com.br/agro/exportacao-de-milho-do-3/">Exportação de milho em novembro já se aproxima do total do mesmo mês de 2025</a></h3><p class="resumo">O Brasil exportou 4,77 milhões de toneladas de milho nas três primeiras semanas de novembro, perto de todo o volume de novembro de 2025, segundo dados da Secex. A média diária de embarques subiu 38,5%. A Anec projeta que o mês feche no maior patamar mensal em mais de três anos. No acumulado de janeiro a outubro, porém, os embarques somaram 25,3 milhões de toneladas, queda de 15% sobre 2025.</p></article><article class="item"><div class="eyebrow fonte">Farmnews</div><h3><a href="https://farmnews.com.br/mercado/preco-da-soja-renova-maxima-de-2026-na-parcial-de-novembro/">Preço da soja renova máxima de 2026 em novembro</a></h3><p class="resumo">O indicador da soja em Paranaguá, do Cepea, voltou a subir e alcançou R$ 167,4 por saca em 17 de novembro, o maior valor nominal de 2026. Na terça-feira (24), a saca em Minas Gerais subiu 1,14%, para R$ 159, e igualou o maior preço em 12 meses. Os preços físicos no interior seguem mais baixos, como no norte de Mato Grosso. Consultores projetam novas altas no curto prazo.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">Suno Notícias</div><h3><a href="https://www.suno.com.br/noticias/m-dias-branco-mdia3-queda-jpmorgan-venda/">JPMorgan rebaixa M. Dias Branco para venda e ação cai até 9%</a></h3><p class="resumo">O JPMorgan rebaixou a recomendação da M. Dias Branco (MDIA3) para venda e cortou o preço-alvo de R$ 21,50 para R$ 16. O banco cita custos maiores de trigo e óleo de palma em 2027 e demanda fraca. A ação chegou a cair mais de 9% no pregão de terça-feira (24). Gancho de FUP: num ano de margem apertada, vale acompanhar se a empresa mantém o orçamento de patrocínio para 2027.</p></article><article class="item"><div class="eyebrow fonte">Mais Minas</div><h3><a href="https://maisminas.com.br/oportunidades/samarco-recebe-curriculos-para-cargos-tecnicos-e-operacionais-em-mariana-mg/">Samarco abre seleção para cargos técnicos e operacionais em Mariana</a></h3><p class="resumo">A Samarco recebe currículos para cargos técnicos e operacionais na Unidade Germano, em Mariana (MG). As vagas fazem parte do plano de retomada da capacidade total, com investimento de R$ 13,8 bilhões até 2028. A projeção é de cerca de 9 mil postos em Minas Gerais, com pico de mobilização em 2027. Gancho de FUP: a expansão amplia a presença da empresa em Mariana e região, terreno para projetos incentivados com impacto local.</p></article><article class="item"><div class="eyebrow fonte">Brasil Inovador</div><h3><a href="https://brasilinovador.com.br/m-dias-branco-recebe-trofeu-transparencia-anefac-e-consolida-governanca-contabil-no-setor-de-alimentos/">M. Dias Branco recebe Troféu Transparência ANEFAC pela oitava vez</a></h3><p class="resumo">A M. Dias Branco recebeu o Troféu Transparência da ANEFAC, na 29ª edição do prêmio, que reconhece a qualidade das demonstrações contábeis. Segundo a empresa, é a oitava vez que fica entre as premiadas. O reconhecimento reforça a agenda de governança divulgada pela companhia. Gancho de FUP: abre espaço para contato com a área institucional.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-11-25</span></footer>
+</body></html>
