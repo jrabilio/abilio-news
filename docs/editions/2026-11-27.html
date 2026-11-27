@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Diário — 2026-11-27</title>
+<style>:root {
+  color-scheme: light dark;
+  --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b;
+  --serif:Georgia,"Times New Roman",Cambria,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+    --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+    --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+}
+:root[data-theme="light"]{ --paper:#f6f5f2; --panel:#fffefb; --ink:#1a1d21; --muted:#6b6e73;
+  --line:rgba(20,22,26,.12); --line-strong:rgba(20,22,26,.24);
+  --accent:#1f6f78; --up:#157f3b; --down:#c02b2b; }
+:root[data-theme="dark"]{ --paper:#14171a; --panel:#191d21; --ink:#e9e8e4; --muted:#9ba0a6;
+  --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.24);
+  --accent:#5fb6be; --up:#4fbe77; --down:#e86a6a; }
+
+* { box-sizing:border-box; }
+body { font-family:var(--sans); line-height:1.62; max-width:680px;
+  margin:0 auto; padding:2.5rem 1.25rem 4rem; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:2px; }
+
+.eyebrow { font-size:.7rem; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:600; }
+.back { display:inline-block; margin-bottom:1.75rem; font-size:.72rem;
+  text-transform:uppercase; letter-spacing:.1em; }
+
+header.nl { margin-bottom:1.5rem; }
+header.nl .kicker { display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.5rem; }
+header.nl h1 { font-family:var(--serif); font-weight:700; letter-spacing:-.01em;
+  margin:0; font-size:2.5rem; line-height:1.02; text-wrap:balance; }
+header.nl .data { font-family:var(--sans); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--muted); white-space:nowrap; }
+
+.mercado { display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr));
+  border:1px solid var(--line); border-radius:2px; margin:1rem 0 2rem; overflow:hidden; }
+.tick { padding:.6rem .7rem; text-align:left; border-right:1px solid var(--line);
+  background:var(--panel); }
+.tick:last-child { border-right:none; }
+.tick .nome { font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.tick .valor { font-size:1.02rem; font-weight:600; font-variant-numeric:tabular-nums;
+  margin-top:.1rem; }
+.tick .var { font-size:.74rem; font-weight:600; font-variant-numeric:tabular-nums; }
+.var.up{ color:var(--up); } .var.down{ color:var(--down); } .var.flat{ color:var(--muted); }
+
+.intro { font-family:var(--serif); font-style:italic; font-size:1.18rem; line-height:1.5;
+  color:var(--ink); margin:0 0 2.25rem; padding-left:1rem; border-left:2px solid var(--accent); }
+
+.manchete { margin:0 0 2rem; padding:1.25rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:2px; }
+.manchete .fonte { color:var(--accent); margin-bottom:.5rem; }
+.manchete h2 { font-family:var(--serif); font-weight:700; font-size:1.75rem; line-height:1.1;
+  margin:0 0 .6rem; letter-spacing:-.015em; text-wrap:balance; }
+.manchete h2 a { color:var(--ink); }
+.manchete h2 a:hover { color:var(--accent); text-decoration:none; }
+.manchete .resumo { margin:0; font-size:1.05rem; }
+
+.secao { margin:2.5rem 0 0; padding-bottom:.4rem; border-bottom:2px solid var(--ink);
+  font-family:var(--sans); font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.1em; }
+
+.tarja { margin:2.5rem 0 1rem; padding:1.1rem 1.25rem 1.4rem; background:var(--panel);
+  border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:2px; }
+.tarja .tarja-label { color:var(--accent); margin-bottom:.35rem; }
+.tarja h2.tarja-titulo { font-family:var(--sans); font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.08em; border:0; margin:.1rem 0 .4rem; }
+.tarja .item:first-of-type { border-top:1px solid var(--line); }
+
+.item { padding:1.4rem 0; border-top:1px solid var(--line); }
+.item .fonte { margin-bottom:.35rem; }
+.item h3 { font-family:var(--serif); font-weight:700; font-size:1.3rem; line-height:1.16;
+  margin:0 0 .45rem; letter-spacing:-.01em; text-wrap:balance; }
+.item h3 a { color:var(--ink); }
+.item h3 a:hover { color:var(--accent); text-decoration:none; }
+.item .resumo { margin:0; color:var(--ink); }
+
+footer { margin-top:3rem; padding-top:1rem; border-top:2px solid var(--ink);
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+  display:flex; justify-content:space-between; }
+
+ul.edicoes { list-style:none; padding:0; margin:0; }
+ul.edicoes li { padding:1rem 0; border-top:1px solid var(--line); }
+ul.edicoes a { font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
+ul.edicoes a:hover { color:var(--accent); text-decoration:none; }
+ul.edicoes .data { display:block; font-family:var(--sans); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted); margin-top:.15rem; }
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important; } }</style></head><body>
+<a class="back" href="../index.html">← Edições anteriores</a>
+<header class="nl"><div class="kicker">
+<h1>Radar Diário</h1>
+<div class="data">2026-11-27</div></div></header>
+<article class="manchete"><div class="eyebrow fonte">InfoMoney</div><h2><a href="https://www.infomoney.com.br/mercados/ibovespa-salta-3-e-supera-os-172-mil-pontos-com-possibilidade-de-trabuco-na-fazenda/">Lula escolhe Luiz Carlos Trabuco para a Fazenda e Ibovespa dispara 6%</a></h2><p class="resumo">O presidente Lula anunciou na quinta-feira (26) o presidente do conselho do Bradesco, Luiz Carlos Trabuco, como ministro da Fazenda do quarto mandato, que começa em 2027. Ele é o primeiro nome definido da nova equipe. O Ibovespa subiu 6,07% e fechou perto de 176.800 pontos, e o dólar recuou. A escolha dividiu o PT, com críticos do ajuste fiscal comparando o caso ao de Joaquim Levy em 2015.</p></article>
+<div class="mercado"><div class="tick"><div class="nome">Dólar</div><div class="valor">5,74</div><div class="var down">▼ -1.26%</div></div><div class="tick"><div class="nome">Ibovespa</div><div class="valor">176.800</div><div class="var up">▲ +6.07%</div></div><div class="tick"><div class="nome">S&amp;P 500</div><div class="valor">7.183</div><div class="var down">▼ -0.25%</div></div><div class="tick"><div class="nome">Nasdaq</div><div class="valor">23.586</div><div class="var down">▼ -0.62%</div></div></div>
+
+<h2 class="secao">Mercado Financeiro &amp; Aquisições</h2><article class="item"><div class="eyebrow fonte">InfoMoney</div><h3><a href="https://www.infomoney.com.br/economia/cmn-e-bc-aprovam-medidas-para-conter-riscos-do-endividamento/">CMN e BC aprovam corte de limite para quem usa o rotativo com frequência</a></h3><p class="resumo">O Conselho Monetário Nacional e o Banco Central aprovaram na quarta-feira (25) um pacote contra o endividamento. Os bancos terão de reduzir gradualmente o limite de quem, em seis meses, deixou de pagar o total de três ou mais faturas e financiou o restante no rotativo. As medidas valem a partir de 1º de julho de 2027, segundo os relatos. O rotativo teve contratações recordes de R$ 311 bilhões de janeiro a agosto de 2026.</p></article><article class="item"><div class="eyebrow fonte">Space Money</div><h3><a href="https://www.spacemoney.com.br/economia/cvm-americanas-31-acusados-rombo-contabil/">CVM intima Americanas, ex-CEO e mais 29 ex-executivos por rombo contábil</a></h3><p class="resumo">A CVM começou a intimar 31 acusados em processo administrativo sobre as inconsistências contábeis reveladas pela Americanas em janeiro de 2023, estimadas inicialmente em R$ 20 bilhões. A intimação foi assinada em 24 de novembro e veio a público na quinta (26). O foco está no tratamento contábil do risco sacado. Intimação é etapa processual, não condenação.</p></article><article class="item"><div class="eyebrow fonte">Agência Brasil</div><h3><a href="https://agenciabrasil.ebc.com.br/geral/noticia/2026-11/pol%C3%ADcia-civil-de-S%C3%A3o-Paulo-faz-opera%C3%A7%C3%A3o-contra-Grupo-Fictorsa-que-movimentou-r-4-bi">Grupo Fictor é alvo de operação; Justiça manda bloquear até R$ 4,3 bilhões</a></h3><p class="resumo">A Polícia Civil de São Paulo deflagrou na quinta (26) operação contra o Grupo Fictor, suspeito de captar mais de R$ 4 bilhões de investidores com promessa de rendimento fixo sem respaldo financeiro. A Justiça determinou o bloqueio de bens e contas de investigados até R$ 4,3 bilhões, teto ligado às dívidas da recuperação judicial. O grupo diz que acompanha o caso e está à disposição das autoridades.</p></article><h2 class="secao">Captação de Recursos</h2><article class="item"><div class="eyebrow fonte">Startups.com.br</div><h3><a href="https://startups.com.br/negocios/nomad-capta-r-172m-com-a-tether-e-mais-que-dobra-valuation-para-r-4b/">Nomad capta R$ 172 milhões em Série C liderada pela Tether e vale R$ 4 bilhões</a></h3><p class="resumo">A fintech Nomad fechou rodada Série C de R$ 172 milhões liderada pela Tether Capital, com avaliação de R$ 4 bilhões, mais que o dobro da anterior. A empresa diz ter atingido breakeven de Ebitda em 2025 e ter 5 milhões de clientes. Os recursos servirão para expandir produtos de IA, investimentos e infraestrutura de pagamentos internacionais. Os números são da própria companhia.</p></article><h2 class="secao">Agro</h2><article class="item"><div class="eyebrow fonte">PN7</div><h3><a href="https://pn7.com.br/cotacao-do-agro-boi-gordo-chega-a-r-395-e-soja-cai-142-no-mercado-brasileiro/">Boi gordo segue perto de R$ 395 a arroba; soja recua em Mato Grosso</a></h3><p class="resumo">O boi gordo ficou estável em R$ 395 por arroba em São Paulo, e o indicador Cepea/Notícias Agrícolas marcou R$ 395,45 em 24/11. A soja caiu 1,42% em Sorriso (MT), a R$ 139 por saca, enquanto o indicador Cepea/Esalq do Paraná ficou em R$ 162,98 em 25/11. As cotações variam conforme a praça.</p></article><section class="tarja"><div class="eyebrow tarja-label">Monitoramento</div><h2 class="tarja-titulo">Carteira Ecotransforma</h2><article class="item"><div class="eyebrow fonte">TradeMap</div><h3><a href="https://trademap.com.br/noticias/news-8582260">Engie Brasil lucra R$ 711,1 milhões no 3º trimestre, com receita líquida 9,8% maior</a></h3><p class="resumo">A Engie Brasil Energia (EGIE3) registrou lucro de R$ 711,1 milhões no 3T26, queda de 3,7% sobre um ano antes, com receita líquida de R$ 3,67 bilhões (+9,8%). Gancho de FUP: resultado robusto e geração de caixa sustentam apetite por patrocínio e agenda ESG/cultural.</p></article><article class="item"><div class="eyebrow fonte">Clube FII News</div><h3><a href="https://www.clubefiinews.com.br/acoes/engie-brasil-energia-assembleia-geral-extraordinaria-novembro-2026">Engie Brasil convoca assembleia para 30/11 para incorporar a Comercializadora</a></h3><p class="resumo">A Engie Brasil Energia convocou AGE digital para 30 de novembro de 2026 para votar a incorporação da ENGIE Brasil Energia Comercializadora, que será extinta, sem aumento de capital nem novas ações. Fato institucional de reorganização societária.</p></article></section>
+<footer><span>Radar Diário</span><span>2026-11-27</span></footer>
+</body></html>
